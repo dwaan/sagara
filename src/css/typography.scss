@@ -1,0 +1,240 @@
+@use 'variables';
+
+html,
+body {
+    color: var(--dark-normal);
+
+    font-family: "Golos Text", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.02rem;
+}
+
+@mixin inline-bold {
+    display: inline-block;
+    font-weight: 600;
+}
+
+@mixin children-tags {
+    strong {
+        display: inline-block;
+        font-weight: 700;
+    }
+
+    a {
+        color: inherit;
+        font-style: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+}
+
+h1 {
+    @include inline-bold;
+    @include children-tags;
+
+    color: var(--blue-deep);
+    line-height: 100%;
+
+    &.homepage {
+        font-size: 5.5rem;
+        letter-spacing: -0.22rem;
+    }
+
+    &.listing {
+        font-size: 4.875rem;
+        letter-spacing: -0.14625rem;
+    }
+
+    &.detail {
+        font-size: 3.5rem;
+        letter-spacing: -0.105rem;
+    }
+}
+
+h2 {
+    @include inline-bold;
+    @include children-tags;
+
+    font-size: 3rem;
+    line-height: 110%;
+
+    &.big {
+        font-size: 4rem;
+        line-height: 90%;
+        letter-spacing: -0.08rem;
+    }
+
+    &.medium {
+        font-size: 2.6875rem;
+        line-height: 120%;
+    }
+
+    &.small {
+        font-size: 2.25rem;
+        line-height: 110%;
+    }
+
+    &.smallest {
+        font-size: 1.5rem;
+        line-height: 150%;
+    }
+}
+
+h3 {
+    @include inline-bold;
+    @include children-tags;
+
+    &.small {
+        font-size: 1.5rem;
+        line-height: 130%;
+    }
+}
+
+h4 {
+    @include inline-bold;
+    @include children-tags;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+h5 {
+    @include inline-bold;
+    @include children-tags;
+}
+
+p {
+    @include children-tags;
+
+    font-size: 1.125rem;
+    line-height: 160%;
+
+    strong {
+        font-weight: 500;
+        color: var(--neon-blue);
+    }
+
+    &.small {
+        font-size: 1rem;
+        line-height: 150%;
+        letter-spacing: 0.02rem;
+    }
+
+    &.hero {
+        font-size: 1.3125rem;
+        line-height: 160%;
+    }
+
+    &.blue {
+        font-size: 1.875rem;
+        font-weight: 600;
+        line-height: 130%;
+
+        &.big {
+            font-size: 2.25rem;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &.button {
+        color: var(--neon-blue);
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    &.cta {
+        color: var(--light-white-normal);
+        font-size: 1.5rem;
+        line-height: normal;
+        letter-spacing: 0.03rem;
+    }
+
+    &.pill {
+        color: var(--dark-normal);
+    }
+
+    &.big {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.03rem;
+    }
+}
+
+b,
+strong {
+    @include inline-bold
+}
+
+menu,
+.tabs nav {
+
+    h2,
+    a,
+    label {
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 130%;
+        letter-spacing: 0.03375rem;
+    }
+}
+
+menu.submenu {
+
+    a {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 0.03rem;
+    }
+}
+
+
+
+footer {
+    .sitemap {
+
+        h3,
+        li>a {
+            color: var(--dark-normal);
+            font-style: normal;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            line-height: 150%;
+            font-weight: 600;
+        }
+
+        li>a {
+            font-size: 1rem;
+            line-height: 140%;
+            font-weight: 400;
+
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .legal {
+
+        p,
+        a {
+            font-size: 1rem;
+        }
+
+        a {
+            font-weight: 600;
+        }
+    }
+}
