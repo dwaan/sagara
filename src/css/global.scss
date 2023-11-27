@@ -4,9 +4,12 @@
 @use 'vertical';
 @use 'after-before';
 @use 'animation';
+@use 'nojs';
 
 
-/* Extend flex classess */
+/**
+    Extend flex classess
+**/
 
 .flex-row {
     display: flex;

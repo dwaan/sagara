@@ -63,7 +63,8 @@ const paths = {
 		dest: sites + 'js/'
 	},
 	html: {
-		src: 'src/*.html',
+		src: 'src/**/*.html',
+		parse: 'src/*.html',
 		dest: sites
 	},
 	font: {
@@ -129,7 +130,7 @@ function css_prefix_dev() {
 }
 
 function html() {
-	return gulp.src(paths.html.src, { since: gulp.lastRun(html) })
+	return gulp.src(paths.html.parse, { since: gulp.lastRun(html) })
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file'
