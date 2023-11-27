@@ -6,21 +6,19 @@
   "type": "module",
   "scripts": {
     "sitemap": "node src/sitemap.js",
-    "test": "gulp dev",
-    "build": "gulp prod"
+    "webp": "gulp webp",
+    "test": "gulp webp && (gulp dev & npx @11ty/eleventy --serve)",
+    "watch": "gulp dev & npx @11ty/eleventy --serve",
+    "build": "gulp prod && npx @11ty/eleventy"
   },
   "author": "Dwan",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@fontsource-variable/golos-text": "^5.0.8",
-    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-file-include": "^2.3.0",
-    "gulp-htmlmin": "^5.0.1",
     "gulp-postcss": "^9.0.1",
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",

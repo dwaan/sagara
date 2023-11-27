@@ -1,12 +1,8 @@
 import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
 import concat from 'gulp-concat';
-import connect from 'gulp-connect';
-import fileinclude from 'gulp-file-include';
-import browserSync from 'browser-sync';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-import htmlmin from 'gulp-htmlmin';
 import webpack from 'webpack-stream';
 import webp from 'gulp-webp';
 import svgmin from 'gulp-svgmin';
@@ -15,8 +11,7 @@ import svgstore from 'gulp-svgstore';
 import replace from 'gulp-replace';
 
 const sass = gulpSass(dartSass);
-const siteUrl = 'http://localhost:8080/';
-const sites = 'sites/';
+const sites = '_src/';
 const img = sites + 'img/';
 const svgminoption = {
 	multipass: true,
@@ -50,12 +45,12 @@ const paths = {
 		src: 'src/img/**/*.{png,jpg,jpeg,gif}',
 		dest: img
 	},
-	sass: {
+	scss: {
 		src: ['node_modules/normalize.css/normalize.css', 'src/css/**/*.scss'],
-		dest: 'cache/css/'
+		dest: sites + 'css/temp/'
 	},
 	css: {
-		src: 'cache/css/*.css',
+		src: sites + 'css/temp/*.css',
 		dest: sites + 'css/'
 	},
 	js: {
@@ -82,8 +77,7 @@ function js_prod() {
 				clean: true
 			}
 		}))
-		.pipe(gulp.dest(paths.js.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.js.dest));
 }
 function js_dev() {
 	return gulp.src(paths.js.src, { allowEmpty: true })
@@ -95,58 +89,41 @@ function js_dev() {
 				clean: true
 			}
 		}))
-		.pipe(gulp.dest(paths.js.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.js.dest));
 }
 
-function css_prod() {
-	return gulp.src(paths.sass.src)
+function scss_prod() {
+	return gulp.src(paths.scss.src)
 		.pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
 		.pipe(concat("bundle.css"))
-		.pipe(gulp.dest(paths.sass.dest));
+		.pipe(gulp.dest(paths.scss.dest));
 }
-function css_dev() {
-	return gulp.src(paths.sass.src)
+function scss_dev() {
+	return gulp.src(paths.scss.src)
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
 		.pipe(concat("bundle.css"))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.sass.dest));
+		.pipe(gulp.dest(paths.scss.dest));
 }
 
 function css_prefix_prod() {
 	return gulp.src(paths.css.src)
 		.pipe(autoprefixer())
-		.pipe(gulp.dest(paths.css.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.css.dest));
 }
 function css_prefix_dev() {
 	return gulp.src(paths.css.src)
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.css.dest))
-		.pipe(browserSync.stream());
-}
-
-function html() {
-	return gulp.src(paths.html.parse, { since: gulp.lastRun(html) })
-		.pipe(fileinclude({
-			prefix: '@@',
-			basepath: '@file'
-		}))
-		.pipe(htmlmin({
-			collapseWhitespace: true
-		}))
-		.pipe(gulp.dest(paths.html.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.css.dest));
 }
 
 function image() {
 	return gulp.src(paths.image.src, { since: gulp.lastRun(image) })
 		.pipe(webp())
-		.pipe(gulp.dest(paths.image.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.image.dest));
 }
 
 function svgsmall() {
@@ -156,8 +133,7 @@ function svgsmall() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgsmall.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgsmall.dest));
 }
 function svgplain() {
 	return gulp.src(paths.svgplain.src)
@@ -167,8 +143,7 @@ function svgplain() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgplain.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgplain.dest));
 }
 function svgmedium() {
 	return gulp.src(paths.svgmedium.src)
@@ -177,8 +152,7 @@ function svgmedium() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgmedium.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgmedium.dest));
 }
 function svgshadow() {
 	return gulp.src(paths.svgshadow.src)
@@ -189,77 +163,36 @@ function svgshadow() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgshadow.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgshadow.dest));
 }
 
 function copy_svg() {
 	return gulp.src(paths.staticsvg.src, { since: gulp.lastRun(copy_svg) })
-		.pipe(gulp.dest(paths.staticsvg.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.staticsvg.dest));
 }
 function copy_font() {
 	return gulp.src(paths.font.src, { since: gulp.lastRun(copy_font) })
-		.pipe(gulp.dest(paths.font.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.font.dest));
+}
+function copy_html() {
+	return gulp.src(paths.html.src, { since: gulp.lastRun(copy_html) })
+		.pipe(gulp.dest(paths.html.dest));
 }
 
-function server() {
-	connect.server({
-		livereload: true,
-		root: 'sites/',
-		port: 8080
-	}, function () {
-		browserSync.init({
-			open: false,
-			proxy: siteUrl,
-			serveStatic: ['./'],
-			serveStaticOptions: {
-				extensions: ['html']
-			},
-			middleware: [
-				function (req, _, next) {
-					const notHTML = [".css", ".js", ".jpg", ".jpeg", ".webp", ".svg", ".png", ".woff2", ".map"];
-					function doesNotEndWithAnyExtension(str, prohibitedExtensions) {
-						for (const extension of prohibitedExtensions) {
-							if (str.endsWith(extension)) {
-								return false; // Return early if a match is found
-							}
-						}
-						return true; // If no match is found, the string does not end with any prohibited extension
-					}
-
-					// Convert *.html to extensionless counterpart
-					if (req.url.endsWith('.html')) {
-						req.url = req.url.slice(0, -5); // remove the '.html' extension
-					}
-					// Handle the default route by redirecting to 404.html
-					else if (doesNotEndWithAnyExtension(req.url, notHTML)) {
-						req.url = '/index.html';
-					}
-
-					next();
-				}
-			]
-		});
-	});
-}
 function development() {
-	server();
-
 	gulp.watch(paths.font.src, { events: 'all', ignoreInitial: false }, gulp.series(copy_font));
 	gulp.watch(paths.svgsmall.src, { events: 'all', ignoreInitial: false }, svgsmall);
 	gulp.watch(paths.svgmedium.src, { events: 'all', ignoreInitial: false }, svgmedium);
 	gulp.watch(paths.svgplain.src, { events: 'all', ignoreInitial: false }, svgplain);
 	gulp.watch(paths.svgshadow.src, { events: 'all', ignoreInitial: false }, svgshadow);
 	gulp.watch(paths.staticsvg.src, { events: 'all', ignoreInitial: false }, copy_svg);
-	gulp.watch(paths.image.src, { events: 'all', ignoreInitial: false }, image);
-	gulp.watch(paths.sass.src, { events: 'all', ignoreInitial: false }, css_dev);
+	gulp.watch(paths.scss.src, { events: 'all', ignoreInitial: false }, scss_dev);
 	gulp.watch(paths.css.src, { events: 'all', ignoreInitial: false }, css_prefix_dev);
 	gulp.watch(paths.js.src, { events: 'all', ignoreInitial: false }, js_dev);
-	gulp.watch(paths.html.src, { events: 'all', ignoreInitial: false }, html);
+	gulp.watch(paths.html.src, { events: 'all', ignoreInitial: false }, copy_html);
 }
 
+gulp.task('webp', gulp.series(image));
 gulp.task('dev', gulp.parallel(development));
 gulp.task('prod', gulp.series(
 	copy_font,
@@ -269,9 +202,9 @@ gulp.task('prod', gulp.series(
 	svgshadow,
 	copy_svg,
 	image,
-	css_prod,
+	scss_prod,
 	css_prefix_prod,
 	js_prod,
-	html
+	copy_html
 ));
 gulp.task('default', gulp.series('dev'));

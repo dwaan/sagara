@@ -65,7 +65,9 @@
 }
 
 
-/* Default stlyes */
+/*
+    Default stlyes
+*/
 
 * {
     box-sizing: border-box;
@@ -624,8 +626,11 @@ noscript {
     padding: 0 var(--var-size-96);
 }
 
-/* Arrow insert */
 
+
+/*
+    Arrow insert
+*/
 
 .arrow {
     @extend .flex-column-center;
@@ -680,7 +685,11 @@ noscript {
     }
 }
 
-/* Listing styles */
+
+
+/*
+    Listing styles
+*/
 
 .box {
     @extend .flex-row-start;
@@ -738,7 +747,10 @@ noscript {
 }
 
 
-/* Tabbing */
+
+/*
+    Tabbing
+*/
 
 .tabs {
     @extend .no-padding-margin;

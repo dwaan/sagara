@@ -1,274 +1,257 @@
-<!DOCTYPE html>
-<html lang="en" class="nojs">
+---
+layout: main.html
+---
 
-@@include_once('inc/head.html', {
-"title": "Sagara - A Mission Driven Technology Company in Indonesia"
-})
+<section class="hero">
+	<article>
+		<div class="text">
+			<h1 class="homepage">We are a Mission Driven Technology Company in Indonesia</h1>
+			<p class="hero">Our innovative products and services technologies are designed with a profound
+				commitment to the <strong>sustainability</strong>, <strong>accessibility</strong>, and
+				<strong>privacy</strong> in mind.
+			</p>
+		</div>
+		<a href="/commitment-and-responsibility" class="button cta">Learn about our commitments <i
+				class="arrow"></i></a>
+	</article>
+</section>
 
-<body>
-	@@include_once('inc/header.html')
+<section class="tabs">
+	<input type="radio" id="tabs1Products" name="tabs1" checked>
+	<input type="radio" id="tabs1Solutions" name="tabs1">
+	<input type="radio" id="tabs1Consultations" name="tabs1">
 
-	<main>
-		<section class="hero">
-			<article>
-				<div class="text">
-					<h1 class="homepage">We are a Mission Driven Technology Company in Indonesia</h1>
-					<p class="hero">Our innovative products and services technologies are designed with a profound
-						commitment to the <strong>sustainability</strong>, <strong>accessibility</strong>, and
-						<strong>privacy</strong> in mind.
-					</p>
-				</div>
-				<a href="/commitment-and-responsibility" class="button cta">Learn about our commitments <i
-						class="arrow"></i></a>
-			</article>
-		</section>
+	<nav>
+		<h2>Discover our:</h2>
+		<menu class="flat tab submenu">
+			<li><label for="tabs1Products">Products</label></li>
+			<li><label for="tabs1Solutions">Solutions</label></li>
+			<li><label for="tabs1Consultations">Consultations</label></li>
+		</menu>
+	</nav>
 
-		<section class="tabs">
-			<input type="radio" id="tabs1Products" name="tabs1" checked>
-			<input type="radio" id="tabs1Solutions" name="tabs1">
-			<input type="radio" id="tabs1Consultations" name="tabs1">
-
-			<nav>
-				<h2>Discover our:</h2>
-				<menu class="flat tab submenu">
-					<li><label for="tabs1Products">Products</label></li>
-					<li><label for="tabs1Solutions">Solutions</label></li>
-					<li><label for="tabs1Consultations">Consultations</label></li>
-				</menu>
-			</nav>
-
-			<div class="content">
-				<article id="products" class="box">
-					<h2 hidden>Products</h2>
-					<ol class="flat scroll">
-						<li class="plain"><i class="arrow"></i></li>
-						<li>
-							<a href="/jadi">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Jadi Logo" class="icon">
-									<use href="/img/icons/shadow.svg#jadi-scale"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/jadi">Jadi</a></h3>
-								<p class="small"><a href="/jadi">Legal Documents and Information System</a></p>
-							</div>
-						</li>
-						<li>
-							<a href="/pm.os">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="pm.os Logo"
-									class="icon">
-									<use href="/img/icons/shadow.svg#pm.os"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/pm.os">pm.os</a></h3>
-								<p class="small"><a href="/pm.os">Project Management Office System</a></p>
-							</div>
-						</li>
-						<li>
-							<a href="/hachemist">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Hachemist Logo"
-									class="icon">
-									<use href="/img/icons/shadow.svg#hachemist"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/hachemist">Hachemist</a></h3>
-								<p class="small"><a href="/hachemist">Human Capital Management System</a></p>
-							</div>
-						</li>
-						<li>
-							<a href="/itik">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Itik Logo" class="icon">
-									<use href="/img/icons/shadow.svg#itik"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/itik">Itik</a></h3>
-								<p class="small"><a href="/itik">Point of Sale and Ticketing System</a></p>
-							</div>
-						</li>
-					</ol>
-				</article>
-
-				<article id="solutions" class="box">
-					<h2 hidden>Solutions</h2>
-					<ol class="flat scroll">
-						<li class="plain"><i class="arrow"></i></li>
-						<li>
-							<a href="/lm.sys">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Lm.sys Logo"
-									class="icon">
-									<use href="/img/icons/shadow.svg#lm.sys"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/lm.sys">Lm.sys</a></h3>
-								<p class="small"><a href="/lm.sys">Learning Management System</a></p>
-							</div>
-						</li>
-						<li>
-							<a href="/dask">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Dask Logo" class="icon">
-									<use href="/img/icons/shadow.svg#dask"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/dask">Dask</a></h3>
-								<p class="small"><a href="/dask">Live Dashboard and Information System</a></p>
-							</div>
-						</li>
-						<li>
-							<a href="/pagi">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Pagi Logo" class="icon">
-									<use href="/img/icons/shadow.svg#pagi"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/pagi">Pagi</a></h3>
-								<p class="small"><a href="/pagi">Payment Gateway and Simponi Integration</a></p>
-							</div>
-						</li>
-						<li>
-							<a href="/eyesee">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="EyeSee Logo"
-									class="icon">
-									<use href="/img/icons/shadow.svg#eyesee"></use>
-								</svg>
-							</a>
-							<div class="text">
-								<h3 class="small"><a href="/eyesee">EyeSee</a></h3>
-								<p class="small"><a href="/eyesee">Integrated Security and Monitoring System</a></p>
-							</div>
-						</li>
-					</ol>
-				</article>
-
-				<article id="consultations" class="box">
-					<h2 hidden>Consultations</h2>
-					<ol class="flat scroll">
-						<li class="plain"><i class="arrow"></i></li>
-						<li>
-							<a href="/mobile-apps-development">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Mobile Apps Development Logo" class="icon">
-									<use href="/img/icons/shadow.svg#mobile"></use>
-								</svg>
-							</a>
-							<p><a href="/mobile-apps-development">Mobile Apps Development</a></p>
-						</li>
-						<li>
-							<a href="/web-based-development">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Web-Based Development Logo" class="icon">
-									<use href="/img/icons/shadow.svg#custom-development"></use>
-								</svg>
-							</a>
-							<p><a href="/web-based-development">Web-Based Development</a></p>
-						</li>
-						<li>
-							<a href="/web-and-interface-redesign">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Web and Interface Redesign Logo" class="icon">
-									<use href="/img/icons/shadow.svg#website"></use>
-								</svg>
-							</a>
-							<p><a href="/web-and-interface-redesign">Web and Interface Redesign</a></p>
-						</li>
-						<li>
-							<a href="/redesign">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="User Experience Redesign Logo" class="icon">
-									<use href="/img/icons/shadow.svg#redesign"></use>
-								</svg>
-							</a>
-							<p><a href="/redesign">User Experience Redesign</a></p>
-						</li>
-						<li>
-							<a href="/mobile">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Accessibility Implementation Logo" class="icon">
-									<use href="/img/icons/shadow.svg#accessibility"></use>
-								</svg>
-							</a>
-							<p><a href="/mobile">Accessibility Implementation</a></p>
-						</li>
-						<li>
-							<a href="/sustainable-emission-practices">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Sustainable Emission Practices Logo" class="icon">
-									<use href="/img/icons/shadow.svg#emission-reduction"></use>
-								</svg>
-							</a>
-							<p><a href="/sustainable-emission-practices">Sustainable Emission Practices</a></p>
-						</li>
-						<li>
-							<a href="/businness-bootstrapping">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Business Bootstrapping Logo" class="icon">
-									<use href="/img/icons/shadow.svg#bootstrap"></use>
-								</svg>
-							</a>
-							<p><a href="/businness-bootstrapping">Business Bootstrapping</a></p>
-						</li>
-					</ol>
-				</article>
-			</div>
-		</section>
-
-		<section class="horizontal">
-			<h2 class="big">Inside<br />Sagara</h2>
-
-			<div class="text">
-				<p class="hero">At Sagara, we're dedicated to making a difference through innovative technologies that
-					prioritize the environment, accessibility, and privacy. Our commitment will drives us to create
-					technologies that not only works seamlessly but also has a positive impact on the world around us.
-				</p>
-				<a href="/about" class="button big">About Sagara <i class="arrow"></i></a>
-			</div>
-		</section>
-
-		<section class="blue career">
-			<article>
-				<div class="text">
-					<h3 class="small">Join Our Team</h3>
-					<p class="blue">Together we define a clearer narrative, expand our creativity, contribute to
-						effective problem solving, and strive for collaborative excellence.</p>
-				</div>
-				<menu class="submenu">
-					<li>
-						<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Rack Icon">
-							<use href="/img/icons/small.svg#rack"></use>
+	<div class="content">
+		<article id="products" class="box">
+			<h2 hidden>Products</h2>
+			<ol class="flat scroll">
+				<li class="plain"><i class="arrow"></i></li>
+				<li>
+					<a href="/jadi">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Jadi Logo" class="icon">
+							<use href="/img/icons/shadow.svg#jadi-scale"></use>
 						</svg>
-						<a href="/career/backend-developer-web-based">Backend Developer - Web-Based Solutions</a>
-					</li>
-					<li>
-						<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Mobile Icon">
-							<use href="/img/icons/small.svg#mobile"></use>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/jadi">Jadi</a></h3>
+						<p class="small"><a href="/jadi">Legal Documents and Information System</a></p>
+					</div>
+				</li>
+				<li>
+					<a href="/pm.os">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="pm.os Logo" class="icon">
+							<use href="/img/icons/shadow.svg#pm.os"></use>
 						</svg>
-						<a href="/career/backend-developer-mobile-based">Backend Developer - Mobile Based Solutions</a>
-					</li>
-					<li>
-						<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Interface Icon">
-							<use href="/img/icons/small.svg#interface"></use>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/pm.os">pm.os</a></h3>
+						<p class="small"><a href="/pm.os">Project Management Office System</a></p>
+					</div>
+				</li>
+				<li>
+					<a href="/hachemist">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Hachemist Logo" class="icon">
+							<use href="/img/icons/shadow.svg#hachemist"></use>
 						</svg>
-						<a href="/career/user-interface-developer-web-based">User Interface Developer - Web-Based
-							Solutions</a>
-					</li>
-					<li>
-						<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Experience Icon">
-							<use href="/img/icons/small.svg#experience"></use>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/hachemist">Hachemist</a></h3>
+						<p class="small"><a href="/hachemist">Human Capital Management System</a></p>
+					</div>
+				</li>
+				<li>
+					<a href="/itik">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Itik Logo" class="icon">
+							<use href="/img/icons/shadow.svg#itik"></use>
 						</svg>
-						<a href="/career/user-experience-designer-mobile-and-web">User Experience Designer - Mobile and
-							Web Solutions</a>
-					</li>
-				</menu>
-				<a href="/career" class="button">See all open positions <i class="arrow"></i></a>
-			</article>
-		</section>
-	</main>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/itik">Itik</a></h3>
+						<p class="small"><a href="/itik">Point of Sale and Ticketing System</a></p>
+					</div>
+				</li>
+			</ol>
+		</article>
 
-	@@include_once('inc/footer.html')
-</body>
+		<article id="solutions" class="box">
+			<h2 hidden>Solutions</h2>
+			<ol class="flat scroll">
+				<li class="plain"><i class="arrow"></i></li>
+				<li>
+					<a href="/lm.sys">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Lm.sys Logo" class="icon">
+							<use href="/img/icons/shadow.svg#lm.sys"></use>
+						</svg>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/lm.sys">Lm.sys</a></h3>
+						<p class="small"><a href="/lm.sys">Learning Management System</a></p>
+					</div>
+				</li>
+				<li>
+					<a href="/dask">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Dask Logo" class="icon">
+							<use href="/img/icons/shadow.svg#dask"></use>
+						</svg>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/dask">Dask</a></h3>
+						<p class="small"><a href="/dask">Live Dashboard and Information System</a></p>
+					</div>
+				</li>
+				<li>
+					<a href="/pagi">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Pagi Logo" class="icon">
+							<use href="/img/icons/shadow.svg#pagi"></use>
+						</svg>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/pagi">Pagi</a></h3>
+						<p class="small"><a href="/pagi">Payment Gateway and Simponi Integration</a></p>
+					</div>
+				</li>
+				<li>
+					<a href="/eyesee">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="EyeSee Logo" class="icon">
+							<use href="/img/icons/shadow.svg#eyesee"></use>
+						</svg>
+					</a>
+					<div class="text">
+						<h3 class="small"><a href="/eyesee">EyeSee</a></h3>
+						<p class="small"><a href="/eyesee">Integrated Security and Monitoring System</a></p>
+					</div>
+				</li>
+			</ol>
+		</article>
 
-</html>
+		<article id="consultations" class="box">
+			<h2 hidden>Consultations</h2>
+			<ol class="flat scroll">
+				<li class="plain"><i class="arrow"></i></li>
+				<li>
+					<a href="/mobile-apps-development">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Mobile Apps Development Logo"
+							class="icon">
+							<use href="/img/icons/shadow.svg#mobile"></use>
+						</svg>
+					</a>
+					<p><a href="/mobile-apps-development">Mobile Apps Development</a></p>
+				</li>
+				<li>
+					<a href="/web-based-development">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Web-Based Development Logo"
+							class="icon">
+							<use href="/img/icons/shadow.svg#custom-development"></use>
+						</svg>
+					</a>
+					<p><a href="/web-based-development">Web-Based Development</a></p>
+				</li>
+				<li>
+					<a href="/web-and-interface-redesign">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Web and Interface Redesign Logo"
+							class="icon">
+							<use href="/img/icons/shadow.svg#website"></use>
+						</svg>
+					</a>
+					<p><a href="/web-and-interface-redesign">Web and Interface Redesign</a></p>
+				</li>
+				<li>
+					<a href="/redesign">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="User Experience Redesign Logo"
+							class="icon">
+							<use href="/img/icons/shadow.svg#redesign"></use>
+						</svg>
+					</a>
+					<p><a href="/redesign">User Experience Redesign</a></p>
+				</li>
+				<li>
+					<a href="/mobile">
+						<svg width="128" height="128" viewBox="0 0 128 128"
+							aria-label="Accessibility Implementation Logo" class="icon">
+							<use href="/img/icons/shadow.svg#accessibility"></use>
+						</svg>
+					</a>
+					<p><a href="/mobile">Accessibility Implementation</a></p>
+				</li>
+				<li>
+					<a href="/sustainable-emission-practices">
+						<svg width="128" height="128" viewBox="0 0 128 128"
+							aria-label="Sustainable Emission Practices Logo" class="icon">
+							<use href="/img/icons/shadow.svg#emission-reduction"></use>
+						</svg>
+					</a>
+					<p><a href="/sustainable-emission-practices">Sustainable Emission Practices</a></p>
+				</li>
+				<li>
+					<a href="/businness-bootstrapping">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Business Bootstrapping Logo"
+							class="icon">
+							<use href="/img/icons/shadow.svg#bootstrap"></use>
+						</svg>
+					</a>
+					<p><a href="/businness-bootstrapping">Business Bootstrapping</a></p>
+				</li>
+			</ol>
+		</article>
+	</div>
+</section>
+
+<section class="horizontal">
+	<h2 class="big">Inside<br />Sagara</h2>
+
+	<div class="text">
+		<p class="hero">At Sagara, we're dedicated to making a difference through innovative technologies that
+			prioritize the environment, accessibility, and privacy. Our commitment will drives us to create
+			technologies that not only works seamlessly but also has a positive impact on the world around us.
+		</p>
+		<a href="/about" class="button big">About Sagara <i class="arrow"></i></a>
+	</div>
+</section>
+
+<section class="blue career">
+	<article>
+		<div class="text">
+			<h3 class="small">Join Our Team</h3>
+			<p class="blue">Together we define a clearer narrative, expand our creativity, contribute to
+				effective problem solving, and strive for collaborative excellence.</p>
+		</div>
+		<menu class="submenu">
+			<li>
+				<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Rack Icon">
+					<use href="/img/icons/small.svg#rack"></use>
+				</svg>
+				<a href="/career/backend-developer-web-based">Backend Developer - Web-Based Solutions</a>
+			</li>
+			<li>
+				<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Mobile Icon">
+					<use href="/img/icons/small.svg#mobile"></use>
+				</svg>
+				<a href="/career/backend-developer-mobile-based">Backend Developer - Mobile Based Solutions</a>
+			</li>
+			<li>
+				<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Interface Icon">
+					<use href="/img/icons/small.svg#interface"></use>
+				</svg>
+				<a href="/career/user-interface-developer-web-based">User Interface Developer - Web-Based
+					Solutions</a>
+			</li>
+			<li>
+				<svg width="26" height="26" viewBox="0 0 32 32" aria-label="Experience Icon">
+					<use href="/img/icons/small.svg#experience"></use>
+				</svg>
+				<a href="/career/user-experience-designer-mobile-and-web">User Experience Designer - Mobile and
+					Web Solutions</a>
+			</li>
+		</menu>
+		<a href="/career" class="button">See all open positions <i class="arrow"></i></a>
+	</article>
+</section>
