@@ -6,11 +6,11 @@
 
     position: absolute;
     z-index: -1;
-    top: var(--var-size-0);
-    left: var(--var-size-0);
-    right: var(--var-size-0);
-    bottom: var(--var-size-0);
-    border-radius: var(--var-size-24);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--round-m);
 
     transition: all var(--fast) var(--ease-back);
 }

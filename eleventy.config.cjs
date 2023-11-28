@@ -1,11 +1,17 @@
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("_src/css/*.css");
-    eleventyConfig.addPassthroughCopy("_src/js");
-    eleventyConfig.addPassthroughCopy("_src/img");
+    eleventyConfig.addPassthroughCopy("cache/css/*");
+    eleventyConfig.addPassthroughCopy("cache/fonts");
+    eleventyConfig.addPassthroughCopy("cache/js");
+    eleventyConfig.addPassthroughCopy("cache/img");
+
+    eleventyConfig.setUseGitIgnore(false);
+    eleventyConfig.setServerOptions({
+        watch: ["cache/css/*", "cache/js/*"]
+    });
 
     return {
         dir: {
-            input: "_src",
+            input: "cache",
             output: "sites",
             includes: "_includes",
             layouts: "_layouts"

@@ -10,8 +10,8 @@
     @extend .after-before;
 
     &::before {
-        background: var(--light-white-normal);
-        border: 1px solid var(--light-gray-transparent);
+        background: var(--white-normal);
+        border: 1px solid var(--gray-transparent);
         opacity: 0;
     }
 
@@ -22,22 +22,21 @@
 
 .vertical--default {
     @extend .vertical;
-    gap: var(--var-size-8);
     width: 16rem;
-    padding: var(--var-size-32);
+    padding: var(--bttn-l);
     justify-content: flex-start;
-    gap: var(--var-size-16);
+    gap: var(--bttn-s);
 
     &::before {
-        border: 1px solid var(--light-gray-dynamic);
-        background: var(--light-white-dynamic);
+        border: 1px solid var(--gray-dynamic);
+        background: var(--white-dynamic);
         opacity: 1;
     }
 
     &::after {
         display: flex;
-        border-color: var(--light-gray-high-contrast);
-        background: var(--light-gray-normal);
+        border-color: var(--gray-high-contrast);
+        background: var(--gray-normal);
         opacity: 0;
     }
 
@@ -45,14 +44,14 @@
 
         &::before,
         &::after {
-            top: calc(var(--var-size-8) * -1);
-            left: calc(var(--var-size-8) * -1);
-            right: calc(var(--var-size-8) * -1);
-            bottom: calc(var(--var-size-8) * -1);
-            border-radius: var(--var-size-32);
+            top: calc(var(--bttn-s) / -2);
+            left: calc(var(--bttn-s) / -2);
+            right: calc(var(--bttn-s) / -2);
+            bottom: calc(var(--bttn-s) / -2);
+            border-radius: var(--round-m);
 
-            border-color: var(--light-gray-high-contrast);
-            background: var(--light-gray-normal);
+            border-color: var(--gray-high-contrast);
+            background: var(--gray-normal);
 
             opacity: 0;
         }
@@ -65,15 +64,15 @@
 
 .vertical--minimal {
     @extend .vertical;
-    padding: var(--var-size-16);
-    gap: var(--var-size-8);
+    padding: var(--bttn-s);
+    gap: calc(var(--bttn-s) / 2);
 
     &:hover {
         &::before {
-            top: calc(var(--var-size-4) * -1);
-            left: calc(var(--var-size-4) * -1);
-            right: calc(var(--var-size-4) * -1);
-            bottom: calc(var(--var-size-4) * -1);
+            top: calc(var(--bttn-s) / -4);
+            left: calc(var(--bttn-s) / -4);
+            right: calc(var(--bttn-s) / -4);
+            bottom: calc(var(--bttn-s) / -4);
             opacity: 1;
         }
     }

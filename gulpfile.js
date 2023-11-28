@@ -11,7 +11,7 @@ import svgstore from 'gulp-svgstore';
 import replace from 'gulp-replace';
 
 const sass = gulpSass(dartSass);
-const sites = '_src/';
+const sites = 'cache/';
 const img = sites + 'img/';
 const svgminoption = {
 	multipass: true,
@@ -35,6 +35,10 @@ const paths = {
 	},
 	svgshadow: {
 		src: 'src/img/icons/shadow/*.svg',
+		dest: img + 'icons/'
+	},
+	svgwide: {
+		src: 'src/img/icons/wide/*.svg',
 		dest: img + 'icons/'
 	},
 	staticsvg: {
@@ -138,7 +142,7 @@ function svgsmall() {
 function svgplain() {
 	return gulp.src(paths.svgplain.src)
 		.pipe(replace(' fill="none"', ''))
-		.pipe(replace('#F9FAFC', 'var(--light-white-normal)'))
+		.pipe(replace('#F9FAFC', 'var(--white-normal)'))
 		.pipe(replace('#2B2727', 'var(--dark-normal)'))
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
@@ -148,6 +152,7 @@ function svgplain() {
 function svgmedium() {
 	return gulp.src(paths.svgmedium.src)
 		.pipe(replace(' fill="none"', ''))
+		.pipe(replace('#F9FAFC', 'var(--white-normal)'))
 		.pipe(replace('#2B2727', 'var(--dark-normal)'))
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
@@ -157,13 +162,23 @@ function svgmedium() {
 function svgshadow() {
 	return gulp.src(paths.svgshadow.src)
 		.pipe(replace(' fill="none"', ''))
-		.pipe(replace('#F9FAFC', 'var(--light-white-normal)'))
+		.pipe(replace('#F9FAFC', 'var(--white-normal)'))
 		.pipe(replace('#2B2727', 'var(--dark-normal)'))
 		.pipe(replace('#0057F2', 'var(--neon-blue)'))
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
 		.pipe(gulp.dest(paths.svgshadow.dest));
+}
+function svgwide() {
+	return gulp.src(paths.svgwide.src)
+		.pipe(replace(' fill="none"', ''))
+		.pipe(replace('#F9FAFC', 'var(--white-normal)'))
+		.pipe(replace('#2B2727', 'var(--dark-normal)'))
+		.pipe(svgmin(svgminoption))
+		.pipe(svgstore())
+		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
+		.pipe(gulp.dest(paths.svgwide.dest));
 }
 
 function copy_svg() {
@@ -185,6 +200,7 @@ function development() {
 	gulp.watch(paths.svgmedium.src, { events: 'all', ignoreInitial: false }, svgmedium);
 	gulp.watch(paths.svgplain.src, { events: 'all', ignoreInitial: false }, svgplain);
 	gulp.watch(paths.svgshadow.src, { events: 'all', ignoreInitial: false }, svgshadow);
+	gulp.watch(paths.svgwide.src, { events: 'all', ignoreInitial: false }, svgwide);
 	gulp.watch(paths.staticsvg.src, { events: 'all', ignoreInitial: false }, copy_svg);
 	gulp.watch(paths.scss.src, { events: 'all', ignoreInitial: false }, scss_dev);
 	gulp.watch(paths.css.src, { events: 'all', ignoreInitial: false }, css_prefix_dev);
@@ -200,6 +216,7 @@ gulp.task('prod', gulp.series(
 	svgmedium,
 	svgplain,
 	svgshadow,
+	svgwide,
 	copy_svg,
 	image,
 	scss_prod,

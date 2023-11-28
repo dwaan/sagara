@@ -1,28 +1,58 @@
 :root {
-    --var-size-0: 0rem;
-    --var-size-4: .25rem;
-    --var-size-8: .5rem;
-    --var-size-12: .75rem;
-    --var-size-16: 1rem;
-    --var-size-24: 1.5rem;
-    --var-size-32: 2rem;
-    --var-size-48: 3rem;
-    --var-size-64: 4rem;
-    --var-size-96: 6rem;
-    --var-size-128: 8rem;
-    --var-size-160: 10rem;
-    --var-size-190: 11.875rem;
-    --var-size-big: 1000px;
+    // Common variable, don't use, only for reference
+    --size-4: .25rem;
+    --size-8: .5rem;
+    --size-12: .75rem;
+    --size-16: 1rem;
+    --size-24: 1.5rem;
+    --size-32: 2rem;
+    --size-48: 3rem;
+    --size-64: 4rem;
+    --size-96: 6rem;
+    --size-128: 8rem;
+    --size-160: 10rem;
+    --size-190: 11.875rem;
+    --size-big: 1000px;
 
-    --var-text-width-one-third: 23.33313rem;
+    // Padding
+    --pad-t: var(--size-24);
+    --pad-2t: var(--size-48);
+    --pad-s: var(--size-64);
+    --pad-m: var(--size-96);
+    --pad-l: var(--size-128);
 
+    // Gap
+    --gap-t: var(--size-8);
+    --gap-2t: var(--size-16);
+    --gap-s: var(--size-32);
+    --gap-m: var(--size-48);
+    --gap-l: var(--size-64);
+
+    // Button
+    --bttn-s: var(--size-16);
+    --bttn-m: var(--size-24);
+    --bttn-l: var(--size-48);
+
+    // Rounded corner
+    --round-s: var(--size-8);
+    --round-m: var(--size-24);
+    --round: var(--size-big);
+
+    // Common size
+    --size-one-third: 23.33313rem;
+
+    // Max size
     --max-medium: 47.5rem;
-    --max-wide: 66rem;
+    --max-wide: 57.5rem;
+    --max-ultrawide: 66rem;
 
+    // Animation speed
     --fast: 400ms;
     --slow: 800ms;
 
+    // Easing
     --ease-back: cubic-bezier(0.1, 0.2, 0.2, 1.6);
+    --ease-out: cubic-bezier(0.1, 0.2, 0.2, 1.1);
 }
 
 
@@ -30,15 +60,15 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --light-white-normal: #F9FAFC;
-        --light-white-static: #F9FAFC;
-        --light-white-transparent: #F9FAFCCC;
+        --white-normal: #F9FAFC;
+        --white-static: #F9FAFC;
+        --white-transparent: #F9FAFCCC;
 
-        --light-gray-normal: #E6DBDB;
-        --light-gray-transparent: #E6DBDBCC;
-        --light-gray-dynamic: #E6DBDBCC;
-        --light-gray-high-contrast: #E6DBDB00;
-        --light-gray-background: #A49D8514;
+        --gray-normal: #E6DBDB;
+        --gray-transparent: #E6DBDBCC;
+        --gray-dynamic: #E6DBDBCC;
+        --gray-high-contrast: #E6DBDB00;
+        --gray-background: #A49D8514;
 
         --dark-normal: #2B2727;
         --dark-static: #2B2727;
@@ -56,15 +86,15 @@
 @media (prefers-color-scheme: dark) {
     :root {
 
-        --light-white-normal: #191A1B;
-        --light-white-static: #F9FAFC;
-        --light-white-transparent: #191A1BCC;
+        --white-normal: #191A1B;
+        --white-static: #F9FAFC;
+        --white-transparent: #191A1BCC;
 
-        --light-gray-normal: #322F2FCC;
-        --light-gray-transparent: #e6dbdb28;
-        --light-gray-dynamic: #E6DBDB14;
-        --light-gray-high-contrast: #E6DBDB00;
-        --light-gray-background: #A49D8514;
+        --gray-normal: #322F2FCC;
+        --gray-transparent: #e6dbdb28;
+        --gray-dynamic: #E6DBDB14;
+        --gray-high-contrast: #E6DBDB00;
+        --gray-background: #A49D8514;
 
         --dark-normal: #C1C1C2;
         --dark-static: #2B2727;

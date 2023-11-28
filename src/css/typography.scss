@@ -8,7 +8,7 @@ body {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 130%;
     letter-spacing: 0.02rem;
 }
 
@@ -37,6 +37,8 @@ h1 {
     @include children-tags;
 
     color: var(--blue-deep);
+    font-size: 3.5rem;
+    letter-spacing: -0.105rem;
     line-height: 100%;
 
     &.homepage {
@@ -47,11 +49,6 @@ h1 {
     &.listing {
         font-size: 4.875rem;
         letter-spacing: -0.14625rem;
-    }
-
-    &.detail {
-        font-size: 3.5rem;
-        letter-spacing: -0.105rem;
     }
 }
 
@@ -88,8 +85,16 @@ h3 {
     @include inline-bold;
     @include children-tags;
 
+    font-size: 1.75rem;
+    line-height: 120%;
+
     &.small {
         font-size: 1.5rem;
+        line-height: 130%;
+    }
+
+    &.big {
+        font-size: 1.875rem;
         line-height: 130%;
     }
 }
@@ -110,7 +115,8 @@ h5 {
     @include children-tags;
 }
 
-p {
+p,
+li {
     @include children-tags;
 
     font-size: 1.125rem;
@@ -118,7 +124,6 @@ p {
 
     strong {
         font-weight: 500;
-        color: var(--neon-blue);
     }
 
     &.small {
@@ -153,7 +158,7 @@ a {
     }
 
     &.cta {
-        color: var(--light-white-normal);
+        color: var(--white-normal);
         font-size: 1.5rem;
         line-height: normal;
         letter-spacing: 0.03rem;

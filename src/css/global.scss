@@ -54,8 +54,8 @@
 .flex-column-start {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     align-self: stretch;
 }
 
@@ -77,7 +77,7 @@ html,
 body {
     @extend .no-padding-margin;
 
-    background: var(--light-white-normal);
+    background: var(--white-normal);
 }
 
 header {
@@ -86,7 +86,7 @@ header {
 
     position: relative;
     z-index: 999;
-    padding: var(--var-size-48) var(--var-size-96);
+    padding: var(--pad-2t) var(--pad-l);
     justify-content: space-between;
 
     >div {
@@ -98,21 +98,19 @@ header {
     }
 
     li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--var-size-8);
+        @extend .flex-column-center;
+
+        gap: var(--gap-t);
         z-index: 3;
     }
 
     a {
         align-self: center;
-
         color: var(--dark-normal);
     }
 
     object {
-        background: transparent;
+        pointer-events: none;
     }
 
     .main>li {
@@ -122,7 +120,7 @@ header {
             @extend .flex-row-center;
             z-index: 2;
 
-            gap: var(--var-size-8);
+            gap: var(--gap-t);
 
             @extend .before;
 
@@ -144,16 +142,16 @@ header {
                 color: var(--dark-static);
 
                 &::before {
-                    top: calc(var(--var-size-12) * -1);
-                    left: calc(var(--var-size-24) * -1);
-                    right: calc(var(--var-size-24) * -1);
-                    bottom: calc(var(--var-size-12) * -1);
+                    top: calc(var(--bttn-m) / -2);
+                    left: calc(var(--bttn-m) / -1);
+                    right: calc(var(--bttn-m) / -1);
+                    bottom: calc(var(--bttn-m) / -2);
                     opacity: 1;
                 }
 
                 .arrow {
                     &::before {
-                        right: .25rem;
+                        right: calc(var(--bttn-m) / 4);
                     }
 
                     &::after {
@@ -167,7 +165,8 @@ header {
             opacity: 0;
             pointer-events: none;
             transform: translate(0, -2rem);
-            transition: all var(--fast) var(--ease-back);
+            transition: all var(--fast) var(--ease-out);
+            transition-delay: 150ms;
         }
 
         &:hover>nav {
@@ -183,39 +182,44 @@ menu {
     @extend .flex-row-center;
     @extend .no-padding-margin;
 
-    gap: var(--var-size-48);
+    gap: var(--gap-m);
     list-style: none;
 }
 
 nav.popup {
+    @extend .flex-column-center;
+    @extend .before;
+
     position: absolute;
     z-index: 1;
-    top: 5.5rem;
+    top: var(--pad-m);
     left: 0;
     right: 0;
-    display: flex;
-    padding: var(--var-size-48) var(--var-size-96);
-    flex-direction: column;
-    align-items: center;
-    gap: var(--var-size-48);
+    padding: var(--pad-2t) var(--pad-l);
 
-    background: var(--light-white-transparent);
-    box-shadow: 0 var(--var-size-64) var(--var-size-64) 0 rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(var(--var-size-32));
+    gap: var(--gap-m);
+
+    &::before {
+        top: calc(var(--pad-t) * 1.5);
+        border-radius: 0;
+        background: var(--white-transparent);
+        box-shadow: 0 var(--pad-m) var(--pad-m) 0 rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(var(--pad-s));
+    }
 
     li {
-        @extend .flex-column-start;
+        @extend .flex-column;
         @extend .vertical--minimal;
+
         align-self: stretch;
 
         min-width: 8rem;
-        width: calc(25% - var(--var-size-48));
+        width: calc(25% - var(--gap-m));
         max-width: 13.75rem;
-        ;
     }
 
     menu {
-        gap: var(--var-size-16) var(--var-size-48);
+        gap: calc(var(--gap-s) / 2) var(--gap-m);
         flex-wrap: wrap;
     }
 
@@ -232,7 +236,7 @@ a {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: var(--var-size-16);
+        gap: var(--bttn-s);
 
         span {
             display: flex;
@@ -242,13 +246,13 @@ a {
 
         &::before,
         &::after {
-            border-radius: var(--var-size-big);
+            border-radius: var(--round);
         }
     }
 
     &.cta {
-        padding: var(--var-size-24) var(--var-size-48);
-        gap: var(--var-size-32);
+        padding: var(--bttn-m) var(--bttn-l);
+        gap: calc(var(--bttn-s) * 2);
 
         span {
             display: flex;
@@ -258,62 +262,62 @@ a {
 
         &::before,
         &::after {
-            border-radius: var(--var-size-big);
+            border-radius: var(--round);
             background: var(--neon-blue);
         }
 
         &::after {
-            transform: translate(var(--var-size-12), var(--var-size-8));
+            transform: translate(calc(var(--bttn-m) / 2), calc(var(--bttn-s) / 2));
             background: var(--neon-green);
         }
 
         &:hover {
             &::before {
-                top: calc(var(--var-size-8) * -1);
-                left: calc(var(--var-size-24) * -1);
-                right: calc(var(--var-size-24) * -1);
-                bottom: calc(var(--var-size-8) * -1);
+                top: calc(var(--bttn-s) / -2);
+                left: calc(var(--bttn-m) * -1);
+                right: calc(var(--bttn-m) * -1);
+                bottom: calc(var(--bttn-s) / -2);
             }
         }
 
         .arrow {
-            width: 4rem;
-            margin-right: -1rem;
+            width: calc(var(--bttn-s) * 4);
+            margin-right: calc(var(--bttn-s) * -1);
         }
     }
 
     &.pill {
-        padding: var(--var-size-16) var(--var-size-24);
-        gap: var(--var-size-16);
+        padding: var(--bttn-s) var(--bttn-m);
+        gap: var(--bttn-s);
 
         &::before {
-            border: 1px solid var(--light-gray-transparent);
+            border: 1px solid var(--gray-transparent);
         }
 
         &:hover {
-            color: var(--light-white-normal);
+            color: var(--white-normal);
 
             &::before {
-                top: calc(var(--var-size-4) * -1/2);
-                left: calc(var(--var-size-4) * -1);
-                right: calc(var(--var-size-4) * -1);
-                bottom: calc(var(--var-size-4) * -1/2);
+                top: calc(var(--bttn-s) * -1/8);
+                left: calc(var(--bttn-s) * -1/4);
+                right: calc(var(--bttn-s) * -1/4);
+                bottom: calc(var(--bttn-s) * -1/8);
                 background: var(--neon-blue);
             }
         }
     }
 
     .arrow {
-        width: 2rem;
+        width: var(--bttn-l);
     }
 
     &:hover .arrow {
         &::before {
-            right: 1rem;
+            right: var(--bttn-s);
         }
 
         &::after {
-            right: .75rem;
+            right: calc(var(--bttn-m) / 2);
         }
     }
 }
@@ -340,65 +344,67 @@ menu {
 main {
     @extend .flex-column;
     @extend .no-padding-margin;
-    gap: var(--var-size-64)
+
+    gap: var(--gal-l);
 }
 
 section {
     @extend .flex-column-center;
     @extend .no-padding-margin;
 
-    padding: var(--var-size-64) var(--var-size-96);
+    padding: var(--pad-s) var(--pad-m);
     flex-direction: column;
-    gap: var(--var-size-64);
+    gap: var(--gap-l);
 }
 
 section.hero {
-    padding-top: var(--var-size-96);
+    padding-top: var(--pad-m);
 
     article {
-        display: flex;
-        padding: 0 var(--var-size-128);
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: var(--var-size-64);
-        align-self: stretch;
+        @extend .flex-column;
+
+        padding: 0 var(--pad-l);
+        gap: var(--gap-l);
+    }
+
+    strong {
+        color: var(--neon-blue);
     }
 }
 
 section.horizontal {
     flex-direction: row;
     align-items: flex-start;
-    gap: var(--var-size-64);
+    gap: var(--gap-l);
 
     h2 {
         color: var(--blue-deep);
-        flex: var(--var-text-width-one-third) 0 0;
+        flex: var(--size-one-third) 0 0;
     }
 
     .text {
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--var-size-48);
+        gap: var(--gap-m);
         flex: 1 0 0;
     }
 }
 
 section.blue {
-    padding: var(--var-size-64) 5rem;
+    padding: var(--pad-s) calc(var(--pad-m) * 5 / 6);
 
     article {
         display: flex;
-        padding: var(--var-size-64) var(--var-size-96);
+        padding: var(--pad-s) var(--pad-m);
 
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--var-size-48);
+        gap: var(--gap-m);
 
-        color: var(--light-white-static);
+        color: var(--white-static);
 
         align-self: stretch;
-        border-radius: var(--var-size-24);
+        border-radius: var(--round-m);
         background: var(--neon-blue);
     }
 
@@ -410,17 +416,17 @@ section.blue {
         align-items: flex-start;
         justify-content: flex-start;
         flex-wrap: wrap;
-        gap: 0 var(--var-size-64);
+        gap: 0 var(--gap-l);
         align-self: stretch;
 
         li {
             position: relative;
             z-index: 1;
             display: flex;
-            padding: var(--var-size-24) 0;
+            padding: var(--pad-t) 0;
             align-items: flex-start;
-            gap: var(--var-size-16);
-            flex: calc(50% - var(--var-size-32)) 0 0;
+            gap: calc(var(--gap-s) / 2);
+            flex: calc(50% - var(--gap-s)) 0 0;
 
             a {
                 display: flex;
@@ -432,8 +438,8 @@ section.blue {
 
             &:before {
                 height: 1px;
-                right: calc(var(--var-size-64) * -1);
-                background: var(--light-white-static);
+                right: calc(var(--gap-s) * -2);
+                background: var(--white-static);
                 opacity: .25;
             }
 
@@ -444,25 +450,25 @@ section.blue {
             }
 
             &:after {
-                top: var(--var-size-24);
+                top: var(--pad-t);
                 left: 0;
                 right: 0;
-                bottom: var(--var-size-24);
-                border-radius: var(--var-size-8);
+                bottom: var(--pad-t);
+                border-radius: var(--round-s);
             }
 
             svg {
-                fill: var(--light-white-static);
+                fill: var(--white-static);
             }
 
             &:hover {
                 color: var(--dark-static);
 
                 &:after {
-                    top: var(--var-size-16);
-                    left: calc(var(--var-size-8) * -1);
-                    right: calc(var(--var-size-8) * -1);
-                    bottom: var(--var-size-16);
+                    top: var(--size-16);
+                    left: calc(var(--size-8) * -1);
+                    right: calc(var(--size-8) * -1);
+                    bottom: var(--size-16);
                     background: var(--neon-green);
                 }
 
@@ -475,11 +481,21 @@ section.blue {
     }
 
     .text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--var-size-24);
-        align-self: stretch;
+        @extend .flex-row;
+
+        gap: var(--pad-m);
+
+        div {
+            @extend .flex-column;
+            gap: calc(var(--gap-m) / 2);
+            align-self: stretch;
+        }
+
+        object {
+            pointer-events: none;
+            flex: none;
+            margin: calc(var(--pad-s) / -4) calc(var(--pad-s) / -2) 0 0;
+        }
     }
 
     .button {
@@ -487,13 +503,70 @@ section.blue {
     }
 }
 
+section.content {
+    .text {
+        @extend .flex-column;
+        align-self: center;
+        max-width: var(--max-wide);
+    }
+
+    .img {
+        @extend .flex-row-center;
+
+        margin: 0 calc(var(--size-96) * -1);
+        height: 30rem;
+        overflow: hidden;
+    }
+}
+
+article.history {
+    @extend .flex-row;
+    gap: var(--gap-m);
+    padding: 0 var(--pad-l);
+
+    date {
+        @extend .flex-row-center;
+        gap: var(--gap-2t);
+        width: 15rem;
+        flex: none;
+        align-self: flex-start;
+
+        .arrow {
+            flex: 1;
+        }
+    }
+
+    div {
+        gap: var(--gap-2t);
+    }
+}
+
+section.notfound {
+    text-align: center;
+
+    .text {
+        @extend .flex-column-center;
+        max-width: var(--max-medium);
+        align-self: center;
+    }
+
+    div {
+        @extend .flex-row-center;
+        gap: var(--gap-s);
+        margin-top: var(--pad-t);
+    }
+
+    padding-bottom: var(--pad-l);
+}
+
+
 .text {
     display: flex;
     padding: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--var-size-32);
+    gap: var(--gap-s);
     align-self: stretch;
 
     h1,
@@ -511,25 +584,25 @@ footer {
     @extend .flex-column-center;
     @extend .no-padding-margin;
 
-    padding: var(--var-size-64) var(--var-size-96) var(--var-size-48);
-    gap: var(--var-size-48);
+    padding: var(--pad-s) var(--pad-m) var(--pad-2t);
+    gap: var(--gap-m);
 
     a {
         @extend .before;
 
         &::before {
-            background: var(--light-gray-normal);
-            border-radius: var(--var-size-12);
+            background: var(--gray-normal);
+            border-radius: calc(var(--round-s) * 2);
             border: none;
             opacity: 0;
         }
 
         &:hover {
             &::before {
-                top: calc(var(--var-size-4) * -1);
-                left: calc(var(--var-size-12) * -1);
-                right: calc(var(--var-size-12) * -1);
-                bottom: calc(var(--var-size-4) * -1);
+                top: calc(var(--size-4) * -1);
+                left: calc(var(--size-12) * -1);
+                right: calc(var(--size-12) * -1);
+                bottom: calc(var(--size-4) * -1);
                 opacity: 1;
             }
         }
@@ -541,13 +614,13 @@ footer {
         }
 
         &:hover {
-            color: var(--light-white-normal);
+            color: var(--white-normal);
 
             &::before {
-                top: calc(var(--var-size-8) * -1);
-                left: calc(var(--var-size-16) * -1);
-                right: calc(var(--var-size-16) * -1);
-                bottom: calc(var(--var-size-8) * -1);
+                top: calc(var(--size-8) * -1);
+                left: calc(var(--size-16) * -1);
+                right: calc(var(--size-16) * -1);
+                bottom: calc(var(--size-8) * -1);
                 opacity: 1;
             }
         }
@@ -558,14 +631,14 @@ footer {
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
-        max-width: var(--max-wide);
+        max-width: var(--max-ultrawide);
         align-self: center;
         width: 100%;
     }
 
     .sitemap {
-        gap: var(--var-size-64);
-        padding-bottom: var(--var-size-64);
+        gap: var(--gap-l);
+        padding-bottom: var(--pad-s);
 
         ol,
         ul {
@@ -574,7 +647,7 @@ footer {
             padding: 0;
             flex-direction: column;
             align-items: flex-start;
-            gap: var(--var-size-24);
+            gap: calc(var(--gap-m) / 2);
         }
 
         li {
@@ -582,24 +655,24 @@ footer {
             padding: 0;
             flex-direction: column;
             align-items: flex-start;
-            gap: var(--var-size-24);
+            gap: calc(var(--gap-m) / 2);
             flex: 1 0 0;
         }
 
         ul {
-            gap: var(--var-size-64);
+            gap: var(--gap-l);
         }
     }
 
     .legal {
         padding: 0;
         align-items: center;
-        gap: var(--var-size-48);
+        gap: var(--gap-m);
     }
 
     .arrow {
-        margin-left: calc(var(--var-size-96) * -1);
-        width: calc(100% + var(--var-size-96));
+        margin-left: calc(var(--pad-l) * -1);
+        width: calc(100% + var(--pad-l));
     }
 }
 
@@ -622,8 +695,8 @@ div {
 }
 
 noscript {
-    @extend .flex-column-start;
-    padding: 0 var(--var-size-96);
+    @extend .flex-column;
+    padding: 0 var(--pad-l);
 }
 
 
@@ -636,7 +709,7 @@ noscript {
     @extend .flex-column-center;
 
     align-self: initial;
-    width: 6rem;
+    width: calc(var(--bttn-s) * 6);
 
     @extend .after-before;
 
@@ -644,9 +717,9 @@ noscript {
     &::after {
         top: initial;
         left: 0;
-        right: .25rem;
+        right: calc(var(--bttn-m) / 4);
         bottom: initial;
-        height: .25rem;
+        height: calc(var(--bttn-m) / 4);
         border-radius: 0;
         border-top: .125rem solid transparent;
         border-bottom: .125rem solid currentColor;
@@ -655,8 +728,8 @@ noscript {
     &::after {
         left: initial;
         right: 0;
-        width: .25rem;
-        border-radius: .25rem .25rem .25rem 0;
+        width: calc(var(--bttn-m) / 4);
+        border-radius: calc(var(--bttn-m) / 4) calc(var(--bttn-m) / 4) calc(var(--bttn-m) / 4) 0;
         border: .125rem solid currentColor;
         border-left-color: transparent !important;
     }
@@ -676,11 +749,11 @@ noscript {
 
     &.gray {
         &::before {
-            border-bottom-color: var(--light-gray-normal);
+            border-bottom-color: var(--gray-normal);
         }
 
         &::after {
-            border-color: var(--light-gray-normal);
+            border-color: var(--gray-normal);
         }
     }
 }
@@ -695,24 +768,26 @@ noscript {
     @extend .flex-row-start;
 
     h3 {
-        color: var(--blue-dark, #002B76);
+        color: var(--blue-dark);
     }
 
     ul,
     ol {
         @extend .flex-row;
 
-        gap: var(--var-size-32);
+        gap: var(--gap-s);
     }
 
     li {
         @extend .vertical--default;
-        width: calc((100% - var(--var-size-96) - (4 * var(--var-size-32))) / 4);
+
+        width: calc((100% - var(--pad-m) - (4 * var(--gap-s))) / 4);
         flex: none;
 
         &.plain {
-            width: var(--var-size-96);
-            padding: var(--var-size-0);
+            @extend .no-padding-margin;
+
+            width: var(--pad-m);
             border-radius: 0;
             border: 0;
             background-color: transparent;
@@ -733,16 +808,16 @@ noscript {
 
     .text {
         display: flex;
-        padding: var(--var-size-0px);
+        padding: 0;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
-        gap: var(--var-size-8, 8px);
+        gap: var(--gap-t);
         align-self: stretch;
     }
 
     .arrow {
-        width: 3rem;
+        width: var(--pad-s);
     }
 }
 
@@ -754,8 +829,8 @@ noscript {
 
 .tabs {
     @extend .no-padding-margin;
-    padding: var(--var-size-64) 0;
-    margin-bottom: calc(var(--var-size-32) * -1);
+    padding: var(--size-64) 0;
+    margin-bottom: calc(var(--size-32) * -1);
     overflow: hidden;
 
     input[type="radio"] {
@@ -768,7 +843,7 @@ noscript {
 
                 // Current tab
                 &:nth-of-type(#{$i})~nav .tab> :nth-child(#{$i}) label {
-                    color: var(--light-white-normal);
+                    color: var(--white-normal);
 
                     &:after {
                         border-color: var(--neon-blue);
@@ -781,7 +856,7 @@ noscript {
                     position: relative;
                     z-index: 1;
                     width: initial;
-                    margin: calc(var(--var-size-32) * -1) 0 0;
+                    margin: calc(var(--size-32) * -1) 0 0;
                     opacity: 1;
                     pointer-events: all;
 
@@ -798,7 +873,7 @@ noscript {
         position: absolute;
         top: 0;
         z-index: 0;
-        margin: calc(var(--var-size-32) * -1) 0 0;
+        margin: calc(var(--size-32) * -1) 0 0;
         width: 100vw;
         opacity: 0;
         overflow: hidden;
@@ -807,8 +882,8 @@ noscript {
         transition: opacity var(--fast) ease-out;
 
         .scroll {
-            margin: 0 0 calc(var(--var-size-32) * -1);
-            padding: var(--var-size-32) var(--var-size-96) var(--var-size-64);
+            margin: 0 0 calc(var(--size-32) * -1);
+            padding: var(--size-32) var(--size-96) var(--size-64);
             overflow-y: hidden;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
@@ -832,9 +907,9 @@ noscript {
     nav {
         display: flex;
         flex-direction: row;
-        padding: var(--var-size-0) calc(var(--var-size-128) + var(--var-size-96));
+        padding: 0 calc(var(--pad-l) + var(--pad-m));
         align-items: center;
-        gap: var(--var-size-64);
+        gap: var(--gap-l);
         align-self: stretch;
     }
 
@@ -846,31 +921,31 @@ noscript {
 .tab {
     @extend .flex-row-center;
 
-    gap: var(--var-size-24);
+    gap: calc(var(--gap-m) / 2);
 
     li {
 
         a,
         label {
             @extend .flex-row-start;
-            padding: var(--var-size-16) var(--var-size-24);
+            padding: var(--bttn-s) var(--bttn-m);
             gap: 0;
 
             @extend .after;
 
             &:after {
-                border-radius: var(--var-size-big);
-                border: 1px solid var(--light-gray-transparent);
+                border-radius: var(--round);
+                border: 1px solid var(--gray-transparent);
             }
 
             &:hover {
-                color: var(--light-white-normal);
+                color: var(--white-normal);
 
                 &:after {
-                    top: calc(var(--var-size-4) * -1/2);
-                    left: calc(var(--var-size-4) * -1);
-                    right: calc(var(--var-size-4) * -1);
-                    bottom: calc(var(--var-size-4) * -1/2);
+                    top: calc(var(--bttn-s) / -8);
+                    left: calc(var(--bttn-s) / -4);
+                    right: calc(var(--bttn-s) / -4);
+                    bottom: calc(var(--bttn-s) / -8);
 
                     border-color: var(--neon-blue);
                     background: var(--neon-blue);
@@ -878,4 +953,16 @@ noscript {
             }
         }
     }
+}
+
+/*
+    Three dots
+*/
+
+.dots {
+    align-self: center;
+    width: 5rem;
+    height: 1rem;
+    background-color: var(--gray-normal);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='16' fill='%23000' viewBox='0 0 80 16'%3E%3Ccircle cx='8' cy='8' r='8'/%3E%3Ccircle cx='40' cy='8' r='8'/%3E%3Ccircle cx='72' cy='8' r='8'/%3E%3C/svg%3E");
 }
