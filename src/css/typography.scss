@@ -9,7 +9,6 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-    letter-spacing: 0.02rem;
 }
 
 @mixin inline-bold {
@@ -32,7 +31,7 @@ body {
     }
 }
 
-h1 {
+.h1 {
     @include inline-bold;
     @include children-tags;
 
@@ -46,10 +45,14 @@ h1 {
         letter-spacing: -0.22rem;
     }
 
+    &--listing,
     &.listing {
         font-size: 4.875rem;
         letter-spacing: -0.14625rem;
     }
+}
+h1 {
+    @extend .h1;
 }
 
 h2 {
@@ -152,20 +155,14 @@ a {
     text-decoration: none;
 
     &.button {
-        color: var(--neon-blue);
         font-size: 1.125rem;
         font-weight: 600;
     }
 
     &.cta {
-        color: var(--white-normal);
         font-size: 1.5rem;
         line-height: normal;
         letter-spacing: 0.03rem;
-    }
-
-    &.pill {
-        color: var(--dark-normal);
     }
 
     &.big {
@@ -173,6 +170,7 @@ a {
         font-weight: 600;
         letter-spacing: 0.03rem;
     }
+
 }
 
 b,

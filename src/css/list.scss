@@ -1,0 +1,58 @@
+@use 'variables';
+@use 'after-before';
+@use 'flex';
+
+//
+// menu, ul, ol to be display as flat list without decoration
+//
+
+.flat {
+    @extend .flex-row;
+    @extend .no-padding-margin;
+
+    padding: 0;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+    }
+}
+
+//
+// Fake numbering, to be use for ol or ul
+//
+
+.fake-ol {
+    @extend .flex-column;
+    @extend .no-padding-margin;
+
+    gap: var(--gap-s);
+    max-width: var(--max-medium);
+    list-style: none;
+
+    li {
+        @extend .flex-column;
+        @extend .before;
+
+        gap: var(--gap-t);
+        padding-left: var(--bttn-l);
+
+        &::before {
+            @extend .flex-row-center;
+
+            content: "1";
+            width: var(--bttn-2s);
+            height: var(--bttn-2s);
+
+            background: var(--gray-dynamic);
+        }
+
+        @for $i from 1 through 15 {
+            &:nth-child(#{$i})::before {
+                content: "#{$i}";
+            }
+        }
+    }
+}

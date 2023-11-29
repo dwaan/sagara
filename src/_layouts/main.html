@@ -1,5 +1,5 @@
 ---
-title: Sagara - A Mission Driven Technology Company in Indonesia
+title: A Mission Driven Technology Company in Indonesia
 ---
 
 <!DOCTYPE html>
@@ -9,7 +9,12 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/bundle.css">
-	<title>{{ title }}</title>
+	<meta name="theme-color" content="#F9FAFC">
+	<link rel="icon" href="/favicon.svg">
+	<link rel="mask-icon" href="/favicon.svg" color="#F9FAFC">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<title>{{ title }} - Sagara</title>
 </head>
 
 <body>
@@ -21,15 +26,14 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 
 		<menu class="main">
 			<li hidden><a href="/">Home</a></li>
-			<li>
+			<li class="{{ products-now }}">
 				<a href="/products">Products <i class="arrow"></i></a>
 
 				<nav class="popup">
 					<menu class="submenu">
 						<li>
 							<a href="/jadi">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Jadi Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Jadi Logo">
 									<use href="/img/icons/shadow.svg#jadi-scale"></use>
 								</svg>
 							</a>
@@ -37,8 +41,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						</li>
 						<li>
 							<a href="/pm.os">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="pm.os Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="pm.os Logo">
 									<use href="/img/icons/shadow.svg#pm.os"></use>
 								</svg>
 							</a>
@@ -46,8 +49,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						</li>
 						<li>
 							<a href="/hachemist">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Hachemist Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Hachemist Logo">
 									<use href="/img/icons/shadow.svg#hachemist"></use>
 								</svg>
 							</a>
@@ -55,8 +57,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						</li>
 						<li>
 							<a href="/itik">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Itik Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Itik Logo">
 									<use href="/img/icons/shadow.svg#itik"></use>
 								</svg>
 							</a>
@@ -66,15 +67,14 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 					<a href="/products" class="button pill">See All Products <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li>
+			<li class="{{ solutions-now }}">
 				<a href="/solutions">Solutions <i class="arrow"></i></a>
 
 				<nav class="popup">
 					<menu class="submenu">
 						<li>
 							<a href="/lm.sys">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Lm.sys Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Lm.sys Logo">
 									<use href="/img/icons/shadow.svg#lm.sys"></use>
 								</svg>
 							</a>
@@ -82,8 +82,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						</li>
 						<li>
 							<a href="/dask">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Dask Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Dask Logo">
 									<use href="/img/icons/shadow.svg#dask"></use>
 								</svg>
 							</a>
@@ -91,8 +90,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						</li>
 						<li>
 							<a href="/pagi">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Pagi Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Pagi Logo">
 									<use href="/img/icons/shadow.svg#pagi"></use>
 								</svg>
 							</a>
@@ -100,8 +98,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						</li>
 						<li>
 							<a href="/eyesee">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="EyeSee Logo"
-								>
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="EyeSee Logo">
 									<use href="/img/icons/shadow.svg#eyesee"></use>
 								</svg>
 							</a>
@@ -111,7 +108,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 					<a href="/solutions" class="button pill">See All Solutions <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li>
+			<li class="{{ consultations-now }}">
 				<a href="/consultations">Consultations <i class="arrow"></i></a>
 
 				<nav class="popup">
@@ -119,8 +116,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/mobile-apps-development">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Mobile Apps Development Logo"
-									>
+									aria-label="Mobile Apps Development Logo">
 									<use href="/img/icons/shadow.svg#mobile"></use>
 								</svg>
 							</a>
@@ -129,8 +125,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/web-based-development">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Web-Based Development Logo"
-									>
+									aria-label="Web-Based Development Logo">
 									<use href="/img/icons/shadow.svg#custom-development"></use>
 								</svg>
 							</a>
@@ -139,8 +134,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/web-and-interface-redesign">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Web and Interface Redesign Logo"
-									>
+									aria-label="Web and Interface Redesign Logo">
 									<use href="/img/icons/shadow.svg#website"></use>
 								</svg>
 							</a>
@@ -149,8 +143,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/redesign">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="User Experience Redesign Logo"
-									>
+									aria-label="User Experience Redesign Logo">
 									<use href="/img/icons/shadow.svg#redesign"></use>
 								</svg>
 							</a>
@@ -159,8 +152,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/mobile">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Accessibility Implementation Logo"
-									>
+									aria-label="Accessibility Implementation Logo">
 									<use href="/img/icons/shadow.svg#accessibility"></use>
 								</svg>
 							</a>
@@ -169,8 +161,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/sustainable-emission-practices">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Sustainable Emission Practices Logo"
-									>
+									aria-label="Sustainable Emission Practices Logo">
 									<use href="/img/icons/shadow.svg#emission-reduction"></use>
 								</svg>
 							</a>
@@ -179,8 +170,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 						<li>
 							<a href="/businness-bootstrapping">
 								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Business Bootstrapping Logo"
-									>
+									aria-label="Business Bootstrapping Logo">
 									<use href="/img/icons/shadow.svg#bootstrap"></use>
 								</svg>
 							</a>
@@ -190,12 +180,37 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 					<a href="/consultations" class="button pill">See All Consultations <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li><a href="/supports">Supports <i class="arrow"></i></a></li>
-			<li><a href="/career">Careers</a></li>
+			<li class="{{ supports-now }}">
+				<a href="/supports">Supports <i class="arrow"></i></a>
+
+				<nav class="popup">
+					<menu class="submenu">
+						<li>
+							<a href="/request-for-demo">
+								<svg width="128" height="128" viewBox="0 0 128 128"
+									aria-label="Request for Demo Logo">
+									<use href="/img/icons/shadow.svg#request-demo"></use>
+								</svg>
+							</a>
+							<a href="/request-for-demo">Request for Demo</a>
+						</li>
+						<li>
+							<a href="/costumer-service">
+								<svg width="128" height="128" viewBox="0 0 128 128"
+									aria-label="Costumer Service Logo">
+									<use href="/img/icons/shadow.svg#costumer"></use>
+								</svg>
+							</a>
+							<a href="/costumer-service">Costumer Service</a>
+						</li>
+					</menu>
+					<a href="/support" class="button pill">See All Supports <i class="arrow"></i></a>
+				</nav>
+			</li>
+			<li class="{{ career-now }}"><a href="/career">Careers</a></li>
 			<li class="accessibility">
 				<a href="#accesibility">
-					<svg width="24" height="24" viewBox="0 0 32 32" aria-label="Jadi Logo"
-					>
+					<svg width="24" height="24" viewBox="0 0 32 32" aria-label="Jadi Logo">
 						<use href="/img/icons/medium.svg#accessibility"></use>
 					</svg>
 				</a>
@@ -203,14 +218,14 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 		</menu>
 	</header>
 
-	<main>
+	<main class="{{ class }}">
 		{{ content }}
 	</main>
 
 	<footer>
 		<menu class="sitemap">
 			<li>
-				<h3><a href="/products">Products</a></h3>
+				<h3><a href="/products" class="{{ products-now }}">Products</a></h3>
 				<ol>
 					<li><a href="/jadi"><strong>Jadi</strong> - Legal Documents and Information System</a></li>
 					<li><a href="/pm.os"><strong>pm</strong>.os - Project Management Office System</a></li>
@@ -219,7 +234,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 				</ol>
 			</li>
 			<li>
-				<h3><a href="/solutions">Solutions</a></h3>
+				<h3><a href="/solutions" class="{{ solutions-now }}">Solutions</a></h3>
 				<ol>
 					<li><a href="/lm.sys"><strong>Lm.sys</strong> - Learning Management System</a></li>
 					<li><a href="/dask"><strong>Dask</strong> - Live Dashboard and Information System</a></li>
@@ -228,11 +243,11 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 				</ol>
 			</li>
 			<li>
-				<h3><a href="/cosultations">Consultations</a></h3>
+				<h3><a href="/cosultations" class="{{ consultations-now }}">Consultations</a></h3>
 				<ol>
 					<li><a href="/mobile-apps-development">Mobile Apps Development</a></li>
-					<li><a href="/web-and-interface-redesign">Web and Interface Redesign</a></li>
 					<li><a href="/web-based-development">Web-Based Development</a></li>
+					<li><a href="/web-and-interface-redesign">Web and Interface Redesign</a></li>
 					<li><a href="/user-experiece-redesign">User Experience Redesign</a></li>
 					<li><a href="/accesibility-implementation">Accessibility Implementation</a></li>
 					<li><a href="/sustainable-emission-practices">Sustainable Emission Practices</a></li>
@@ -242,7 +257,7 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 			<li>
 				<ul>
 					<li>
-						<h3><a href="/supports">Supports</a></h3>
+						<h3><a href="/supports" class="{{ supports-now }}">Supports</a></h3>
 						<ol>
 							<li><a href="/request-for-demo">Request for Demo</a></li>
 							<li><a href="/costumer-services">Costumer Services</a></li>
@@ -251,9 +266,9 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 					<li>
 						<h3>Corporate</h3>
 						<ol>
-							<li><a href="/career">Career</a></li>
-							<li><a href="/about">About Sagara</a></li>
-							<li><a href="/commitment-and-responsibility">Commitment and Responsibility</a></li>
+							<li><a href="/career" class="{{ career-now }}">Career</a></li>
+							<li><a href="/about" class="{{ about-now }}">About Sagara</a></li>
+							<li><a href="/commitment-and-responsibility" class="{{ commitment-now }}">Commitment and Responsibility</a></li>
 						</ol>
 					</li>
 				</ul>
@@ -265,9 +280,9 @@ title: Sagara - A Mission Driven Technology Company in Indonesia
 		<section class="legal">
 			<p>©2023 PT. Sagara Xinix Solusitama</p>
 			<menu>
-				<li><a href="/terms-of-use">Terms of Use</a></li>
-				<li><a href="/cookie-policy">Cookie Policy</a></li>
-				<li><a href="/privacy-policy">Privacy Policy</a></li>
+				<li><a href="/terms-of-use" class="{{ term-now }}">Terms of Use</a></li>
+				<li><a href="/cookie-policy" class="{{ cookie-now }}">Cookie Policy</a></li>
+				<li><a href="/privacy-policy" class="{{ privacy-now }}">Privacy Policy</a></li>
 			</menu>
 		</section>
 	</footer>

@@ -18,7 +18,7 @@
 .pointer {
     position: relative;
     z-index: 0;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 .before {
@@ -30,9 +30,7 @@
 }
 
 .after {
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
+    @extend .pointer;
 
     &::after {
         @extend .block;

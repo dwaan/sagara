@@ -3,6 +3,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("cache/fonts");
     eleventyConfig.addPassthroughCopy("cache/js");
     eleventyConfig.addPassthroughCopy("cache/img");
+    eleventyConfig.addPassthroughCopy({ "src/meta/*": "./" });
 
     eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.setServerOptions({

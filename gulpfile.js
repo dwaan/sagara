@@ -62,8 +62,7 @@ const paths = {
 		dest: sites + 'js/'
 	},
 	html: {
-		src: 'src/**/*.html',
-		parse: 'src/*.html',
+		src: 'src/**/*.{html,md,njk}',
 		dest: sites
 	},
 	font: {
