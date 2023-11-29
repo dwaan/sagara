@@ -7,13 +7,9 @@ class: home
 	<article>
 		<div class="text">
 			<h1>We are a Mission Driven Technology Company in Indonesia</h1>
-			<p>Our innovative products and services technologies are designed with a profound
-				commitment to the <strong>sustainability</strong>, <strong>accessibility</strong>, and
-				<strong>privacy</strong> in mind.
-			</p>
+			<p>Our innovative products and services technologies are designed with a profound commitment to the <strong>sustainability</strong>, <strong>accessibility</strong>, and <strong>privacy</strong> in mind.</p>
 		</div>
-		<a href="/commitment-and-responsibility" class="button cta">Learn about our commitments <i
-				class="arrow"></i></a>
+		<a href="/commitment-and-responsibility" class="button cta">Learn about our commitments <i class="arrow"></i></a>
 	</article>
 </section>
 
@@ -44,8 +40,8 @@ class: home
 						</svg>
 					</a>
 					<div class="text">
-						{% if product.data.title-strong %}<h3 class="small"><a href="{{ product.url }}">{{ product.data.title-strong }}</a></h3>{% endif %}
-						<p class="small"><a href="{{ product.url }}">{{ product.data.title-description }}</a></p>
+						{% if product.data.title-strong %}<h3><a href="{{ product.url }}">{{ product.data.title-strong }}</a></h3>{% endif %}
+						<p><a href="{{ product.url }}">{{ product.data.title-description }}</a></p>
 					</div>
 				</li>
 				{%- endfor -%}
@@ -56,50 +52,19 @@ class: home
 			<h2 hidden>Solutions</h2>
 			<ol class="flat scroll">
 				<li class="plain"><i class="arrow"></i></li>
+				{%- for solution in collections.solutions -%}
 				<li>
-					<a href="/lm.sys">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Lm.sys Logo">
-							<use href="/img/icons/shadow.svg#lm.sys"></use>
+					<a href="{{ solution.url }}">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="{{ solution.data.title }} - Logo">
+							<use href="/img/icons/shadow.svg#{{ solution.data.svg }}"></use>
 						</svg>
 					</a>
 					<div class="text">
-						<h3 class="small"><a href="/lm.sys">Lm.sys</a></h3>
-						<p class="small"><a href="/lm.sys">Learning Management System</a></p>
+						{% if solution.data.title-strong %}<h3><a href="{{ solution.url }}">{{ solution.data.title-strong }}</a></h3>{% endif %}
+						<p><a href="{{ solution.url }}">{{ solution.data.title-description }}</a></p>
 					</div>
 				</li>
-				<li>
-					<a href="/dask">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Dask Logo">
-							<use href="/img/icons/shadow.svg#dask"></use>
-						</svg>
-					</a>
-					<div class="text">
-						<h3 class="small"><a href="/dask">Dask</a></h3>
-						<p class="small"><a href="/dask">Live Dashboard and Information System</a></p>
-					</div>
-				</li>
-				<li>
-					<a href="/pagi">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Pagi Logo">
-							<use href="/img/icons/shadow.svg#pagi"></use>
-						</svg>
-					</a>
-					<div class="text">
-						<h3 class="small"><a href="/pagi">Pagi</a></h3>
-						<p class="small"><a href="/pagi">Payment Gateway and Simponi Integration</a></p>
-					</div>
-				</li>
-				<li>
-					<a href="/eyesee">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="EyeSee Logo">
-							<use href="/img/icons/shadow.svg#eyesee"></use>
-						</svg>
-					</a>
-					<div class="text">
-						<h3 class="small"><a href="/eyesee">EyeSee</a></h3>
-						<p class="small"><a href="/eyesee">Integrated Security and Monitoring System</a></p>
-					</div>
-				</li>
+				{%- endfor -%}
 			</ol>
 		</article>
 
@@ -109,8 +74,7 @@ class: home
 				<li class="plain"><i class="arrow"></i></li>
 				<li>
 					<a href="/mobile-apps-development">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Mobile Apps Development Logo"
-							class="icon">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Mobile Apps Development Logo" class="icon">
 							<use href="/img/icons/shadow.svg#mobile"></use>
 						</svg>
 					</a>
@@ -118,8 +82,7 @@ class: home
 				</li>
 				<li>
 					<a href="/web-based-development">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Web-Based Development Logo"
-							class="icon">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Web-Based Development Logo" class="icon">
 							<use href="/img/icons/shadow.svg#custom-development"></use>
 						</svg>
 					</a>
@@ -127,8 +90,7 @@ class: home
 				</li>
 				<li>
 					<a href="/web-and-interface-redesign">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Web and Interface Redesign Logo"
-							class="icon">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Web and Interface Redesign Logo" class="icon">
 							<use href="/img/icons/shadow.svg#website"></use>
 						</svg>
 					</a>
@@ -136,8 +98,7 @@ class: home
 				</li>
 				<li>
 					<a href="/redesign">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="User Experience Redesign Logo"
-							class="icon">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="User Experience Redesign Logo" class="icon">
 							<use href="/img/icons/shadow.svg#redesign"></use>
 						</svg>
 					</a>
@@ -163,8 +124,7 @@ class: home
 				</li>
 				<li>
 					<a href="/businness-bootstrapping">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Business Bootstrapping Logo"
-							class="icon">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Business Bootstrapping Logo" class="icon">
 							<use href="/img/icons/shadow.svg#bootstrap"></use>
 						</svg>
 					</a>
@@ -176,13 +136,10 @@ class: home
 </section>
 
 <section class="horizontal">
-	<h2 class="big">Inside<br />Sagara</h2>
+	<h2>Inside<br />Sagara</h2>
 
 	<div class="text">
-		<p class="hero">At Sagara, we're dedicated to making a difference through innovative technologies that
-			prioritize the environment, accessibility, and privacy. Our commitment will drives us to create
-			technologies that not only works seamlessly but also has a positive impact on the world around us.
-		</p>
+		<p>At Sagara, we're dedicated to making a difference through innovative technologies that prioritize the environment, accessibility, and privacy. Our commitment will drives us to create technologies that not only works seamlessly but also has a positive impact on the world around us.</p>
 		<a href="/about" class="button big">About Sagara <i class="arrow"></i></a>
 	</div>
 </section>

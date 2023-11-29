@@ -1,0 +1,41 @@
+---
+layout: main.html
+tags: consultations
+class: consultations
+consultations-now: true
+---
+
+<section class="hero">
+  <article>
+    <div class="text">
+      <h4>{{ tags }}</h4>
+      <h1>{{ title }}</h1>
+      <p>Please change this template.</p>
+    </div>
+    <a href="#request-demo" class="button cta">Request for Demo
+      <i class="arrow"></i>
+    </a>
+  </article>
+</section>
+
+{{ content }}
+
+<section class="blue request-demo" id="request-demo">
+  <article>
+    <div>
+      <div class="text">
+        <h3>Join Our Team</h3>
+        {% if demo-message %}
+          <p>{{ demo-message }}</p>
+        {% else %}
+          <p>To schedule for a conversation with our experts in {{ title-description }} Consultations, please share your email, and we'll contact you back.</p>
+        {% endif %}
+      </div>
+
+      <form action="{{ page.url }}">
+        <input type="email" placeholder="Type your email" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </article>
+</section>

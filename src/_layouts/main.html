@@ -68,69 +68,16 @@ title: A Mission Driven Technology Company in Indonesia
 
 				<nav class="popup">
 					<menu class="submenu">
+						{%- for consultation in collections.consultations -%}
 						<li>
-							<a href="/mobile-apps-development/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Mobile Apps Development Logo">
-									<use href="/img/icons/shadow.svg#mobile"></use>
+							<a href="{{ consultation.url }}">
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="{{ consultation.data.title }} - Logo">
+									<use href="/img/icons/shadow.svg#{{ consultation.data.svg }}"></use>
 								</svg>
 							</a>
-							<a href="/mobile-apps-development/">Mobile Apps Development</a>
+							<a href="{{ consultation.url }}">{% if consultation.data.title-strong %}<strong>{{ consultation.data.title-strong }}</strong> - {% endif %}{{ consultation.data.title-description }}</a>
 						</li>
-						<li>
-							<a href="/web-based-development/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Web-Based Development Logo">
-									<use href="/img/icons/shadow.svg#custom-development"></use>
-								</svg>
-							</a>
-							<a href="/web-based-development/">Web-Based Development</a>
-						</li>
-						<li>
-							<a href="/web-and-interface-redesign/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Web and Interface Redesign Logo">
-									<use href="/img/icons/shadow.svg#website"></use>
-								</svg>
-							</a>
-							<a href="/web-and-interface-redesign/">Web and Interface Redesign</a>
-						</li>
-						<li>
-							<a href="/user-experience-redesign/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="User Experience Redesign Logo">
-									<use href="/img/icons/shadow.svg#redesign"></use>
-								</svg>
-							</a>
-							<a href="/user-experience-redesign/">User Experience Redesign</a>
-						</li>
-						<li>
-							<a href="/accessibility-implementation/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Accessibility Implementation Logo">
-									<use href="/img/icons/shadow.svg#accessibility"></use>
-								</svg>
-							</a>
-							<a href="/accessibility-implementation/">Accessibility Implementation</a>
-						</li>
-						<li>
-							<a href="/sustainable-emission-practices/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Sustainable Emission Practices Logo">
-									<use href="/img/icons/shadow.svg#emission-reduction"></use>
-								</svg>
-							</a>
-							<a href="/sustainable-emission-practices/">Sustainable Emission Practices</a>
-						</li>
-						<li>
-							<a href="/businness-bootstrapping/">
-								<svg width="128" height="128" viewBox="0 0 128 128"
-									aria-label="Business Bootstrapping Logo">
-									<use href="/img/icons/shadow.svg#bootstrap"></use>
-								</svg>
-							</a>
-							<a href="/businness-bootstrapping/">Business Bootstrapping</a>
-						</li>
+						{%- endfor -%}
 					</menu>
 					<a href="/consultations/" class="button pill">See All Consultations <i class="arrow"></i></a>
 				</nav>
@@ -188,7 +135,7 @@ title: A Mission Driven Technology Company in Indonesia
 				</ol>
 			</li>
 			<li>
-				<h3><a href="/solutions/"{% if page.url == "/solutions/" or solutions-now %} aria-current="page"{% endif %}>Solutions</a></h3>
+				<h3><a href="/solutions/"{% if page.url == "/solutions/ %} aria-current="page"{% endif %}>Solutions</a></h3>
 				<ol>
 					{%- for solution in collections.solutions -%}
 					<li><a href="{{ solution.url }}"{% if page.url == solution.url %} aria-current="page"{% endif %}>{% if solution.data.title-strong %}<strong>{{ solution.data.title-strong }}</strong> - {% endif %}{{ solution.data.title-description }}</a></li>
@@ -196,15 +143,11 @@ title: A Mission Driven Technology Company in Indonesia
 				</ol>
 			</li>
 			<li>
-				<h3><a href="/cosultations"{% if page.url == "/cosultations/" or cosultations-now %} aria-current="page"{% endif %}>Consultations</a></h3>
+				<h3><a href="/consultations"{% if page.url == "/consultations/" %} aria-current="page"{% endif %}>Consultations</a></h3>
 				<ol>
-					<li><a href="/mobile-apps-development/">Mobile Apps Development</a></li>
-					<li><a href="/web-based-development/">Web-Based Development</a></li>
-					<li><a href="/web-and-interface-redesign/">Web and Interface Redesign</a></li>
-					<li><a href="/user-experiece-redesign/">User Experience Redesign</a></li>
-					<li><a href="/accesibility-implementation/">Accessibility Implementation</a></li>
-					<li><a href="/sustainable-emission-practices/">Sustainable Emission Practices</a></li>
-					<li><a href="/bussiness-bootstrapping/">Business Bootstrapping</a></li>
+					{%- for consultation in collections.consultations -%}
+					<li><a href="{{ consultation.url }}"{% if page.url == consultation.url %} aria-current="page"{% endif %}>{% if consultation.data.title-strong %}<strong>{{ consultation.data.title-strong }}</strong> - {% endif %}{{ consultation.data.title-description }}</a></li>
+					{%- endfor -%}
 				</ol>
 			</li>
 			<li>

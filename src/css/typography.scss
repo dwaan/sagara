@@ -57,54 +57,68 @@ h1 {
     @extend .h1;
 }
 
-h2 {
+.h2 {
     @include inline-bold;
     @include children-tags;
 
     font-size: 3rem;
     line-height: 110%;
 
+    &--big,
     &.big {
         font-size: 4rem;
         line-height: 90%;
         letter-spacing: -0.08rem;
     }
 
+    &--medium,
     &.medium {
         font-size: 2.6875rem;
         line-height: 120%;
     }
 
+    &--small,
     &.small {
         font-size: 2.25rem;
         line-height: 110%;
     }
 
+    &--smallest,
     &.smallest {
         font-size: 1.5rem;
         line-height: 150%;
     }
 }
 
-h3 {
+h2 {
+    @extend .h2;
+}
+
+.h3 {
     @include inline-bold;
     @include children-tags;
 
     font-size: 1.75rem;
     line-height: 120%;
 
+    &--small,
     &.small {
         font-size: 1.5rem;
         line-height: 130%;
     }
 
+    &--big,
     &.big {
         font-size: 1.875rem;
         line-height: 130%;
     }
 }
 
-h4 {
+h3 {
+    @extend .h3;
+}
+
+.h4 {
     @include inline-bold;
     @include children-tags;
 
@@ -115,9 +129,17 @@ h4 {
     text-transform: uppercase;
 }
 
-h5 {
+h4 {
+    @extend .h4;
+}
+
+.h5 {
     @include inline-bold;
     @include children-tags;
+}
+
+h5 {
+    @extend .h5;
 }
 
 .p {
@@ -160,26 +182,33 @@ li {
     @extend .p;
 }
 
-a {
+.a {
     text-decoration: none;
 
+    &--button,
     &.button {
         font-size: 1.125rem;
         font-weight: 600;
     }
 
+    &--cta,
     &.cta {
         font-size: 1.5rem;
         line-height: normal;
         letter-spacing: 0.03rem;
     }
 
+    &--big,
     &.big {
         font-size: 1.5rem;
         font-weight: 600;
         letter-spacing: 0.03rem;
     }
 
+}
+
+a {
+    @extend .a
 }
 
 b,

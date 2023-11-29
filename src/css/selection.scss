@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'after-before';
 @use 'flex';
+@use 'typography';
 
 //
 // Vertical Component
@@ -28,6 +29,14 @@
         width: 16rem;
         gap: var(--bttn-s);
         flex: none;
+
+        h3 {
+            @extend .h3--small;
+        }
+
+        p {
+            @extend .p--small;
+        }
 
         &::before {
             border-color: var(--gray-dynamic);
