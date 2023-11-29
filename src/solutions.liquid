@@ -1,0 +1,25 @@
+---
+layout: listing.html
+title: Solutions
+solutions-now: true
+---
+
+<div class="text">
+    <h1>Years of Best Practices Compilations</h1>
+    <p>Our solutions result from extensive collaboration with government agencies, public, and private organizations, tapping into a reservoir of best practices. Informed by lessons from regulatory compliance, workflow optimization, and user experience enhancement, our approach is deeply rooted in valuable partnerships.</p>
+</div>
+
+<div class="dots"></div>
+
+<ul>
+	{%- for solution in collections.solutions -%}
+	<li>
+		<svg width="160" height="160" viewBox="0 0 128 128" aria-label="{{ solution.data.title }} - Logo">
+			<use href="/img/icons/shadow.svg#{{ solution.data.svg }}"></use>
+		</svg>
+		<h3>{% if solution.data.title-strong %}<strong>{{ solution.data.title-strong }}</strong> - {% endif %}{{ solution.data.title-description }}</h3>
+		<p>{{ solution.data.description }}</p>
+		<a href="{{ solution.url }}" class="button pill blue">Learn more <i class="arrow"></i></a>
+	</li>
+	{%- endfor -%}
+</ul>

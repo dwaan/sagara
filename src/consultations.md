@@ -1,7 +1,6 @@
 ---
 layout: listing.html
 title: Consultations
-consultations-now: now
 ---
 
 <div class="text">

@@ -40,6 +40,7 @@ body {
     letter-spacing: -0.105rem;
     line-height: 100%;
 
+    &--homepage,
     &.homepage {
         font-size: 5.5rem;
         letter-spacing: -0.22rem;
@@ -51,6 +52,7 @@ body {
         letter-spacing: -0.14625rem;
     }
 }
+
 h1 {
     @extend .h1;
 }
@@ -118,8 +120,7 @@ h5 {
     @include children-tags;
 }
 
-p,
-li {
+.p {
     @include children-tags;
 
     font-size: 1.125rem;
@@ -129,17 +130,20 @@ li {
         font-weight: 500;
     }
 
+    &--small,
     &.small {
         font-size: 1rem;
         line-height: 150%;
         letter-spacing: 0.02rem;
     }
 
+    &--hero,
     &.hero {
         font-size: 1.3125rem;
         line-height: 160%;
     }
 
+    &--blue,
     &.blue {
         font-size: 1.875rem;
         font-weight: 600;
@@ -149,6 +153,11 @@ li {
             font-size: 2.25rem;
         }
     }
+}
+
+p,
+li {
+    @extend .p;
 }
 
 a {
@@ -201,14 +210,11 @@ menu.submenu {
     }
 }
 
-
-
 footer {
     .sitemap {
 
         h3,
         li>a {
-            color: var(--dark-normal);
             font-style: normal;
         }
 

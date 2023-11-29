@@ -1,7 +1,7 @@
 ---
 layout: listing.html
 title: Supports
-supports-now: now
+supports-now: true
 ---
 
 <div class="text">

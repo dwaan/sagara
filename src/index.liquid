@@ -6,8 +6,8 @@ class: home
 <section class="hero">
 	<article>
 		<div class="text">
-			<h1 class="homepage">We are a Mission Driven Technology Company in Indonesia</h1>
-			<p class="hero">Our innovative products and services technologies are designed with a profound
+			<h1>We are a Mission Driven Technology Company in Indonesia</h1>
+			<p>Our innovative products and services technologies are designed with a profound
 				commitment to the <strong>sustainability</strong>, <strong>accessibility</strong>, and
 				<strong>privacy</strong> in mind.
 			</p>
@@ -36,50 +36,19 @@ class: home
 			<h2 hidden>Products</h2>
 			<ol class="flat scroll">
 				<li class="plain"><i class="arrow"></i></li>
+				{%- for product in collections.products -%}
 				<li>
-					<a href="/jadi">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Jadi Logo">
-							<use href="/img/icons/shadow.svg#jadi-scale"></use>
+					<a href="{{ product.url }}">
+						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="{{ product.data.title }} - Logo">
+							<use href="/img/icons/shadow.svg#{{ product.data.svg }}"></use>
 						</svg>
 					</a>
 					<div class="text">
-						<h3 class="small"><a href="/jadi">Jadi</a></h3>
-						<p class="small"><a href="/jadi">Legal Documents and Information System</a></p>
+						{% if product.data.title-strong %}<h3 class="small"><a href="{{ product.url }}">{{ product.data.title-strong }}</a></h3>{% endif %}
+						<p class="small"><a href="{{ product.url }}">{{ product.data.title-description }}</a></p>
 					</div>
 				</li>
-				<li>
-					<a href="/pm.os">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="pm.os Logo">
-							<use href="/img/icons/shadow.svg#pm.os"></use>
-						</svg>
-					</a>
-					<div class="text">
-						<h3 class="small"><a href="/pm.os">pm.os</a></h3>
-						<p class="small"><a href="/pm.os">Project Management Office System</a></p>
-					</div>
-				</li>
-				<li>
-					<a href="/hachemist">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Hachemist Logo">
-							<use href="/img/icons/shadow.svg#hachemist"></use>
-						</svg>
-					</a>
-					<div class="text">
-						<h3 class="small"><a href="/hachemist">Hachemist</a></h3>
-						<p class="small"><a href="/hachemist">Human Capital Management System</a></p>
-					</div>
-				</li>
-				<li>
-					<a href="/itik">
-						<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Itik Logo">
-							<use href="/img/icons/shadow.svg#itik"></use>
-						</svg>
-					</a>
-					<div class="text">
-						<h3 class="small"><a href="/itik">Itik</a></h3>
-						<p class="small"><a href="/itik">Point of Sale and Ticketing System</a></p>
-					</div>
-				</li>
+				{%- endfor -%}
 			</ol>
 		</article>
 

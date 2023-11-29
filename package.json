@@ -7,8 +7,8 @@
   "scripts": {
     "sitemap": "node src/sitemap.js",
     "webp": "gulp webp",
-    "test": "gulp webp && (gulp dev & npx @11ty/eleventy --serve --incremental)",
-    "watch": "gulp dev & npx @11ty/eleventy --serve --incremental",
+    "test": "gulp webp && (gulp dev & npx @11ty/eleventy --serve)",
+    "watch": "gulp dev & npx @11ty/eleventy --serve",
     "build": "gulp prod && npx @11ty/eleventy"
   },
   "author": "Dwan",

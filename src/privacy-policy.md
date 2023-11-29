@@ -1,7 +1,6 @@
 ---
 layout: static.html
 title: Cookie Policy
-privacy-now: now
 ---
 
 ## Privacy Policy

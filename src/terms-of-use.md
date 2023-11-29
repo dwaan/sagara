@@ -1,7 +1,6 @@
 ---
 layout: static.html
 title: Terms of Use
-term-now: now
 ---
 
 ## Term of Use

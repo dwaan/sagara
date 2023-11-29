@@ -20,194 +20,149 @@ title: A Mission Driven Technology Company in Indonesia
 <body>
 	<header>
 		<div>
-			<a href="/"><object data="/img/logo-colorful.svg" type="image/svg+xml" width="158" height="56"
-					aria-label="Sagara Logo"></object></a>
+			<a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}><object data="/img/logo-colorful.svg" type="image/svg+xml" width="158" height="56" aria-label="Sagara Logo"></object></a>
 		</div>
 
 		<menu class="main">
 			<li hidden><a href="/">Home</a></li>
-			<li class="{{ products-now }}">
-				<a href="/products">Products <i class="arrow"></i></a>
+			<li{% if page.url == "/products/" or products-now %} aria-current="page"{% endif %}>
+				<a href="/products/">Products <i class="arrow"></i></a>
 
 				<nav class="popup">
 					<menu class="submenu">
+						{%- for product in collections.products -%}
 						<li>
-							<a href="/jadi">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Jadi Logo">
-									<use href="/img/icons/shadow.svg#jadi-scale"></use>
+							<a href="{{ product.url }}">
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="{{ product.data.title }} - Logo">
+									<use href="/img/icons/shadow.svg#{{ product.data.svg }}"></use>
 								</svg>
 							</a>
-							<a href="/jadi"><strong>Jadi</strong> - Legal Documents and Information System</a>
+							<a href="{{ product.url }}">{% if product.data.title-strong %}<strong>{{ product.data.title-strong }}</strong> - {% endif %}{{ product.data.title-description }}</a>
 						</li>
-						<li>
-							<a href="/pm.os">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="pm.os Logo">
-									<use href="/img/icons/shadow.svg#pm.os"></use>
-								</svg>
-							</a>
-							<a href="/pm.os"><strong>pm.os</strong> - Project Management Office System</a>
-						</li>
-						<li>
-							<a href="/hachemist">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Hachemist Logo">
-									<use href="/img/icons/shadow.svg#hachemist"></use>
-								</svg>
-							</a>
-							<a href="/hachemist"><strong>Hachemist</strong> - Human Capital Management System</a>
-						</li>
-						<li>
-							<a href="/itik">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Itik Logo">
-									<use href="/img/icons/shadow.svg#itik"></use>
-								</svg>
-							</a>
-							<a href="/itik"><strong>Itik</strong> - Point of Sale and Ticketing System</a>
-						</li>
+						{%- endfor -%}
 					</menu>
-					<a href="/products" class="button pill">See All Products <i class="arrow"></i></a>
+					<a href="/products/" class="button pill">See All Products <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li class="{{ solutions-now }}">
-				<a href="/solutions">Solutions <i class="arrow"></i></a>
+			<li{% if page.url == "/solutions/" or solutions-now %} aria-current="page"{% endif %}>
+				<a href="/solutions/">Solutions <i class="arrow"></i></a>
 
 				<nav class="popup">
 					<menu class="submenu">
+						{%- for solution in collections.solutions -%}
 						<li>
-							<a href="/lm.sys">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Lm.sys Logo">
-									<use href="/img/icons/shadow.svg#lm.sys"></use>
+							<a href="{{ solution.url }}">
+								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="{{ solution.data.title }} - Logo">
+									<use href="/img/icons/shadow.svg#{{ solution.data.svg }}"></use>
 								</svg>
 							</a>
-							<a href="/lm.sys"><strong>lm.sys</strong> - Learning Management System</a>
+							<a href="{{ solution.url }}">{% if solution.data.title-strong %}<strong>{{ solution.data.title-strong }}</strong> - {% endif %}{{ solution.data.title-description }}</a>
 						</li>
-						<li>
-							<a href="/dask">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Dask Logo">
-									<use href="/img/icons/shadow.svg#dask"></use>
-								</svg>
-							</a>
-							<a href="/dask"><strong>Dask</strong> - Live Dashboard and Information System</a>
-						</li>
-						<li>
-							<a href="/pagi">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="Pagi Logo">
-									<use href="/img/icons/shadow.svg#pagi"></use>
-								</svg>
-							</a>
-							<a href="/pagi"><strong>Pagi</strong> - Payment Gateway and Simponi Integration</a>
-						</li>
-						<li>
-							<a href="/eyesee">
-								<svg width="128" height="128" viewBox="0 0 128 128" aria-label="EyeSee Logo">
-									<use href="/img/icons/shadow.svg#eyesee"></use>
-								</svg>
-							</a>
-							<a href="/eyesee"><strong>EyeSee</strong> - Integrated Security and Monitoring System</a>
-						</li>
+						{%- endfor -%}
 					</menu>
-					<a href="/solutions" class="button pill">See All Solutions <i class="arrow"></i></a>
+					<a href="/solutions/" class="button pill">See All Solutions <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li class="{{ consultations-now }}">
-				<a href="/consultations">Consultations <i class="arrow"></i></a>
+			<li{% if page.url == "/consultations/" or consultations-now %} aria-current="page"{% endif %}>
+				<a href="/consultations/">Consultations <i class="arrow"></i></a>
 
 				<nav class="popup">
 					<menu class="submenu">
 						<li>
-							<a href="/mobile-apps-development">
+							<a href="/mobile-apps-development/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Mobile Apps Development Logo">
 									<use href="/img/icons/shadow.svg#mobile"></use>
 								</svg>
 							</a>
-							<a href="/mobile-apps-development">Mobile Apps Development</a>
+							<a href="/mobile-apps-development/">Mobile Apps Development</a>
 						</li>
 						<li>
-							<a href="/web-based-development">
+							<a href="/web-based-development/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Web-Based Development Logo">
 									<use href="/img/icons/shadow.svg#custom-development"></use>
 								</svg>
 							</a>
-							<a href="/web-based-development">Web-Based Development</a>
+							<a href="/web-based-development/">Web-Based Development</a>
 						</li>
 						<li>
-							<a href="/web-and-interface-redesign">
+							<a href="/web-and-interface-redesign/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Web and Interface Redesign Logo">
 									<use href="/img/icons/shadow.svg#website"></use>
 								</svg>
 							</a>
-							<a href="/web-and-interface-redesign">Web and Interface Redesign</a>
+							<a href="/web-and-interface-redesign/">Web and Interface Redesign</a>
 						</li>
 						<li>
-							<a href="/redesign">
+							<a href="/user-experience-redesign/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="User Experience Redesign Logo">
 									<use href="/img/icons/shadow.svg#redesign"></use>
 								</svg>
 							</a>
-							<a href="/redesign">User Experience Redesign</a>
+							<a href="/user-experience-redesign/">User Experience Redesign</a>
 						</li>
 						<li>
-							<a href="/mobile">
+							<a href="/accessibility-implementation/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Accessibility Implementation Logo">
 									<use href="/img/icons/shadow.svg#accessibility"></use>
 								</svg>
 							</a>
-							<a href="/mobile">Accessibility Implementation</a>
+							<a href="/accessibility-implementation/">Accessibility Implementation</a>
 						</li>
 						<li>
-							<a href="/sustainable-emission-practices">
+							<a href="/sustainable-emission-practices/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Sustainable Emission Practices Logo">
 									<use href="/img/icons/shadow.svg#emission-reduction"></use>
 								</svg>
 							</a>
-							<a href="/sustainable-emission-practices">Sustainable Emission Practices</a>
+							<a href="/sustainable-emission-practices/">Sustainable Emission Practices</a>
 						</li>
 						<li>
-							<a href="/businness-bootstrapping">
+							<a href="/businness-bootstrapping/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Business Bootstrapping Logo">
 									<use href="/img/icons/shadow.svg#bootstrap"></use>
 								</svg>
 							</a>
-							<a href="/businness-bootstrapping">Business Bootstrapping</a>
+							<a href="/businness-bootstrapping/">Business Bootstrapping</a>
 						</li>
 					</menu>
-					<a href="/consultations" class="button pill">See All Consultations <i class="arrow"></i></a>
+					<a href="/consultations/" class="button pill">See All Consultations <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li class="{{ supports-now }}">
-				<a href="/supports">Supports <i class="arrow"></i></a>
+			<li{% if page.url == "/supports/" or supports-now %} aria-current="page"{% endif %}>
+				<a href="/supports/">Supports <i class="arrow"></i></a>
 
 				<nav class="popup">
 					<menu class="submenu">
 						<li>
-							<a href="/request-for-demo">
+							<a href="/request-for-demo/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Request for Demo Logo">
 									<use href="/img/icons/shadow.svg#request-demo"></use>
 								</svg>
 							</a>
-							<a href="/request-for-demo">Request for Demo</a>
+							<a href="/request-for-demo/">Request for Demo</a>
 						</li>
 						<li>
-							<a href="/costumer-service">
+							<a href="/costumer-service/">
 								<svg width="128" height="128" viewBox="0 0 128 128"
 									aria-label="Costumer Service Logo">
 									<use href="/img/icons/shadow.svg#costumer"></use>
 								</svg>
 							</a>
-							<a href="/costumer-service">Costumer Service</a>
+							<a href="/costumer-service/">Costumer Service</a>
 						</li>
 					</menu>
-					<a href="/support" class="button pill">See All Supports <i class="arrow"></i></a>
+					<a href="/supports/" class="button pill">See All Supports <i class="arrow"></i></a>
 				</nav>
 			</li>
-			<li class="{{ career-now }}"><a href="/career">Careers</a></li>
+			<li{% if page.url == "/careers/" or career-now %} aria-current="page"{% endif %}><a href="/careers/">Careers</a></li>
 			<li class="accessibility">
 				<a href="#accesibility">
 					<svg width="24" height="24" viewBox="0 0 32 32" aria-label="Jadi Logo">
@@ -225,50 +180,48 @@ title: A Mission Driven Technology Company in Indonesia
 	<footer>
 		<menu class="sitemap">
 			<li>
-				<h3><a href="/products" class="{{ products-now }}">Products</a></h3>
+				<h3><a href="/products/"{% if page.url == "/products/" %} aria-current="page"{% endif %}>Products</a></h3>
 				<ol>
-					<li><a href="/jadi"><strong>Jadi</strong> - Legal Documents and Information System</a></li>
-					<li><a href="/pm.os"><strong>pm</strong>.os - Project Management Office System</a></li>
-					<li><a href="/hachemist"><strong>Hachemist</strong> - Human Capital Management System</a></li>
-					<li><a href="/itik"><strong>Itik</strong> - Point of Sale and Ticketing System</a></li>
+					{%- for product in collections.products -%}
+					<li><a href="{{ product.url }}"{% if page.url == product.url %} aria-current="page"{% endif %}>{% if product.data.title-strong %}<strong>{{ product.data.title-strong }}</strong> - {% endif %}{{ product.data.title-description }}</a></li>
+					{%- endfor -%}
 				</ol>
 			</li>
 			<li>
-				<h3><a href="/solutions" class="{{ solutions-now }}">Solutions</a></h3>
+				<h3><a href="/solutions/"{% if page.url == "/solutions/" or solutions-now %} aria-current="page"{% endif %}>Solutions</a></h3>
 				<ol>
-					<li><a href="/lm.sys"><strong>Lm.sys</strong> - Learning Management System</a></li>
-					<li><a href="/dask"><strong>Dask</strong> - Live Dashboard and Information System</a></li>
-					<li><a href="/pagi"><strong>Pagi</strong> - Payment Gateway and Simponi Integration</a></li>
-					<li><a href="/eyesee"><strong>EyeSee</strong> - Integrated Security and Monitoring System</a></li>
+					{%- for solution in collections.solutions -%}
+					<li><a href="{{ solution.url }}"{% if page.url == solution.url %} aria-current="page"{% endif %}>{% if solution.data.title-strong %}<strong>{{ solution.data.title-strong }}</strong> - {% endif %}{{ solution.data.title-description }}</a></li>
+					{%- endfor -%}
 				</ol>
 			</li>
 			<li>
-				<h3><a href="/cosultations" class="{{ consultations-now }}">Consultations</a></h3>
+				<h3><a href="/cosultations"{% if page.url == "/cosultations/" or cosultations-now %} aria-current="page"{% endif %}>Consultations</a></h3>
 				<ol>
-					<li><a href="/mobile-apps-development">Mobile Apps Development</a></li>
-					<li><a href="/web-based-development">Web-Based Development</a></li>
-					<li><a href="/web-and-interface-redesign">Web and Interface Redesign</a></li>
-					<li><a href="/user-experiece-redesign">User Experience Redesign</a></li>
-					<li><a href="/accesibility-implementation">Accessibility Implementation</a></li>
-					<li><a href="/sustainable-emission-practices">Sustainable Emission Practices</a></li>
-					<li><a href="/business-bootstrapping">Business Bootstrapping</a></li>
+					<li><a href="/mobile-apps-development/">Mobile Apps Development</a></li>
+					<li><a href="/web-based-development/">Web-Based Development</a></li>
+					<li><a href="/web-and-interface-redesign/">Web and Interface Redesign</a></li>
+					<li><a href="/user-experiece-redesign/">User Experience Redesign</a></li>
+					<li><a href="/accesibility-implementation/">Accessibility Implementation</a></li>
+					<li><a href="/sustainable-emission-practices/">Sustainable Emission Practices</a></li>
+					<li><a href="/bussiness-bootstrapping/">Business Bootstrapping</a></li>
 				</ol>
 			</li>
 			<li>
 				<ul>
 					<li>
-						<h3><a href="/supports" class="{{ supports-now }}">Supports</a></h3>
+						<h3><a href="/supports/"{% if page.url == "/supports/" or supports-now %} aria-current="page"{% endif %}>Supports</a></h3>
 						<ol>
-							<li><a href="/request-for-demo">Request for Demo</a></li>
+							<li><a href="/request-for-demo/">Request for Demo</a></li>
 							<li><a href="/costumer-services">Costumer Services</a></li>
 						</ol>
 					</li>
 					<li>
 						<h3>Corporate</h3>
 						<ol>
-							<li><a href="/career" class="{{ career-now }}">Career</a></li>
-							<li><a href="/about" class="{{ about-now }}">About Sagara</a></li>
-							<li><a href="/commitment-and-responsibility" class="{{ commitment-now }}">Commitment and Responsibility</a></li>
+							<li><a href="/careers/"{% if page.url == "/careers/" %} aria-current="page"{% endif %}>Career</a></li>
+							<li><a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About Sagara</a></li>
+							<li><a href="/commitment-and-responsibility/"{% if page.url == "/commitment-and-responsibility/" %} aria-current="page"{% endif %}>Commitment and Responsibility</a></li>
 						</ol>
 					</li>
 				</ul>
@@ -280,9 +233,9 @@ title: A Mission Driven Technology Company in Indonesia
 		<section class="legal">
 			<p>©2023 PT. Sagara Xinix Solusitama</p>
 			<menu>
-				<li><a href="/terms-of-use" class="{{ term-now }}">Terms of Use</a></li>
-				<li><a href="/cookie-policy" class="{{ cookie-now }}">Cookie Policy</a></li>
-				<li><a href="/privacy-policy" class="{{ privacy-now }}">Privacy Policy</a></li>
+				<li><a href="/terms-of-use/"{% if page.url == "/terms-of-use/" %} aria-current="page"{% endif %}>Terms of Use</a></li>
+				<li><a href="/cookie-policy/"{% if page.url == "/cookie-policy/" %} aria-current="page"{% endif %}>Cookie Policy</a></li>
+				<li><a href="/privacy-policy/"{% if page.url == "/privacy-policy/" %} aria-current="page"{% endif %}>Privacy Policy</a></li>
 			</menu>
 		</section>
 	</footer>
