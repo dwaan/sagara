@@ -7,7 +7,7 @@ footer {
     @extend .flex-column-center;
     @extend .no-padding-margin;
 
-    padding: var(--pad-s) var(--pad-m) var(--pad-2t);
+    padding: var(--pad-2s) var(--pad-m) var(--pad-2t);
     gap: var(--gap-m);
 
     a {
@@ -84,7 +84,7 @@ footer {
 
     .sitemap {
         gap: var(--gap-l);
-        padding-bottom: var(--pad-s);
+        padding-bottom: var(--pad-2s);
 
         ol,
         ul {

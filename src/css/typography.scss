@@ -185,6 +185,8 @@ li {
 .a {
     text-decoration: none;
 
+    &--default,
+    &.default,
     &--button,
     &.button {
         font-size: 1.125rem;

@@ -1,5 +1,5 @@
 ---
-layout: static.html
+layout: static.liquid
 title: Cookie Policy
 ---
 

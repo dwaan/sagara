@@ -1,0 +1,6 @@
+# .editorconfig
+
+# Set the default indent style to tabs
+[*]
+indent_style = tab
+indent_size = 4  # Set your preferred tab size

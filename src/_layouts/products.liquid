@@ -1,22 +1,9 @@
 ---
 layout: main.liquid
-tags: consultations
-class: consultations
-consultations-now: true
+tags: products
+class: products
+products-now: true
 ---
-
-<section class="hero">
-  <article>
-    <div class="text">
-      <h4>{{ tags }}</h4>
-      <h1>{{ title }}</h1>
-      <p>Please change this template.</p>
-    </div>
-    <a href="#request-demo" class="button cta">Request for Demo
-      <i class="arrow"></i>
-    </a>
-  </article>
-</section>
 
 {{ content }}
 
@@ -28,7 +15,7 @@ consultations-now: true
         {% if demo-message %}
           <p>{{ demo-message }}</p>
         {% else %}
-          <p>To schedule for a conversation with our experts in {{ title-description }} Consultations, please share your email, and we'll contact you back.</p>
+          <p>To ask for quotation or schedule for a conversation with our {{ title-strong }} experts, please share your email, and we'll contact you back.</p>
         {% endif %}
       </div>
 

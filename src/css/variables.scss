@@ -17,13 +17,15 @@
     // Padding
     --pad-t: var(--size-24);
     --pad-2t: var(--size-48);
-    --pad-s: var(--size-64);
+    --pad-s: var(--size-32);
+    --pad-2s: var(--size-64);
     --pad-m: var(--size-96);
     --pad-l: var(--size-128);
 
     // Gap
     --gap-t: var(--size-8);
     --gap-2t: var(--size-16);
+    --gap-3t: var(--size-24);
     --gap-s: var(--size-32);
     --gap-m: var(--size-48);
     --gap-l: var(--size-64);
@@ -41,6 +43,8 @@
 
     // Common size
     --size-one-third: 23.3333125rem;
+    --size-ss: 75rem; // calc(100vw * 1200/1440);
+    --aspect-ratio-ss: calc(1200 / 720);
 
     // Max size
     --max-medium: 47.5rem;
@@ -57,6 +61,7 @@
 
     // Shadow
     --shadow: var(--gap-2t) var(--gap-m) var(--gap-l) 0 rgba(0, 0, 0, 0.25);
+    --shadow-small: 0 var(--gap-2t) var(--gap-3t) 0 rgba(0, 0, 0, 0.25);
 }
 
 
@@ -111,4 +116,14 @@
         --neon-blue: #045EFF;
         --neon-green: #2FFF86;
     }
+}
+
+//
+// SVG color
+//
+
+:root {
+    --svg-fill: var(--white-normal);
+    --svg-stroke: var(--dark-normal);
+    --svg-stroke-blue: var(--neon-blue);
 }
