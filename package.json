@@ -5,11 +5,9 @@
   "main": "src/index.php",
   "type": "module",
   "scripts": {
-    "sitemap": "node src/sitemap.js",
     "webp": "gulp webp",
-    "test": "gulp webp && (gulp dev & npx @11ty/eleventy --serve)",
-    "watch": "gulp dev & npx @11ty/eleventy --serve",
-    "build": "gulp prod && npx @11ty/eleventy"
+    "test": "npx @11ty/eleventy --serve & gulp dev",
+    "build": "npx @11ty/eleventy && gulp prod"
   },
   "author": "Dwan",
   "license": "ISC",
@@ -17,6 +15,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@fontsource-variable/golos-text": "^5.0.8",
     "@sherby/eleventy-plugin-files-minifier": "^1.1.1",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-concat": "^2.6.1",

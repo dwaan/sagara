@@ -4,6 +4,7 @@ To run project:
 
 1. Open terminal and navigate to the directory
 2. Run 'npm install'
-3. Run 'npm test' to build and test website, this will run image conversion to webp that can take awhile.
-4. or, Run 'npm run watch' to run test webite without converting images.
-5. Open browser and navigate to http://localhost:8080
+3. Run 'npm test' to build and test website.
+4. or, Run 'npm run webp' to run image conversion.
+5. or, Run 'npm run build' to build website so it's ready to upload.
+6. Open browser and navigate to http://localhost:8080

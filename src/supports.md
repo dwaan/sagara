@@ -14,7 +14,7 @@ Whether you have a question, need technical help, or want to provide feedback, w
 
 <div class="dots"></div>
 
-- <svg width="160" height="160" viewBox="0 0 128 128" aria-label="Icon of hand requesting a demo"><use href="/img/icons/shadow.svg#request-demo"></use></svg>
+- <svg width="160" height="160" viewBox="0 0 128 128" aria-label="Icon of hand requesting a demo"><use href="/img/icons/shadow.svg#request-demo" /></svg>
 
   ### Request for Demo
 
@@ -22,7 +22,7 @@ Whether you have a question, need technical help, or want to provide feedback, w
 
   <a href="/request-for-demo" class="button pill blue">Learn more <i class="arrow"></i></a>
 
-- <svg width="160" height="160" viewBox="0 0 128 128" aria-label="Two chat bubble depicting costumer service "><use href="/img/icons/shadow.svg#costumer"></use></svg>
+- <svg width="160" height="160" viewBox="0 0 128 128" aria-label="Two chat bubble depicting costumer service "><use href="/img/icons/shadow.svg#costumer" /></svg>
 
   ### Costumer Service
 
