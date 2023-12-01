@@ -2,12 +2,12 @@
   "name": "sagara",
   "version": "0.0.1",
   "description": "Sagara Redesign 2023",
-  "main": "src/index.php",
+  "main": "src/index.liquid",
   "type": "module",
   "scripts": {
     "webp": "gulp webp",
-    "test": "npx @11ty/eleventy --serve & gulp dev",
-    "build": "npx @11ty/eleventy && gulp prod"
+    "test": "gulp dev",
+    "build": "gulp prod"
   },
   "author": "Dwan",
   "license": "ISC",

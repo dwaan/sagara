@@ -10,7 +10,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import svgstore from 'gulp-svgstore';
 import replace from 'gulp-replace';
 import browserSyncModule from 'browser-sync';
-import { exec } from 'child_process';
+import eleventy from '@11ty/eleventy';
 
 const browserSync = browserSyncModule.create();
 const sass = gulpSass(dartSass);
@@ -215,31 +215,36 @@ function html() {
 		.pipe(browserSync.stream());
 }
 
-// function eleventy_dev(cb) {
-// 	return exec('npx @11ty/eleventy --serve', (err, stdout, stderr) => {
-// 		console.log(stdout);
-// 		console.error(stderr);
-// 		cb(err);
-// 	});
-// }
-// function eleventy_prod(cb) {
-// 	return exec('npx @11ty/eleventy', (err, stdout, stderr) => {
-// 		console.log(stdout);
-// 		console.error(stderr);
-// 		cb(err);
-// 	});
-// }
+async function eleventy_dev() {
+	try {
+		const port = 8080;
+		const elev = new eleventy();
+		await elev.watch();
+		await elev.serve(port);
+
+		// Proxy eleventy server
+		browserSync.init({
+			open: false,
+			stream: true,
+			proxy: 'http://localhost:' + port
+		});
+	} catch (error) {
+		console.error('Error starting Eleventy server:', error);
+		process.exit(1);
+	}
+}
+async function eleventy_prod() {
+	try {
+		const elev = new eleventy();
+		await elev.write();
+	} catch (error) {
+		console.error('Error starting running Eleventy:', error);
+		process.exit(1);
+	}
+}
 
 function development(cb) {
-	// // Starting 11ty server at 8080
-	// eleventy_dev();
-
-	// Proxy eleventy server
-	browserSync.init({
-		open: false,
-		stream: true,
-		proxy: 'http://localhost:8080'
-	});
+	eleventy_dev();
 
 	gulp.watch(paths.image.src, { events: 'all', ignoreInitial: false }, image);
 	gulp.watch(paths.font.src, { events: 'all', ignoreInitial: false }, copy_font);
@@ -272,6 +277,7 @@ gulp.task('prod', gulp.series(
 	image,
 	scss_prod,
 	css_prefix_prod,
-	js_prod
+	js_prod,
+	eleventy_prod
 ));
 gulp.task('default', gulp.series('dev'));
