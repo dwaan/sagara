@@ -24,7 +24,10 @@
 
 .selection--default {
     li {
+        @extend .flex-column;
         @extend .vertical;
+
+        align-items: center;
 
         width: 16rem;
         gap: var(--bttn-s);

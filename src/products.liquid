@@ -12,25 +12,5 @@ products-now: true
 <div class="dots"></div>
 
 <ul>
-  {%- for product in collections.products -%}
-    <li>
-      <svg
-        width="160"
-        height="160"
-        viewBox="0 0 128 128"
-        aria-label="{{ product.data.title }} - Logo">
-        <use href="/img/icons/shadow.svg#{{ product.data.svg }}" />
-      </svg>
-      <h3>
-        {% if product.data.title-strong %}
-          <strong>{{ product.data.title-strong }}</strong>
-          -
-        {% endif %}
-        {{ product.data.title-description }}</h3>
-      <p>{{ product.data.description }}</p>
-      <a href="{{ product.url }}" class="button pill blue">Learn more
-        <i class="arrow"></i>
-      </a>
-    </li>
-  {%- endfor -%}
+  {% render 'item-listing' for collections.products as item %}
 </ul>

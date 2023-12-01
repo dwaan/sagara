@@ -51,25 +51,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {%- for product in collections.products -%}
-                <li>
-                  <a href="{{ product.url }}">
-                    <svg
-                      width="128"
-                      height="128"
-                      viewBox="0 0 128 128"
-                      aria-label="{{ product.data.title }} - Logo">
-                      <use href="/img/icons/shadow.svg#{{ product.data.svg }}" />
-                    </svg>
-                  </a>
-                  <a href="{{ product.url }}">
-                    {% if product.data.title-strong %}
-                      <strong>{{ product.data.title-strong }}</strong>
-                      -
-                    {% endif %}
-                    {{ product.data.title-description }}</a>
-                </li>
-              {%- endfor -%}
+              {% render 'item-menu' for collections.products as item %}
             </menu>
             <a href="/products/" class="button pill">See All Products
               <i class="arrow"></i>
@@ -86,25 +68,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {%- for solution in collections.solutions -%}
-                <li>
-                  <a href="{{ solution.url }}">
-                    <svg
-                      width="128"
-                      height="128"
-                      viewBox="0 0 128 128"
-                      aria-label="{{ solution.data.title }} - Logo">
-                      <use href="/img/icons/shadow.svg#{{ solution.data.svg }}" />
-                    </svg>
-                  </a>
-                  <a href="{{ solution.url }}">
-                    {% if solution.data.title-strong %}
-                      <strong>{{ solution.data.title-strong }}</strong>
-                      -
-                    {% endif %}
-                    {{ solution.data.title-description }}</a>
-                </li>
-              {%- endfor -%}
+              {% render 'item-menu' for collections.solutions as item %}
             </menu>
             <a href="/solutions/" class="button pill">See All Solutions
               <i class="arrow"></i>
@@ -121,25 +85,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {%- for consultation in collections.consultations -%}
-                <li>
-                  <a href="{{ consultation.url }}">
-                    <svg
-                      width="128"
-                      height="128"
-                      viewBox="0 0 128 128"
-                      aria-label="{{ consultation.data.title }} - Logo">
-                      <use href="/img/icons/shadow.svg#{{ consultation.data.svg }}" />
-                    </svg>
-                  </a>
-                  <a href="{{ consultation.url }}">
-                    {% if consultation.data.title-strong %}
-                      <strong>{{ consultation.data.title-strong }}</strong>
-                      -
-                    {% endif %}
-                    {{ consultation.data.title-description }}</a>
-                </li>
-              {%- endfor -%}
+              {% render 'item-menu' for collections.consultations as item %}
             </menu>
             <a href="/consultations/" class="button pill">See All Consultations
               <i class="arrow"></i>
@@ -156,30 +102,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              <li>
-                <a href="/request-for-demo/">
-                  <svg
-                    width="128"
-                    height="128"
-                    viewBox="0 0 128 128"
-                    aria-label="Request for Demo Logo">
-                    <use href="/img/icons/shadow.svg#request-demo" />
-                  </svg>
-                </a>
-                <a href="/request-for-demo/">Request for Demo</a>
-              </li>
-              <li>
-                <a href="/costumer-service/">
-                  <svg
-                    width="128"
-                    height="128"
-                    viewBox="0 0 128 128"
-                    aria-label="Costumer Service Logo">
-                    <use href="/img/icons/shadow.svg#costumer" />
-                  </svg>
-                </a>
-                <a href="/costumer-service/">Costumer Service</a>
-              </li>
+              {% render 'item-menu' for collections.supports as item %}
             </menu>
             <a href="/supports/" class="button pill">See All Supports
               <i class="arrow"></i>
@@ -221,20 +144,9 @@ title: A Mission Driven Technology Company in Indonesia
               {% endif %}>Products</a>
           </h3>
           <ol>
-            {%- for product in collections.products -%}
-              <li>
-                <a
-                  href="{{ product.url }}"
-                  {% if page.url == product.url %}
-                  aria-current="page"
-                  {% endif %}>
-                  {% if product.data.title-strong %}
-                    <strong>{{ product.data.title-strong }}</strong>
-                    -
-                  {% endif %}
-                  {{ product.data.title-description }}</a>
-              </li>
-            {%- endfor -%}
+            {% render 'item-menu-footer'
+              , items: collections.products
+              , page_url: page.url %}
           </ol>
         </li>
         <li>
@@ -246,20 +158,9 @@ title: A Mission Driven Technology Company in Indonesia
               {% endif %}>Solutions</a>
           </h3>
           <ol>
-            {%- for solution in collections.solutions -%}
-              <li>
-                <a
-                  href="{{ solution.url }}"
-                  {% if page.url == solution.url %}
-                  aria-current="page"
-                  {% endif %}>
-                  {% if solution.data.title-strong %}
-                    <strong>{{ solution.data.title-strong }}</strong>
-                    -
-                  {% endif %}
-                  {{ solution.data.title-description }}</a>
-              </li>
-            {%- endfor -%}
+            {% render 'item-menu-footer'
+              , items: collections.solutions
+              , page_url: page.url %}
           </ol>
         </li>
         <li>
@@ -271,20 +172,9 @@ title: A Mission Driven Technology Company in Indonesia
               {% endif %}>Consultations</a>
           </h3>
           <ol>
-            {%- for consultation in collections.consultations -%}
-              <li>
-                <a
-                  href="{{ consultation.url }}"
-                  {% if page.url == consultation.url %}
-                  aria-current="page"
-                  {% endif %}>
-                  {% if consultation.data.title-strong %}
-                    <strong>{{ consultation.data.title-strong }}</strong>
-                    -
-                  {% endif %}
-                  {{ consultation.data.title-description }}</a>
-              </li>
-            {%- endfor -%}
+            {% render 'item-menu-footer'
+              , items: collections.consultations
+              , page_url: page.url %}
           </ol>
         </li>
         <li>
@@ -293,13 +183,14 @@ title: A Mission Driven Technology Company in Indonesia
               <h3>
                 <a
                   href="/supports/"
-                  {% if page.url == "/supports/" or supports-now %}
+                  {% if page.url == "/supports/" %}
                   aria-current="page"
                   {% endif %}>Supports</a>
               </h3>
               <ol>
-                <li><a href="/request-for-demo/">Request for Demo</a></li>
-                <li><a href="/costumer-services">Costumer Services</a></li>
+                {% render 'item-menu-footer'
+                  , items: collections.supports
+                  , page_url: page.url %}
               </ol>
             </li>
             <li>
@@ -317,28 +208,25 @@ title: A Mission Driven Technology Company in Indonesia
       <i class="arrow gray thin"></i>
 
       <section class="legal">
-        <p>©2023 PT. Sagara Xinix Solusitama</p>
+        <p>&copy;{{ "now" | date: "%Y" }} PT. Sagara Xinix Solusitama</p>
         <menu>
           <li>
-            <a
-              href="/terms-of-use/"
-              {% if page.url == "/terms-of-use/" %}
-              aria-current="page"
-              {% endif %}>Terms of Use</a>
+            {% render 'a-menu'
+              , title: 'Terms of Use'
+              , url: '/terms-of-use/'
+              , page_url: page.url %}
           </li>
           <li>
-            <a
-              href="/cookie-policy/"
-              {% if page.url == "/cookie-policy/" %}
-              aria-current="page"
-              {% endif %}>Cookie Policy</a>
+            {% render 'a-menu'
+              , title: 'Cookie Policy'
+              , url: '/cookie-policy/'
+              , page_url: page.url %}
           </li>
           <li>
-            <a
-              href="/privacy-policy/"
-              {% if page.url == "/privacy-policy/" %}
-              aria-current="page"
-              {% endif %}>Privacy Policy</a>
+            {% render 'a-menu'
+              , title: 'Privacy Policy'
+              , url: '/privacy-policy/'
+              , page_url: page.url %}
           </li>
         </menu>
       </section>

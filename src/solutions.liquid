@@ -12,25 +12,5 @@ solutions-now: true
 <div class="dots"></div>
 
 <ul>
-  {%- for solution in collections.solutions -%}
-    <li>
-      <svg
-        width="160"
-        height="160"
-        viewBox="0 0 128 128"
-        aria-label="{{ solution.data.title }} - Logo">
-        <use href="/img/icons/shadow.svg#{{ solution.data.svg }}" />
-      </svg>
-      <h3>
-        {% if solution.data.title-strong %}
-          <strong>{{ solution.data.title-strong }}</strong>
-          -
-        {% endif %}
-        {{ solution.data.title-description }}</h3>
-      <p>{{ solution.data.description }}</p>
-      <a href="{{ solution.url }}" class="button pill blue">Learn more
-        <i class="arrow"></i>
-      </a>
-    </li>
-  {%- endfor -%}
+  {% render 'item-listing' for collections.solutions as item %}
 </ul>

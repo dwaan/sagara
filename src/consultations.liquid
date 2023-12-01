@@ -11,25 +11,5 @@ title: Consultations
 <div class="dots"></div>
 
 <ul>
-  {%- for consultation in collections.consultations -%}
-    <li>
-      <svg
-        width="160"
-        height="160"
-        viewBox="0 0 128 128"
-        aria-label="{{ consultation.data.title }} - Logo">
-        <use href="/img/icons/shadow.svg#{{ consultation.data.svg }}" />
-      </svg>
-      <h3>
-        {% if consultation.data.title-strong %}
-          <strong>{{ consultation.data.title-strong }}</strong>
-          -
-        {% endif %}
-        {{ consultation.data.title-description }}</h3>
-      <p>{{ consultation.data.description }}</p>
-      <a href="{{ consultation.url }}" class="button pill blue">Learn more
-        <i class="arrow"></i>
-      </a>
-    </li>
-  {%- endfor -%}
+  {% render 'item-listing' for collections.consultations as item %}
 </ul>

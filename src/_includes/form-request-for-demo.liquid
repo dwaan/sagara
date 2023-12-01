@@ -1,0 +1,29 @@
+<section class="blue request-demo" id="request-demo">
+  <article>
+    <div>
+      <div class="text">
+        <h3>Request for Demo</h3>
+        {% if form-message %}
+          <p>{{ form-message }}</p>
+        {% else %}
+          {% if form-consultation %}
+            <p>To schedule for a conversation with our experts in
+              <strong>{{ title }}</strong>
+              Consultations, please share your email, and we'll contact you back.</p>
+          {% else %}
+            <p>To ask for quotation or schedule for a conversation with our
+              <strong>{{ title-strong }}</strong>
+              experts, please share your email, and we'll contact you back.</p>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <form action="{{ page.url }}">
+        <input type="email" placeholder="Type your email" />
+        <a class="button cta small">
+          <button type="submit">Send</button>
+        </a>
+      </form>
+    </div>
+  </article>
+</section>

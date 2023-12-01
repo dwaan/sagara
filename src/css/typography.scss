@@ -145,11 +145,15 @@ h5 {
 .p {
     @include children-tags;
 
-    font-size: 1.125rem;
-    line-height: 160%;
-
     strong {
         font-weight: 500;
+    }
+
+    &,
+    &--regular,
+    &.regular {
+        font-size: 1.125rem;
+        line-height: 160%;
     }
 
     &--small,

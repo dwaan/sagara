@@ -20,24 +20,4 @@ solutions-now: true
 
 {{ content }}
 
-<section class="blue request-demo" id="request-demo">
-  <article>
-    <div>
-      <div class="text">
-        <h3>Request for Demo</h3>
-        {% if demo-message %}
-          <p>{{ demo-message }}</p>
-        {% else %}
-          <p>To ask for quotation or schedule for a conversation with our {{ title-strong }} experts, please share your email, and we'll contact you back.</p>
-        {% endif %}
-      </div>
-
-      <form action="{{ page.url }}">
-        <input type="email" placeholder="Type your email" />
-        <a class="button cta small">
-          <button type="submit">Send</button>
-        </a>
-      </form>
-    </div>
-  </article>
-</section>
+{% render'form-request-for-demo' %}
