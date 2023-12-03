@@ -5,9 +5,10 @@
   "main": "src/index.liquid",
   "type": "module",
   "scripts": {
-    "webp": "gulp webp",
     "test": "gulp dev",
-    "build": "gulp prod"
+    "webp": "gulp dev:webp",
+    "build": "gulp prod",
+    "serve": "gulp prod:serve"
   },
   "author": "Dwan",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",

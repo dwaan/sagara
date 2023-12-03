@@ -25,51 +25,18 @@ class: static
   <div class="dots"></div>
   <div class="selection center-static">
     <ol class="flat">
-      <li>
-        <div class="img">
-          <svg
-            width="320"
-            height="160"
-            viewBox="0 0 256 128"
-            aria-label="Itik Logo">
-            <use href="/img/icons/wide.svg#trusted" />
-          </svg>
-        </div>
-        <div class="text">
-          <h3 class="small">Human Capital Growth</h3>
-          <p class="small">Prioritizing our people's growth and development while seamlessly integrating sustainability practices into our corporate ethos.</p>
-        </div>
-      </li>
-      <li>
-        <div class="img">
-          <svg
-            width="320"
-            height="160"
-            viewBox="0 0 256 128"
-            aria-label="Itik Logo">
-            <use href="/img/icons/wide.svg#reusable" />
-          </svg>
-        </div>
-        <div class="text">
-          <h3 class="small">Core Values in System Development</h3>
-          <p class="small">Designing and developing systems with a foundation in sustainability, accessibility, and privacy to meet current needs and contribute to a sustainable and inclusive future.</p>
-        </div>
-      </li>
-      <li>
-        <div class="img">
-          <svg
-            width="320"
-            height="160"
-            viewBox="0 0 256 128"
-            aria-label="Itik Logo">
-            <use href="/img/icons/wide.svg#support" />
-          </svg>
-        </div>
-        <div class="text">
-          <h3 class="small">Collaborative Partnerships</h3>
-          <p class="small">Forging partnerships that prioritize responsible growth and sustainability, ensuring every step forward benefits both our organization and the world around us.</p>
-        </div>
-      </li>
+      {% selection "320x160" "256x128" "wide" "trusted" "Human Capital Growth icon" %}
+        <h3>Human Capital Growth</h3>
+        <p>Prioritizing our people's growth and development while seamlessly integrating sustainability practices into our corporate ethos.</p>
+      {% endselection %}
+      {% selection "320x160" "256x128" "wide" "reusable" "Core Values in System Development icon" %}
+        <h3>Core Values in System Development</h3>
+        <p>Designing and developing systems with a foundation in sustainability, accessibility, and privacy to meet current needs and contribute to a sustainable and inclusive future.</p>
+      {% endselection %}
+      {% selection "320x160" "256x128" "wide" "support" "Collaborative Partnerships icon" %}
+        <h3>Collaborative Partnerships</h3>
+        <p>Forging partnerships that prioritize responsible growth and sustainability, ensuring every step forward benefits both our organization and the world around us.</p>
+      {% endselection %}
     </ol>
   </div>
 </section>

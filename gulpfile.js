@@ -10,12 +10,20 @@ import autoprefixer from 'gulp-autoprefixer';
 import svgstore from 'gulp-svgstore';
 import replace from 'gulp-replace';
 import browserSyncModule from 'browser-sync';
+import livereload from 'gulp-livereload';
 import eleventy from '@11ty/eleventy';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import fs from 'fs';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const browserSync = browserSyncModule.create();
 const sass = gulpSass(dartSass);
+const src = 'src/';
 const sites = 'sites/';
 const img = sites + 'img/';
+const elev = new eleventy();
 const svgminoption = {
 	multipass: true,
 	js2svg: {
@@ -25,35 +33,35 @@ const svgminoption = {
 };
 const paths = {
 	svgsmall: {
-		src: 'src/img/icons/small/*.svg',
+		src: src + 'img/icons/small/*.svg',
 		dest: img + 'icons/'
 	},
 	svgplain: {
-		src: 'src/img/icons/plain/*.svg',
+		src: src + 'img/icons/plain/*.svg',
 		dest: img + 'icons/'
 	},
 	svgmedium: {
-		src: 'src/img/icons/medium/*.svg',
+		src: src + 'img/icons/medium/*.svg',
 		dest: img + 'icons/'
 	},
 	svgshadow: {
-		src: 'src/img/icons/shadow/*.svg',
+		src: src + 'img/icons/shadow/*.svg',
 		dest: img + 'icons/'
 	},
 	svgwide: {
-		src: 'src/img/icons/wide/*.svg',
+		src: src + 'img/icons/wide/*.svg',
 		dest: img + 'icons/'
 	},
 	staticsvg: {
-		src: 'src/img/*.svg',
+		src: src + 'img/*.svg',
 		dest: img
 	},
 	image: {
-		src: 'src/img/**/*.{png,jpg,jpeg,gif}',
+		src: src + 'img/**/*.{png,jpg,jpeg,gif}',
 		dest: img
 	},
 	scss: {
-		src: ['node_modules/normalize.css/normalize.css', 'src/css/**/*.scss'],
+		src: ['node_modules/normalize.css/normalize.css', src + 'css/**/*.scss'],
 		dest: 'cache/css/'
 	},
 	css: {
@@ -61,7 +69,7 @@ const paths = {
 		dest: sites + 'css/'
 	},
 	js: {
-		src: 'src/js/main.js',
+		src: src + 'js/main.js',
 		dest: sites + 'js/'
 	},
 	html: {
@@ -72,7 +80,7 @@ const paths = {
 		dest: sites + "fonts"
 	},
 	meta: {
-		src: 'src/meta/*',
+		src: src + 'meta/*',
 		dest: sites
 	}
 };
@@ -89,17 +97,18 @@ function js_prod() {
 		.pipe(gulp.dest(paths.js.dest));
 }
 function js_dev() {
-	return gulp.src(paths.js.src, { allowEmpty: true })
+	return gulp.src(['cache/js/reload.js', paths.js.src], { allowEmpty: true })
 		.pipe(webpack({
 			devtool: 'source-map',
-			mode: 'production',
+			mode: 'development',
 			output: {
 				filename: 'bundle.js',
 				clean: true
 			}
 		}))
 		.pipe(gulp.dest(paths.js.dest))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
+		.pipe(livereload());
 }
 
 function scss_prod() {
@@ -128,14 +137,14 @@ function css_prefix_dev() {
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.css.dest))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
+		.pipe(livereload());
 }
 
 function image() {
 	return gulp.src(paths.image.src, { since: gulp.lastRun(image) })
 		.pipe(webp())
-		.pipe(gulp.dest(paths.image.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.image.dest));
 }
 
 function svgsmall() {
@@ -145,8 +154,7 @@ function svgsmall() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgsmall.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgsmall.dest));
 }
 function svgplain() {
 	return gulp.src(paths.svgplain.src)
@@ -156,8 +164,7 @@ function svgplain() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgplain.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgplain.dest));
 }
 function svgmedium() {
 	return gulp.src(paths.svgmedium.src)
@@ -167,8 +174,7 @@ function svgmedium() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgmedium.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgmedium.dest));
 }
 function svgshadow() {
 	return gulp.src(paths.svgshadow.src)
@@ -179,8 +185,7 @@ function svgshadow() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgshadow.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgshadow.dest));
 }
 function svgwide() {
 	return gulp.src(paths.svgwide.src)
@@ -190,24 +195,20 @@ function svgwide() {
 		.pipe(svgmin(svgminoption))
 		.pipe(svgstore())
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
-		.pipe(gulp.dest(paths.svgwide.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.svgwide.dest));
 }
 
 function copy_svg() {
 	return gulp.src(paths.staticsvg.src, { since: gulp.lastRun(copy_svg) })
-		.pipe(gulp.dest(paths.staticsvg.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.staticsvg.dest));
 }
 function copy_font() {
 	return gulp.src(paths.font.src, { since: gulp.lastRun(copy_font) })
-		.pipe(gulp.dest(paths.font.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.font.dest));
 }
 function copy_meta() {
 	return gulp.src(paths.meta.src, { since: gulp.lastRun(copy_meta) })
-		.pipe(gulp.dest(paths.meta.dest))
-		.pipe(browserSync.stream());
+		.pipe(gulp.dest(paths.meta.dest));
 }
 
 function html() {
@@ -215,35 +216,46 @@ function html() {
 		.pipe(browserSync.stream());
 }
 
-async function eleventy_dev() {
+function css_livereload() {
+	const _path = path.join(__dirname, 'cache/js');
+	const _file = path.join(_path, 'reload.js');
+	const livereloadServerUrl = 'http://localhost:35729';
+	const scriptContent = `document.write('<script src="${livereloadServerUrl}/livereload.js"></script>');`;
+	if (!fs.existsSync(_path)) {
+		fs.mkdirSync(_path, { recursive: true });
+	}
+	fs.writeFileSync(_file, scriptContent, 'utf-8');
+}
+async function eleventy_dev(server = true) {
 	try {
-		const port = 8080;
-		const elev = new eleventy();
-		await elev.watch();
-		await elev.serve(port);
+		if (server) {
+			const port = 8080;
+			await elev.watch();
+			await elev.serve(port);
 
-		// Proxy eleventy server
-		browserSync.init({
-			open: false,
-			stream: true,
-			proxy: 'http://localhost:' + port
-		});
+			// Proxy eleventy server
+			browserSync.init({
+				open: false,
+				stream: true,
+				proxy: 'http://localhost:' + port
+			});
+
+			// Create livereload script for CSS
+			css_livereload();
+			livereload.listen();
+		} else {
+			await elev.write();
+		}
 	} catch (error) {
 		console.error('Error starting Eleventy server:', error);
 		process.exit(1);
 	}
 }
 async function eleventy_prod() {
-	try {
-		const elev = new eleventy();
-		await elev.write();
-	} catch (error) {
-		console.error('Error starting running Eleventy:', error);
-		process.exit(1);
-	}
+	await eleventy_dev(false);
 }
 
-function development(cb) {
+function development() {
 	eleventy_dev();
 
 	gulp.watch(paths.image.src, { events: 'all', ignoreInitial: false }, image);
@@ -259,25 +271,27 @@ function development(cb) {
 	gulp.watch(paths.css.src, { events: 'all', ignoreInitial: false }, css_prefix_dev);
 	gulp.watch(paths.js.src, { events: 'all', ignoreInitial: false }, js_dev);
 	gulp.watch(paths.html.src, { events: 'all', ignoreInitial: false }, html);
-
-	cb();
+}
+function production() {
+	return gulp.parallel(
+		image, gulp.series(
+			copy_font,
+			copy_meta,
+			svgsmall,
+			svgmedium,
+			svgplain,
+			svgshadow,
+			svgwide,
+			copy_svg,
+			scss_prod,
+			css_prefix_prod,
+			js_prod
+		)
+	);
 }
 
-gulp.task('webp', gulp.series(image));
-gulp.task('dev', gulp.parallel(development));
-gulp.task('prod', gulp.series(
-	copy_font,
-	copy_meta,
-	svgsmall,
-	svgmedium,
-	svgplain,
-	svgshadow,
-	svgwide,
-	copy_svg,
-	image,
-	scss_prod,
-	css_prefix_prod,
-	js_prod,
-	eleventy_prod
-));
+gulp.task('dev', gulp.series(development));
+gulp.task('dev:webp', gulp.series(image));
+gulp.task('prod', gulp.parallel(production(), eleventy_prod));
+gulp.task('prod:serve', gulp.series(production(), eleventy_dev));
 gulp.task('default', gulp.series('dev'));

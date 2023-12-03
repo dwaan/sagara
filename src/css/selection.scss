@@ -113,6 +113,8 @@
 }
 
 .selection--static {
+    @extend .flex-row-center;
+
     li {
         @extend .vertical;
 

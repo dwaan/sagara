@@ -7,4 +7,5 @@ To run project:
 3. Run 'npm test' to build and test website.
 4. or, Run 'npm run webp' to run image conversion.
 5. or, Run 'npm run build' to build website so it's ready to upload.
-6. Open browser and navigate to <http://localhost:8080>
+6. or, Run 'npm run serve' to build website and test it.
+7. Open browser and navigate to <http://localhost:8080>

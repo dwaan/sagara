@@ -9,7 +9,6 @@
 @use 'footer';
 @use 'nojs';
 
-
 //
 //! Default stlyes
 //
@@ -819,6 +818,14 @@ section.slider {
             width: var(--size-ss);
             height: auto;
             aspect-ratio: var(--aspect-ratio-ss);
+        }
+    }
+}
+
+section.points {
+    .text {
+        p {
+            @extend .p--hero;
         }
     }
 }
