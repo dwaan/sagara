@@ -233,8 +233,7 @@ function html() {
 function css_livereload() {
 	const _path = path.join(__dirname, 'cache/js');
 	const _file = path.join(_path, 'reload.js');
-	const livereloadServerUrl = 'http://localhost:35729';
-	const scriptContent = `document.write('<script src="${livereloadServerUrl}/livereload.js"></script>');`;
+	const scriptContent = `document.write('<script src="http://' + window.location.hostname + ':35729/livereload.js"></script>');`;
 	if (!fs.existsSync(_path)) {
 		fs.mkdirSync(_path, { recursive: true });
 	}

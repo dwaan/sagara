@@ -325,11 +325,6 @@ section.blue {
             gap: var(--pad-m);
             justify-content: space-between;
 
-            @media screen and (max-width: variables.$screen-wide) {
-                flex-direction: column;
-                gap: var(--gap-m);
-            }
-
             object {
                 pointer-events: none;
                 flex: none;
@@ -433,14 +428,14 @@ section.blue {
         align-self: center;
 
         padding: calc(var(--pad-t) * 2/3) var(--pad-t) calc(var(--pad-t) * 2/3) var(--pad-2t);
-        max-width: 24rem;
+        max-width: 2rem;
 
         background: var(--white-static);
         border-radius: var(--round);
 
         transition: all var(--fast) var(--ease-back);
 
-        @media screen and (max-width: variables.$screen-wide) {
+        @media screen and (max-width: variables.$screen-normal) {
             margin-left: -.5rem;
             max-width: none;
         }
