@@ -25,7 +25,7 @@
 		.img {
 			@extend .flex-column-center;
 
-			--svg-stroke: var(--white-normal);
+			--svg-stroke: var(--white-static);
 
 			align-self: stretch;
 			justify-self: stretch;

@@ -52,178 +52,184 @@ class: home
   <div class="content">
     <article id="products" class="selection default">
       <h2 hidden>Products</h2>
-      <ol class="flat scroll">
-        <li class="plain">
-          <i class="arrow"></i>
-        </li>
-        {%- for product in collections.products -%}
-          <li>
-            <a href="{{ product.url }}">
-              <svg
-                width="128"
-                height="128"
-                viewBox="0 0 128 128"
-                aria-label="{{ product.data.title }} - Logo">
-                <use href="/img/icons/shadow.svg#{{ product.data.svg }}" />
-              </svg>
-            </a>
-            <div class="text">
-              {% if product.data.title-strong %}
-                <h3>
-                  <a href="{{ product.url }}">{{ product.data.title-strong }}</a>
-                </h3>
-              {% endif %}
-              <p>
-                <a href="{{ product.url }}">{{ product.data.title-description }}</a>
-              </p>
-            </div>
+      <div class="scroll">
+        <ol class="flat">
+          <li class="plain">
+            <i class="arrow"></i>
           </li>
-        {%- endfor -%}
-      </ol>
+          {%- for product in collections.products -%}
+            <li>
+              <a href="{{ product.url }}">
+                <svg
+                  width="128"
+                  height="128"
+                  viewBox="0 0 128 128"
+                  aria-label="{{ product.data.title }} - Logo">
+                  <use href="/img/icons/shadow.svg#{{ product.data.svg }}" />
+                </svg>
+              </a>
+              <div class="text">
+                {% if product.data.title-strong %}
+                  <h3>
+                    <a href="{{ product.url }}">{{ product.data.title-strong }}</a>
+                  </h3>
+                {% endif %}
+                <p>
+                  <a href="{{ product.url }}">{{ product.data.title-description }}</a>
+                </p>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ol>
+      </div>
     </article>
 
     <article id="solutions" class="selection default">
       <h2 hidden>Solutions</h2>
-      <ol class="flat scroll">
-        <li class="plain">
-          <i class="arrow"></i>
-        </li>
-        {%- for solution in collections.solutions -%}
-          <li>
-            <a href="{{ solution.url }}">
-              <svg
-                width="128"
-                height="128"
-                viewBox="0 0 128 128"
-                aria-label="{{ solution.data.title }} - Logo">
-                <use href="/img/icons/shadow.svg#{{ solution.data.svg }}" />
-              </svg>
-            </a>
-            <div class="text">
-              {% if solution.data.title-strong %}
-                <h3>
-                  <a href="{{ solution.url }}">{{ solution.data.title-strong }}</a>
-                </h3>
-              {% endif %}
-              <p>
-                <a href="{{ solution.url }}">{{ solution.data.title-description }}</a>
-              </p>
-            </div>
+      <div class="scroll">
+        <ol class="flat">
+          <li class="plain">
+            <i class="arrow"></i>
           </li>
-        {%- endfor -%}
-      </ol>
+          {%- for solution in collections.solutions -%}
+            <li>
+              <a href="{{ solution.url }}">
+                <svg
+                  width="128"
+                  height="128"
+                  viewBox="0 0 128 128"
+                  aria-label="{{ solution.data.title }} - Logo">
+                  <use href="/img/icons/shadow.svg#{{ solution.data.svg }}" />
+                </svg>
+              </a>
+              <div class="text">
+                {% if solution.data.title-strong %}
+                  <h3>
+                    <a href="{{ solution.url }}">{{ solution.data.title-strong }}</a>
+                  </h3>
+                {% endif %}
+                <p>
+                  <a href="{{ solution.url }}">{{ solution.data.title-description }}</a>
+                </p>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ol>
+      </div>
     </article>
 
     <article id="consultations" class="selection default">
       <h2 hidden>Consultations</h2>
-      <ol class="flat scroll">
-        <li class="plain">
-          <i class="arrow"></i>
-        </li>
-        <li>
-          <a href="/mobile-apps-development">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="Mobile Apps Development Logo"
-              class="icon">
-              <use href="/img/icons/shadow.svg#mobile" />
-            </svg>
-          </a>
-          <p>
-            <a href="/mobile-apps-development">Mobile Apps Development</a>
-          </p>
-        </li>
-        <li>
-          <a href="/web-based-development">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="Web-Based Development Logo"
-              class="icon">
-              <use href="/img/icons/shadow.svg#custom-development" />
-            </svg>
-          </a>
-          <p>
-            <a href="/web-based-development">Web-Based Development</a>
-          </p>
-        </li>
-        <li>
-          <a href="/web-and-interface-redesign">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="Web and Interface Redesign Logo"
-              class="icon">
-              <use href="/img/icons/shadow.svg#website" />
-            </svg>
-          </a>
-          <p>
-            <a href="/web-and-interface-redesign">Web and Interface Redesign</a>
-          </p>
-        </li>
-        <li>
-          <a href="/redesign">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="User Experience Redesign Logo"
-              class="icon">
-              <use href="/img/icons/shadow.svg#redesign" />
-            </svg>
-          </a>
-          <p>
-            <a href="/redesign">User Experience Redesign</a>
-          </p>
-        </li>
-        <li>
-          <a href="/mobile">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="Accessibility Implementation Logo">
-              <use href="/img/icons/shadow.svg#accessibility" />
-            </svg>
-          </a>
-          <p>
-            <a href="/mobile">Accessibility Implementation</a>
-          </p>
-        </li>
-        <li>
-          <a href="/sustainable-emission-practices">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="Sustainable Emission Practices Logo">
-              <use href="/img/icons/shadow.svg#emission-reduction" />
-            </svg>
-          </a>
-          <p>
-            <a href="/sustainable-emission-practices">Sustainable Emission Practices</a>
-          </p>
-        </li>
-        <li>
-          <a href="/businness-bootstrapping">
-            <svg
-              width="128"
-              height="128"
-              viewBox="0 0 128 128"
-              aria-label="Business Bootstrapping Logo"
-              class="icon">
-              <use href="/img/icons/shadow.svg#bootstrap" />
-            </svg>
-          </a>
-          <p>
-            <a href="/businness-bootstrapping">Business Bootstrapping</a>
-          </p>
-        </li>
-      </ol>
+      <div class="scroll">
+        <ol class="flat">
+          <li class="plain">
+            <i class="arrow"></i>
+          </li>
+          <li>
+            <a href="/mobile-apps-development">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="Mobile Apps Development Logo"
+                class="icon">
+                <use href="/img/icons/shadow.svg#mobile" />
+              </svg>
+            </a>
+            <p>
+              <a href="/mobile-apps-development">Mobile Apps Development</a>
+            </p>
+          </li>
+          <li>
+            <a href="/web-based-development">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="Web-Based Development Logo"
+                class="icon">
+                <use href="/img/icons/shadow.svg#custom-development" />
+              </svg>
+            </a>
+            <p>
+              <a href="/web-based-development">Web-Based Development</a>
+            </p>
+          </li>
+          <li>
+            <a href="/web-and-interface-redesign">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="Web and Interface Redesign Logo"
+                class="icon">
+                <use href="/img/icons/shadow.svg#website" />
+              </svg>
+            </a>
+            <p>
+              <a href="/web-and-interface-redesign">Web and Interface Redesign</a>
+            </p>
+          </li>
+          <li>
+            <a href="/redesign">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="User Experience Redesign Logo"
+                class="icon">
+                <use href="/img/icons/shadow.svg#redesign" />
+              </svg>
+            </a>
+            <p>
+              <a href="/redesign">User Experience Redesign</a>
+            </p>
+          </li>
+          <li>
+            <a href="/mobile">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="Accessibility Implementation Logo">
+                <use href="/img/icons/shadow.svg#accessibility" />
+              </svg>
+            </a>
+            <p>
+              <a href="/mobile">Accessibility Implementation</a>
+            </p>
+          </li>
+          <li>
+            <a href="/sustainable-emission-practices">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="Sustainable Emission Practices Logo">
+                <use href="/img/icons/shadow.svg#emission-reduction" />
+              </svg>
+            </a>
+            <p>
+              <a href="/sustainable-emission-practices">Sustainable Emission Practices</a>
+            </p>
+          </li>
+          <li>
+            <a href="/businness-bootstrapping">
+              <svg
+                width="128"
+                height="128"
+                viewBox="0 0 128 128"
+                aria-label="Business Bootstrapping Logo"
+                class="icon">
+                <use href="/img/icons/shadow.svg#bootstrap" />
+              </svg>
+            </a>
+            <p>
+              <a href="/businness-bootstrapping">Business Bootstrapping</a>
+            </p>
+          </li>
+        </ol>
+      </div>
     </article>
   </div>
 </section>

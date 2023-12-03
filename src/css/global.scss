@@ -219,6 +219,7 @@ main {
     @extend .flex-column;
     @extend .no-padding-margin;
 
+    overflow: hidden;
     gap: var(--gap-l);
 }
 
@@ -673,9 +674,12 @@ section.slider {
         @extend .p--hero;
     }
 
+    article {
+        margin-top: 0;
+    }
+
     .scroll {
-        margin: calc(var(--pad-2t) * -1) calc(var(--pad-m) * -1) calc(var(--pad-l) * -1);
-        overflow: hidden;
+        margin: -10rem calc(var(--pad-m) * -1);
 
         ul {
             @extend .flex-row;
@@ -683,15 +687,8 @@ section.slider {
             flex-wrap: nowrap;
             gap: var(--gap-l);
 
-            margin: 0 0 calc(var(--pad-2t) * -1);
-            padding: var(--pad-2t) calc((100% - var(--size-ss)) / 2) calc(var(--pad-l) + var(--pad-2t));
-            overflow-y: hidden;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-
-            >li {
-                scroll-snap-align: center;
-            }
+            margin-bottom: calc(8rem * -1);
+            padding: 10rem calc((100% - var(--size-ss)) / 2) calc(8rem + 10rem);
         }
 
         img {
@@ -699,6 +696,26 @@ section.slider {
             height: auto;
             aspect-ratio: var(--aspect-ratio-ss);
         }
+    }
+}
+
+section.tabs {
+
+    ul,
+    ol {
+        padding-left: var(--pad-l);
+        padding-right: var(--pad-l);
+    }
+
+    article {
+        margin: 0 calc(var(--pad-l) * -1);
+    }
+
+    >nav {
+        align-self: initial;
+        padding: 0;
+        width: 100%;
+        max-width: var(--max-medium);
     }
 }
 
@@ -722,6 +739,18 @@ section.points {
     }
 }
 
+section.image {
+    overflow: hidden;
+
+    p {
+        @extend .p--hero;
+    }
+
+    .img {
+        margin: 0 calc(var(--pad-l) * -1);
+    }
+}
+
 div {
     @extend .flex-column-center;
 }
@@ -740,9 +769,10 @@ noscript {
     @extend .flex-column;
     @extend .no-padding-margin;
 
-    align-self: center;
+    align-self: initial;
     gap: var(--gap-s);
 
+    width: 100%;
     max-width: var(--max-medium)
 }
 
@@ -827,11 +857,6 @@ noscript {
 //
 
 .tabs {
-    @extend .no-padding-margin;
-    padding: var(--pad-2s) 0;
-    margin-bottom: calc(var(--pad-s) * -1);
-    overflow: hidden;
-
     input[type="radio"] {
         display: none;
 
@@ -855,7 +880,7 @@ noscript {
                     position: relative;
                     z-index: 1;
                     width: initial;
-                    margin: calc(var(--pad-s) * -1) 0 0;
+                    // margin: calc(var(--pad-s) * -1) 0 0;
                     opacity: 1;
                     pointer-events: all;
 
@@ -872,32 +897,22 @@ noscript {
         position: absolute;
         top: 0;
         z-index: 0;
-        margin: calc(var(--pad-s) * -1) 0 0;
-        width: 100vw;
+
         opacity: 0;
-        overflow: hidden;
 
         pointer-events: none;
         transition: opacity var(--fast) ease-out;
 
-        .scroll {
-            margin: 0 0 calc(var(--pad-s) * -1);
-            padding: var(--pad-s) var(--pad-m) var(--pad-2s);
-            overflow-y: hidden;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
+        li {
+            opacity: 0;
+            pointer-events: all;
+            transform: translate(0, 2rem);
+            transition: transform var(--fast) var(--ease-back), opacity var(--fast) ease-out;
 
-            >li {
-                scroll-snap-align: center;
-                opacity: 0;
-                transform: translate(0, 2rem);
-                transition: transform var(--fast) var(--ease-back), opacity var(--fast) ease-out;
-
-                // Add more if tab content is more than 8
-                @for $i from 1 through 8 {
-                    &:nth-child(#{$i}) {
-                        transition-delay: #{$i*32}ms;
-                    }
+            // Add more if tab content is more than 8
+            @for $i from 1 through 8 {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{$i*32}ms;
                 }
             }
         }
@@ -913,6 +928,7 @@ noscript {
     }
 
     .content {
+        pointer-events: none;
         position: relative;
     }
 }
@@ -920,6 +936,7 @@ noscript {
 .tab {
     @extend .flex-row-center;
 
+    z-index: 2;
     gap: calc(var(--gap-m) / 2);
 
     li {
@@ -952,6 +969,31 @@ noscript {
                 }
             }
         }
+    }
+}
+
+
+//
+//* Scroll
+//
+
+.scroll {
+    overflow: hidden;
+    // Removing excess padding
+    margin: calc(var(--pad-s) * -1) 0;
+
+    ul,
+    ol {
+        // Cropping scroll bar
+        margin: 0 0 calc(8rem * -1);
+        padding: var(--pad-s) 0 calc(var(--pad-s) + 8rem);
+        overflow-y: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    li {
+        scroll-snap-align: center;
     }
 }
 
@@ -1006,7 +1048,7 @@ noscript {
         width: var(--pad-2s);
     }
 
-    .hero {
+    section.hero {
         padding-top: var(--pad-m);
 
         h1 {
@@ -1024,6 +1066,14 @@ noscript {
             >* {
                 text-align: left;
             }
+        }
+    }
+
+    section.tabs {
+        nav {
+            align-self: flex-start;
+            padding-left: var(--pad-l);
+            max-width: none;
         }
     }
 }
