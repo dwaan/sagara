@@ -136,6 +136,21 @@
     }
 }
 
+.selection--partners {
+    li {
+        @extend .flex-column-start;
+
+        gap: var(--gap-2t);
+        max-width: 15.625rem;
+    }
+
+    p {
+        @extend .p--small;
+
+        text-align: center;
+    }
+}
+
 //
 //  Listing styles
 //
@@ -171,7 +186,8 @@
         @extend .selection--default;
     }
 
-    &.center-static {
+    &.center-static,
+    &.commitment {
         @extend .selection--static;
 
         ul,
@@ -183,5 +199,17 @@
     &.cta,
     &.jurney {
         @extend .selection--static;
+    }
+
+    &.partners {
+        @extend .selection--partners;
+    }
+
+    &.commitment {
+        .img {
+            svg {
+                width: 100%;
+            }
+        }
     }
 }

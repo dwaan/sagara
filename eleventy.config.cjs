@@ -9,10 +9,29 @@ module.exports = function (eleventyConfig) {
 	});
 
 	//
-	//! Custom shortcodes to be use in templete, reload 11ty after editing
+	//! Shortcodes
 	//
 	eleventyConfig.addShortcode("svg", function (icon, size, view, alt) {
-		return `<svg width="${size}" height="${size}" viewBox="0 0 ${view} ${view}" aria-label="${alt}"> <use href="/img/icons/${icon}}" /></svg>`;
+		size = size.toString().toLowerCase();
+		view = view.toString().toLowerCase();
+
+		let width = size;
+		let height = size;
+		let viewWidth = view;
+		let viewHeight = view;
+
+		if (size.includes('x')) {
+			size = size.split('x');
+			width = size[0];
+			height = size[1];
+		}
+		if (view.includes('x')) {
+			view = view.split('x');
+			viewWidth = view[0];
+			viewHeight = view[1];
+		}
+
+		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"> <use href="/img/icons/${icon}" /></svg>`;
 	});
 	eleventyConfig.addShortcode("a_menu", function (title, url, page_url) {
 		return `<a href="${url}"` + (page_url == url ? ` aria-current="page"` : ``) + `>${title}</a>`;
@@ -23,6 +42,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode("aria_current_page", function (url, page_url, now) {
 		return page_url == url || now ? ` aria-current="page"` : ``;
 	});
+
+	//
+	//! Paired shortcodes
+	//
 	eleventyConfig.addPairedShortcode("selection", function (content, size, view, icon, symbol, alt) {
 		size = size.toString().toLowerCase();
 		view = view.toString().toLowerCase();
@@ -54,6 +77,21 @@ module.exports = function (eleventyConfig) {
 					${content}
 				</div>
 			</li>`;
+	});
+	eleventyConfig.addPairedShortcode("h2", function (content, svg, alt) {
+		let icon = `
+		<div class="icon">
+			<svg width="112" height="112" viewBox="0 0 128 128" aria-label="${alt}">
+				<use href="/img/icons/plain.svg#${svg}" />
+			</svg>
+		</div>`;
+		if (svg.toLowerCase() == 'none') icon = ``;
+
+		return `
+			<div class="text">
+				${icon}
+				${content}
+			</div>`;
 	});
 
 	return {

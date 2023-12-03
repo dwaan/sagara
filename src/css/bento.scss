@@ -1,0 +1,245 @@
+@use 'variables';
+@use 'typography';
+@use 'after-before';
+@use 'flex';
+
+//
+//! Bento style
+//
+
+.bento {
+	@extend .flex-row-center;
+	@extend .no-padding-margin;
+
+	gap: var(--gap-l);
+	flex-wrap: wrap;
+
+	.box {
+		color: var(--white-static);
+		background: var(--neon-blue);
+		border: 1px solid transparent;
+		border-radius: var(--round-m);
+		overflow: hidden;
+		height: 26.25rem;
+
+		.img {
+			@extend .flex-column-center;
+
+			--svg-stroke: var(--white-normal);
+
+			align-self: stretch;
+			justify-self: stretch;
+			padding: var(--pad-s);
+
+			// image position
+
+			&.top {
+				justify-content: flex-start;
+			}
+
+			&.right {
+				align-items: flex-end;
+			}
+
+			&.bottom {
+				justify-content: flex-end;
+			}
+
+			&.left {
+				align-items: flex-start;
+			}
+		}
+
+		.text {
+			@extend .flex-column;
+
+			gap: var(--gap-2t);
+
+			h3 {
+				@extend .h3--small;
+				align-self: stretch;
+			}
+
+			p {
+				@extend .p;
+				align-self: stretch;
+			}
+		}
+
+		// Size
+
+		--size: calc((100% - (var(--gap-l) * 2)) / 3);
+
+		&.small {
+			width: var(--size);
+
+			.text {
+				padding: var(--pad-s) var(--pad-2t);
+				gap: calc(var(--gap-t) / 2);
+			}
+		}
+
+		&.medium {
+			width: calc((var(--size) * 1.5) + (var(--gap-l) / 2));
+
+			.text {
+				padding: var(--pad-s) var(--pad-2t);
+			}
+		}
+
+		&.big {
+			width: calc((var(--size) * 2) + var(--gap-l));
+			align-self: stretch;
+
+			.text {
+				padding: var(--pad-2t) var(--pad-2s);
+			}
+		}
+
+		// Style
+
+		&.v-text-r {
+			flex-flow: row;
+
+			.img,
+			.text {
+				order: 1;
+				width: 50%;
+			}
+
+			.img {
+				align-items: flex-end;
+			}
+
+			.text {
+				@extend .flex-column-center;
+
+				order: 2;
+			}
+		}
+
+		&.v-text-l {
+			flex-flow: row;
+			justify-content: flex-start;
+
+			.img,
+			.text {
+				order: 2;
+			}
+
+			.img {
+				align-items: flex-start;
+			}
+
+			.text {
+				@extend .flex-column-center;
+
+				flex: none;
+				width: 22.5rem;
+				order: 1;
+			}
+		}
+
+		&.h-text-t {
+			justify-content: flex-start;
+
+			.img {
+				order: 2;
+			}
+
+			.text {
+				padding-bottom: 0;
+				order: 1;
+			}
+
+			h3,
+			p {
+				text-align: center;
+			}
+		}
+
+		&.h-text-b {
+			justify-content: flex-end;
+
+			.img {
+				order: 1;
+				flex: auto;
+			}
+
+			.text {
+				padding-top: 0;
+				order: 2;
+			}
+
+			h3,
+			p {
+				text-align: center;
+			}
+		}
+
+
+		// Color
+
+		&.neon-blue {
+			background: var(--neon-blue);
+
+			.img {
+				--svg-fill: var(--neon-blue);
+			}
+		}
+
+		&.neon-green {
+			color: var(--dark-static);
+			background: var(--neon-green);
+
+			.img {
+				--svg-fill: var(--neon-green);
+			}
+		}
+
+		&.blue-dark {
+			background: var(--blue-dark);
+
+			.img {
+				--svg-fill: var(--blue-dark);
+			}
+		}
+
+		&.blue-deep {
+			background: var(--blue-deep);
+
+			.img {
+				--svg-fill: var(--blue-deep);
+			}
+		}
+
+		&.blue-normal {
+			background: var(--blue-normal);
+
+			.img {
+				--svg-fill: var(--blue-normal);
+			}
+		}
+
+		&.blue-cyan {
+			color: var(--white-normal);
+			background: var(--blue-cyan);
+
+			.img {
+				--svg-fill: var(--blue-cyan);
+			}
+		}
+	}
+
+	// Compensating drop shadow inside image
+
+	img {
+		margin: calc(var(--gap-t) * -1) calc(var(--gap-3t) * -1) calc(var(--gap-t) * -5)
+	}
+
+	.round-shadow {
+		img {
+			margin: 0;
+		}
+	}
+}

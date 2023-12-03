@@ -52,6 +52,10 @@ const paths = {
 		src: src + 'img/icons/wide/*.svg',
 		dest: img + 'icons/'
 	},
+	svglogo: {
+		src: src + 'img/icons/logos/*.svg',
+		dest: img + 'icons/'
+	},
 	staticsvg: {
 		src: src + 'img/*.svg',
 		dest: img
@@ -73,7 +77,8 @@ const paths = {
 		dest: sites + 'js/'
 	},
 	html: {
-		src: 'sites/**/*.html'
+		src: 'sites/**/*.html',
+		dest: sites
 	},
 	font: {
 		src: 'node_modules/@fontsource-variable/golos-text/files/golos-text-latin-*.woff2',
@@ -197,6 +202,13 @@ function svgwide() {
 		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
 		.pipe(gulp.dest(paths.svgwide.dest));
 }
+function svglogo() {
+	return gulp.src(paths.svglogo.src)
+		.pipe(svgmin(svgminoption))
+		.pipe(svgstore())
+		.pipe(replace('<symbol ', '<symbol fill="none" stroke="none" '))
+		.pipe(gulp.dest(paths.svglogo.dest));
+}
 
 function copy_svg() {
 	return gulp.src(paths.staticsvg.src, { since: gulp.lastRun(copy_svg) })
@@ -213,6 +225,8 @@ function copy_meta() {
 
 function html() {
 	return gulp.src(paths.html.src, { since: gulp.lastRun(html) })
+		.pipe(replace(' src="/sites/', ' src="/'))
+		.pipe(gulp.dest(paths.html.dest))
 		.pipe(browserSync.stream());
 }
 
@@ -266,6 +280,7 @@ function development() {
 	gulp.watch(paths.svgplain.src, { events: 'all', ignoreInitial: false }, svgplain);
 	gulp.watch(paths.svgshadow.src, { events: 'all', ignoreInitial: false }, svgshadow);
 	gulp.watch(paths.svgwide.src, { events: 'all', ignoreInitial: false }, svgwide);
+	gulp.watch(paths.svglogo.src, { events: 'all', ignoreInitial: false }, svglogo);
 	gulp.watch(paths.staticsvg.src, { events: 'all', ignoreInitial: false }, copy_svg);
 	gulp.watch(paths.scss.src, { events: 'all', ignoreInitial: false }, scss_dev);
 	gulp.watch(paths.css.src, { events: 'all', ignoreInitial: false }, css_prefix_dev);

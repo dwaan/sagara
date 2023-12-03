@@ -31,22 +31,13 @@ permalink: jadi/index.html
 </section>
 
 <section class="blocks">
-  <div class="text">
-    <div class="icon">
-      <svg
-        width="112"
-        height="112"
-        viewBox="0 0 128 128"
-        aria-label="{{ title }} - Logo">
-        <use href="/img/icons/plain.svg#{{ svg }}" />
-      </svg>
-    </div>
+  {% h2 svg title %}
     <h2>Embrace Efficiency, Transparency, and Accuracy</h2>
     <p>Join the ranks of various organizations relying on
       <strong>Jadi</strong>
       to publish their legal and research documents. With
       <strong>Jadi</strong>, your organization can seamlessly access, manage, and leverage a vast repository of legal documents, regulations, and government publications.</p>
-  </div>
+  {% endh2 %}
 
   <div class="dots"></div>
 
@@ -192,3 +183,31 @@ permalink: jadi/index.html
     </ul>
   </div>
 </section>
+
+<section class="points">
+  <div class="text">
+    <h2>Trusted By</h2>
+    <p>These organizations have partnered with Sagara to enhance their legal document system, delivering exceptional results.</p>
+  </div>
+
+  <div class="selection partners">
+    <div class="scroll">
+      <ol class="flat">
+        {% selection "202x150" "186x150" "logos" "bekraf" "Indonesian Agency for Creative Logo" %}
+          <p>Indonesian Agency for Creative Economy</p>
+        {% endselection %}
+        {% selection "202x150" "186x150" "logos" "bnpt" "National Counter Terrorism Agency of Indonesia Logo" %}
+          <p>National Counter Terrorism Agency of Indonesia</p>
+        {% endselection %}
+        {% selection "202x150" "186x150" "logos" "kemensos" "Ministry of Social Affairs of Indonesia Logo" %}
+          <p>Ministry of Social Affairs of Indonesia</p>
+        {% endselection %}
+        {% selection "202x150" "186x150" "logos" "kemenkumham" "National Legal Development Agency of Indonesia Logo" %}
+          <p>National Legal Development Agency of Indonesia</p>
+        {% endselection %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+{% render 'build-in' %}

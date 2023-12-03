@@ -1,5 +1,18 @@
+//
+// Screen size
+//
+
+$screen-wider: 1280px;
+$screen-wide: 1200px;
+$screen-normal: 1024px;
+
+
+//
+// CSS Variables
+//
+
 :root {
-    // Common variable, don't use, only for reference
+    //! Common variable, don't use, only for reference
     --size-4: .25rem;
     --size-8: .5rem;
     --size-12: .75rem;
@@ -43,7 +56,7 @@
 
     // Common size
     --size-one-third: 23.3333125rem;
-    --size-ss: 75rem; // calc(100vw * 1200/1440);
+    --size-ss: calc(100vw * 1200/1440);
     --aspect-ratio-ss: calc(1200 / 720);
 
     // Max size
@@ -65,7 +78,17 @@
 }
 
 
-/* Color collection */
+@media screen and (max-width: $screen-wider) {
+    :root {
+        --pad-m: var(--size-64);
+        --pad-l: var(--size-96);
+    }
+}
+
+
+//
+// Color collection
+//
 
 @media (prefers-color-scheme: light) {
     :root {
@@ -117,6 +140,7 @@
         --neon-green: #2FFF86;
     }
 }
+
 
 //
 // SVG color
