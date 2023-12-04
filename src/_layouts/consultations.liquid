@@ -10,14 +10,16 @@ consultations-now: true
     <div class="text">
       <h4>{{ tags }}</h4>
       <h1>{{ title }}</h1>
-      <p>Please change this template.</p>
+      <p>{{ description-hero }}</p>
     </div>
-    <a href="#request-demo" class="button cta">Request for Demo
+    <a href="#request-demo" class="button cta">Request for Quotation
       <i class="arrow"></i>
     </a>
   </article>
 </section>
 
 {{ content }}
+
+{% render 'build-in' %}
 
 {% render 'form-request-for-demo' form-consultation: true %}

@@ -240,6 +240,10 @@ section {
     }
 
     .text {
+        h1 {
+            margin-bottom: var(--gap-s);
+        }
+
         h2 {
             margin-bottom: var(--gap-3t);
         }
@@ -253,24 +257,6 @@ section {
 
             &:last-child {
                 margin-bottom: 0
-            }
-
-            a {
-                @extend .after-before;
-
-                white-space: nowrap;
-                color: var(--neon-blue);
-
-                &:hover {
-
-                    &::before {
-                        background: var(--gray-background);
-
-                        left: calc(var(--bttn-s) / -1);
-                        right: calc(var(--bttn-s) / -1);
-                    }
-
-                }
             }
         }
     }
@@ -314,6 +300,22 @@ section.hero {
 
         h4 {
             margin-bottom: calc(var(--gap-2t));
+        }
+    }
+
+    &.image-outside {
+        margin-top: calc(var(--gap-l) * -1);
+        padding: 0;
+
+        img {
+            aspect-ratio: initial;
+        }
+
+        &.no-shadow {
+            img {
+                border-radius: 0;
+                box-shadow: none;
+            }
         }
     }
 }
@@ -516,27 +518,36 @@ section.content {
         height: 30rem;
         overflow: hidden;
     }
-}
 
-article.history {
-    @extend .flex-row;
-    gap: var(--gap-m);
-    padding: 0 var(--pad-l);
+    article.history {
+        @extend .flex-row;
 
-    date {
-        @extend .flex-row-center;
-        gap: var(--gap-2t);
-        width: 15rem;
-        flex: none;
-        align-self: flex-start;
+        gap: var(--gap-m);
+        padding: 0 var(--pad-l);
+        max-width: initial;
 
-        .arrow {
-            flex: 1;
+        @media screen and (max-width: variables.$screen-wide) {
+            padding: 0 var(--pad-s);
         }
-    }
+        @media screen and (max-width: variables.$screen-normal) {
+            padding: 0;
+        }
 
-    div {
-        gap: var(--gap-2t);
+        date {
+            @extend .flex-row-center;
+            gap: var(--gap-2t);
+            width: 15rem;
+            flex: none;
+            align-self: flex-start;
+
+            .arrow {
+                flex: 1;
+            }
+        }
+
+        div {
+            gap: var(--gap-2t);
+        }
     }
 }
 
@@ -558,12 +569,32 @@ section.notfound {
     padding-bottom: var(--pad-l);
 }
 
+section.number {
+    article {
+        @extend .flex-row;
+
+        gap: var(--gap-l);
+        max-width: initial;
+
+        h2 {
+            flex: none;
+            width: var(--size-one-third);
+            color: var(--blue-deep);
+        }
+
+        ol {
+            @extend .fake-ol;
+        }
+    }
+}
+
 section.background {
     position: relative;
 
     .img {
-        z-index: 0;
         @extend .absolute;
+
+        z-index: 0;
         overflow: hidden;
     }
 
@@ -574,7 +605,7 @@ section.background {
         z-index: 1;
 
         border-radius: var(--round-m);
-        background: var(--gray-dynamic);
+        background: var(--white-transparent);
         backdrop-filter: blur(16px);
     }
 }
@@ -596,6 +627,7 @@ section.listing {
         li {
             gap: 0;
             padding: var(--pad-2s) var(--pad-2t);
+            flex: none;
             width: calc((100% - (var(--gap-l) * 2)) / 3);
 
             @for $i from 1 through 4 {
@@ -756,6 +788,19 @@ section.points {
         @extend .p--regular;
     }
 
+    .partners {
+        margin: 0 calc(var(--pad-l) * -1);
+
+        .scroll {
+
+            >ul,
+            >ol {
+                padding-left: var(--pad-l);
+                padding-right: var(--pad-l);
+            }
+        }
+    }
+
     &.commitment {
         --svg-fill: var(--dark-normal);
 
@@ -836,6 +881,8 @@ section.gray {
     }
 }
 
+
+
 div {
     @extend .flex-column-center;
 }
@@ -861,23 +908,6 @@ noscript {
     max-width: var(--max-medium)
 }
 
-.number {
-    article {
-        @extend .flex-row;
-
-        gap: var(--gap-l);
-
-        h2 {
-            flex: none;
-            width: var(--size-one-third);
-            color: var(--blue-deep);
-        }
-
-        ol {
-            @extend .fake-ol;
-        }
-    }
-}
 
 //
 //! Arrow insert
@@ -1163,6 +1193,16 @@ noscript {
             align-self: flex-start;
             padding-left: var(--pad-l);
             max-width: none;
+        }
+
+        .scroll {
+            margin-left: calc(var(--pad-m) * -1);
+            margin-right: calc(var(--pad-m) * -1);
+
+            ul,ol {
+                padding-left: var(--pad-m);
+                padding-right: var(--pad-m);
+            }
         }
     }
 }
