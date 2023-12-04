@@ -249,6 +249,12 @@ section {
         }
 
         p {
+            margin-bottom: var(--gap-2t);
+
+            &:last-child {
+                margin-bottom: 0
+            }
+
             a {
                 @extend .after-before;
 
@@ -812,6 +818,21 @@ section.icon {
         .cta {
             margin-top: var(--gap-s);
         }
+    }
+}
+
+section.gray {
+    background: var(--gray-background);
+
+    article {
+        @extend .flex-row;
+
+        align-self: center;
+        gap: var(--gap-l);
+    }
+
+    h2 {
+        @extend .h2--medium;
     }
 }
 

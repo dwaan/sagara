@@ -57,6 +57,7 @@
 
 			h3 {
 				@extend .h3--small;
+
 				align-self: stretch;
 			}
 
@@ -93,6 +94,10 @@
 
 			.text {
 				padding: var(--pad-2t) var(--pad-2s);
+
+				h3 {
+					@extend .h3;
+				}
 			}
 		}
 
