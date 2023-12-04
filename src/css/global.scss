@@ -247,6 +247,26 @@ section {
         .cta {
             margin-top: var(--gap-m);
         }
+
+        p {
+            a {
+                @extend .after-before;
+
+                white-space: nowrap;
+                color: var(--neon-blue);
+
+                &:hover {
+
+                    &::before {
+                        background: var(--gray-background);
+
+                        left: calc(var(--bttn-s) / -1);
+                        right: calc(var(--bttn-s) / -1);
+                    }
+
+                }
+            }
+        }
     }
 }
 

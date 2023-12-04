@@ -139,6 +139,7 @@
         padding: var(--bttn-2s) var(--bttn-l);
 
         gap: var(--gap-2t);
+        flex: 1 0 0;
 
         &::before {
             background-color: var(--gray-background);
@@ -158,6 +159,8 @@
     li {
         @extend .flex-column-start;
 
+        align-self: flex-start;
+        flex: 1 0 0;
         gap: var(--gap-2t);
         max-width: 15.625rem;
     }

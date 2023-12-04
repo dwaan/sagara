@@ -5,19 +5,28 @@ class: solutions
 solutions-now: true
 ---
 
-<section class="hero">
+<section class="hero image">
   <article>
     <div class="text">
       <h4>{{ tags }}</h4>
       <h1>{{ title }}</h1>
-      <p>Please change this template.</p>
+      <p>{{ description-hero }}</p>
     </div>
-    <a href="#request-demo" class="button cta">Request for Demo
+    <a href="#request-demo" class="button cta">Request for Quotation
       <i class="arrow"></i>
     </a>
   </article>
+  <div class="img">
+    <img
+      src="{{ img }}"
+      width="1440"
+      height=""
+      alt="{{ alt }}" />
+  </div>
 </section>
 
 {{ content }}
+
+{% render 'build-in' %}
 
 {% include 'form-request-for-demo' %}
