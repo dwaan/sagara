@@ -64,6 +64,15 @@
 			p {
 				@extend .p;
 				align-self: stretch;
+
+			}
+
+			&.left {
+
+				h3,
+				p {
+					text-align: left;
+				}
 			}
 		}
 
@@ -83,8 +92,13 @@
 		&.medium {
 			width: calc((var(--size) * 1.5) + (var(--gap-l) / 2));
 
+			.img,
 			.text {
 				padding: var(--pad-s) var(--pad-2t);
+			}
+
+			.text {
+				gap: var(--gap-t);
 			}
 		}
 
@@ -199,6 +213,7 @@
 
 			.img {
 				--svg-fill: var(--neon-green);
+				--svg-stroke: var(--dark-static);
 			}
 		}
 
