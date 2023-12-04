@@ -42,7 +42,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {% render 'item-menu' for collections.products as item %}
+              {% render 'item-menu' items: collections.products page_url: page.url %}
             </menu>
             {% a_arrow "See All Products" "/Products/" "button pill" %}
           </nav>
@@ -52,7 +52,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {% render 'item-menu' for collections.solutions as item %}
+              {% render 'item-menu' items: collections.solutions page_url: page.url %}
             </menu>
             {% a_arrow "See All Solutions" "/solutions/" "button pill" %}
           </nav>
@@ -62,7 +62,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {% render 'item-menu' for collections.consultations as item %}
+              {% render 'item-menu' items: collections.consultations page_url: page.url %}
             </menu>
             {% a_arrow "See All Consultations" "/consultations/" "button pill" %}
           </nav>
@@ -72,7 +72,7 @@ title: A Mission Driven Technology Company in Indonesia
 
           <nav class="popup">
             <menu class="submenu">
-              {% render 'item-menu' for collections.supports as item %}
+              {% render 'item-menu' items: collections.supports page_url: page.url %}
             </menu>
             {% a_arrow "See All Supports" "/supports/" "button pill" %}
           </nav>

@@ -1,4 +1,5 @@
-<li>
+{% for item in items %}
+<li{% if page_url == item.url %} aria-current="page"{% endif %}>
   {% if item.data.svg %}
     <a href="{{ item.url }}">
       <svg
@@ -22,3 +23,4 @@
     {% endif %}
   </a>
 </li>
+{% endfor %}

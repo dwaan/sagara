@@ -13,10 +13,18 @@ header {
     padding: var(--pad-2t) var(--pad-l);
     justify-content: space-between;
 
+    @media screen and (max-width: variables.$screen-wide) {
+        padding: var(--pad-t) var(--pad-l);
+    }
+
     >div {
         @extend .flex-row-center;
 
         z-index: 3;
+
+        a {
+            @extend .flex-row-center;
+        }
     }
 
     >menu {
@@ -31,8 +39,8 @@ header {
     }
 
     a {
-        @extend .flex-row-center;
         color: var(--dark-normal);
+        align-self: center;
     }
 
     object {
@@ -128,6 +136,10 @@ nav.popup {
     left: 0;
     right: 0;
     padding: var(--pad-2t) var(--pad-l);
+
+    @media screen and (max-width: variables.$screen-wide) {
+        top: calc(var(--pad-s) * 2);
+    }
 
     gap: var(--gap-m);
 

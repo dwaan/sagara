@@ -1,5 +1,6 @@
 @use 'variables';
 @use 'after-before';
+@use 'list';
 @use 'flex';
 @use 'typography';
 
@@ -100,7 +101,12 @@
             opacity: 0;
         }
 
-        &:hover {
+        &[aria-current="page"] {
+            pointer-events: none;
+        }
+
+        &:hover,
+        &[aria-current="page"] {
             &::before {
                 top: calc(var(--bttn-s) / -4);
                 left: calc(var(--bttn-s) / -4);
@@ -109,11 +115,23 @@
                 opacity: 1;
             }
         }
+
+        &[aria-current="page"] {
+            &::before {
+                background-color: var(--gray-dynamic);
+                border-color: transparent;
+            }
+        }
     }
 }
 
 .selection--static {
     @extend .flex-row-center;
+
+    >ul,
+    >ol {
+        @extend .flat;
+    }
 
     li {
         @extend .vertical;

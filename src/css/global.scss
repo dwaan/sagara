@@ -230,16 +230,31 @@ section {
     padding: var(--pad-2s) var(--pad-m);
     gap: var(--gap-l);
 
-    article {
-        @extend .flex-column-center;
+    >article {
+        @extend .flex-column-start;
         @extend .no-padding-margin;
 
+        align-self: initial;
         gap: var(--gap-m);
+        max-width: var(--max-medium);
+    }
+
+    .text {
+        h2 {
+            margin-bottom: var(--gap-3t);
+        }
+
+        .cta {
+            margin-top: var(--gap-m);
+        }
     }
 }
 
 section.hero {
-    article {
+    >article {
+        @extend .flex-column-center;
+
+        max-width: initial;
         padding: 0 var(--pad-l);
     }
 
@@ -304,9 +319,10 @@ section.horizontal {
 section.blue {
     padding: var(--pad-2s) calc(var(--pad-m) * 5 / 6);
 
-    article {
+    >article {
         @extend .flex-column-start;
 
+        max-width: initial;
         padding: var(--pad-2s) var(--pad-m);
         gap: var(--gap-m);
 
@@ -345,7 +361,6 @@ section.blue {
 
     .text {
         gap: var(--gap-2t);
-        align-self: flex-start;
 
         @media screen and (max-width: variables.$screen-wide) {
             max-width: none;
@@ -428,7 +443,7 @@ section.blue {
         align-self: center;
 
         padding: calc(var(--pad-t) * 2/3) var(--pad-t) calc(var(--pad-t) * 2/3) var(--pad-2t);
-        max-width: 2rem;
+        max-width: 24rem;
 
         background: var(--white-static);
         border-radius: var(--round);
@@ -442,7 +457,9 @@ section.blue {
 
         input {
             @extend .p;
+
             width: 100%;
+            min-width: 9rem;
         }
 
         button {
@@ -631,29 +648,10 @@ section.blocks {
 
         h2 {
             @extend .h2--medium;
-            margin-bottom: var(--gap-2t);
         }
 
         p {
             @extend .p--hero;
-        }
-
-        .icon {
-            align-self: initial;
-
-            background: var(--neon-blue);
-            border-radius: var(--round);
-            padding: var(--pad-t);
-            margin-bottom: var(--gap-l);
-
-            svg {
-                --svg-fill: var(--neon-blue);
-                --svg-stroke: var(--white-static);
-            }
-        }
-
-        .cta {
-            margin-top: var(--gap-s);
         }
     }
 }
@@ -673,6 +671,10 @@ section.slider {
         margin-top: 0;
     }
 
+    .text {
+        gap: 0;
+    }
+
     .scroll {
         margin: -10rem calc(var(--pad-m) * -1);
 
@@ -690,6 +692,11 @@ section.slider {
             width: var(--size-ss);
             height: auto;
             aspect-ratio: var(--aspect-ratio-ss);
+        }
+
+        li {
+            @extend .round-shadow;
+            @extend .round-shadow--big;
         }
     }
 }
@@ -741,8 +748,50 @@ section.image {
         @extend .p--hero;
     }
 
+    .text {
+        gap: 0;
+    }
+
     .img {
         margin: 0 calc(var(--pad-l) * -1);
+
+        img {
+            width: 100%;
+            aspect-ratio: 1440/480;
+            border-radius: 0;
+            box-shadow: none
+        }
+    }
+
+}
+
+section.icon {
+    >article {
+        gap: var(--gap-s);
+    }
+
+    .icon {
+        align-self: initial;
+
+        background: var(--neon-blue);
+        border-radius: var(--round);
+        padding: var(--pad-t);
+        margin-bottom: var(--gap-l);
+
+        svg {
+            --svg-fill: var(--neon-blue);
+            --svg-stroke: var(--white-static);
+        }
+    }
+
+    .text {
+        h2 {
+            margin-bottom: var(--gap-2t);
+        }
+
+        .cta {
+            margin-top: var(--gap-s);
+        }
     }
 }
 
@@ -765,7 +814,7 @@ noscript {
     @extend .no-padding-margin;
 
     align-self: initial;
-    gap: var(--gap-s);
+    gap: 0;
 
     width: 100%;
     max-width: var(--max-medium)
@@ -977,8 +1026,10 @@ noscript {
     // Removing excess padding
     margin: calc(var(--pad-s) * -1) 0;
 
-    ul,
-    ol {
+    >ul,
+    >ol {
+        @extend .flat;
+
         // Cropping scroll bar
         margin: 0 0 calc(8rem * -1);
         padding: var(--pad-s) 0 calc(var(--pad-s) + 8rem);
@@ -1019,6 +1070,7 @@ noscript {
         backdrop-filter: blur(var(--gap-2t));
     }
 
+    &--big,
     &.big {
         img {
             box-shadow: var(--shadow);
@@ -1045,6 +1097,7 @@ noscript {
 
     section.hero {
         padding-top: var(--pad-m);
+
 
         h1 {
             @extend .h1--homepage;
