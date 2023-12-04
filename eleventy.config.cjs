@@ -2,6 +2,40 @@
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
 
 module.exports = function (eleventyConfig) {
+	function selection(content, size, view, icon, symbol, alt) {
+		size = size.toString().toLowerCase();
+		view = view.toString().toLowerCase();
+
+		let width = size;
+		let height = size;
+		let viewWidth = view;
+		let viewHeight = view;
+
+		if (size.includes('x')) {
+			size = size.split('x');
+			width = size[0];
+			height = size[1];
+		}
+		if (view.includes('x')) {
+			view = view.split('x');
+			viewWidth = view[0];
+			viewHeight = view[1];
+		}
+
+		return `
+			<li>
+				<div class="img">
+					<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}">
+					<use href="/img/icons/${icon}.svg#${symbol}" />
+					</svg>
+				</div>
+				<div class="text">
+					${content}
+				</div>
+			</li>`;
+	}
+
+
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
 	eleventyConfig.setServerOptions({
@@ -42,41 +76,16 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode("aria_current_page", function (url, page_url, now) {
 		return page_url == url || now ? ` aria-current="page"` : ``;
 	});
+	eleventyConfig.addShortcode("selection_logo", function (symbol, name) {
+		return selection(`<p>${name}</p>`, "202x150", "186x150", "logos", symbol, name + " Logo");
+	});
 
 	//
 	//! Paired shortcodes
 	//
-	eleventyConfig.addPairedShortcode("selection", function (content, size, view, icon, symbol, alt) {
-		size = size.toString().toLowerCase();
-		view = view.toString().toLowerCase();
-
-		let width = size;
-		let height = size;
-		let viewWidth = view;
-		let viewHeight = view;
-
-		if (size.includes('x')) {
-			size = size.split('x');
-			width = size[0];
-			height = size[1];
-		}
-		if (view.includes('x')) {
-			view = view.split('x');
-			viewWidth = view[0];
-			viewHeight = view[1];
-		}
-
-		return `
-			<li>
-				<div class="img">
-					<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}">
-					<use href="/img/icons/${icon}.svg#${symbol}" />
-					</svg>
-				</div>
-				<div class="text">
-					${content}
-				</div>
-			</li>`;
+	eleventyConfig.addPairedShortcode("selection", selection);
+	eleventyConfig.addPairedShortcode("selection_icon_shadow", function (content, symbol, alt) {
+		return selection(content, 160, 128, "shadow", symbol, alt);
 	});
 	eleventyConfig.addPairedShortcode("h2", function (content, svg, alt) {
 		let icon = `

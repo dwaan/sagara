@@ -1,17 +1,19 @@
 ---
 layout: solutions.liquid
+
 title: Lm.sys - Learning Management System
 title-strong: Lm.sys
 title-description: Learning Management System
 description: Build your ideal and on-brand Learning Management System (LMS) using proven open-source technology.
 description-hero: Build your ideal and on-brand Learning Management System (LMS) using proven open-source technology. Tailor a multimedia-rich experience for your audiences, providing an engaging and interactive platform for effective learning and knowledge retention.
+
 img: /img/lm.sys/lmsys-learning-management-system.webp
 alt: An all in one computer with keyboard and coffee on top of wooden table
 svg: lm.sys
+
 date: 1983-10-29
 permalink: lm.sys/index.html
 ---
-
 
 <section class="blocks">
   <div class="text">
@@ -25,7 +27,7 @@ permalink: lm.sys/index.html
   <div class="bento">
     <div class="box small blue-normal h-text-b">
       <div class="img">
-        {% svg "logos.svg#moodle" "400x220" "186x150" "On Premise Icon" %}
+        {% svg "logos.svg#moodle" "300x200" "186x150" "On Premise Icon" %}
       </div>
       <div class="text">
         <h3>Moodle LMS</h3>
@@ -212,15 +214,9 @@ permalink: lm.sys/index.html
   <div class="selection partners">
     <div class="scroll">
       <ol>
-        {% selection "202x150" "186x150" "logos" "pbnu" "Nahdlatul Ulama Executive Board Logo" %}
-          <p>Nahdlatul Ulama Executive Board</p>
-        {% endselection %}
-        {% selection "202x150" "186x150" "logos" "ppatk" "Indonesian Financial Transaction Reports and Analysis Center Logo" %}
-          <p>Indonesian Financial Transaction Reports and Analysis Center</p>
-        {% endselection %}
-        {% selection "202x150" "186x150" "logos" "ma" "Supreme Court of Indonesia Logo" %}
-          <p>Supreme Court of Indonesia</p>
-        {% endselection %}
+        {% selection_logo "pbnu" "Nahdlatul Ulama Executive Board" %}
+        {% selection_logo "ppatk" "Indonesian Financial Transaction Reports and Analysis Center" %}
+        {% selection_logo "ma" "Supreme Court of Indonesia" %}
       </ol>
     </div>
   </div>
