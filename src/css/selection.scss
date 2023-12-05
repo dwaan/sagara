@@ -215,6 +215,33 @@
     }
 }
 
+.selection--checkbox {
+    @extend .selection--default;
+
+    input,
+    label {
+        cursor: pointer;
+    }
+
+    label {
+        @extend .flex-column-center;
+
+        font-weight: initial;
+        gap: var(--gap-2t);
+        padding: var(--bttn-2s);
+    }
+
+    li {
+        padding: 0;
+        align-self: initial;
+        width: 17.5rem;
+    }
+
+    p {
+        @extend .p--small;
+    }
+}
+
 //
 //  Listing styles
 //
@@ -279,5 +306,9 @@
 
     &.journey {
         @extend .selection--journey;
+    }
+
+    &.checkbox {
+        @extend .selection--checkbox;
     }
 }

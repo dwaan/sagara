@@ -81,7 +81,7 @@ a {
         }
 
         &::after {
-            transform: translate(calc(var(--bttn-m) / 2), calc(var(--bttn-s) / 2));
+            transform: translate(calc(var(--bttn-m) / 2), calc(var(--bttn-s) / 4));
             background: var(--neon-green);
         }
 
@@ -186,14 +186,35 @@ button {
     }
 }
 
+input[type="radio"] {
+    width: var(--bttn-2s);
+    height: var(--bttn-2s);
+    appearance: none;
+
+    background: var(--white-normal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%232B2727' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E") center no-repeat;
+    background-size: 0;
+
+    border: 1px solid var(--gray-normal);
+    border-radius: var(--round);
+
+    transition: all var(--fast) var(--ease-back);
+
+    &:checked {
+        background-size: var(--bttn-2s);
+    }
+}
+
 form {
     @extend .flex-column;
 }
 
-svg,
-object,
-embed {
-    pointer-events: none;
+div {
+    @extend .flex-column-center;
+}
+
+noscript {
+    @extend .flex-column;
+    padding: 0 var(--pad-l);
 }
 
 section,
@@ -215,6 +236,12 @@ menu {
     }
 }
 
+svg,
+object,
+embed {
+    pointer-events: none;
+}
+
 main {
     @extend .flex-column;
     @extend .no-padding-margin;
@@ -222,6 +249,11 @@ main {
     overflow: hidden;
     gap: var(--gap-l);
 }
+
+
+//
+//! Sections blocks styling
+//
 
 section {
     @extend .flex-column-center;
@@ -464,19 +496,9 @@ section.blue {
     }
 
     form {
-        @extend .flex-row-center;
+        @extend .combined;
 
-        gap: var(--gap-s);
-        flex: none;
-        align-self: center;
-
-        padding: calc(var(--pad-t) * 2/3) var(--pad-t) calc(var(--pad-t) * 2/3) var(--pad-2t);
         max-width: 24rem;
-
-        background: var(--white-static);
-        border-radius: var(--round);
-
-        transition: all var(--fast) var(--ease-back);
 
         @media screen and (max-width: variables.$screen-wider) {
             max-width: 27rem;
@@ -487,20 +509,6 @@ section.blue {
             max-width: none;
         }
 
-        input {
-            @extend .p;
-
-            width: 100%;
-            min-width: 9rem;
-        }
-
-        button {
-            @extend .a--cta;
-        }
-
-        &:hover {
-            box-shadow: 0 0 0 .25rem var(--neon-green);
-        }
     }
 }
 
@@ -895,15 +903,37 @@ section.journey {
     }
 }
 
+section.checkbox {
+    article {
+        margin-left: calc(var(--pad-m) * -1);
+        margin-right: calc(var(--pad-m) * -1);
+        max-width: initial;
 
+        ul,
+        ol {
+            padding-left: calc(var(--pad-m) * 2);
+            padding-right: calc(var(--pad-m) * 2);
+        }
+    }
 
-div {
-    @extend .flex-column-center;
+    form {
+        @extend .flex-column-center;
+
+        gap: var(--gap-l);
+    }
 }
 
-noscript {
-    @extend .flex-column;
-    padding: 0 var(--pad-l);
+
+//
+//! Helper to make section closer to previous section
+//
+
+section.closer {
+    margin-top: calc(var(--gap-l) * -1);
+}
+
+section.closest {
+    margin-top: calc(var(--gap-l) * -2);
 }
 
 
@@ -920,6 +950,38 @@ noscript {
 
     width: 100%;
     max-width: var(--max-medium)
+}
+
+.combined {
+    @extend .flex-row-center;
+
+    gap: var(--gap-s);
+    flex: none;
+    align-self: center;
+
+    padding: calc(var(--pad-t) * 2/3) var(--pad-t) calc(var(--pad-t) * 2/3) var(--pad-2t);
+
+    background: var(--white-static);
+    border-radius: var(--round);
+
+    transition: all var(--fast) var(--ease-back);
+
+    input {
+        width: 100%;
+        min-width: 9rem;
+    }
+
+    button {
+        @extend .a--cta;
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 .25rem var(--neon-green);
+    }
+
+    &.border {
+        border: 1px solid var(--gray-transparent);
+    }
 }
 
 
@@ -1217,6 +1279,34 @@ noscript {
             ol {
                 padding-left: var(--pad-m);
                 padding-right: var(--pad-m);
+            }
+        }
+    }
+}
+
+//* Customer Support page
+.customer {
+
+    .selection {
+
+        .scroll {
+            overflow: unset;
+            max-width: var(--max-wide);
+        }
+
+        ul,
+        ol {
+            @extend .flex-row-center;
+
+            overflow-x: unset;
+            overflow-y: unset;
+
+            padding-left: 0;
+            padding-right: 0;
+
+            li {
+                width: initial;
+                flex: 1 0 0;
             }
         }
     }
