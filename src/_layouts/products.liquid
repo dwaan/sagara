@@ -3,10 +3,12 @@ layout: main.liquid
 tags: products
 class: products
 products-now: true
+svg: placeholder
+permalink: "{{ title-strong | slugify }}/index.html"
 ---
 
 {{ content }}
 
-{% render 'build-in' %}
+{% include 'build-in' %}
 
 {% include 'form-request-for-demo' %}

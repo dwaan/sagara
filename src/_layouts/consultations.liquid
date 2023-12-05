@@ -3,6 +3,8 @@ layout: main.liquid
 tags: consultations
 class: consultations
 consultations-now: true
+svg: placeholder
+permalink: "{{ title | slugify }}/index.html"
 ---
 
 <section class="hero">
@@ -20,6 +22,6 @@ consultations-now: true
 
 {{ content }}
 
-{% render 'build-in' %}
+{% include 'build-in' %}
 
 {% render 'form-request-for-demo' form-consultation: true %}

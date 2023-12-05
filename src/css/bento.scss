@@ -23,35 +23,42 @@
 		height: 26.25rem;
 
 		.img {
-			@extend .flex-column-center;
+			@extend .flex-row-center;
 
 			--svg-stroke: var(--white-static);
 
+			position: relative;
+			z-index: 1;
+
 			align-self: stretch;
 			justify-self: stretch;
+			flex: auto;
 			padding: var(--pad-s);
 
 			// image position
 
 			&.top {
-				justify-content: flex-start;
+				align-items: flex-start;
 			}
 
 			&.right {
-				align-items: flex-end;
-			}
-
-			&.bottom {
 				justify-content: flex-end;
 			}
 
+			&.bottom {
+				align-items: flex-end;
+			}
+
 			&.left {
-				align-items: flex-start;
+				justify-content: flex-start;
 			}
 		}
 
 		.text {
 			@extend .flex-column;
+
+			position: relative;
+			z-index: 2;
 
 			gap: var(--gap-2t);
 
@@ -141,13 +148,8 @@
 			flex-flow: row;
 			justify-content: flex-start;
 
-			.img,
-			.text {
-				order: 2;
-			}
-
 			.img {
-				align-items: flex-start;
+				order: 2;
 			}
 
 			.text {
@@ -182,7 +184,6 @@
 
 			.img {
 				order: 1;
-				flex: auto;
 			}
 
 			.text {

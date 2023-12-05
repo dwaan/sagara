@@ -31,7 +31,7 @@
         align-items: center;
 
         width: 16rem;
-        gap: var(--bttn-s);
+        gap: var(--gap-2t);
         flex: none;
 
         h3 {
@@ -95,7 +95,7 @@
         @extend .vertical;
 
         padding: var(--bttn-s);
-        gap: calc(var(--bttn-s) / 2);
+        gap: var(--gap-t);
 
         &::before {
             opacity: 0;
@@ -173,6 +173,48 @@
     }
 }
 
+.selection--journey {
+    li {
+        @extend .flex-column;
+        @extend .vertical;
+
+        align-items: center;
+        align-self: flex-end;
+
+        width: 18.3625rem;
+        gap: var(--gap-2t);
+        flex: none;
+
+        &::before {
+            @extend .p--regular;
+            @extend .flex-row-center;
+
+            align-self: initial;
+            position: relative;
+
+            width: var(--bttn-l);
+            height: var(--bttn-l);
+
+            color: var(--white-normal);
+            background: var(--blue-deep);
+            border-radius: var(--round);
+        }
+
+        // Add more if necessary
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i})::before {
+                content: "#{$i}";
+            }
+        }
+
+        &::after {
+            opacity: 1;
+            border-color: var(--gray-dynamic);
+            background: var(--gray-background);
+        }
+    }
+}
+
 //
 //  Listing styles
 //
@@ -233,5 +275,9 @@
                 width: 100%;
             }
         }
+    }
+
+    &.journey {
+        @extend .selection--journey;
     }
 }

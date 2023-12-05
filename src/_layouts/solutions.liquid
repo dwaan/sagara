@@ -2,7 +2,9 @@
 layout: main.liquid
 tags: solutions
 class: solutions
+svg: placeholder
 solutions-now: true
+permalink: "{{ title-strong | slugify }}/index.html"
 ---
 
 <section class="hero image">
@@ -27,6 +29,6 @@ solutions-now: true
 
 {{ content }}
 
-{% render 'build-in' %}
+{% include 'build-in' %}
 
 {% include 'form-request-for-demo' %}

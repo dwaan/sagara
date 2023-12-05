@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
 
     @media screen and (max-width: variables.$screen-wide) {
-        padding: var(--pad-t) var(--pad-l);
+        padding: var(--pad-s) var(--pad-m);
     }
 
     >div {

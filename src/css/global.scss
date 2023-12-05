@@ -529,6 +529,7 @@ section.content {
         @media screen and (max-width: variables.$screen-wide) {
             padding: 0 var(--pad-s);
         }
+
         @media screen and (max-width: variables.$screen-normal) {
             padding: 0;
         }
@@ -881,6 +882,19 @@ section.gray {
     }
 }
 
+section.journey {
+    .scroll {
+        margin-left: calc(var(--pad-m) * -1);
+        margin-right: calc(var(--pad-m) * -1);
+
+        ol,
+        ul {
+            padding-left: var(--pad-m);
+            padding-right: var(--pad-m);
+        }
+    }
+}
+
 
 
 div {
@@ -1199,7 +1213,8 @@ noscript {
             margin-left: calc(var(--pad-m) * -1);
             margin-right: calc(var(--pad-m) * -1);
 
-            ul,ol {
+            ul,
+            ol {
                 padding-left: var(--pad-m);
                 padding-right: var(--pad-m);
             }
