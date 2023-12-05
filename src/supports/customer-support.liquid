@@ -12,6 +12,28 @@ date: 1984-10-29
 
 <section class="checkbox closest">
   <form action="{{ page.url }}" method="post">
+    <div class="combined border">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        minlength="3"
+        required
+        placeholder="Type your name or your organization name" />
+    </div>
+
+    <div class="combined border">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        minlength="6"
+        required
+        placeholder="Type your email" />
+    </div>
+
     <article id="products" class="selection checkbox">
       <h2 hidden>Products</h2>
       <div class="scroll">
@@ -21,16 +43,38 @@ date: 1984-10-29
       </div>
     </article>
 
-    <div class="combined border">
-      <label for="email">Email</label>
+    <div class="combined drop border">
       <input
-        id="email"
-        name="email"
-        type="email"
-        minlength="6"
-        placeholder="Type your email" />
+        type="file"
+        id="upload"
+        name="upload" />
+      <label for="upload">
+        <svg width="24" height="24">
+          <g
+            stroke="var(--svg-stroke)"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <path d="m17 8-5-5m0 0L7 8m5-5v12" />
+          </g>
+        </svg>
+        <p>Tap, click or drop your document here to upload</p>
+      </label>
+    </div>
+
+    <div class="combined large border">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        minlength="10"
+        placeholder="Type your message"
+        required
+        rows="10"></textarea>
       <a class="button cta small">
-        <button type="submit">Request</button>
+        <button type="submit">Contact Us</button>
       </a>
     </div>
 

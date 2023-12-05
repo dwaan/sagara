@@ -62,6 +62,7 @@ a {
 
     &.button {
         color: var(--neon-blue);
+        white-space: nowrap;
 
         &::before,
         &::after {
@@ -81,7 +82,7 @@ a {
         }
 
         &::after {
-            transform: translate(calc(var(--bttn-m) / 2), calc(var(--bttn-s) / 4));
+            transform: translate(calc(var(--bttn-m) / 2), calc(var(--bttn-s) / 3));
             background: var(--neon-green);
         }
 
@@ -174,12 +175,17 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="submit"],
+input[type="radio"],
 button {
     display: inline-block;
-    background: none;
     color: var(--dark-static);
+
+    background: none;
     border: none;
+
     outline: none;
+    appearance: none;
+    resize: none;
 
     &::placeholder {
         color: var(--dark-static);
@@ -189,7 +195,6 @@ button {
 input[type="radio"] {
     width: var(--bttn-2s);
     height: var(--bttn-2s);
-    appearance: none;
 
     background: var(--white-normal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%232B2727' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E") center no-repeat;
     background-size: 0;
@@ -955,6 +960,10 @@ section.closest {
 .combined {
     @extend .flex-row-center;
 
+    width: 100%;
+    max-width: var(--max-medium);
+    min-height: 5.5rem;
+
     gap: var(--gap-s);
     flex: none;
     align-self: center;
@@ -962,11 +971,12 @@ section.closest {
     padding: calc(var(--pad-t) * 2/3) var(--pad-t) calc(var(--pad-t) * 2/3) var(--pad-2t);
 
     background: var(--white-static);
-    border-radius: var(--round);
+    border-radius: var(--round-l);
 
     transition: all var(--fast) var(--ease-back);
 
-    input {
+    input,
+    textarea {
         width: 100%;
         min-width: 9rem;
     }
@@ -981,6 +991,33 @@ section.closest {
 
     &.border {
         border: 1px solid var(--gray-transparent);
+    }
+
+    &.drop {
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        label {
+            @extend .flex-row-center;
+
+            gap: var(--gap-2t);
+
+            font-weight: initial;
+            cursor: pointer;
+        }
+    }
+
+    &.large {
+        label {
+            align-self: flex-start;
+        }
+
+        .button {
+            align-self: flex-end;
+        }
     }
 }
 
@@ -1286,12 +1323,19 @@ section.closest {
 
 //* Customer Support page
 .customer {
+    .checkbox {
+        form {
+            gap: var(--gap-3t);
+        }
+
+        .dots {
+            margin-top: calc(var(--gap-l) - var(--gap-3t));
+        }
+    }
 
     .selection {
-
-        .scroll {
-            overflow: unset;
-            max-width: var(--max-wide);
+        form {
+            gap: var(--gap-3t);
         }
 
         ul,
@@ -1309,5 +1353,11 @@ section.closest {
                 flex: 1 0 0;
             }
         }
+
+        .scroll {
+            overflow: unset;
+            max-width: var(--max-wide);
+        }
+
     }
 }

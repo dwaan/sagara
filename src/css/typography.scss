@@ -1,4 +1,5 @@
 @use 'variables';
+@use "flex";
 
 html,
 body {
@@ -225,7 +226,9 @@ strong {
 form,
 input,
 button,
-label {
+label,
+textarea {
+    @extend .no-padding-margin;
     @extend .p--regular;
 }
 
