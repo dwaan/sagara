@@ -1,6 +1,10 @@
 <section class="points commitment">
   <div class="text">
-    <h2>Build In</h2>
+    {% if build-in != true or build-in != false %}
+      <h2>Embedded In</h2>
+    {% else %}
+      <h2>Build In</h2>
+    {% endif %}
     <p>Crafting a digital future that's not just functional but is a commitment to a world that's sustainable, accessible, and privacy.</p>
   </div>
 

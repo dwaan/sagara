@@ -152,6 +152,10 @@
             justify-content: center;
             margin: 0 calc(var(--bttn-l) * -1);
         }
+
+        p {
+            margin-bottom: 0;
+        }
     }
 }
 

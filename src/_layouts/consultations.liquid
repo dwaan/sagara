@@ -23,7 +23,7 @@ permalink: "{{ title | slugify }}/index.html"
 
 {{ content }}
 
-{% if build-in == true %}
+{% if build-in %}
   {% include 'build-in' %}
 {% endif %}
 
