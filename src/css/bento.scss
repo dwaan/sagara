@@ -52,6 +52,17 @@
 			&.left {
 				justify-content: flex-start;
 			}
+
+			&.stretch {
+				padding: 0;
+
+				img {
+					width: 100%;
+					height: 100%;
+					margin: 0;
+					object-fit: cover;
+				}
+			}
 		}
 
 		.text {
@@ -131,10 +142,6 @@
 			.text {
 				order: 1;
 				width: 50%;
-			}
-
-			.img {
-				align-items: flex-end;
 			}
 
 			.text {

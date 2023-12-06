@@ -312,6 +312,10 @@ section.hero {
             }
         }
     }
+
+    .clip {
+        overflow: hidden;
+    }
 }
 
 section.horizontal {
@@ -660,6 +664,18 @@ section.listing {
             @extend .p--hero;
         }
     }
+
+    &.small {
+        .text {
+            max-width: var(--max-medium);
+            padding: 0;
+        }
+
+        .selection {
+            max-width: var(--max-wide);
+            align-self: center;
+        }
+    }
 }
 
 section.static {
@@ -815,10 +831,14 @@ section.image {
 
     .img {
         margin: 0 calc(var(--pad-l) * -1);
+        height: 30rem;
+
+        overflow: hidden;
 
         img {
             width: 100%;
-            aspect-ratio: 1440/480;
+            aspect-ratio: initial;
+            height: auto;
             border-radius: 0;
             box-shadow: none
         }
