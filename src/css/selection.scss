@@ -251,6 +251,68 @@
     }
 }
 
+.selection--careers {
+    @extend .flex-column;
+
+    gap: var(--gap-l);
+    align-self: initial;
+
+    width: 100%;
+    max-width: var(--max-wide);
+
+    >ul,
+    >ol {
+        flex-wrap: wrap;
+        gap: var(--gap-l);
+        padding: 0;
+
+        li {
+            @extend .vertical;
+            @extend .flex-row-center;
+
+            flex: none;
+            gap: var(--gap-2t);
+            padding: calc(var(--pad-s) / 2) var(--pad-t);
+
+            width: calc(50% - (var(--gap-l) / 2));
+            max-width: initial;
+
+            &::before {
+                background: var(--gray-background);
+                border-color: var(--gray-dynamic);
+            }
+
+            &::after {
+                background: var(--gray-normal);
+                border-color: var(--gray-high-contrast);
+            }
+
+            &:hover {
+
+                &::before,
+                &::after {
+                    top: calc(var(--bttn-s) / -2);
+                    left: calc(var(--bttn-s) / -2);
+                    right: calc(var(--bttn-s) / -2);
+                    bottom: calc(var(--bttn-s) / -2);
+                    border-radius: var(--round-m);
+
+                    opacity: 0;
+                }
+
+                &::after {
+                    opacity: 1;
+
+                }
+            }
+        }
+
+        a {
+            @extend .a--default;
+        }
+    }
+}
+
 //
 //  Listing styles
 //
@@ -319,5 +381,9 @@
 
     &.checkbox {
         @extend .selection--checkbox;
+    }
+
+    &.careers {
+        @extend .selection--careers;
     }
 }

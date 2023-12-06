@@ -99,8 +99,11 @@ h2 {
     @include inline-bold;
     @include children-tags;
 
-    font-size: 1.75rem;
-    line-height: 120%;
+    &--regular,
+    & {
+        font-size: 1.75rem;
+        line-height: 120%;
+    }
 
     &--small,
     &.small {

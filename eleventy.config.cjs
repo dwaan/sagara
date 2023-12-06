@@ -42,6 +42,7 @@ module.exports = function (eleventyConfig) {
 		watch: ["sites/js/*"]
 	});
 
+
 	//
 	//! Shortcodes
 	//
@@ -80,8 +81,8 @@ module.exports = function (eleventyConfig) {
 		return selection(`<p>${name}</p>`, "202x150", "186x150", "logos", symbol, name + " Logo");
 	});
 	eleventyConfig.addShortcode("selection_icon_plain", function (title, content, symbol = "") {
-		const finalContent= `<h3>${title}</h3><p>${content}</p>`;
-		if(symbol == "") symbol = title.toLowerCase().replace(/ /g, "-");
+		const finalContent = `<h3>${title}</h3><p>${content}</p>`;
+		if (symbol == "") symbol = title.toLowerCase().replace(/ /g, "-");
 
 		return selection(finalContent, 128, 128, "plain", symbol, title + " Icon");
 	});
@@ -108,6 +109,41 @@ module.exports = function (eleventyConfig) {
 				${content}
 			</div>`;
 	});
+
+
+	//
+	//! Get career tags
+	//
+
+	// Filter to get tags list
+	eleventyConfig.addFilter("getTagList", function (collection) {
+		const tagSet = new Set();
+		collection.getAll().forEach(item => {
+			if ("tags" in item.data) {
+				item.data.tags.forEach(tag => {
+					if (tag.includes("careers-")) tagSet.add(tag);
+				});
+			}
+		});
+		return Array.from(tagSet);
+	});
+
+	// Create a collection for each tag
+	eleventyConfig.addCollection("tagList", function (collection) {
+		return eleventyConfig.getFilter("getTagList")(collection);
+	});
+
+	// Convert tag to title
+	eleventyConfig.addFilter("makeTitleFromTag", function (value) {
+		value = value.replace(/careers-/g, "").replace(/-/g, " ").replace(
+			/\w\S*/g,
+			function (txt) {
+				return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+			}
+		);
+		return value;
+	});
+
 
 	return {
 		dir: {
