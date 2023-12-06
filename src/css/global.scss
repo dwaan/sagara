@@ -9,6 +9,7 @@
 @use 'animation';
 @use 'list';
 @use 'bento';
+@use 'form';
 @use 'nojs';
 
 //
@@ -167,50 +168,6 @@ a {
         color: currentColor;
         cursor: pointer;
     }
-}
-
-textarea,
-input[type="tel"],
-input[type="password"],
-input[type="email"],
-input[type="text"],
-input[type="submit"],
-input[type="radio"],
-button {
-    display: inline-block;
-    color: var(--dark-static);
-
-    background: none;
-    border: none;
-
-    outline: none;
-    appearance: none;
-    resize: none;
-
-    &::placeholder {
-        color: var(--dark-static);
-    }
-}
-
-input[type="radio"] {
-    width: var(--bttn-2s);
-    height: var(--bttn-2s);
-
-    background: var(--white-normal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%232B2727' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E") center no-repeat;
-    background-size: 0;
-
-    border: 1px solid var(--gray-normal);
-    border-radius: var(--round);
-
-    transition: all var(--fast) var(--ease-back);
-
-    &:checked {
-        background-size: var(--bttn-2s);
-    }
-}
-
-form {
-    @extend .flex-column;
 }
 
 div {
@@ -567,11 +524,14 @@ section.content {
 
 section.notfound {
     text-align: center;
+    padding-bottom: var(--pad-l);
 
     .text {
         @extend .flex-column-center;
-        max-width: var(--max-medium);
+
         align-self: center;
+        gap: var(--gap-t);
+        max-width: var(--max-medium);
     }
 
     div {
@@ -580,7 +540,11 @@ section.notfound {
         margin-top: var(--pad-t);
     }
 
-    padding-bottom: var(--pad-l);
+    a,
+    p,
+    .cta {
+        margin: 0;
+    }
 }
 
 section.number {
@@ -621,6 +585,18 @@ section.background {
         border-radius: var(--round-m);
         background: var(--white-transparent);
         backdrop-filter: blur(16px);
+    }
+
+    h2 {
+        margin-bottom: var(--gap-2t);
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .cta {
+        margin-top: var(--gap-3t);
     }
 }
 
@@ -906,6 +882,10 @@ section.journey {
             padding-right: var(--pad-m);
         }
     }
+
+    p {
+        @extend .p--hero;
+    }
 }
 
 section.checkbox {
@@ -955,70 +935,6 @@ section.closest {
 
     width: 100%;
     max-width: var(--max-medium)
-}
-
-.combined {
-    @extend .flex-row-center;
-
-    width: 100%;
-    max-width: var(--max-medium);
-    min-height: 5.5rem;
-
-    gap: var(--gap-s);
-    flex: none;
-    align-self: center;
-
-    padding: calc(var(--pad-t) * 2/3) var(--pad-t) calc(var(--pad-t) * 2/3) var(--pad-2t);
-
-    background: var(--white-static);
-    border-radius: var(--round-l);
-
-    transition: all var(--fast) var(--ease-back);
-
-    input,
-    textarea {
-        width: 100%;
-        min-width: 9rem;
-    }
-
-    button {
-        @extend .a--cta;
-    }
-
-    &:hover {
-        box-shadow: 0 0 0 .25rem var(--neon-green);
-    }
-
-    &.border {
-        border: 1px solid var(--gray-transparent);
-    }
-
-    &.drop {
-        cursor: pointer;
-
-        input {
-            display: none;
-        }
-
-        label {
-            @extend .flex-row-center;
-
-            gap: var(--gap-2t);
-
-            font-weight: initial;
-            cursor: pointer;
-        }
-    }
-
-    &.large {
-        label {
-            align-self: flex-start;
-        }
-
-        .button {
-            align-self: flex-end;
-        }
-    }
 }
 
 
@@ -1359,5 +1275,20 @@ section.closest {
             max-width: var(--max-wide);
         }
 
+    }
+}
+
+
+//
+//! dark mode, dim image a little bit
+//
+
+@media (prefers-color-scheme: dark) {
+    img {
+        filter: brightness(.8);
+
+        .nodim {
+            filter: brightness(1);
+        }
     }
 }

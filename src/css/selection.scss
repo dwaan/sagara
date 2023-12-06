@@ -195,9 +195,10 @@
             width: var(--bttn-l);
             height: var(--bttn-l);
 
-            color: var(--white-normal);
+            color: var(--white-static);
             background: var(--blue-deep);
             border-radius: var(--round);
+            border: 0;
         }
 
         // Add more if necessary
@@ -212,6 +213,10 @@
             border-color: var(--gray-dynamic);
             background: var(--gray-background);
         }
+    }
+
+    p {
+        @extend .p--small;
     }
 }
 

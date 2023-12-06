@@ -12,12 +12,8 @@ import replace from 'gulp-replace';
 import browserSyncModule from 'browser-sync';
 import livereload from 'gulp-livereload';
 import eleventy from '@11ty/eleventy';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import fs from 'fs';
+import header from 'gulp-header';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const browserSync = browserSyncModule.create();
 const sass = gulpSass(dartSass);
 const src = 'src/';
@@ -66,10 +62,10 @@ const paths = {
 	},
 	scss: {
 		src: ['node_modules/normalize.css/normalize.css', src + 'css/**/*.scss'],
-		dest: 'cache/css/'
+		dest: sites + 'css/'
 	},
 	css: {
-		src: 'cache/css/*.css',
+		src: sites + 'css/*.css',
 		dest: sites + 'css/'
 	},
 	js: {
@@ -102,7 +98,7 @@ function js_prod() {
 		.pipe(gulp.dest(paths.js.dest));
 }
 function js_dev() {
-	return gulp.src(['cache/js/reload.js', paths.js.src], { allowEmpty: true })
+	return gulp.src(paths.js.src, { allowEmpty: true })
 		.pipe(webpack({
 			devtool: 'source-map',
 			mode: 'development',
@@ -111,6 +107,7 @@ function js_dev() {
 				clean: true
 			}
 		}))
+		.pipe(header(`document.write('<script src="http://' + window.location.hostname + ':35729/livereload.js"></script>');`))
 		.pipe(gulp.dest(paths.js.dest))
 		.pipe(browserSync.stream())
 		.pipe(livereload());
@@ -230,15 +227,6 @@ function html() {
 		.pipe(browserSync.stream());
 }
 
-function css_livereload() {
-	const _path = path.join(__dirname, 'cache/js');
-	const _file = path.join(_path, 'reload.js');
-	const scriptContent = `document.write('<script src="http://' + window.location.hostname + ':35729/livereload.js"></script>');`;
-	if (!fs.existsSync(_path)) {
-		fs.mkdirSync(_path, { recursive: true });
-	}
-	fs.writeFileSync(_file, scriptContent, 'utf-8');
-}
 async function eleventy_dev(server = true) {
 	try {
 		if (server) {
@@ -253,8 +241,6 @@ async function eleventy_dev(server = true) {
 				proxy: 'http://localhost:' + port
 			});
 
-			// Create livereload script for CSS
-			css_livereload();
 			livereload.listen();
 		} else {
 			await elev.write();
@@ -281,8 +267,7 @@ function development() {
 	gulp.watch(paths.svgwide.src, { events: 'all', ignoreInitial: false }, svgwide);
 	gulp.watch(paths.svglogo.src, { events: 'all', ignoreInitial: false }, svglogo);
 	gulp.watch(paths.staticsvg.src, { events: 'all', ignoreInitial: false }, copy_svg);
-	gulp.watch(paths.scss.src, { events: 'all', ignoreInitial: false }, scss_dev);
-	gulp.watch(paths.css.src, { events: 'all', ignoreInitial: false }, css_prefix_dev);
+	gulp.watch(paths.scss.src, { events: 'all', ignoreInitial: false }, gulp.series(scss_dev, css_prefix_dev));
 	gulp.watch(paths.js.src, { events: 'all', ignoreInitial: false }, js_dev);
 	gulp.watch(paths.html.src, { events: 'all', ignoreInitial: false }, html);
 }
