@@ -844,6 +844,13 @@ section.image {
         }
     }
 
+    &.no-clip {
+        overflow: initial;
+
+        .img {
+            height: initial;
+        }
+    }
 }
 
 section.icon {
@@ -957,7 +964,7 @@ section.closest {
     max-width: var(--max-medium)
 }
 
-.buttons  {
+.buttons {
     @extend .flex-row;
     @extend .no-padding-margin;
 
