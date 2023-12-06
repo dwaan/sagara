@@ -197,6 +197,15 @@
 			}
 		}
 
+		&.center {
+			justify-content: center;
+			align-items: center;
+
+			.img {
+				flex: none;
+			}
+		}
+
 
 		// Color
 

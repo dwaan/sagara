@@ -65,7 +65,7 @@ module.exports = function (eleventyConfig) {
 			viewHeight = view[1];
 		}
 
-		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"> <use href="/img/icons/${icon}" /></svg>`;
+		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"> <use href="/img/icons/${icon}" viewBox="0 0 ${viewWidth} ${viewHeight}" /></svg>`;
 	});
 	eleventyConfig.addShortcode("a_menu", function (title, url, page_url) {
 		return `<a href="${url}"` + (page_url == url ? ` aria-current="page"` : ``) + `>${title}</a>`;

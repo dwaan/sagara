@@ -937,6 +937,17 @@ section.closest {
     max-width: var(--max-medium)
 }
 
+.buttons  {
+    @extend .flex-row;
+    @extend .no-padding-margin;
+
+    align-self: initial;
+    gap: var(--gap-m);
+
+    width: 100%;
+    max-width: var(--max-medium)
+}
+
 
 //
 //! Arrow insert
