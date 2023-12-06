@@ -4,6 +4,7 @@ tags: consultations
 class: consultations
 consultations-now: true
 svg: placeholder
+build-in: true
 permalink: "{{ title | slugify }}/index.html"
 ---
 
@@ -22,6 +23,8 @@ permalink: "{{ title | slugify }}/index.html"
 
 {{ content }}
 
-{% include 'build-in' %}
+{% if build-in == true %}
+  {% include 'build-in' %}
+{% endif %}
 
-{% render 'form-request-for-demo' form-consultation: true %}
+{% include 'form-request-for-demo' form-consultation: true %}

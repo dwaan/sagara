@@ -851,6 +851,23 @@ section.image {
             height: initial;
         }
     }
+
+    .row {
+        @extend .flex-row-start;
+
+        align-self: initial;
+        gap: var(--gap-l);
+        max-width: initial;
+
+        h2 {
+            @extend .h2--medium;
+        }
+
+        .text {
+            width: 100%;
+            max-width: var(--size-one-third);
+        }
+    }
 }
 
 section.icon {

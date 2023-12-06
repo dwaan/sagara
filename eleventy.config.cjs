@@ -79,9 +79,10 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode("selection_logo", function (symbol, name) {
 		return selection(`<p>${name}</p>`, "202x150", "186x150", "logos", symbol, name + " Logo");
 	});
-	eleventyConfig.addShortcode("selection_icon_plain", function (title, content) {
-		const symbol = title.toLowerCase().replace(/ /g, "-");
+	eleventyConfig.addShortcode("selection_icon_plain", function (title, content, symbol = "") {
 		const finalContent= `<h3>${title}</h3><p>${content}</p>`;
+		if(symbol == "") symbol = title.toLowerCase().replace(/ /g, "-");
+
 		return selection(finalContent, 128, 128, "plain", symbol, title + " Icon");
 	});
 
