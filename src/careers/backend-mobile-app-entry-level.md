@@ -2,12 +2,12 @@
 layout: careers.liquid
 
 title: Backend Developer - Mobile Based Solutions
-description: Are you passionate about web-based solutions and backend development? Are you looking to kickstart your career in a dynamic and collaborative environment? Join us at Sagara as an Entry-Level Backend Developer and embark on a journey to shape the digital landscape!
+description: At Sagara, we are on a mission to revolutionize mobile-based solutions, and we need a talented Entry-Level Backend Developer to join our growing team. If you have a passion for mobile app development, backend technologies, and creating seamless user experiences, we want to hear from you. This is an exciting opportunity for someone looking to kickstart their career in backend development for mobile applications.
 level: Entry-Level
 id: backend-mobile-entry-level
 
-img: /img/careers/typing.webp
-alt: A person typing on their laptop on the sofa, with scatered book on the side
+img: /img/careers/mobile.webp
+alt: A person holding a mobile phone infront of their laptop, debuging thier mobile app
 svg: mobile
 
 tags:
@@ -18,7 +18,7 @@ tags:
 date: 1983-10-29
 ---
 
-At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an Entry-Level Backend Developer, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.
+As an Entry-Level Backend Developer - Mobile Based Solutions at Sagara, you will play a crucial role in designing, developing, and maintaining the backend infrastructure that powers our mobile applications. You'll work closely with our front-end developers, mobile app developers, and other cross-functional teams to deliver high-quality solutions. This role is an excellent opportunity to gain hands-on experience in both hybrid and native mobile app development.
 
 ### Location
 
@@ -26,23 +26,30 @@ At Sagara, we're dedicated to creating balanced innovative web-based solutions t
 
 We welcome everyone who live outside Jakarta to apply for this position. But to save commute time when needed, we prefer candidate who live or will live nearby our office area.
 
-### Key Responsibilities
+### Responsibilities
 
-- Collaborate with frontend developers to build robust and efficient web applications.
-- Develop, test, and maintain backend services, APIs, and databases.
-- Ensure code quality, security, and performance optimization.
-- Troubleshoot and resolve technical issues, ensuring seamless functionality.
-- Work with version control systems and follow coding standards.
+- Collaborate with mobile app developers to understand application requirements.
+- Design and develop scalable and efficient backend solutions for mobile applications.
+- Work with databases, APIs, and third-party integrations to enhance mobile app functionality.
+- Collaborate with cross-functional teams to ensure seamless integration of backend services with mobile apps.
+- Participate in code reviews and contribute to the continuous improvement of development processes.
+- Stay updated on industry trends and best practices in mobile backend development.
 
 ### Qualifications
 
-- Bachelor's degree in computer science or related field (or relevant coursework/certifications).
-- Proficiency in one or more backend programming languages (e.g. PHP, Node.js).
-- Basic knowledge of databases (SQL, NoSQL) and web development concepts.
-- Familiarity with version control systems like Git.
+- Bachelor's degree in Computer Science, Software Engineering, or a related field (or equivalent experience).
+- Understanding of backend technologies such as Node.js, Python, or Java.
+- Familiarity with databases (SQL and/or NoSQL) and RESTful APIs.
+- Basic knowledge of hybrid mobile app development frameworks (e.g., React Native, Flutter) and/or native mobile app development (iOS/Android).
 - Strong problem-solving skills and attention to detail.
-- Effective communication and teamwork abilities.
 - Eagerness to learn and adapt to new technologies.
+
+### Preferred Qualifications
+
+- Experience with cloud platforms such as AWS, Azure, or Google Cloud.
+- Knowledge of containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with version control systems (e.g., Git).
+- Understanding of mobile app security best practices.
 
 ### Salary Range
 

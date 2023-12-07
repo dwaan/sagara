@@ -2,11 +2,11 @@
 layout: careers.liquid
 
 title: User Experience Designer - Mobile and Web Solutions
-description: Are you passionate about web-based solutions and backend development? Are you looking to kickstart your career in a dynamic and collaborative environment? Join us at Sagara as an Entry-Level Backend Developer and embark on a journey to shape the digital landscape!
+description: Join the creative team at Sagara, where innovation meets design. At Sagara, we are committed to delivering exceptional user experiences that captivate and delight our users. As we expand our team, we are seeking a passionate and talented Entry-Level User Experience Designer to contribute to our mission of creating meaningful and user-centric products.
 level: Entry-Level
 
-img: /img/careers/typing.webp
-alt: A person typing on their laptop on the sofa, with scatered book on the side
+img: /img/careers/ux.webp
+alt: A collection of hand drawn wireframes wiht a pencil and a mobile phone on the right side
 svg: experience
 
 tags:
@@ -17,7 +17,7 @@ tags:
 date: 1986-10-29
 ---
 
-At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an Entry-Level Backend Developer, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.
+As an Entry-Level User Experience Designer at Sagara, you will play a vital role in shaping the overall look and feel of our digital products. Working collaboratively with cross-functional teams, you will be involved in all aspects of the design process, from user research and wireframing to prototyping and usability testing. This is an excellent opportunity for a recent graduate or someone with minimal experience to kickstart their career in UX design.
 
 ### Location
 
@@ -25,23 +25,30 @@ At Sagara, we're dedicated to creating balanced innovative web-based solutions t
 
 We welcome everyone who live outside Jakarta to apply for this position. But to save commute time when needed, we prefer candidate who live or will live nearby our office area.
 
-### Key Responsibilities
+### Responsibilities
 
-- Collaborate with frontend developers to build robust and efficient web applications.
-- Develop, test, and maintain backend services, APIs, and databases.
-- Ensure code quality, security, and performance optimization.
-- Troubleshoot and resolve technical issues, ensuring seamless functionality.
-- Work with version control systems and follow coding standards.
+- Conduct user research to understand user needs, behaviors, and pain points.
+- Create wireframes, prototypes, and high-fidelity designs for web and mobile applications.
+- Collaborate with product managers and developers to ensure design feasibility and implementation.
+- Conduct usability testing and gather feedback to iterate and improve designs.
+- Stay current with industry trends, design tools, and emerging technologies.
+- Work closely with stakeholders to understand business goals and user requirements.
 
 ### Qualifications
 
-- Bachelor's degree in computer science or related field (or relevant coursework/certifications).
-- Proficiency in one or more backend programming languages (e.g. PHP, Node.js).
-- Basic knowledge of databases (SQL, NoSQL) and web development concepts.
-- Familiarity with version control systems like Git.
-- Strong problem-solving skills and attention to detail.
-- Effective communication and teamwork abilities.
-- Eagerness to learn and adapt to new technologies.
+- Bachelor's degree in Graphic Design, Interaction Design, Human-Computer Interaction, or a related field (or equivalent experience).
+- Strong understanding of design principles and user-centered design methodologies
+- Proficiency in design tools such as Sketch, Figma, or Adobe Creative Suite.
+- Excellent communication and collaboration skills.
+- Eagerness to learn and adapt to new design trends and technologies.
+- Strong portfolio showcasing design projects and process.
+
+### Preferred Qualifications
+
+- Basic knowledge of front-end development technologies (HTML, CSS, JavaScript).
+- Experience with animation and interaction design.
+- Familiarity with design systems and component-based design.
+- Passion for solving complex design challenges.
 
 ### Salary Range
 

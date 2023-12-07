@@ -4,7 +4,6 @@ layout: main.liquid
 tags: careers
 class: careers
 svg: placeholder
-id: general
 
 careers-now: true
 permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
@@ -13,8 +12,8 @@ permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
 <section class="hero image">
   <article>
     <div class="text">
-      <h4>Careers</h4>
-      <h1>[{{ level }}] {{ title }}</h1>
+      <h4>{{ level }}</h4>
+      <h1>{{ title }}</h1>
       <p>{{ description }}</p>
     </div>
     <a href="#detail" class="button cta">See Details
@@ -67,7 +66,7 @@ permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
             <input
               type="file"
               id="upload"
-              accept=".zip,.rar,.7zip,.7z,.tgz,.gz"
+              accept=".zip,.rar,.7zip,.7z,.tgz,.gz,.bz,.bz2,.tar"
               required
               name="upload" />
             <label for="upload">

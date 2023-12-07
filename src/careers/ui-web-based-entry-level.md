@@ -5,8 +5,8 @@ title: User Interface Developer - Web-Based Solutions
 description: Are you passionate about web-based solutions and backend development? Are you looking to kickstart your career in a dynamic and collaborative environment? Join us at Sagara as an Entry-Level Backend Developer and embark on a journey to shape the digital landscape!
 level: Entry-Level
 
-img: /img/careers/typing.webp
-alt: A person typing on their laptop on the sofa, with scatered book on the side
+img: /img/careers/ui.webp
+alt: Two monitors displaying overall view of website design
 svg: interface
 
 tags:
@@ -17,7 +17,7 @@ tags:
 date: 1985-10-29
 ---
 
-At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an Entry-Level Backend Developer, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.
+At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an {{ title }}, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.
 
 ### Location
 
@@ -25,23 +25,31 @@ At Sagara, we're dedicated to creating balanced innovative web-based solutions t
 
 We welcome everyone who live outside Jakarta to apply for this position. But to save commute time when needed, we prefer candidate who live or will live nearby our office area.
 
-### Key Responsibilities
+### Responsibilities
 
-- Collaborate with frontend developers to build robust and efficient web applications.
-- Develop, test, and maintain backend services, APIs, and databases.
-- Ensure code quality, security, and performance optimization.
-- Troubleshoot and resolve technical issues, ensuring seamless functionality.
-- Work with version control systems and follow coding standards.
+- Collaborate with designers to translate visual designs into responsive and engaging user interfaces.
+- Implement and maintain front-end code using HTML, CSS, and JavaScript.
+- Ensure the technical feasibility of UI/UX designs and optimize applications for maximum speed and scalability.
+- Participate in code reviews and provide constructive feedback to peers.
+- Stay up-to-date with the latest industry trends and best practices in UI development.
 
 ### Qualifications
 
-- Bachelor's degree in computer science or related field (or relevant coursework/certifications).
-- Proficiency in one or more backend programming languages (e.g. PHP, Node.js).
-- Basic knowledge of databases (SQL, NoSQL) and web development concepts.
-- Familiarity with version control systems like Git.
-- Strong problem-solving skills and attention to detail.
-- Effective communication and teamwork abilities.
+- Bachelor's degree in Computer Science, Web Development, or a related field (or equivalent experience).
+- Strong understanding of HTML, CSS, and JavaScript.
+- Basic knowledge of front-end frameworks (e.g., React, Angular, or Vue.js).
+- Basic knowledge of node.js development tools (e.g. Gulp, Webpack, or Grunt).
+- Ability to collaborate effectively in a team environment.
 - Eagerness to learn and adapt to new technologies.
+- Excellent problem-solving and communication skills.
+
+### Preferred Qualifications
+
+- Experience with version control systems (e.g., Git).
+- Familiarity with design tools such as Sketch, Figma, or Adobe Creative Suite.
+- Familiarity with UI/UX design principles.
+- Knowledge of responsive design techniques.
+- Portfolio or examples of previous UI development projects.
 
 ### Salary Range
 
