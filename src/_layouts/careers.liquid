@@ -55,7 +55,7 @@ permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
     <div>
       <div class="text">
         <h3>How to Apply</h3>
-        <p>Ready to jumpstart your career as an {{ level }} {{ title }}? Send and upload your resume and a brief cover letter outlining your passion for backend development in a zip file here.</p>
+        <p>Ready to jumpstart your career as an {{ level }} {{ title }}? Send and upload your resume and a brief cover letter outlining your passion in a zip file here.</p>
       </div>
 
       <form action="{{ page.url }}">
@@ -67,6 +67,8 @@ permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
             <input
               type="file"
               id="upload"
+              accept=".zip,.rar,.7zip,.7z,.tgz,.gz"
+              required
               name="upload" />
             <label for="upload">
               <svg width="24" height="24">
