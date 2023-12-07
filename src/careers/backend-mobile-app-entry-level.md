@@ -4,6 +4,7 @@ layout: careers.liquid
 title: Backend Developer - Mobile Based Solutions
 description: Are you passionate about web-based solutions and backend development? Are you looking to kickstart your career in a dynamic and collaborative environment? Join us at Sagara as an Entry-Level Backend Developer and embark on a journey to shape the digital landscape!
 level: Entry-Level
+id: backend-mobile-entry-level
 
 img: /img/careers/typing.webp
 alt: A person typing on their laptop on the sofa, with scatered book on the side
@@ -11,6 +12,7 @@ svg: mobile
 
 tags:
 - careers
+- featured
 - careers-backend
 
 date: 1983-10-29

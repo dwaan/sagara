@@ -4,7 +4,9 @@ layout: main.liquid
 tags: careers
 class: careers
 svg: placeholder
+id: general
 
+careers-now: true
 permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
 ---
 
@@ -31,7 +33,14 @@ permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
 
 <section id="detail" class="career">
   <div class="content">
-    <sidebar></sidebar>
+    <sidebar>
+      <menu>
+        {{ content | toc }}
+        <li>
+          <a href="#how-to-apply" class="blue">How to Apply</a>
+        </li>
+      </menu>
+    </sidebar>
 
     <article>
       {{ content }}
@@ -39,4 +48,53 @@ permalink: "careers/{{ title | slugify }}/{{ level | slugify }}/index.html"
   </div>
 
   <div class="dots"></div>
+</section>
+
+<section id="how-to-apply" class="blue">
+  <article>
+    <div>
+      <div class="text">
+        <h3>How to Apply</h3>
+        <p>Ready to jumpstart your career as an {{ level }} {{ title }}? Send and upload your resume and a brief cover letter outlining your passion for backend development in a zip file here.</p>
+      </div>
+
+      <form action="{{ page.url }}">
+        <div class="row">
+          <div class="combined">
+            <input type="text" placeholder="Type your name" />
+          </div>
+          <div class="combined drop">
+            <input
+              type="file"
+              id="upload"
+              name="upload" />
+            <label for="upload">
+              <svg width="24" height="24">
+                <g
+                  stroke="var(--svg-stroke)"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <path d="m17 8-5-5m0 0L7 8m5-5v12" />
+                </g>
+              </svg>
+            </label>
+          </div>
+        </div>
+
+        <div class="combined cta">
+          <input
+            type="email"
+            minlength="6"
+            required
+            placeholder="Type your email" />
+          <a class="button cta small">
+            <button type="submit">Send</button>
+          </a>
+        </div>
+      </form>
+    </div>
+  </article>
 </section>

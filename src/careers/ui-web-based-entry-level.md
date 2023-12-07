@@ -11,9 +11,10 @@ svg: interface
 
 tags:
 - careers
+- featured
 - careers-frontend
 
-date: 1983-10-29
+date: 1985-10-29
 ---
 
 At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an Entry-Level Backend Developer, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.

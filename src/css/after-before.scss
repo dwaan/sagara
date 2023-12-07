@@ -1,51 +1,51 @@
 /* Common mixin for displaying ::after ::before */
 
 .block {
-    display: flex;
-    content: "";
+	display: flex;
+	content: "";
 
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: var(--round-m);
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: var(--round-m);
 
-    transition: all var(--fast) var(--ease-back);
+	transition: all var(--fast) var(--ease-back);
 }
 
 .pointer {
-    position: relative;
-    z-index: 0;
-    // cursor: pointer;
+	position: relative;
+	z-index: 0;
+	// cursor: pointer;
 }
 
 .before {
-    @extend .pointer;
+	@extend .pointer;
 
-    &::before {
-        @extend .block;
-    }
+	&::before {
+		@extend .block;
+	}
 }
 
 .after {
-    @extend .pointer;
+	@extend .pointer;
 
-    &::after {
-        @extend .block;
-    }
+	&::after {
+		@extend .block;
+	}
 }
 
 .after-before {
-    @extend .pointer;
+	@extend .pointer;
 
-    &::before,
-    &::after {
-        @extend .block;
-    }
+	&::before,
+	&::after {
+		@extend .block;
+	}
 
-    &::after {
-        z-index: -2;
-    }
+	&::after {
+		z-index: -2;
+	}
 }

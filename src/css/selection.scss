@@ -9,308 +9,308 @@
 //
 
 .vertical {
-    @extend .flex-column;
-    @extend .after-before;
+  @extend .flex-column;
+  @extend .after-before;
 
-    &::before {
-        background: var(--white-normal);
-        border: 1px solid var(--gray-transparent);
-        opacity: 1;
-    }
+  &::before {
+    background: var(--white-normal);
+    border: 1px solid var(--gray-transparent);
+    opacity: 1;
+  }
 
-    &::after {
-        opacity: 0;
-    }
+  &::after {
+    opacity: 0;
+  }
 }
 
 .selection--default {
-    li {
-        @extend .flex-column;
-        @extend .vertical;
+  li {
+    @extend .flex-column;
+    @extend .vertical;
 
-        align-items: center;
+    align-items: center;
 
-        width: 16rem;
-        gap: var(--gap-2t);
-        flex: none;
+    width: 16rem;
+    gap: var(--gap-2t);
+    flex: none;
 
-        h3 {
-            @extend .h3--small;
-        }
-
-        p {
-            @extend .p--small;
-        }
-
-        &::before {
-            border-color: var(--gray-dynamic);
-            background: var(--white-dynamic);
-        }
-
-        &::after {
-            border-color: var(--gray-high-contrast);
-            background: var(--gray-normal);
-        }
-
-        &:hover {
-
-            &::before,
-            &::after {
-                top: calc(var(--bttn-s) / -2);
-                left: calc(var(--bttn-s) / -2);
-                right: calc(var(--bttn-s) / -2);
-                bottom: calc(var(--bttn-s) / -2);
-                border-radius: var(--round-m);
-
-                border-color: var(--gray-high-contrast);
-                background: var(--gray-normal);
-
-                opacity: 0;
-            }
-
-            &::after {
-                opacity: 1;
-            }
-        }
-
-        &.plain {
-            @extend .no-padding-margin;
-
-            width: var(--pad-m);
-            border-radius: 0;
-            border: 0;
-            background-color: transparent;
-            justify-content: center;
-
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
+    h3 {
+      @extend .h3--small;
     }
+
+    p {
+      @extend .p--small;
+    }
+
+    &::before {
+      border-color: var(--gray-dynamic);
+      background: var(--white-dynamic);
+    }
+
+    &::after {
+      border-color: var(--gray-high-contrast);
+      background: var(--gray-normal);
+    }
+
+    &:hover {
+
+      &::before,
+      &::after {
+        top: calc(var(--bttn-s) / -2);
+        left: calc(var(--bttn-s) / -2);
+        right: calc(var(--bttn-s) / -2);
+        bottom: calc(var(--bttn-s) / -2);
+        border-radius: var(--round-m);
+
+        border-color: var(--gray-high-contrast);
+        background: var(--gray-normal);
+
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.plain {
+      @extend .no-padding-margin;
+
+      width: var(--pad-m);
+      border-radius: 0;
+      border: 0;
+      background-color: transparent;
+      justify-content: center;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 
 .selection--minimal {
-    li {
-        @extend .vertical;
+  li {
+    @extend .vertical;
 
-        padding: var(--bttn-s);
-        gap: var(--gap-t);
+    padding: var(--bttn-s);
+    gap: var(--gap-t);
 
-        &::before {
-            opacity: 0;
-        }
-
-        &[aria-current="page"] {
-            pointer-events: none;
-        }
-
-        &:hover,
-        &[aria-current="page"] {
-            &::before {
-                top: calc(var(--bttn-s) / -4);
-                left: calc(var(--bttn-s) / -4);
-                right: calc(var(--bttn-s) / -4);
-                bottom: calc(var(--bttn-s) / -4);
-                opacity: 1;
-            }
-        }
-
-        &[aria-current="page"] {
-            &::before {
-                background-color: var(--gray-dynamic);
-                border-color: transparent;
-            }
-        }
+    &::before {
+      opacity: 0;
     }
+
+    &[aria-current="page"] {
+      pointer-events: none;
+    }
+
+    &:hover,
+    &[aria-current="page"] {
+      &::before {
+        top: calc(var(--bttn-s) / -4);
+        left: calc(var(--bttn-s) / -4);
+        right: calc(var(--bttn-s) / -4);
+        bottom: calc(var(--bttn-s) / -4);
+        opacity: 1;
+      }
+    }
+
+    &[aria-current="page"] {
+      &::before {
+        background-color: var(--gray-dynamic);
+        border-color: transparent;
+      }
+    }
+  }
 }
 
 .selection--static {
-    @extend .flex-row-center;
+  @extend .flex-row-center;
 
-    >ul,
-    >ol {
-        @extend .flat;
+  >ul,
+  >ol {
+    @extend .flat;
+  }
+
+  li {
+    @extend .vertical;
+
+    padding: var(--bttn-2s) var(--bttn-l);
+
+    gap: var(--gap-2t);
+    flex: 1 0 0;
+
+    &::before {
+      background-color: var(--gray-background);
+      border: 1px solid var(--gray-transparent);
     }
 
-    li {
-        @extend .vertical;
-
-        padding: var(--bttn-2s) var(--bttn-l);
-
-        gap: var(--gap-2t);
-        flex: 1 0 0;
-
-        &::before {
-            background-color: var(--gray-background);
-            border: 1px solid var(--gray-transparent);
-        }
-
-        .img {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 calc(var(--bttn-l) * -1);
-        }
-
-        p {
-            margin-bottom: 0;
-        }
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 calc(var(--bttn-l) * -1);
     }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .selection--partners {
-    li {
-        @extend .flex-column-start;
+  li {
+    @extend .flex-column-start;
 
-        align-self: flex-start;
-        flex: 1 0 0;
-        gap: var(--gap-2t);
-        max-width: 15.625rem;
-    }
+    align-self: flex-start;
+    flex: 1 0 0;
+    gap: var(--gap-2t);
+    max-width: 15.625rem;
+  }
 
-    p {
-        @extend .p--small;
+  p {
+    @extend .p--small;
 
-        text-align: center;
-        align-self: stretch;
-    }
+    text-align: center;
+    align-self: stretch;
+  }
 }
 
 .selection--journey {
-    li {
-        @extend .flex-column;
-        @extend .vertical;
+  li {
+    @extend .flex-column;
+    @extend .vertical;
 
-        align-items: center;
-        align-self: flex-end;
+    align-items: center;
+    align-self: flex-end;
 
-        width: 18.3625rem;
-        gap: var(--gap-2t);
-        flex: none;
+    width: 18.3625rem;
+    gap: var(--gap-2t);
+    flex: none;
 
-        &::before {
-            @extend .p--regular;
-            @extend .flex-row-center;
+    &::before {
+      @extend .p--regular;
+      @extend .flex-row-center;
 
-            align-self: initial;
-            position: relative;
+      align-self: initial;
+      position: relative;
 
-            width: var(--bttn-l);
-            height: var(--bttn-l);
+      width: var(--bttn-l);
+      height: var(--bttn-l);
 
-            color: var(--white-static);
-            background: var(--blue-deep);
-            border-radius: var(--round);
-            border: 0;
-        }
-
-        // Add more if necessary
-        @for $i from 1 through 10 {
-            &:nth-child(#{$i})::before {
-                content: "#{$i}";
-            }
-        }
-
-        &::after {
-            opacity: 1;
-            border-color: var(--gray-dynamic);
-            background: var(--gray-background);
-        }
+      color: var(--white-static);
+      background: var(--blue-deep);
+      border-radius: var(--round);
+      border: 0;
     }
 
-    p {
-        @extend .p--small;
+    // Add more if necessary
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
     }
+
+    &::after {
+      opacity: 1;
+      border-color: var(--gray-dynamic);
+      background: var(--gray-background);
+    }
+  }
+
+  p {
+    @extend .p--small;
+  }
 }
 
 .selection--checkbox {
-    @extend .selection--default;
+  @extend .selection--default;
 
-    input,
-    label {
-        cursor: pointer;
-    }
+  input,
+  label {
+    cursor: pointer;
+  }
 
-    label {
-        @extend .flex-column-center;
+  label {
+    @extend .flex-column-center;
 
-        font-weight: initial;
-        gap: var(--gap-2t);
-        padding: var(--bttn-2s);
-    }
+    font-weight: initial;
+    gap: var(--gap-2t);
+    padding: var(--bttn-2s);
+  }
 
-    li {
-        padding: 0;
-        align-self: initial;
-        width: 17.5rem;
-    }
+  li {
+    padding: 0;
+    align-self: initial;
+    width: 17.5rem;
+  }
 
-    p {
-        @extend .p--small;
-    }
+  p {
+    @extend .p--small;
+  }
 }
 
 .selection--careers {
-    @extend .flex-column;
+  @extend .flex-column;
 
+  gap: var(--gap-l);
+  align-self: initial;
+
+  width: 100%;
+  max-width: var(--max-wide);
+
+  >ul,
+  >ol {
+    flex-wrap: wrap;
     gap: var(--gap-l);
-    align-self: initial;
+    padding: 0;
 
-    width: 100%;
-    max-width: var(--max-wide);
+    li {
+      @extend .vertical;
+      @extend .flex-row-center;
 
-    >ul,
-    >ol {
-        flex-wrap: wrap;
-        gap: var(--gap-l);
-        padding: 0;
+      flex: none;
+      gap: var(--gap-2t);
+      padding: calc(var(--pad-s) / 2) var(--pad-t);
 
-        li {
-            @extend .vertical;
-            @extend .flex-row-center;
+      width: calc(50% - (var(--gap-l) / 2));
+      max-width: initial;
 
-            flex: none;
-            gap: var(--gap-2t);
-            padding: calc(var(--pad-s) / 2) var(--pad-t);
+      &::before {
+        background: var(--gray-background);
+        border-color: var(--gray-dynamic);
+      }
 
-            width: calc(50% - (var(--gap-l) / 2));
-            max-width: initial;
+      &::after {
+        background: var(--gray-normal);
+        border-color: var(--gray-high-contrast);
+      }
 
-            &::before {
-                background: var(--gray-background);
-                border-color: var(--gray-dynamic);
-            }
+      &:hover {
 
-            &::after {
-                background: var(--gray-normal);
-                border-color: var(--gray-high-contrast);
-            }
+        &::before,
+        &::after {
+          top: calc(var(--bttn-s) / -2);
+          left: calc(var(--bttn-s) / -2);
+          right: calc(var(--bttn-s) / -2);
+          bottom: calc(var(--bttn-s) / -2);
+          border-radius: var(--round-m);
 
-            &:hover {
-
-                &::before,
-                &::after {
-                    top: calc(var(--bttn-s) / -2);
-                    left: calc(var(--bttn-s) / -2);
-                    right: calc(var(--bttn-s) / -2);
-                    bottom: calc(var(--bttn-s) / -2);
-                    border-radius: var(--round-m);
-
-                    opacity: 0;
-                }
-
-                &::after {
-                    opacity: 1;
-
-                }
-            }
+          opacity: 0;
         }
 
-        a {
-            @extend .a--default;
+        &::after {
+          opacity: 1;
+
         }
+      }
     }
+
+    a {
+      @extend .a--default;
+    }
+  }
 }
 
 //
@@ -318,72 +318,72 @@
 //
 
 .selection {
-    @extend .flex-row-start;
+  @extend .flex-row-start;
 
-    h3 {
-        color: var(--blue-dark);
-    }
+  h3 {
+    color: var(--blue-dark);
+  }
+
+  ul,
+  ol {
+    @extend .flex-row;
+
+    gap: var(--gap-s);
+  }
+
+  li {
+    padding: var(--bttn-2s);
+  }
+
+  .text {
+    gap: var(--gap-t);
+  }
+
+
+  //
+  // Type
+  //
+
+  &.default {
+    @extend .selection--default;
+  }
+
+  &.center-static,
+  &.commitment {
+    @extend .selection--static;
 
     ul,
     ol {
-        @extend .flex-row;
-
-        gap: var(--gap-s);
+      gap: var(--gap-l);
     }
+  }
 
-    li {
-        padding: var(--bttn-2s);
+  &.cta,
+  &.jurney {
+    @extend .selection--static;
+  }
+
+  &.partners {
+    @extend .selection--partners;
+  }
+
+  &.commitment {
+    .img {
+      svg {
+        width: 100%;
+      }
     }
+  }
 
-    .text {
-        gap: var(--gap-t);
-    }
+  &.journey {
+    @extend .selection--journey;
+  }
 
+  &.checkbox {
+    @extend .selection--checkbox;
+  }
 
-    //
-    // Type
-    //
-
-    &.default {
-        @extend .selection--default;
-    }
-
-    &.center-static,
-    &.commitment {
-        @extend .selection--static;
-
-        ul,
-        ol {
-            gap: var(--gap-l);
-        }
-    }
-
-    &.cta,
-    &.jurney {
-        @extend .selection--static;
-    }
-
-    &.partners {
-        @extend .selection--partners;
-    }
-
-    &.commitment {
-        .img {
-            svg {
-                width: 100%;
-            }
-        }
-    }
-
-    &.journey {
-        @extend .selection--journey;
-    }
-
-    &.checkbox {
-        @extend .selection--checkbox;
-    }
-
-    &.careers {
-        @extend .selection--careers;
-    }
+  &.careers {
+    @extend .selection--careers;
+  }
 }

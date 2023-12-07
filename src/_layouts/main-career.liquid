@@ -20,46 +20,7 @@ layout: main.liquid
         aria-label="We are hiring"></object>
     </div>
     <menu class="submenu">
-      <li>
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 32 32"
-          aria-label="Rack Icon">
-          <use href="/img/icons/small.svg#rack" />
-        </svg>
-        <a href="/career/backend-developer-web-based">Backend Developer - Web-Based Solutions</a>
-      </li>
-      <li>
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 32 32"
-          aria-label="Mobile Icon">
-          <use href="/img/icons/small.svg#mobile" />
-        </svg>
-        <a href="/career/backend-developer-mobile-based">Backend Developer - Mobile Based Solutions</a>
-      </li>
-      <li>
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 32 32"
-          aria-label="Interface Icon">
-          <use href="/img/icons/small.svg#interface" />
-        </svg>
-        <a href="/career/user-interface-developer-web-based">User Interface Developer - Web-Based Solutions</a>
-      </li>
-      <li>
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 32 32"
-          aria-label="Experience Icon">
-          <use href="/img/icons/small.svg#experience" />
-        </svg>
-        <a href="/career/user-experience-designer-mobile-and-web">User Experience Designer - Mobile and Web Solutions</a>
-      </li>
+      {% render 'item-careers' items: collections.featured %}
     </menu>
     <a href="/careers/" class="default green">See all open positions
       <i class="arrow"></i>

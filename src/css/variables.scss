@@ -12,78 +12,78 @@ $screen-normal: 1024px;
 //
 
 :root {
-    //! Common variable, don't use, only for reference
-    --size-4: .25rem;
-    --size-8: .5rem;
-    --size-12: .75rem;
-    --size-16: 1rem;
-    --size-24: 1.5rem;
-    --size-32: 2rem;
-    --size-48: 3rem;
-    --size-64: 4rem;
-    --size-96: 6rem;
-    --size-128: 8rem;
-    --size-160: 10rem;
-    --size-190: 11.875rem;
-    --size-big: 1000px;
+  //! Common variable, don't use, only for reference
+  --size-4: .25rem;
+  --size-8: .5rem;
+  --size-12: .75rem;
+  --size-16: 1rem;
+  --size-24: 1.5rem;
+  --size-32: 2rem;
+  --size-48: 3rem;
+  --size-64: 4rem;
+  --size-96: 6rem;
+  --size-128: 8rem;
+  --size-160: 10rem;
+  --size-190: 11.875rem;
+  --size-big: 1000px;
 
-    // Padding
-    --pad-t: var(--size-24);
-    --pad-2t: var(--size-48);
-    --pad-s: var(--size-32);
-    --pad-2s: var(--size-64);
-    --pad-m: var(--size-96);
-    --pad-l: var(--size-128);
+  // Padding
+  --pad-t: var(--size-24);
+  --pad-2t: var(--size-48);
+  --pad-s: var(--size-32);
+  --pad-2s: var(--size-64);
+  --pad-m: var(--size-96);
+  --pad-l: var(--size-128);
 
-    // Gap
-    --gap-t: var(--size-8);
-    --gap-2t: var(--size-16);
-    --gap-3t: var(--size-24);
-    --gap-s: var(--size-32);
-    --gap-m: var(--size-48);
-    --gap-l: var(--size-64);
+  // Gap
+  --gap-t: var(--size-8);
+  --gap-2t: var(--size-16);
+  --gap-3t: var(--size-24);
+  --gap-s: var(--size-32);
+  --gap-m: var(--size-48);
+  --gap-l: var(--size-64);
 
-    // Button
-    --bttn-s: var(--size-16);
-    --bttn-2s: var(--size-32);
-    --bttn-m: var(--size-24);
-    --bttn-l: var(--size-48);
+  // Button
+  --bttn-s: var(--size-16);
+  --bttn-2s: var(--size-32);
+  --bttn-m: var(--size-24);
+  --bttn-l: var(--size-48);
 
-    // Rounded corner
-    --round-s: var(--size-8);
-    --round-m: var(--size-24);
-    --round-l: var(--size-48);
-    --round: var(--size-big);
+  // Rounded corner
+  --round-s: var(--size-8);
+  --round-m: var(--size-24);
+  --round-l: var(--size-48);
+  --round: var(--size-big);
 
-    // Common size
-    --size-one-third: 23.3333125rem;
-    --size-ss: calc(100vw * 1200/1440);
-    --aspect-ratio-ss: calc(1200 / 720);
+  // Common size
+  --size-one-third: 23.3333125rem;
+  --size-ss: calc(100vw * 1200/1440);
+  --aspect-ratio-ss: calc(1200 / 720);
 
-    // Max size
-    --max-medium: 47.5rem;
-    --max-wide: 57.5rem;
-    --max-ultrawide: 66rem;
+  // Max size
+  --max-medium: 47.5rem;
+  --max-wide: 57.5rem;
+  --max-ultrawide: 66rem;
 
-    // Animation speed
-    --fast: 400ms;
-    --slow: 800ms;
+  // Animation speed
+  --fast: 400ms;
+  --slow: 800ms;
 
-    // Easing
-    --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-    --ease-out: cubic-bezier(0.1, 0.2, 0.2, 1.1);
+  // Easing
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.1, 0.2, 0.2, 1.1);
 
-    // Shadow
-    --shadow: var(--gap-2t) var(--gap-m) var(--gap-l) 0 rgba(0, 0, 0, 0.25);
-    --shadow-small: 0 var(--gap-2t) var(--gap-3t) 0 rgba(0, 0, 0, 0.25);
+  // Shadow
+  --shadow: var(--gap-2t) var(--gap-m) var(--gap-l) 0 rgba(0, 0, 0, 0.25);
+  --shadow-small: 0 var(--gap-2t) var(--gap-3t) 0 rgba(0, 0, 0, 0.25);
 }
 
 
 @media screen and (max-width: $screen-wider) {
-    :root {
-        --pad-m: var(--size-64);
-        --pad-l: var(--size-96);
-    }
+  :root {
+    --pad-m: var(--size-64);
+    --pad-l: var(--size-96);
+  }
 }
 
 
@@ -92,54 +92,54 @@ $screen-normal: 1024px;
 //
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --white-normal: #F9FAFC;
-        --white-static: #F9FAFC;
-        --white-transparent: #F9FAFCCC;
+  :root {
+    --white-normal: #F9FAFC;
+    --white-static: #F9FAFC;
+    --white-transparent: #F9FAFCCC;
 
-        --gray-normal: #E6DBDB;
-        --gray-transparent: #E6DBDBCC;
-        --gray-dynamic: #E6DBDBCC;
-        --gray-high-contrast: #E6DBDB00;
-        --gray-background: #A49D8514;
+    --gray-normal: #E6DBDB;
+    --gray-transparent: #E6DBDBCC;
+    --gray-dynamic: #E6DBDBCC;
+    --gray-high-contrast: #E6DBDB00;
+    --gray-background: #A49D8514;
 
-        --dark-normal: #2B2727;
-        --dark-static: #2B2727;
+    --dark-normal: #2B2727;
+    --dark-static: #2B2727;
 
-        --blue-dark: #002B76;
-        --blue-deep: #003DAE;
-        --blue-normal: #004BD0;
-        --blue-cyan: #0096E1;
+    --blue-dark: #002B76;
+    --blue-deep: #003DAE;
+    --blue-normal: #004BD0;
+    --blue-cyan: #0096E1;
 
-        --neon-blue: #0057F2;
-        --neon-green: #2FFF86;
-    }
+    --neon-blue: #0057F2;
+    --neon-green: #2FFF86;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+  :root {
 
-        --white-normal: #191A1B;
-        --white-static: #F9FAFC;
-        --white-transparent: #191A1BCC;
+    --white-normal: #191A1B;
+    --white-static: #F9FAFC;
+    --white-transparent: #191A1BCC;
 
-        --gray-normal: #322F2FCC;
-        --gray-transparent: #e6dbdb28;
-        --gray-dynamic: #E6DBDB14;
-        --gray-high-contrast: #E6DBDB00;
-        --gray-background: #A49D8514;
+    --gray-normal: #322F2FCC;
+    --gray-transparent: #e6dbdb28;
+    --gray-dynamic: #E6DBDB14;
+    --gray-high-contrast: #E6DBDB00;
+    --gray-background: #A49D8514;
 
-        --dark-normal: #C1C1C2;
-        --dark-static: #2B2727;
+    --dark-normal: #C1C1C2;
+    --dark-static: #2B2727;
 
-        --blue-dark: #0558EA;
-        --blue-deep: #0246C5;
-        --blue-normal: #0357EC;
-        --blue-cyan: #0096E1;
+    --blue-dark: #0558EA;
+    --blue-deep: #0246C5;
+    --blue-normal: #0357EC;
+    --blue-cyan: #0096E1;
 
-        --neon-blue: #045EFF;
-        --neon-green: #2FFF86;
-    }
+    --neon-blue: #045EFF;
+    --neon-green: #2FFF86;
+  }
 }
 
 
@@ -148,7 +148,7 @@ $screen-normal: 1024px;
 //
 
 :root {
-    --svg-fill: var(--white-normal);
-    --svg-stroke: var(--dark-normal);
-    --svg-stroke-blue: var(--neon-blue);
+  --svg-fill: var(--white-normal);
+  --svg-stroke: var(--dark-normal);
+  --svg-stroke-blue: var(--neon-blue);
 }

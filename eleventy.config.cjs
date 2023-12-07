@@ -1,4 +1,6 @@
-
+const pluginTOC = require('eleventy-plugin-toc')
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
 
 module.exports = function (eleventyConfig) {
@@ -36,7 +38,13 @@ module.exports = function (eleventyConfig) {
 	}
 
 
+	eleventyConfig.addPlugin(pluginTOC, {
+		tags: ['h2', 'h3'],
+		wrapper: 'li',
+		flat: true
+	});
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+
 
 	eleventyConfig.setServerOptions({
 		watch: ["sites/js/*"]
@@ -143,6 +151,21 @@ module.exports = function (eleventyConfig) {
 		);
 		return value;
 	});
+
+
+
+	//
+	//! Markdown Overrides
+	//
+
+	let markdownLibrary = markdownIt({
+		html: true,
+		breaks: true,
+		linkify: true
+	}).use(markdownItAnchor, {
+		permalink: false
+	});
+	eleventyConfig.setLibrary("md", markdownLibrary);
 
 
 	return {
