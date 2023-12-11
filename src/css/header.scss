@@ -165,7 +165,9 @@ nav.menu {
         pointer-events: none;
       }
 
-      // Current page
+      //
+      //! Menu radio switcher
+      //
 
       &:hover,
       &[aria-current="page"],
@@ -213,7 +215,7 @@ nav.menu {
         }
       }
 
-      // Menu popup hover
+      // Show menu popup
 
       >nav.popup {
         opacity: 0;
@@ -232,7 +234,11 @@ nav.menu {
         margin-top: 0;
         opacity: 1;
         transform: translate(0, 0);
-        pointer-events: all;
+
+        li,
+        a {
+          pointer-events: all;
+        }
       }
     }
   }
@@ -251,6 +257,8 @@ nav.popup {
   padding: var(--pad-2s) var(--pad-l) var(--pad-2t);
 
   gap: var(--gap-m);
+
+  pointer-events: none;
 
   @media screen and (max-width: variables.$screen-wide) {
     top: calc(var(--pad-s) * 2.5);
@@ -294,6 +302,7 @@ nav.popup {
 
     a {
       @extend .a--submenu;
+
       text-align: center;
 
       @media screen and (max-width: variables.$screen-normal) {
