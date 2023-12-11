@@ -4,6 +4,10 @@
 @use 'after-before';
 @use 'flex';
 
+:root {
+  --menu-shadow: 0 var(--pad-m) var(--pad-m) 0 rgba(0, 0, 0, 0.25);
+}
+
 header {
   @extend .flex-row-center;
   @extend .no-padding-margin;
@@ -17,6 +21,10 @@ header {
     padding: var(--pad-s) var(--pad-m);
   }
 
+  @media screen and (max-width: variables.$screen-normal) {
+    padding: var(--pad-s);
+  }
+
   >div {
     @extend .flex-row-center;
 
@@ -27,15 +35,15 @@ header {
     }
   }
 
-  >menu {
-    z-index: 2;
-  }
-
   li {
     @extend .flex-column-center;
 
     gap: var(--gap-t);
     z-index: 3;
+
+    @media screen and (max-width: variables.$screen-normal) {
+      gap: var(--gap-s);
+    }
   }
 
   a {
@@ -47,82 +55,187 @@ header {
     pointer-events: none;
   }
 
-  .main>li {
-    z-index: 2;
+  input[type=radio] {
+    display: none;
+  }
 
-    >a {
-      @extend .flex-row-center;
-      z-index: 2;
+  // Menu switcher
+  #menu-close-trigger {
+    display: block;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-      gap: var(--gap-t);
-
-      @extend .before;
-
-      &::before {
-        background: var(--neon-green);
-        border: none;
-        opacity: 0;
-      }
-
-      .arrow {
-        width: 1rem;
-
-        @media screen and (max-width: variables.$screen-wider) {
-          display: none;
-        }
-
-        &::before {
-          right: calc(var(--bttn-m) / 4);
-        }
-
-        &::after {
-          right: 0;
-        }
-      }
-    }
-
-    &:hover,
-    &[aria-current="page"] {
-      z-index: 1;
-
-      >a {
-        color: var(--dark-static);
-
-        &::before {
-          top: calc(var(--bttn-m) / -2);
-          left: calc(var(--bttn-m) / -1.25);
-          right: calc(var(--bttn-m) / -1.25);
-          bottom: calc(var(--bttn-m) / -2);
-          opacity: 1;
-        }
-      }
-    }
-
-    &[aria-current="page"] {
-      >a {
-        color: var(--white-static);
-
-        &::before {
-          background: var(--neon-blue);
-        }
-      }
-    }
-
-    >nav {
-      opacity: 0;
-      pointer-events: none;
-      transform: translate(0, -2rem);
-      transition: all var(--fast) var(--ease-back);
-    }
-
-    &:hover>nav {
-      margin-top: 0;
-      opacity: 1;
-      transform: translate(0, 0);
-      pointer-events: all;
+    span {
+      display: none;
     }
   }
 
+  input:checked+#menu-close-trigger {
+    display: none;
+  }
+
+}
+
+nav.menu {
+  z-index: 2;
+
+  >a {
+    @extend .a--default;
+
+    @media screen and (max-width: variables.$screen-normal) {
+      display: flex;
+    }
+  }
+
+  >menu {
+    @media screen and (max-width: variables.$screen-normal) {
+      position: absolute;
+      z-index: -1;
+      top: calc(var(--pad-s) * 2.5);
+      right: 0;
+      left: 0;
+
+      padding: var(--pad-l) var(--pad-m);
+
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      background: var(--white-transparent);
+      box-shadow: var(--menu-shadow);
+      backdrop-filter: blur(var(--pad-2s));
+    }
+
+    >li {
+      z-index: 2;
+
+      >label {
+        display: block;
+        align-self: stretch;
+        cursor: pointer;
+      }
+
+      >a,
+      >label a {
+        @extend .flex-row-center;
+        @extend .before;
+
+        z-index: 2;
+
+        flex: auto;
+        gap: var(--gap-t);
+
+        @media screen and (max-width: variables.$screen-normal) {
+          justify-content: flex-start;
+        }
+
+        &::before {
+          background: var(--neon-green);
+          border: none;
+          opacity: 0;
+        }
+
+        .arrow {
+          width: 1rem;
+
+          @media screen and (max-width: variables.$screen-wider) {
+            display: none;
+          }
+
+          @media screen and (max-width: variables.$screen-normal) {
+            display: flex;
+            width: 100%;
+          }
+
+          &::before {
+            right: calc(var(--bttn-m) / 4);
+          }
+
+          &::after {
+            right: 0;
+          }
+        }
+      }
+
+      >label a {
+        pointer-events: none;
+      }
+
+      // Current page
+
+      &:hover,
+      &[aria-current="page"],
+      input:checked {
+        z-index: 1;
+
+        >a,
+        >label a,
+        +label a {
+          color: var(--dark-static);
+
+          &::before {
+            top: calc(var(--bttn-m) / -2);
+            left: calc(var(--bttn-m) / -1.25);
+            right: calc(var(--bttn-m) / -1.25);
+            bottom: calc(var(--bttn-m) / -2);
+            opacity: 1;
+          }
+        }
+      }
+
+      &[aria-current="page"] {
+
+        >a,
+        >label a,
+        +label a {
+          color: var(--white-static);
+
+          &::before {
+            background: var(--neon-blue);
+          }
+        }
+      }
+
+      input:checked {
+
+        >a,
+        >label a,
+        +label a {
+          color: var(--dark-static);
+
+          &::before {
+            background: var(--neon-green);
+          }
+        }
+      }
+
+      // Menu popup hover
+
+      >nav.popup {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(0, -2rem);
+        transition: all var(--fast) var(--ease-back);
+
+        @media screen and (max-width: variables.$screen-normal) {
+          opacity: 1;
+          transform: translate(0, 0);
+          pointer-events: all;
+        }
+      }
+
+      input:checked+label+nav.popup {
+        margin-top: 0;
+        opacity: 1;
+        transform: translate(0, 0);
+        pointer-events: all;
+      }
+    }
+  }
 }
 
 nav.popup {
@@ -137,34 +250,83 @@ nav.popup {
   right: 0;
   padding: var(--pad-2s) var(--pad-l) var(--pad-2t);
 
+  gap: var(--gap-m);
+
   @media screen and (max-width: variables.$screen-wide) {
     top: calc(var(--pad-s) * 2.5);
   }
 
-  gap: var(--gap-m);
+  @media screen and (max-width: variables.$screen-normal) {
+    top: initial;
+    position: static;
+    padding: 0;
+    gap: var(--pad-s);
+
+    >.button {
+      display: none;
+    }
+  }
 
   &::before {
     top: calc(var(--pad-t) * 1.5);
     border-radius: 0;
     background: var(--white-transparent);
-    box-shadow: 0 var(--pad-m) var(--pad-m) 0 rgba(0, 0, 0, 0.25);
+    box-shadow: var(--menu-shadow);
     backdrop-filter: blur(var(--pad-2s));
+
+    @media screen and (max-width: variables.$screen-normal) {
+      background: unset;
+      box-shadow: unset;
+      backdrop-filter: unset;
+    }
+  }
+
+  // submenu
+  >menu {
+    gap: calc(var(--gap-s) / 2) var(--gap-m);
+    flex-wrap: wrap;
+
+    @media screen and (max-width: variables.$screen-normal) {
+      gap: 0;
+      justify-content: flex-start;
+      margin: 0 calc(var(--bttn-s) * -1);
+    }
+
+    a {
+      @extend .a--submenu;
+      text-align: center;
+
+      @media screen and (max-width: variables.$screen-normal) {
+        text-align: left;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
   }
 
   li {
     align-self: stretch;
 
-    min-width: 8rem;
+    min-width: 12rem;
     width: calc(25% - var(--gap-m));
     max-width: 13.75rem;
-  }
 
-  menu {
-    gap: calc(var(--gap-s) / 2) var(--gap-m);
-    flex-wrap: wrap;
-  }
+    @media screen and (max-width: variables.$screen-normal) {
+      flex-direction: row;
 
-  a {
-    text-align: center;
+      width: 100%;
+      min-width: initial;
+      max-width: initial;
+
+      padding-top: calc(var(--bttn-s) / 3);
+      padding-bottom: calc(var(--bttn-s) / 3);
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
   }
 }

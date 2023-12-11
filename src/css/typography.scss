@@ -18,6 +18,8 @@ body {
 }
 
 @mixin children-tags {
+  transition: color var(--fast) var(--ease-out);
+
   strong {
     display: inline-block;
     font-weight: 700;
@@ -201,6 +203,15 @@ li {
     font-weight: 600;
   }
 
+  &--submenu,
+  &.submenu {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.03rem;
+  }
+
+
   &--cta,
   &.cta {
     font-size: 1.25rem;
@@ -249,16 +260,6 @@ menu,
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.03375rem;
-  }
-}
-
-menu.submenu {
-
-  a {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.03rem;
   }
 }
 

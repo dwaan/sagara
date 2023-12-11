@@ -2,7 +2,7 @@
   "name": "sagara",
   "version": "0.0.1",
   "description": "Sagara Redesign 2023",
-  "main": "src/index.liquid",
+  "main": "src/homepage.liquid",
   "type": "module",
   "scripts": {
     "test": "gulp dev",

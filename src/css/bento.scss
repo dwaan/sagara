@@ -101,6 +101,10 @@
 		&.small {
 			width: var(--size);
 
+			@media screen and (max-width: variables.$screen-normal) {
+				width: calc((var(--size) * 1.5) + (var(--gap-l) / 2));
+			}
+
 			.text {
 				padding: var(--pad-s) var(--pad-2t);
 				gap: calc(var(--gap-t) / 2);
@@ -122,7 +126,10 @@
 
 		&.big {
 			width: calc((var(--size) * 2) + var(--gap-l));
-			align-self: stretch;
+
+			@media screen and (max-width: variables.$screen-normal) {
+				width: 100%;
+			}
 
 			.text {
 				padding: var(--pad-2t) var(--pad-2s);
@@ -130,6 +137,12 @@
 				h3 {
 					@extend .h3;
 				}
+			}
+		}
+
+		&.big-mobile {
+			@media screen and (max-width: variables.$screen-normal) {
+				width: 100%;
 			}
 		}
 

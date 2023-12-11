@@ -2,6 +2,7 @@
 @use 'selection';
 @use 'after-before';
 @use 'flex';
+@use 'variables';
 
 footer {
 	@extend .flex-column-center;
@@ -76,6 +77,7 @@ footer {
 	.sitemap,
 	.legal {
 		@extend .flex-row;
+
 		align-self: center;
 
 		width: 100%;
@@ -85,12 +87,14 @@ footer {
 	.sitemap {
 		gap: var(--gap-l);
 		padding-bottom: var(--pad-2s);
+		flex-wrap: wrap;
 
 		ol,
 		ul {
 			@extend .flex-column;
 			@extend .no-padding-margin;
 
+			flex-wrap: wrap;
 			gap: calc(var(--gap-m) / 2);
 
 			a[aria-current="page"] {
@@ -129,16 +133,26 @@ footer {
 			}
 		}
 
+		ul {
+			gap: var(--gap-l);
+		}
+
 		li {
 			@extend .flex-column;
 			@extend .no-padding-margin;
 
 			gap: calc(var(--gap-m) / 2);
 			flex: 1 0 0;
-		}
 
-		ul {
-			gap: var(--gap-l);
+			@media screen and (max-width: variables.$screen-small) {
+				width: calc(50% - (var(--gap-l) / 2));
+				flex: none;
+
+				li {
+					width: initial;
+					flex: 1 0 0;
+				}
+			}
 		}
 	}
 
@@ -146,6 +160,16 @@ footer {
 		padding: 0;
 		align-items: center;
 		gap: var(--gap-m);
+
+		@media screen and (max-width: variables.$screen-small) {
+			gap: var(--gap-2t);
+			align-items: flex-start;
+			flex-direction: column;
+
+			menu {
+				align-self: flex-start;
+			}
+		}
 
 		li {
 			@extend .flex-column-center;

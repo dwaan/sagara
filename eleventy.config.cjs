@@ -76,11 +76,18 @@ module.exports = function (eleventyConfig) {
 
 		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"> <use href="/img/icons/${icon}" viewBox="0 0 ${viewWidth} ${viewHeight}" /></svg>`;
 	});
-	eleventyConfig.addShortcode("a_menu", function (title, url, page_url) {
-		return `<a href="${url}"` + (page_url == url ? ` aria-current="page"` : ``) + `>${title}</a>`;
+	eleventyConfig.addShortcode("a_menu", function (title, url, page_url, now = false) {
+		if (now == "true") now = true;
+		return `<a href="${url}"` + (page_url == url || now ? ` aria-current="page"` : ``) + `>${title}</a>`;
 	});
 	eleventyConfig.addShortcode("a_arrow", function (title, url, classes, page_url) {
 		return `<a href="${url}"` + (classes ? ` class="${classes}"` : ``) + (page_url == url ? ` aria-current="page"` : ``) + `>${title} <i class="arrow"></i></a>`;
+	});
+	eleventyConfig.addShortcode("label_checkbox", function (title, url, name) {
+		return `
+			<input type="radio" name="${name}" id="menu-${url}" hidden />
+			<label for="menu-${url}"><a href="${url}">${title} <i class="arrow"></i></a></label>
+		`;
 	});
 	eleventyConfig.addShortcode("aria_current_page", function (url, page_url, now) {
 		return page_url == url || now ? ` aria-current="page"` : ``;

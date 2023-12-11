@@ -5,6 +5,7 @@
 $screen-wider: 1280px;
 $screen-wide: 1200px;
 $screen-normal: 1024px;
+$screen-small: 768px;
 
 
 //
@@ -86,6 +87,11 @@ $screen-normal: 1024px;
   }
 }
 
+@media screen and (max-width: $screen-normal) {
+  :root {
+    --size-ss: calc(100vw - (var(--pad-m) * 2));
+  }
+}
 
 //
 // Color collection
