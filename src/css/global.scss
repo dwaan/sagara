@@ -238,6 +238,15 @@ section {
 
   padding: var(--pad-2s) var(--pad-m);
   gap: var(--gap-l);
+  max-width: variables.$screen-widest;
+
+  @media screen and (min-width: variables.$screen-widest) {
+    align-self: center;
+  }
+
+  @media screen and (max-width: variables.$screen-small-normal) {
+    padding: var(--pad-m);
+  }
 
   >article {
     @extend .flex-column-start;
@@ -673,6 +682,11 @@ section.background {
 }
 
 section.listing {
+  @media screen and (max-width: variables.$screen-small-normal) {
+    padding-left: var(--pad-s);
+    padding-right: var(--pad-s);
+  }
+
   h1 {
     @extend .h1--listing;
   }
@@ -683,21 +697,43 @@ section.listing {
     @extend .no-padding-margin;
     @extend .selection--static;
 
-    gap: var(--gap-l);
+    --gap: var(--gap-l);
+    --padding-small: var(--pad-2s) var(--pad-2t);
+    --padding-big: var(--pad-2t) var(--pad-m);
+
+    gap: var(--gap);
     flex-wrap: wrap;
 
+    @media screen and (max-width: variables.$screen-small-normal) {
+      --gap: var(--gap-s);
+      --padding-small: var(--pad-s);
+      --padding-big: var(--padding-small);
+    }
+
+    @media screen and (max-width: variables.$screen-verysmall) {
+      flex-direction: column;
+    }
+
     li {
+      --half: calc(50% - (var(--gap) / 2));
+      --third: calc((100% - (var(--gap) * 2)) / 3);
+
       gap: 0;
-      padding: var(--pad-2s) var(--pad-2t);
+      padding: var(--padding);
       flex: none;
-      width: calc((100% - (var(--gap-l) * 2)) / 3);
+      width: var(--third);
+
+      @media screen and (max-width: variables.$screen-normal) {
+        width: var(--half);
+      }
 
       @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-          padding: var(--pad-2t) var(--pad-m);
-          width: calc(50% - (var(--gap-l) / 2));
+          padding: var(--padding-big);
+          width: var(--half);
         }
       }
+
     }
 
     svg {

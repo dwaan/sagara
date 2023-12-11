@@ -17,6 +17,11 @@ header {
   padding: var(--pad-2t) var(--pad-l);
   justify-content: space-between;
 
+  @media screen and (min-width: variables.$screen-widest) {
+    padding-left: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
+    padding-right: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
+  }
+
   @media screen and (max-width: variables.$screen-wide) {
     padding: var(--pad-s) var(--pad-m);
   }
@@ -374,6 +379,11 @@ nav.popup {
   gap: var(--gap-m);
 
   pointer-events: none;
+
+  @media screen and (min-width: variables.$screen-widest) {
+    padding-left: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
+    padding-right: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
+  }
 
   @media screen and (max-width: variables.$screen-wide) {
     top: calc(var(--pad-s) * 2.5);
