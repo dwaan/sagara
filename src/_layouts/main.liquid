@@ -41,6 +41,7 @@ title: A Mission Driven Technology Company in Indonesia
       </div>
 
       <nav class="menu">
+          {% comment %} Toggle for desktop {% endcomment %}
         <input
           type="radio"
           name="main-menu"
@@ -50,12 +51,25 @@ title: A Mission Driven Technology Company in Indonesia
         <label
           for="menu-close"
           id="menu-close-trigger"
+          hidden></label>
+
+        {% comment %} Toggle for mobile {% endcomment %}
+        <input
+          type="checkbox"
+          name="main-menu-show"
+          id="menu-show"
+          hidden
+          checked />
+        <label
+          for="menu-show"
+          id="menu-show-trigger"
           hidden>
           <span>
-            <i class="close"></i>
-            Menu</span>
+            <i class="show"></i>
+          </span>
         </label>
 
+        {% comment %} Menu {% endcomment %}
         <menu>
           <li hidden>
             <a href="/">Home</a>

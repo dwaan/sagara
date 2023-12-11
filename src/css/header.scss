@@ -42,7 +42,7 @@ header {
     z-index: 3;
 
     @media screen and (max-width: variables.$screen-normal) {
-      gap: var(--gap-s);
+      gap: var(--gap-m);
     }
   }
 
@@ -55,30 +55,127 @@ header {
     pointer-events: none;
   }
 
+  label {
+    cursor: pointer;
+  }
+
   input[type=radio] {
     display: none;
   }
+}
 
-  // Menu switcher
-  #menu-close-trigger {
-    display: block;
-    opacity: .5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+//
+// ! Desktop and Mobile Menu switcher
+//
 
-    span {
-      display: none;
+#menu-close-trigger {
+  @extend .flex-row-center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+
+  cursor: auto;
+
+  display: block;
+}
+
+#menu-close {
+  &:checked+label {
+    display: none;
+  }
+}
+
+#menu-show-trigger {
+  position: relative;
+  z-index: 2;
+
+  @media screen and (max-width: variables.$screen-normal) {
+    display: flex;
+  }
+
+  i {
+    @extend .flex-column-center;
+    @extend .after-before;
+
+    display: none;
+    width: 2rem;
+    height: 1rem;
+
+    border-top: 2px solid var(--dark-normal);
+
+    transition: all var(--fast) var(--ease-back);
+
+    &::before,
+    &::after {
+      height: 2px;
+      top: 50%;
+      background-color: var(--dark-normal);
+
+      transition: all var(--fast) var(--ease-back);
+    }
+
+    &::after {
+      top: 1rem;
+      right: .25rem;
+    }
+
+    @media screen and (max-width: variables.$screen-normal) {
+      display: block;
     }
   }
 
-  input:checked+#menu-close-trigger {
+  span {
+    @extend .flex-row-center;
+
+    gap: var(--gap-2t);
     display: none;
+
+    @media screen and (max-width: variables.$screen-normal) {
+      display: flex;
+    }
   }
 
+  &+menu {
+
+    @media screen and (max-width: variables.$screen-normal) {
+      opacity: 0;
+      transition: opacity var(--fast) var(--ease-back);
+    }
+  }
 }
+
+#menu-show {
+  &:checked+label {
+    i {
+      border-color: transparent;
+
+      &::before,
+      &::after {
+        top: 50%;
+        transform: rotate(30deg);
+        right: 0;
+      }
+
+      &::after {
+        transform: rotate(-30deg);
+      }
+    }
+
+    +menu {
+      @media screen and (max-width: variables.$screen-normal) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+//
+//! Popup menu
+//
 
 nav.menu {
   z-index: 2;
@@ -91,10 +188,21 @@ nav.menu {
     }
   }
 
+  >label {
+    >span {
+      pointer-events: none;
+    }
+
+    @media screen and (max-width: variables.$screen-normal) {
+      pointer-events: all;
+    }
+  }
+
   >menu {
+    z-index: 2;
+
     @media screen and (max-width: variables.$screen-normal) {
       position: absolute;
-      z-index: -1;
       top: calc(var(--pad-s) * 2.5);
       right: 0;
       left: 0;
@@ -105,6 +213,8 @@ nav.menu {
       align-items: flex-start;
       justify-content: flex-start;
 
+      pointer-events: none;
+
       background: var(--white-transparent);
       box-shadow: var(--menu-shadow);
       backdrop-filter: blur(var(--pad-2s));
@@ -113,10 +223,11 @@ nav.menu {
     >li {
       z-index: 2;
 
+      pointer-events: all;
+
       >label {
         display: block;
         align-self: stretch;
-        cursor: pointer;
       }
 
       >a,
@@ -224,7 +335,7 @@ nav.menu {
         transition: all var(--fast) var(--ease-back);
 
         @media screen and (max-width: variables.$screen-normal) {
-          opacity: 1;
+          display: none;
           transform: translate(0, 0);
           pointer-events: all;
         }
@@ -234,6 +345,10 @@ nav.menu {
         margin-top: 0;
         opacity: 1;
         transform: translate(0, 0);
+
+        @media screen and (max-width: variables.$screen-normal) {
+          display: flex;
+        }
 
         li,
         a {
@@ -268,11 +383,7 @@ nav.popup {
     top: initial;
     position: static;
     padding: 0;
-    gap: var(--pad-s);
-
-    >.button {
-      display: none;
-    }
+    gap: var(--pad-t);
   }
 
   &::before {
@@ -295,7 +406,6 @@ nav.popup {
     flex-wrap: wrap;
 
     @media screen and (max-width: variables.$screen-normal) {
-      gap: 0;
       justify-content: flex-start;
       margin: 0 calc(var(--bttn-s) * -1);
     }
@@ -336,6 +446,12 @@ nav.popup {
         width: 3rem;
         height: 3rem;
       }
+    }
+  }
+
+  .button {
+    @media screen and (max-width: variables.$screen-normal) {
+      width: 100%;
     }
   }
 }
