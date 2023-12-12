@@ -37,14 +37,16 @@
     @extend .before;
 
     gap: var(--gap-xs);
-    padding-left: var(--bttn-xl);
+    padding-left: 2.75rem;
 
     &::before {
       @extend .flex-row-center;
 
-      content: "1";
-      width: var(--bttn-m);
-      height: var(--bttn-m);
+      content: "-";
+
+      width: 2rem;
+      height: 2rem;
+      font-weight: 500;
 
       background: var(--gray-dynamic);
     }

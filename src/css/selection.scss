@@ -34,6 +34,10 @@
     gap: var(--gap-s);
     flex: none;
 
+    @media screen and (max-width: variables.$screen-small-l) {
+      width: 12rem;
+    }
+
     h3 {
       @extend .h3--small;
     }
@@ -140,7 +144,7 @@
   li {
     @extend .vertical;
 
-    padding: var(--bttn-m) var(--bttn-xl);
+    padding: var(--bttn-l) var(--bttn-xl);
 
     gap: var(--gap-s);
     flex: auto;
@@ -260,7 +264,7 @@
 
     font-weight: initial;
     gap: var(--gap-s);
-    padding: var(--bttn-m);
+    padding: var(--bttn-l);
   }
 
   li {
@@ -285,8 +289,14 @@
 
   >ul,
   >ol {
+    --gap: var(--gap-xxl);
+
+    @media screen and (max-width: variables.$screen-normal-l) {
+      --gap: var(--gap-l);
+    }
+
     flex-wrap: wrap;
-    gap: var(--gap-xxl);
+    gap: var(--gap);
     padding: 0;
 
     li {
@@ -297,8 +307,12 @@
       gap: var(--gap-s);
       padding: calc(var(--pad-m) / 2) var(--pad-xs);
 
-      width: calc(50% - (var(--gap-xxl) / 2));
+      width: calc(50% - (var(--gap) / 2));
       max-width: initial;
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        width: 100%;
+      }
 
       &::before {
         background: var(--gray-background);
@@ -333,6 +347,16 @@
     a {
       @extend .a--default;
     }
+
+    svg {
+      width: 6rem;
+      height: 6rem;
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
   }
 }
 
@@ -355,7 +379,7 @@
   }
 
   li {
-    padding: var(--bttn-m);
+    padding: var(--bttn-l);
   }
 
   .text {

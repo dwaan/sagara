@@ -52,8 +52,8 @@ $screen-unsupported: 240px;
 
   // Button
   --bttn-s: var(--size-16);
-  --bttn-m: var(--size-32);
-  --bttn-l: var(--size-24);
+  --bttn-m: var(--size-24);
+  --bttn-l: var(--size-32);
   --bttn-xl: var(--size-48);
 
   // Rounded corner
@@ -101,32 +101,32 @@ $screen-unsupported: 240px;
 
 @media screen and (max-width: $screen-small-l) {
   :root {
-    // Padding
-    --pad-xs: var(--size-12);
+    // Padding - modified
+    --pad-xs: var(--size-16);
     --pad-s: var(--size-16);
     --pad-m: var(--size-16);
     --pad-l: var(--size-24);
     --pad-xl: var(--size-32);
-    --pad-xxl: var(--size-48);
+    --pad-xxl: var(--size-64);
 
-    // Gap
+    // Gap - modified
     --gap-xs: var(--size-8);
-    --gap-s: var(--size-16);
-    --gap-m: var(--size-24);
+    --gap-s: var(--size-12);
+    --gap-m: var(--size-16);
     --gap-l: var(--size-32);
     --gap-xl: var(--size-48);
-    --gap-xxl: var(--size-64);
+    --gap-xxl: var(--size-48);
 
-    // Button
-    --bttn-s: var(--size-16);
-    --bttn-m: var(--size-32);
+    // Button - modified
+    --bttn-s: var(--size-12);
+    --bttn-m: var(--size-16);
     --bttn-l: var(--size-24);
-    --bttn-xl: var(--size-48);
+    --bttn-xl: var(--size-32);
 
-    // Rounded corner
+    // Rounded corner - modified
     --round-s: var(--size-8);
-    --round-m: var(--size-24);
-    --round-l: var(--size-48);
+    --round-m: var(--size-16);
+    --round-l: var(--size-32);
     --round: var(--size-big);
   }
 }

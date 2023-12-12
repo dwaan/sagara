@@ -58,6 +58,10 @@ header {
 
   object {
     pointer-events: none;
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      width: 8rem;
+    }
   }
 
   label {
@@ -110,21 +114,25 @@ header {
     width: 2rem;
     height: 1rem;
 
-    border-top: 2px solid var(--dark-normal);
+    @media screen and (max-width: variables.$screen-small-l) {
+      width: 1.5rem;
+    }
+
+    border-top: .125rem solid var(--dark-normal);
 
     transition: all var(--fast) var(--ease-back);
 
     &::before,
     &::after {
-      height: 2px;
-      top: 50%;
+      height: .125rem;
+      top: calc(50% - .0625rem);
       background-color: var(--dark-normal);
 
       transition: all var(--fast) var(--ease-back);
     }
 
     &::after {
-      top: 1rem;
+      top: 100%;
       right: .25rem;
     }
 
@@ -161,12 +169,12 @@ header {
       &::before,
       &::after {
         top: 50%;
-        transform: rotate(30deg);
+        transform: rotate(40deg);
         right: 0;
       }
 
       &::after {
-        transform: rotate(-30deg);
+        transform: rotate(-40deg);
       }
     }
 
@@ -225,6 +233,10 @@ nav.menu {
       backdrop-filter: blur(var(--pad-l));
     }
 
+    @media screen and (max-width: variables.$screen-small-l) {
+      top: calc(var(--pad-m) * 5);
+    }
+
     >li {
       z-index: 2;
 
@@ -268,7 +280,7 @@ nav.menu {
           }
 
           &::before {
-            right: calc(var(--bttn-l) / 4);
+            right: calc(var(--bttn-m) / 4);
           }
 
           &::after {
@@ -296,10 +308,10 @@ nav.menu {
           color: var(--dark-static);
 
           &::before {
-            top: calc(var(--bttn-l) / -2);
-            left: calc(var(--bttn-l) / -1.25);
-            right: calc(var(--bttn-l) / -1.25);
-            bottom: calc(var(--bttn-l) / -2);
+            top: calc(var(--bttn-m) / -2);
+            left: calc(var(--bttn-m) / -1.25);
+            right: calc(var(--bttn-m) / -1.25);
+            bottom: calc(var(--bttn-m) / -2);
             opacity: 1;
           }
         }

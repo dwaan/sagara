@@ -108,7 +108,7 @@ footer {
 			a[aria-current="page"] {
 				--size: .35rem;
 				--width: .5rem;
-				--left: calc(var(--gap-l) * -1);
+				--left: calc(var(--gap-m) * -1);
 
 				&::before,
 				&::after {
@@ -152,24 +152,29 @@ footer {
 			gap: var(--gap-y);
 			flex: 1 0 0;
 
-			@media screen and (max-width: variables.$screen-normal-s) {
+			@media screen and (max-width: variables.$screen-normal-m) {
 				width: calc(50% - (var(--gap-x) / 2));
 				flex: none;
 
 				li {
 					width: initial;
-					flex: 1 0 0;
 				}
+			}
+
+			@media screen and (max-width: variables.$screen-small-l) {
+				width: 100%;
 			}
 		}
 	}
 
 	.legal {
-		padding: 0;
 		align-items: flex-start;
 		gap: var(--gap-xl);
 
-		@media screen and (max-width: variables.$screen-normal-s) {
+		padding: 0;
+		white-space: nowrap;
+
+		@media screen and (max-width: variables.$screen-normal-m) {
 			gap: var(--gap-s);
 			flex-direction: column;
 
