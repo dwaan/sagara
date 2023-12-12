@@ -8,8 +8,8 @@ footer {
 	@extend .flex-column-center;
 	@extend .no-padding-margin;
 
-	padding: var(--pad-2s) var(--pad-m) var(--pad-2t);
-	gap: var(--gap-m);
+	padding: var(--pad-l) var(--pad-xl) var(--pad-s);
+	gap: var(--gap-xl);
 
 	a {
 		@extend .before;
@@ -81,12 +81,20 @@ footer {
 		align-self: center;
 
 		width: 100%;
-		max-width: var(--max-ultrawide);
+		max-width: var(--max-l);
 	}
 
 	.sitemap {
-		gap: var(--gap-l);
-		padding-bottom: var(--pad-2s);
+		--gap-x: var(--gap-xxl);
+		--gap-y: calc(var(--gap-xl) / 2);
+
+		@media screen and (max-width: variables.$screen-small-l) {
+			--gap-x: var(--gap-l);
+			--gap-y: var(--gap-m);
+		}
+
+		gap: var(--gap-x);
+		padding-bottom: var(--pad-l);
 		flex-wrap: wrap;
 
 		ol,
@@ -95,12 +103,12 @@ footer {
 			@extend .no-padding-margin;
 
 			flex-wrap: wrap;
-			gap: calc(var(--gap-m) / 2);
+			gap: var(--gap-y);
 
 			a[aria-current="page"] {
 				--size: .35rem;
 				--width: .5rem;
-				--left: calc(var(--gap-s) * -1);
+				--left: calc(var(--gap-l) * -1);
 
 				&::before,
 				&::after {
@@ -112,7 +120,7 @@ footer {
 					opacity: 1;
 
 					background: transparent;
-					border: 2px solid var(--neon-blue);
+					border: .125rem solid var(--neon-blue);
 					transform: translate(0, -50%);
 				}
 
@@ -128,24 +136,24 @@ footer {
 					left: calc(var(--left) - var(--width));
 					border-color: transparent;
 					border-bottom-color: var(--neon-blue);
-					border-radius: 2px;
+					border-radius: .125rem;
 				}
 			}
 		}
 
 		ul {
-			gap: var(--gap-l);
+			gap: var(--gap-x);
 		}
 
 		li {
 			@extend .flex-column;
 			@extend .no-padding-margin;
 
-			gap: calc(var(--gap-m) / 2);
+			gap: var(--gap-y);
 			flex: 1 0 0;
 
-			@media screen and (max-width: variables.$screen-small) {
-				width: calc(50% - (var(--gap-l) / 2));
+			@media screen and (max-width: variables.$screen-normal-s) {
+				width: calc(50% - (var(--gap-x) / 2));
 				flex: none;
 
 				li {
@@ -158,16 +166,19 @@ footer {
 
 	.legal {
 		padding: 0;
-		align-items: center;
-		gap: var(--gap-m);
+		align-items: flex-start;
+		gap: var(--gap-xl);
 
-		@media screen and (max-width: variables.$screen-small) {
-			gap: var(--gap-2t);
-			align-items: flex-start;
+		@media screen and (max-width: variables.$screen-normal-s) {
+			gap: var(--gap-s);
 			flex-direction: column;
 
 			menu {
+				align-items: flex-start;
+				justify-content: flex-start;
 				align-self: flex-start;
+				flex-wrap: wrap;
+				gap: var(--gap-s);
 			}
 		}
 
@@ -178,7 +189,7 @@ footer {
 	}
 
 	.arrow {
-		margin-left: calc(var(--pad-l) * -1);
-		width: calc(100% + var(--pad-l));
+		margin-left: calc(var(--pad-xxl) * -1);
+		width: calc(100% + var(--pad-xxl));
 	}
 }

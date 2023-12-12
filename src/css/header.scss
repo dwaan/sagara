@@ -5,7 +5,7 @@
 @use 'flex';
 
 :root {
-  --menu-shadow: 0 var(--pad-m) var(--pad-m) 0 rgba(0, 0, 0, 0.25);
+  --menu-shadow: 0 var(--pad-xl) var(--pad-xl) 0 rgba(0, 0, 0, 0.25);
 }
 
 header {
@@ -14,20 +14,20 @@ header {
 
   position: relative;
   z-index: 999;
-  padding: var(--pad-2t) var(--pad-l);
+  padding: var(--pad-s) var(--pad-xxl);
   justify-content: space-between;
 
-  @media screen and (min-width: variables.$screen-widest) {
-    padding-left: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
-    padding-right: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
+  @media screen and (min-width: variables.$screen-wide-l) {
+    padding-left: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
+    padding-right: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
   }
 
-  @media screen and (max-width: variables.$screen-wide) {
-    padding: var(--pad-s) var(--pad-m);
+  @media screen and (max-width: variables.$screen-wide-s) {
+    padding: var(--pad-m) var(--pad-xl);
   }
 
-  @media screen and (max-width: variables.$screen-normal) {
-    padding: var(--pad-s);
+  @media screen and (max-width: variables.$screen-normal-l) {
+    padding: var(--pad-m);
   }
 
   >div {
@@ -43,11 +43,11 @@ header {
   li {
     @extend .flex-column-center;
 
-    gap: var(--gap-t);
+    gap: var(--gap-xs);
     z-index: 3;
 
-    @media screen and (max-width: variables.$screen-normal) {
-      gap: var(--gap-m);
+    @media screen and (max-width: variables.$screen-normal-l) {
+      gap: var(--gap-xl);
     }
   }
 
@@ -98,7 +98,7 @@ header {
   position: relative;
   z-index: 2;
 
-  @media screen and (max-width: variables.$screen-normal) {
+  @media screen and (max-width: variables.$screen-normal-l) {
     display: flex;
   }
 
@@ -128,7 +128,7 @@ header {
       right: .25rem;
     }
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       display: block;
     }
   }
@@ -136,17 +136,17 @@ header {
   span {
     @extend .flex-row-center;
 
-    gap: var(--gap-2t);
+    gap: var(--gap-s);
     display: none;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       display: flex;
     }
   }
 
   &+menu {
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       opacity: 0;
       transition: opacity var(--fast) var(--ease-back);
     }
@@ -171,7 +171,7 @@ header {
     }
 
     +menu {
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         opacity: 1;
       }
     }
@@ -188,7 +188,7 @@ nav.menu {
   >a {
     @extend .a--default;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       display: flex;
     }
   }
@@ -198,7 +198,7 @@ nav.menu {
       pointer-events: none;
     }
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       pointer-events: all;
     }
   }
@@ -206,13 +206,13 @@ nav.menu {
   >menu {
     z-index: 2;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       position: absolute;
-      top: calc(var(--pad-s) * 2.5);
+      top: calc(var(--pad-m) * 2.5);
       right: 0;
       left: 0;
 
-      padding: var(--pad-l) var(--pad-m);
+      padding: var(--pad-xxl) var(--pad-xl);
 
       flex-direction: column;
       align-items: flex-start;
@@ -222,7 +222,7 @@ nav.menu {
 
       background: var(--white-transparent);
       box-shadow: var(--menu-shadow);
-      backdrop-filter: blur(var(--pad-2s));
+      backdrop-filter: blur(var(--pad-l));
     }
 
     >li {
@@ -243,9 +243,9 @@ nav.menu {
         z-index: 2;
 
         flex: auto;
-        gap: var(--gap-t);
+        gap: var(--gap-xs);
 
-        @media screen and (max-width: variables.$screen-normal) {
+        @media screen and (max-width: variables.$screen-normal-l) {
           justify-content: flex-start;
         }
 
@@ -258,17 +258,17 @@ nav.menu {
         .arrow {
           width: 1rem;
 
-          @media screen and (max-width: variables.$screen-wider) {
+          @media screen and (max-width: variables.$screen-wide-m) {
             display: none;
           }
 
-          @media screen and (max-width: variables.$screen-normal) {
+          @media screen and (max-width: variables.$screen-normal-l) {
             display: flex;
             width: 100%;
           }
 
           &::before {
-            right: calc(var(--bttn-m) / 4);
+            right: calc(var(--bttn-l) / 4);
           }
 
           &::after {
@@ -296,10 +296,10 @@ nav.menu {
           color: var(--dark-static);
 
           &::before {
-            top: calc(var(--bttn-m) / -2);
-            left: calc(var(--bttn-m) / -1.25);
-            right: calc(var(--bttn-m) / -1.25);
-            bottom: calc(var(--bttn-m) / -2);
+            top: calc(var(--bttn-l) / -2);
+            left: calc(var(--bttn-l) / -1.25);
+            right: calc(var(--bttn-l) / -1.25);
+            bottom: calc(var(--bttn-l) / -2);
             opacity: 1;
           }
         }
@@ -339,7 +339,7 @@ nav.menu {
         transform: translate(0, -2rem);
         transition: all var(--fast) var(--ease-back);
 
-        @media screen and (max-width: variables.$screen-normal) {
+        @media screen and (max-width: variables.$screen-normal-l) {
           display: none;
           transform: translate(0, 0);
           pointer-events: all;
@@ -351,7 +351,7 @@ nav.menu {
         opacity: 1;
         transform: translate(0, 0);
 
-        @media screen and (max-width: variables.$screen-normal) {
+        @media screen and (max-width: variables.$screen-normal-l) {
           display: flex;
         }
 
@@ -371,39 +371,39 @@ nav.popup {
 
   position: absolute;
   z-index: 1;
-  top: calc(var(--pad-s) * 3);
+  top: calc(var(--pad-m) * 3);
   left: 0;
   right: 0;
-  padding: var(--pad-2s) var(--pad-l) var(--pad-2t);
+  padding: var(--pad-l) var(--pad-xxl) var(--pad-s);
 
-  gap: var(--gap-m);
+  gap: var(--gap-xl);
 
   pointer-events: none;
 
-  @media screen and (min-width: variables.$screen-widest) {
-    padding-left: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
-    padding-right: calc(((100vw - variables.$screen-widest) / 2) + var(--pad-l));
+  @media screen and (min-width: variables.$screen-wide-l) {
+    padding-left: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
+    padding-right: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
   }
 
-  @media screen and (max-width: variables.$screen-wide) {
-    top: calc(var(--pad-s) * 2.5);
+  @media screen and (max-width: variables.$screen-wide-s) {
+    top: calc(var(--pad-m) * 2.5);
   }
 
-  @media screen and (max-width: variables.$screen-normal) {
+  @media screen and (max-width: variables.$screen-normal-l) {
     top: initial;
     position: static;
     padding: 0;
-    gap: var(--pad-t);
+    gap: var(--pad-xs);
   }
 
   &::before {
-    top: calc(var(--pad-t) * 1.5);
+    top: calc(var(--pad-xs) * 1.5);
     border-radius: 0;
     background: var(--white-transparent);
     box-shadow: var(--menu-shadow);
-    backdrop-filter: blur(var(--pad-2s));
+    backdrop-filter: blur(var(--pad-l));
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       background: unset;
       box-shadow: unset;
       backdrop-filter: unset;
@@ -412,10 +412,10 @@ nav.popup {
 
   // submenu
   >menu {
-    gap: calc(var(--gap-s) / 2) var(--gap-m);
+    gap: calc(var(--gap-l) / 2) var(--gap-xl);
     flex-wrap: wrap;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       justify-content: flex-start;
       margin: 0 calc(var(--bttn-s) * -1);
     }
@@ -425,7 +425,7 @@ nav.popup {
 
       text-align: center;
 
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         text-align: left;
       }
 
@@ -439,10 +439,10 @@ nav.popup {
     align-self: stretch;
 
     min-width: 12rem;
-    width: calc(25% - var(--gap-m));
+    width: calc(25% - var(--gap-xl));
     max-width: 13.75rem;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       flex-direction: row;
 
       width: 100%;
@@ -460,7 +460,7 @@ nav.popup {
   }
 
   .button {
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       width: 100%;
     }
   }

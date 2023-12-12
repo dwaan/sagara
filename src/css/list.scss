@@ -28,23 +28,23 @@
   @extend .flex-column;
   @extend .no-padding-margin;
 
-  gap: var(--gap-s);
-  max-width: var(--max-medium);
+  gap: var(--gap-l);
+  max-width: var(--max-s);
   list-style: none;
 
   li {
     @extend .flex-column;
     @extend .before;
 
-    gap: var(--gap-t);
-    padding-left: var(--bttn-l);
+    gap: var(--gap-xs);
+    padding-left: var(--bttn-xl);
 
     &::before {
       @extend .flex-row-center;
 
       content: "1";
-      width: var(--bttn-2s);
-      height: var(--bttn-2s);
+      width: var(--bttn-m);
+      height: var(--bttn-m);
 
       background: var(--gray-dynamic);
     }

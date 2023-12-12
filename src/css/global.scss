@@ -33,7 +33,7 @@ menu {
   @extend .flex-row-center;
   @extend .no-padding-margin;
 
-  gap: var(--gap-m);
+  gap: var(--gap-xl);
   list-style: none;
 }
 
@@ -74,7 +74,7 @@ a {
   }
 
   &.cta {
-    padding: var(--bttn-m) var(--bttn-l);
+    padding: var(--bttn-l) var(--bttn-xl);
     gap: calc(var(--bttn-s) * 2);
     color: var(--white-static);
 
@@ -85,15 +85,15 @@ a {
     }
 
     &::after {
-      transform: translate(calc(var(--bttn-m) / 2), calc(var(--bttn-s) / 3));
+      transform: translate(calc(var(--bttn-l) / 2), calc(var(--bttn-s) / 3));
       background: var(--neon-green);
     }
 
     &:hover {
       &::before {
         top: calc(var(--bttn-s) / -2);
-        left: calc(var(--bttn-m) * -1);
-        right: calc(var(--bttn-m) * -1);
+        left: calc(var(--bttn-l) * -1);
+        right: calc(var(--bttn-l) * -1);
         bottom: calc(var(--bttn-s) / -2);
       }
     }
@@ -104,7 +104,7 @@ a {
     }
 
     &.small {
-      padding: var(--bttn-s) var(--bttn-2s);
+      padding: var(--bttn-s) var(--bttn-m);
 
       &::after {
         transform: translate(calc(var(--bttn-s) / 2), calc(var(--bttn-s) / 4));
@@ -122,7 +122,7 @@ a {
   }
 
   &.pill {
-    padding: var(--bttn-s) var(--bttn-m);
+    padding: var(--bttn-s) var(--bttn-l);
     gap: var(--bttn-s);
     color: var(--dark-normal);
 
@@ -153,7 +153,7 @@ a {
   }
 
   .arrow {
-    width: var(--bttn-l);
+    width: var(--bttn-xl);
   }
 
   &:hover .arrow {
@@ -162,7 +162,7 @@ a {
     }
 
     &::after {
-      right: calc(var(--bttn-m) / 2);
+      right: calc(var(--bttn-l) / 2);
     }
   }
 
@@ -191,7 +191,7 @@ div {
 
 noscript {
   @extend .flex-column;
-  padding: 0 var(--pad-l);
+  padding: 0 var(--pad-xxl);
 }
 
 section,
@@ -224,7 +224,7 @@ main {
   @extend .no-padding-margin;
 
   overflow: hidden;
-  gap: var(--gap-l);
+  gap: var(--gap-xxl);
 }
 
 
@@ -236,16 +236,16 @@ section {
   @extend .flex-column-center;
   @extend .no-padding-margin;
 
-  padding: var(--pad-2s) var(--pad-m);
-  gap: var(--gap-l);
-  max-width: variables.$screen-widest;
+  padding: var(--pad-l) var(--pad-xl);
+  gap: var(--gap-xxl);
+  max-width: variables.$screen-wide-l;
 
-  @media screen and (min-width: variables.$screen-widest) {
+  @media screen and (min-width: variables.$screen-wide-l) {
     align-self: center;
   }
 
-  @media screen and (max-width: variables.$screen-small-normal) {
-    padding: var(--pad-m);
+  @media screen and (max-width: variables.$screen-normal-m) {
+    padding: var(--pad-xl);
   }
 
   >article {
@@ -253,25 +253,25 @@ section {
     @extend .no-padding-margin;
 
     align-self: initial;
-    gap: var(--gap-m);
-    max-width: var(--max-medium);
+    gap: var(--gap-xl);
+    max-width: var(--max-s);
   }
 
   .text {
     h1 {
-      margin-bottom: var(--gap-s);
+      margin-bottom: var(--gap-l);
     }
 
     h2 {
-      margin-bottom: var(--gap-3t);
+      margin-bottom: var(--gap-m);
     }
 
     .cta {
-      margin-top: var(--gap-m);
+      margin-top: var(--gap-xl);
     }
 
     p {
-      margin-bottom: var(--gap-2t);
+      margin-bottom: var(--gap-s);
 
       &:last-child {
         margin-bottom: 0
@@ -285,9 +285,9 @@ section.hero {
     @extend .flex-column-center;
 
     max-width: initial;
-    padding: 0 var(--pad-l);
+    padding: 0 var(--pad-xxl);
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       padding: 0;
     }
   }
@@ -317,16 +317,16 @@ section.hero {
     }
 
     h1 {
-      margin-bottom: var(--gap-3t);
+      margin-bottom: var(--gap-m);
     }
 
     h4 {
-      margin-bottom: calc(var(--gap-2t));
+      margin-bottom: calc(var(--gap-s));
     }
   }
 
   &.image-outside {
-    margin-top: calc(var(--gap-l) * -1);
+    margin-top: calc(var(--gap-xxl) * -1);
     padding: 0;
 
     img {
@@ -349,11 +349,11 @@ section.hero {
 section.horizontal {
   @extend .flex-row;
 
-  gap: var(--gap-l);
+  gap: var(--gap-xxl);
 
-  @media screen and (max-width: variables.$screen-normal) {
+  @media screen and (max-width: variables.$screen-normal-l) {
     flex-direction: column;
-    gap: var(--gap-s);
+    gap: var(--gap-l);
   }
 
   h2 {
@@ -362,10 +362,10 @@ section.horizontal {
     color: var(--blue-deep);
     flex: var(--size-one-third) 0 0;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       flex: auto;
 
-      gap: var(--gap-t);
+      gap: var(--gap-xs);
     }
   }
 
@@ -376,23 +376,23 @@ section.horizontal {
   .text {
     @extend .flex-column;
 
-    gap: var(--gap-m);
+    gap: var(--gap-xl);
     flex: 1 0 0;
   }
 }
 
 section.blue {
-  padding: var(--pad-2s) calc(var(--pad-m) * 5 / 6);
+  padding: var(--pad-l) calc(var(--pad-xl) * 5 / 6);
 
   >article {
     @extend .flex-column-start;
 
     max-width: initial;
-    padding: var(--pad-2s) var(--pad-m);
-    gap: var(--gap-m);
+    padding: var(--pad-l) var(--pad-xl);
+    gap: var(--gap-xl);
 
-    @media screen and (max-width: variables.$screen-wider) {
-      padding: var(--pad-2s);
+    @media screen and (max-width: variables.$screen-wide-m) {
+      padding: var(--pad-l);
     }
 
     color: var(--white-static);
@@ -403,14 +403,14 @@ section.blue {
     >div {
       @extend .flex-row;
 
-      gap: var(--pad-m);
+      gap: var(--pad-xl);
       justify-content: space-between;
 
 
       object {
         pointer-events: none;
         flex: none;
-        margin: calc(var(--pad-2s) / -4) calc(var(--pad-2s) / -2) 0 0;
+        margin: calc(var(--pad-l) / -4) calc(var(--pad-l) / -2) 0 0;
       }
     }
 
@@ -419,7 +419,7 @@ section.blue {
   &.request-demo {
     >article {
       >div {
-        @media screen and (max-width: variables.$screen-normal) {
+        @media screen and (max-width: variables.$screen-normal-l) {
           flex-direction: column;
 
           form {
@@ -441,9 +441,9 @@ section.blue {
   }
 
   .text {
-    gap: var(--gap-2t);
+    gap: var(--gap-s);
 
-    @media screen and (max-width: variables.$screen-wide) {
+    @media screen and (max-width: variables.$screen-wide-s) {
       max-width: none;
     }
   }
@@ -452,7 +452,7 @@ section.blue {
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 0 var(--gap-l);
+    gap: 0 var(--gap-xxl);
     align-self: stretch;
 
     li {
@@ -461,21 +461,21 @@ section.blue {
       display: flex;
       padding: 0;
       align-items: flex-start;
-      gap: calc(var(--gap-s) / 2);
-      flex: calc(50% - var(--gap-s)) 0 0;
+      gap: calc(var(--gap-l) / 2);
+      flex: calc(50% - var(--gap-l)) 0 0;
 
       a {
         display: flex;
         line-height: 1.625rem;
         flex: 1 0 0;
-        padding: var(--pad-t) 0;
+        padding: var(--pad-xs) 0;
       }
 
       @extend .after-before;
 
       &:before {
         height: 1px;
-        right: calc(var(--gap-s) * -2);
+        right: calc(var(--gap-l) * -2);
         background: var(--white-static);
         opacity: .25;
       }
@@ -487,10 +487,10 @@ section.blue {
       }
 
       &:after {
-        top: var(--pad-t);
+        top: var(--pad-xs);
         left: 0;
         right: 0;
-        bottom: var(--pad-t);
+        bottom: var(--pad-xs);
         border-radius: var(--round-s);
       }
 
@@ -502,10 +502,10 @@ section.blue {
         color: var(--dark-static);
 
         &:after {
-          top: var(--gap-2t);
-          left: calc(var(--gap-t) * -1);
-          right: calc(var(--gap-t) * -1);
-          bottom: var(--gap-2t);
+          top: var(--gap-s);
+          left: calc(var(--gap-xs) * -1);
+          right: calc(var(--gap-xs) * -1);
+          bottom: var(--gap-s);
           background: var(--neon-green);
         }
 
@@ -523,16 +523,16 @@ section.blue {
   }
 
   form {
-    gap: var(--gap-3t);
+    gap: var(--gap-m);
     align-self: center;
 
     max-width: 24rem;
 
-    @media screen and (max-width: variables.$screen-wider) {
+    @media screen and (max-width: variables.$screen-wide-m) {
       max-width: 27rem;
     }
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       margin-left: -.5rem;
       max-width: none;
     }
@@ -543,13 +543,13 @@ section.content {
   .text {
     @extend .flex-column;
     align-self: center;
-    max-width: var(--max-wide);
+    max-width: var(--max-m);
   }
 
   .img {
     @extend .flex-row-center;
 
-    margin: 0 calc(var(--pad-m) * -1);
+    margin: 0 calc(var(--pad-xl) * -1);
     height: 30rem;
     overflow: hidden;
 
@@ -561,21 +561,21 @@ section.content {
   article.history {
     @extend .flex-row;
 
-    gap: var(--gap-m);
-    padding: 0 var(--pad-l);
+    gap: var(--gap-xl);
+    padding: 0 var(--pad-xxl);
     max-width: initial;
 
-    @media screen and (max-width: variables.$screen-wide) {
-      padding: 0 var(--pad-s);
+    @media screen and (max-width: variables.$screen-wide-s) {
+      padding: 0 var(--pad-m);
     }
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       padding: 0;
     }
 
     date {
       @extend .flex-row-center;
-      gap: var(--gap-2t);
+      gap: var(--gap-s);
       width: 15rem;
       flex: none;
       align-self: flex-start;
@@ -586,27 +586,27 @@ section.content {
     }
 
     div {
-      gap: var(--gap-2t);
+      gap: var(--gap-s);
     }
   }
 }
 
 section.notfound {
   text-align: center;
-  padding-bottom: var(--pad-l);
+  padding-bottom: var(--pad-xxl);
 
   .text {
     @extend .flex-column-center;
 
     align-self: center;
-    gap: var(--gap-t);
-    max-width: var(--max-medium);
+    gap: var(--gap-xs);
+    max-width: var(--max-s);
   }
 
   div {
     @extend .flex-row-center;
-    gap: var(--gap-s);
-    margin-top: var(--pad-t);
+    gap: var(--gap-l);
+    margin-top: var(--pad-xs);
   }
 
   a,
@@ -620,11 +620,11 @@ section.number {
   article {
     @extend .flex-row;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       flex-direction: column;
     }
 
-    gap: var(--gap-l);
+    gap: var(--gap-xxl);
     max-width: initial;
 
     h2 {
@@ -632,7 +632,7 @@ section.number {
       width: var(--size-one-third);
       color: var(--blue-deep);
 
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         width: initial;
       }
     }
@@ -659,7 +659,7 @@ section.background {
 
   .text {
     align-self: flex-end;
-    padding: var(--pad-2t) var(--pad-2s);
+    padding: var(--pad-s) var(--pad-l);
     width: 28.75rem;
     z-index: 1;
 
@@ -669,7 +669,7 @@ section.background {
   }
 
   h2 {
-    margin-bottom: var(--gap-2t);
+    margin-bottom: var(--gap-s);
   }
 
   p {
@@ -677,14 +677,14 @@ section.background {
   }
 
   .cta {
-    margin-top: var(--gap-3t);
+    margin-top: var(--gap-m);
   }
 }
 
 section.listing {
-  @media screen and (max-width: variables.$screen-small-normal) {
-    padding-left: var(--pad-s);
-    padding-right: var(--pad-s);
+  @media screen and (max-width: variables.$screen-normal-m) {
+    padding-left: var(--pad-m);
+    padding-right: var(--pad-m);
   }
 
   h1 {
@@ -697,20 +697,20 @@ section.listing {
     @extend .no-padding-margin;
     @extend .selection--static;
 
-    --gap: var(--gap-l);
-    --padding-small: var(--pad-2s) var(--pad-2t);
-    --padding-big: var(--pad-2t) var(--pad-m);
+    --gap: var(--gap-xxl);
+    --padding-small: var(--pad-l) var(--pad-s);
+    --padding-big: var(--pad-s) var(--pad-xl);
 
     gap: var(--gap);
     flex-wrap: wrap;
 
-    @media screen and (max-width: variables.$screen-small-normal) {
-      --gap: var(--gap-s);
-      --padding-small: var(--pad-s);
+    @media screen and (max-width: variables.$screen-normal-m) {
+      --gap: var(--gap-l);
+      --padding-small: var(--pad-m);
       --padding-big: var(--padding-small);
     }
 
-    @media screen and (max-width: variables.$screen-verysmall) {
+    @media screen and (max-width: variables.$screen-small-l) {
       flex-direction: column;
     }
 
@@ -723,7 +723,7 @@ section.listing {
       flex: none;
       width: var(--third);
 
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         width: var(--half);
       }
 
@@ -738,11 +738,11 @@ section.listing {
 
     svg {
       align-self: center;
-      margin-bottom: var(--gap-s);
+      margin-bottom: var(--gap-l);
     }
 
     h3 {
-      margin-bottom: calc(var(--gap-t) * 1.5);
+      margin-bottom: calc(var(--gap-xs) * 1.5);
       font-weight: 500;
 
       strong {
@@ -751,7 +751,7 @@ section.listing {
     }
 
     a {
-      margin-top: var(--gap-s);
+      margin-top: var(--gap-l);
       align-self: start;
     }
 
@@ -761,30 +761,30 @@ section.listing {
   }
 
   .text {
-    max-width: var(--max-wide);
-    padding: 0 var(--pad-s);
+    max-width: var(--max-m);
+    padding: 0 var(--pad-m);
 
     p {
       @extend .p--hero;
     }
 
     .cta {
-      margin-top: var(--gap-3t);
+      margin-top: var(--gap-m);
     }
   }
 
   &.small {
     .text {
-      max-width: var(--max-medium);
+      max-width: var(--max-s);
       padding: 0;
     }
 
     .selection {
-      max-width: var(--max-wide);
+      max-width: var(--max-m);
       align-self: center;
 
       li {
-        padding: var(--pad-2t);
+        padding: var(--pad-s);
       }
     }
   }
@@ -797,11 +797,11 @@ section.static {
   .text {
     @extend .flex-column;
 
-    gap: var(--gap-t);
+    gap: var(--gap-xs);
   }
 
   .text {
-    margin: 0 var(--pad-m);
+    margin: 0 var(--pad-xl);
   }
 
   h1,
@@ -809,7 +809,7 @@ section.static {
   h3,
   h4,
   h5 {
-    margin: var(--pad-2t) 0 calc(var(--pad-t) / 2);
+    margin: var(--pad-s) 0 calc(var(--pad-xs) / 2);
 
     &:first-child {
       margin-top: 0;
@@ -848,7 +848,7 @@ section.slider {
   }
 
   article {
-    margin: 0 calc(var(--pad-l) * -1);
+    margin: 0 calc(var(--pad-xxl) * -1);
   }
 
   .text {
@@ -856,19 +856,19 @@ section.slider {
   }
 
   .scroll {
-    margin: -10rem calc(var(--pad-m) * -1);
+    margin: -10rem calc(var(--pad-xl) * -1);
 
     ul {
       @extend .flex-row;
 
       flex-wrap: nowrap;
-      gap: var(--gap-l);
+      gap: var(--gap-xxl);
 
       margin-bottom: calc(8rem * -1);
       padding: 10rem calc((100% - var(--size-ss)) / 2) calc(8rem + 10rem);
 
-      @media screen and (max-width: variables.$screen-normal) {
-        gap: var(--gap-s);
+      @media screen and (max-width: variables.$screen-normal-l) {
+        gap: var(--gap-l);
       }
     }
 
@@ -889,15 +889,15 @@ section.tabs {
 
   ul,
   ol {
-    padding-left: var(--pad-l);
-    padding-right: var(--pad-l);
+    padding-left: var(--pad-xxl);
+    padding-right: var(--pad-xxl);
   }
 
   >nav {
     align-self: initial;
     padding: 0;
     width: 100%;
-    max-width: var(--max-medium);
+    max-width: var(--max-s);
   }
 }
 
@@ -911,14 +911,14 @@ section.points {
   }
 
   .partners {
-    margin: 0 calc(var(--pad-l) * -1);
+    margin: 0 calc(var(--pad-xxl) * -1);
 
     .scroll {
 
       >ul,
       >ol {
-        padding-left: var(--pad-l);
-        padding-right: var(--pad-l);
+        padding-left: var(--pad-xxl);
+        padding-right: var(--pad-xxl);
       }
     }
   }
@@ -932,7 +932,7 @@ section.points {
       color: var(--dark-normal);
     }
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       .commitment {
         padding: 0;
       }
@@ -941,10 +941,10 @@ section.points {
       ol {
         padding: 0;
         flex: 1 0 0;
-        gap: var(--gap-s);
+        gap: var(--gap-l);
 
         li {
-          padding: var(--pad-t);
+          padding: var(--pad-xs);
         }
       }
 
@@ -959,7 +959,7 @@ section.points {
       }
     }
 
-    @media screen and (max-width: variables.$screen-small) {
+    @media screen and (max-width: variables.$screen-normal-s) {
       .commitment {
         padding: 0;
       }
@@ -969,12 +969,12 @@ section.points {
         padding: 0;
         flex-direction: column;
         flex: 1 0 0;
-        gap: var(--gap-s);
+        gap: var(--gap-l);
 
         li {
           width: 100%;
           flex-direction: row;
-          padding: var(--pad-t);
+          padding: var(--pad-xs);
         }
       }
 
@@ -1010,7 +1010,7 @@ section.image {
   }
 
   .img {
-    margin: 0 calc(var(--pad-l) * -1);
+    margin: 0 calc(var(--pad-xxl) * -1);
     height: 30rem;
 
     overflow: hidden;
@@ -1038,7 +1038,7 @@ section.image {
     @extend .flex-row-start;
 
     align-self: initial;
-    gap: var(--gap-l);
+    gap: var(--gap-xxl);
     max-width: initial;
 
     h2 {
@@ -1054,7 +1054,7 @@ section.image {
 
 section.icon {
   >article {
-    gap: var(--gap-s);
+    gap: var(--gap-l);
   }
 
   .icon {
@@ -1062,8 +1062,8 @@ section.icon {
 
     background: var(--neon-blue);
     border-radius: var(--round);
-    padding: var(--pad-t);
-    margin-bottom: var(--gap-l);
+    padding: var(--pad-xs);
+    margin-bottom: var(--gap-xxl);
 
     svg {
       --svg-fill: var(--neon-blue);
@@ -1073,11 +1073,11 @@ section.icon {
 
   .text {
     h2 {
-      margin-bottom: var(--gap-2t);
+      margin-bottom: var(--gap-s);
     }
 
     .cta {
-      margin-top: var(--gap-s);
+      margin-top: var(--gap-l);
     }
 
     strong {
@@ -1093,7 +1093,7 @@ section.gray {
     @extend .flex-row;
 
     align-self: center;
-    gap: var(--gap-l);
+    gap: var(--gap-xxl);
   }
 
   h2 {
@@ -1103,13 +1103,13 @@ section.gray {
 
 section.journey {
   .scroll {
-    margin-left: calc(var(--pad-m) * -1);
-    margin-right: calc(var(--pad-m) * -1);
+    margin-left: calc(var(--pad-xl) * -1);
+    margin-right: calc(var(--pad-xl) * -1);
 
     ol,
     ul {
-      padding-left: var(--pad-m);
-      padding-right: var(--pad-m);
+      padding-left: var(--pad-xl);
+      padding-right: var(--pad-xl);
     }
   }
 
@@ -1120,18 +1120,18 @@ section.journey {
 
 section.checkbox {
   article {
-    margin-left: calc(var(--pad-m) * -1);
-    margin-right: calc(var(--pad-m) * -1);
+    margin-left: calc(var(--pad-xl) * -1);
+    margin-right: calc(var(--pad-xl) * -1);
     max-width: initial;
 
     ul,
     ol {
-      padding-left: calc(var(--pad-m) * 2);
-      padding-right: calc(var(--pad-m) * 2);
+      padding-left: calc(var(--pad-xl) * 2);
+      padding-right: calc(var(--pad-xl) * 2);
 
-      @media screen and (max-width: variables.$screen-normal) {
-        padding-left: calc(var(--pad-m));
-        padding-right: calc(var(--pad-m));
+      @media screen and (max-width: variables.$screen-normal-l) {
+        padding-left: calc(var(--pad-xl));
+        padding-right: calc(var(--pad-xl));
       }
     }
   }
@@ -1139,13 +1139,13 @@ section.checkbox {
   form {
     @extend .flex-column-center;
 
-    gap: var(--gap-l);
+    gap: var(--gap-xxl);
   }
 }
 
 section.careers {
   >nav {
-    max-width: var(--max-wide);
+    max-width: var(--max-m);
   }
 }
 
@@ -1158,7 +1158,7 @@ section.career {
       @extend .flat;
 
       flex-direction: column;
-      gap: var(--gap-2t);
+      gap: var(--gap-s);
 
       li {
 
@@ -1186,20 +1186,20 @@ section.career {
       display: block;
 
       width: 100%;
-      max-width: var(--max-medium);
+      max-width: var(--max-s);
 
       h3 {
         @extend .h3--regular;
 
-        margin-top: var(--gap-l);
-        margin-bottom: var(--gap-2t);
+        margin-top: var(--gap-xxl);
+        margin-bottom: var(--gap-s);
 
         color: var(--blue-normal);
       }
 
       p,
       li {
-        margin-bottom: var(--gap-t);
+        margin-bottom: var(--gap-xs);
       }
     }
   }
@@ -1210,11 +1210,11 @@ section.career {
 //
 
 section.closer {
-  margin-top: calc(var(--gap-l) * -1);
+  margin-top: calc(var(--gap-xxl) * -1);
 }
 
 section.closest {
-  margin-top: calc(var(--gap-l) * -2);
+  margin-top: calc(var(--gap-xxl) * -2);
 }
 
 
@@ -1230,7 +1230,7 @@ section.closest {
   gap: 0;
 
   width: 100%;
-  max-width: var(--max-medium)
+  max-width: var(--max-s)
 }
 
 .buttons {
@@ -1238,10 +1238,10 @@ section.closest {
   @extend .no-padding-margin;
 
   align-self: initial;
-  gap: var(--gap-m);
+  gap: var(--gap-xl);
 
   width: 100%;
-  max-width: var(--max-medium)
+  max-width: var(--max-s)
 }
 
 .column {
@@ -1250,7 +1250,7 @@ section.closest {
   column-gap: 4rem;
 
   p {
-    margin-bottom: var(--gap-t);
+    margin-bottom: var(--gap-xs);
 
     &:last-child {
       margin-bottom: 0;
@@ -1274,9 +1274,9 @@ section.closest {
   &::after {
     top: initial;
     left: 0;
-    right: calc(var(--bttn-m) / 4);
+    right: calc(var(--bttn-l) / 4);
     bottom: initial;
-    height: calc(var(--bttn-m) / 4);
+    height: calc(var(--bttn-l) / 4);
     border-radius: 0;
     border-top: 2px solid transparent;
     border-bottom: 2px solid currentColor;
@@ -1285,8 +1285,8 @@ section.closest {
   &::after {
     left: initial;
     right: 0;
-    width: calc(var(--bttn-m) / 4);
-    border-radius: calc(var(--bttn-m) / 4) calc(var(--bttn-m) / 4) calc(var(--bttn-m) / 4) 0;
+    width: calc(var(--bttn-l) / 4);
+    border-radius: calc(var(--bttn-l) / 4) calc(var(--bttn-l) / 4) calc(var(--bttn-l) / 4) 0;
     border: 2px solid currentColor;
     border-left-color: transparent !important;
   }
@@ -1344,7 +1344,7 @@ section.closest {
           position: relative;
           z-index: 1;
           width: initial;
-          // margin: calc(var(--pad-s) * -1) 0 0;
+          // margin: calc(var(--pad-m) * -1) 0 0;
           opacity: 1;
           pointer-events: all;
 
@@ -1385,9 +1385,9 @@ section.closest {
   nav {
     display: flex;
     flex-direction: row;
-    padding: 0 calc(var(--pad-l) + var(--pad-m));
+    padding: 0 calc(var(--pad-xxl) + var(--pad-xl));
     align-items: center;
-    gap: var(--gap-l);
+    gap: var(--gap-xxl);
     align-self: stretch;
   }
 
@@ -1401,7 +1401,7 @@ section.closest {
   @extend .flex-row-center;
 
   z-index: 2;
-  gap: calc(var(--gap-m) / 2);
+  gap: calc(var(--gap-xl) / 2);
 
   li {
 
@@ -1410,7 +1410,7 @@ section.closest {
       @extend .flex-row-start;
       @extend .after;
 
-      padding: var(--bttn-s) var(--bttn-m);
+      padding: var(--bttn-s) var(--bttn-l);
       gap: 0;
       cursor: pointer;
 
@@ -1444,7 +1444,7 @@ section.closest {
 .scroll {
   overflow: hidden;
   // Removing excess padding
-  margin: calc(var(--pad-s) * -1) 0;
+  margin: calc(var(--pad-m) * -1) 0;
 
   >ul,
   >ol {
@@ -1452,7 +1452,7 @@ section.closest {
 
     // Cropping scroll bar
     margin: 0 0 calc(8rem * -1);
-    padding: var(--pad-s) 0 calc(var(--pad-s) + 8rem);
+    padding: var(--pad-m) 0 calc(var(--pad-m) + 8rem);
     overflow-y: hidden;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -1487,7 +1487,7 @@ section.closest {
     margin: 0;
     border-radius: var(--round-m);
     box-shadow: var(--shadow-small);
-    backdrop-filter: blur(var(--gap-2t));
+    backdrop-filter: blur(var(--gap-s));
   }
 
   &--big,
@@ -1508,20 +1508,20 @@ section.closest {
 
 .home {
   .selection li {
-    width: calc((100% - var(--pad-m) - (4 * var(--gap-s))) / 4);
+    width: calc((100% - var(--pad-xl) - (4 * var(--gap-l))) / 4);
   }
 
   .arrow {
-    width: var(--pad-2s);
+    width: var(--pad-l);
   }
 
   section.hero {
-    padding-top: var(--pad-m);
+    padding-top: var(--pad-xl);
 
 
     h1 {
       @extend .h1--homepage;
-      margin-bottom: var(--gap-s);
+      margin-bottom: var(--gap-l);
     }
 
     article {
@@ -1540,24 +1540,24 @@ section.closest {
   section.tabs {
     nav {
       align-self: flex-start;
-      padding-left: var(--pad-l);
+      padding-left: var(--pad-xxl);
       max-width: none;
 
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         padding-left: 0;
       }
     }
 
     .scroll {
-      margin-left: calc(var(--pad-m) * -1);
-      margin-right: calc(var(--pad-m) * -1);
+      margin-left: calc(var(--pad-xl) * -1);
+      margin-right: calc(var(--pad-xl) * -1);
 
       ul,
       ol {
-        padding-left: var(--pad-m);
-        padding-right: var(--pad-m);
+        padding-left: var(--pad-xl);
+        padding-right: var(--pad-xl);
 
-        @media screen and (max-width: variables.$screen-normal) {
+        @media screen and (max-width: variables.$screen-normal-l) {
           li.plain {
             display: none;
           }
@@ -1570,7 +1570,7 @@ section.closest {
 //* pm.os
 .pmos {
   .bento {
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       .box {
         order: 3;
       }
@@ -1590,7 +1590,7 @@ section.closest {
 .dask,
 .itik {
   .bento {
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       .box {
         order: 1;
       }
@@ -1609,7 +1609,7 @@ section.closest {
 //* lm.sys
 .lmsys {
   .bento {
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       .box {
         order: 3;
       }
@@ -1628,7 +1628,7 @@ section.closest {
 //* web-based
 .web-based {
   .bento {
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       .box {
         order: 3;
       }
@@ -1648,17 +1648,17 @@ section.closest {
 .customer {
   .checkbox {
     form {
-      gap: var(--gap-3t);
+      gap: var(--gap-m);
     }
 
     .dots {
-      margin-top: calc(var(--gap-l) - var(--gap-3t));
+      margin-top: calc(var(--gap-xxl) - var(--gap-m));
     }
   }
 
   .selection {
     form {
-      gap: var(--gap-3t);
+      gap: var(--gap-m);
     }
 
     ul,
@@ -1671,18 +1671,18 @@ section.closest {
       overflow-x: unset;
       overflow-y: unset;
 
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         justify-content: flex-start;
 
-        padding-left: var(--pad-m);
-        padding-right: var(--pad-m);
+        padding-left: var(--pad-xl);
+        padding-right: var(--pad-xl);
 
         overflow-x: scroll;
       }
     }
 
     .scroll {
-      max-width: var(--max-wide);
+      max-width: var(--max-m);
     }
 
   }

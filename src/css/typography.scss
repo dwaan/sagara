@@ -47,6 +47,11 @@ body {
   &.homepage {
     font-size: 5.5rem;
     letter-spacing: -0.22rem;
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      font-size: 3.2rem;
+      letter-spacing: -0.12rem;
+    }
   }
 
   &--listing,
@@ -173,6 +178,10 @@ h5 {
   &.hero {
     font-size: 1.3125rem;
     line-height: 160%;
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      font-size: 1.2rem;
+    }
   }
 
   &--blue,

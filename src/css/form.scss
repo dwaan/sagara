@@ -26,8 +26,8 @@ button {
 }
 
 input[type="radio"] {
-	width: var(--bttn-2s);
-	height: var(--bttn-2s);
+	width: var(--bttn-m);
+	height: var(--bttn-m);
 
 	background: var(--white-normal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%232B2727' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E") center no-repeat;
 	background-size: 0;
@@ -38,19 +38,19 @@ input[type="radio"] {
 	transition: all var(--fast) var(--ease-back);
 
 	&:checked {
-		background-size: var(--bttn-2s);
+		background-size: var(--bttn-m);
 	}
 }
 
 form {
 	@extend .flex-column;
 
-	gap: var(--gap-3t);
+	gap: var(--gap-m);
 
 	.row {
 		@extend .flex-row;
 
-		gap: var(--gap-3t);
+		gap: var(--gap-m);
 
 		.combined {
 			flex: auto
@@ -62,15 +62,15 @@ form {
 	@extend .flex-row-center;
 
 	width: 100%;
-	max-width: var(--max-medium);
+	max-width: var(--max-s);
 	min-height: 5.5rem;
 
-	gap: var(--gap-s);
+	gap: var(--gap-l);
 
 	flex: none;
 	align-self: center;
 
-	padding: calc(var(--pad-t) * 2/3) var(--pad-2t);
+	padding: calc(var(--pad-xs) * 2/3) var(--pad-s);
 
 	background: var(--white-normal);
 	border-radius: var(--round-l);
@@ -106,7 +106,7 @@ form {
 		label {
 			@extend .flex-row-center;
 
-			gap: var(--gap-2t);
+			gap: var(--gap-s);
 
 			font-weight: initial;
 			cursor: pointer;
@@ -124,6 +124,6 @@ form {
 	}
 
 	.cta {
-		margin-right: calc(var(--pad-t) * -1);
+		margin-right: calc(var(--pad-xs) * -1);
 	}
 }

@@ -31,7 +31,7 @@
     align-items: center;
 
     width: 16rem;
-    gap: var(--gap-2t);
+    gap: var(--gap-s);
     flex: none;
 
     h3 {
@@ -76,7 +76,7 @@
     &.plain {
       @extend .no-padding-margin;
 
-      width: var(--pad-m);
+      width: var(--pad-xl);
       border-radius: 0;
       border: 0;
       background-color: transparent;
@@ -95,7 +95,7 @@
     @extend .vertical;
 
     padding: var(--bttn-s);
-    gap: var(--gap-t);
+    gap: var(--gap-xs);
 
     &::before {
       opacity: 0;
@@ -132,7 +132,7 @@
   >ol {
     @extend .flat;
 
-    @media screen and (max-width: variables.$screen-normal) {
+    @media screen and (max-width: variables.$screen-normal-l) {
       flex-direction: column;
     }
   }
@@ -140,12 +140,12 @@
   li {
     @extend .vertical;
 
-    padding: var(--bttn-2s) var(--bttn-l);
+    padding: var(--bttn-m) var(--bttn-xl);
 
-    gap: var(--gap-2t);
+    gap: var(--gap-s);
     flex: auto;
 
-    // @media screen and (max-width: variables.$screen-normal) {
+    // @media screen and (max-width: variables.$screen-normal-l) {
     //   flex-direction: row;
     // }
 
@@ -157,9 +157,9 @@
     .img {
       @extend .flex-row-center;
 
-      margin: 0 calc(var(--bttn-l) * -1);
+      margin: 0 calc(var(--bttn-xl) * -1);
 
-      @media screen and (max-width: variables.$screen-normal) {
+      @media screen and (max-width: variables.$screen-normal-l) {
         margin: 0;
       }
     }
@@ -176,7 +176,7 @@
 
     align-self: flex-start;
     flex: 1 0 0;
-    gap: var(--gap-2t);
+    gap: var(--gap-s);
     max-width: 15.625rem;
   }
 
@@ -187,11 +187,11 @@
     align-self: stretch;
   }
 
-  @media screen and (max-width: variables.$screen-normal) {
+  @media screen and (max-width: variables.$screen-normal-l) {
 
     ul,
     ol {
-      gap: var(--gap-m);
+      gap: var(--gap-xl);
 
       li {
         padding: 0
@@ -209,7 +209,7 @@
     align-self: flex-end;
 
     width: 18.3625rem;
-    gap: var(--gap-2t);
+    gap: var(--gap-s);
     flex: none;
 
     &::before {
@@ -219,8 +219,8 @@
       align-self: initial;
       position: relative;
 
-      width: var(--bttn-l);
-      height: var(--bttn-l);
+      width: var(--bttn-xl);
+      height: var(--bttn-xl);
 
       color: var(--white-static);
       background: var(--blue-deep);
@@ -259,8 +259,8 @@
     @extend .flex-column-center;
 
     font-weight: initial;
-    gap: var(--gap-2t);
-    padding: var(--bttn-2s);
+    gap: var(--gap-s);
+    padding: var(--bttn-m);
   }
 
   li {
@@ -277,16 +277,16 @@
 .selection--careers {
   @extend .flex-column;
 
-  gap: var(--gap-l);
+  gap: var(--gap-xxl);
   align-self: initial;
 
   width: 100%;
-  max-width: var(--max-wide);
+  max-width: var(--max-m);
 
   >ul,
   >ol {
     flex-wrap: wrap;
-    gap: var(--gap-l);
+    gap: var(--gap-xxl);
     padding: 0;
 
     li {
@@ -294,10 +294,10 @@
       @extend .flex-row-center;
 
       flex: none;
-      gap: var(--gap-2t);
-      padding: calc(var(--pad-s) / 2) var(--pad-t);
+      gap: var(--gap-s);
+      padding: calc(var(--pad-m) / 2) var(--pad-xs);
 
-      width: calc(50% - (var(--gap-l) / 2));
+      width: calc(50% - (var(--gap-xxl) / 2));
       max-width: initial;
 
       &::before {
@@ -351,15 +351,15 @@
   ol {
     @extend .flex-row;
 
-    gap: var(--gap-s);
+    gap: var(--gap-l);
   }
 
   li {
-    padding: var(--bttn-2s);
+    padding: var(--bttn-m);
   }
 
   .text {
-    gap: var(--gap-t);
+    gap: var(--gap-xs);
   }
 
 
@@ -377,7 +377,7 @@
 
     ul,
     ol {
-      gap: var(--gap-l);
+      gap: var(--gap-xxl);
     }
   }
 

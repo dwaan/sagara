@@ -11,7 +11,7 @@
 	@extend .flex-row-center;
 	@extend .no-padding-margin;
 
-	gap: var(--gap-l);
+	gap: var(--gap-xxl);
 	flex-wrap: wrap;
 
 	.box {
@@ -33,7 +33,7 @@
 			align-self: stretch;
 			justify-self: stretch;
 			flex: auto;
-			padding: var(--pad-s);
+			padding: var(--pad-m);
 
 			// image position
 
@@ -71,7 +71,7 @@
 			position: relative;
 			z-index: 2;
 
-			gap: var(--gap-2t);
+			gap: var(--gap-s);
 
 			h3 {
 				@extend .h3--small;
@@ -96,43 +96,43 @@
 
 		// Size
 
-		--size: calc((100% - (var(--gap-l) * 2)) / 3);
+		--size: calc((100% - (var(--gap-xxl) * 2)) / 3);
 
 		&.small {
 			width: var(--size);
 
-			@media screen and (max-width: variables.$screen-normal) {
-				width: calc((var(--size) * 1.5) + (var(--gap-l) / 2));
+			@media screen and (max-width: variables.$screen-normal-l) {
+				width: calc((var(--size) * 1.5) + (var(--gap-xxl) / 2));
 			}
 
 			.text {
-				padding: var(--pad-s) var(--pad-2t);
-				gap: calc(var(--gap-t) / 2);
+				padding: var(--pad-m) var(--pad-s);
+				gap: calc(var(--gap-xs) / 2);
 			}
 		}
 
 		&.medium {
-			width: calc((var(--size) * 1.5) + (var(--gap-l) / 2));
+			width: calc((var(--size) * 1.5) + (var(--gap-xxl) / 2));
 
 			.img,
 			.text {
-				padding: var(--pad-s) var(--pad-2t);
+				padding: var(--pad-m) var(--pad-s);
 			}
 
 			.text {
-				gap: var(--gap-t);
+				gap: var(--gap-xs);
 			}
 		}
 
 		&.big {
-			width: calc((var(--size) * 2) + var(--gap-l));
+			width: calc((var(--size) * 2) + var(--gap-xxl));
 
-			@media screen and (max-width: variables.$screen-normal) {
+			@media screen and (max-width: variables.$screen-normal-l) {
 				width: 100%;
 			}
 
 			.text {
-				padding: var(--pad-2t) var(--pad-2s);
+				padding: var(--pad-s) var(--pad-l);
 
 				h3 {
 					@extend .h3;
@@ -141,7 +141,7 @@
 		}
 
 		&.big-mobile {
-			@media screen and (max-width: variables.$screen-normal) {
+			@media screen and (max-width: variables.$screen-normal-l) {
 				width: 100%;
 			}
 		}
@@ -284,7 +284,7 @@
 	// Compensating drop shadow inside image
 
 	img {
-		margin: calc(var(--gap-t) * -1) calc(var(--gap-3t) * -1) calc(var(--gap-t) * -5)
+		margin: calc(var(--gap-xs) * -1) calc(var(--gap-m) * -1) calc(var(--gap-xs) * -5)
 	}
 
 	.round-shadow {
