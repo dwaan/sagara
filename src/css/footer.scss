@@ -11,6 +11,11 @@ footer {
 	padding: var(--pad-l) var(--pad-xl) var(--pad-s);
 	gap: var(--gap-xl);
 
+	@media screen and (max-width: variables.$screen-small-l) {
+		gap: var(--gap-l);
+		padding: var(--pad-xl);
+	}
+
 	a {
 		@extend .before;
 
@@ -97,6 +102,10 @@ footer {
 		padding-bottom: var(--pad-l);
 		flex-wrap: wrap;
 
+		@media screen and (max-width: variables.$screen-small-l) {
+			gap: calc(var(--gap-y) * 3);
+		}
+
 		ol,
 		ul {
 			@extend .flex-column;
@@ -143,6 +152,10 @@ footer {
 
 		ul {
 			gap: var(--gap-x);
+
+			@media screen and (max-width: variables.$screen-small-l) {
+				gap: calc(var(--gap-y) * 3);
+			}
 		}
 
 		li {
@@ -175,7 +188,7 @@ footer {
 		white-space: nowrap;
 
 		@media screen and (max-width: variables.$screen-normal-m) {
-			gap: var(--gap-s);
+			gap: var(--gap-m);
 			flex-direction: column;
 
 			menu {
@@ -183,7 +196,7 @@ footer {
 				justify-content: flex-start;
 				align-self: flex-start;
 				flex-wrap: wrap;
-				gap: var(--gap-s);
+				gap: var(--gap-xs) var(--gap-m);
 			}
 		}
 

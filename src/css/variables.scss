@@ -111,11 +111,11 @@ $screen-unsupported: 240px;
 
     // Gap - modified
     --gap-xs: var(--size-8);
-    --gap-s: var(--size-12);
+    --gap-s: var(--size-8);
     --gap-m: var(--size-16);
-    --gap-l: var(--size-32);
-    --gap-xl: var(--size-48);
-    --gap-xxl: var(--size-48);
+    --gap-l: var(--size-16);
+    --gap-xl: var(--size-32);
+    --gap-xxl: var(--size-32);
 
     // Button - modified
     --bttn-s: var(--size-12);
