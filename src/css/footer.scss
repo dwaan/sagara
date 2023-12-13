@@ -11,7 +11,7 @@ footer {
 	gap: var(--gap-xl);
 	padding: var(--pad-l) var(--pad-xl) var(--pad-s);
 
-	@media screen and (max-width: variables.$screen-small-l) {
+	@media screen and (min-width: variables.$screen-small-l) {
 		gap: var(--gap-xl);
 		padding: var(--pad-xl);
 	}

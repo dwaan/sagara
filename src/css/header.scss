@@ -17,11 +17,6 @@ header {
   padding: var(--pad-s) var(--pad-xxl);
   justify-content: space-between;
 
-  @media screen and (min-width: variables.$screen-wide-l) {
-    padding-left: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
-    padding-right: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
-  }
-
   @media screen and (max-width: variables.$screen-wide-s) {
     padding: var(--pad-m) var(--pad-xl);
   }
@@ -392,11 +387,6 @@ nav.popup {
 
   pointer-events: none;
 
-  @media screen and (min-width: variables.$screen-wide-l) {
-    padding-left: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
-    padding-right: calc(((100vw - variables.$screen-wide-l) / 2) + var(--pad-xxl));
-  }
-
   @media screen and (max-width: variables.$screen-wide-s) {
     top: calc(var(--pad-m) * 2.5);
   }
@@ -463,17 +453,23 @@ nav.popup {
 
       padding-top: calc(var(--bttn-s) / 3);
       padding-bottom: calc(var(--bttn-s) / 3);
-
-      svg {
-        width: 3rem;
-        height: 3rem;
-      }
     }
   }
 
   .button {
     @media screen and (max-width: variables.$screen-normal-l) {
       width: 100%;
+    }
+  }
+
+  svg {
+    --size: 8rem;
+
+    width: var(--size);
+    height: var(--size);
+
+    @media screen and (max-width: variables.$screen-normal-l) {
+      --size: 3rem;
     }
   }
 }

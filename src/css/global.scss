@@ -241,7 +241,6 @@ section {
 
   padding: var(--pad-l) var(--pad-xl);
   width: 100%;
-  max-width: variables.$screen-wide-l;
 
   @media screen and (min-width: variables.$screen-wide-l) {
     align-self: center;
@@ -1653,8 +1652,8 @@ section.closest {
 
 .dots {
   align-self: center;
-  width: 5rem;
-  height: 1rem;
+  width: 80px;
+  height: 16px;
   background-color: var(--gray-normal);
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='16' fill='%23000' viewBox='0 0 80 16'%3E%3Ccircle cx='8' cy='8' r='8'/%3E%3Ccircle cx='40' cy='8' r='8'/%3E%3Ccircle cx='72' cy='8' r='8'/%3E%3C/svg%3E");
 }
