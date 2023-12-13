@@ -65,12 +65,20 @@ form {
 	max-width: var(--max-s);
 	min-height: 5.5rem;
 
+	@media screen and (max-width: variables.$screen-small-l) {
+		min-height: 3.5rem;
+	}
+
 	gap: var(--gap-l);
 
 	flex: none;
 	align-self: center;
 
 	padding: calc(var(--pad-xs) * 2/3) var(--pad-s);
+
+	@media screen and (max-width: variables.$screen-small-l) {
+		padding: calc(var(--pad-xs) * 2/3) var(--pad-l);
+	}
 
 	background: var(--white-normal);
 	border-radius: var(--round-l);
@@ -81,12 +89,42 @@ form {
 	textarea {
 		width: 100%;
 		min-width: 9rem;
+
+		@media screen and (max-width: variables.$screen-small-l) {
+			flex: auto;
+			min-width: 0;
+		}
 	}
 
 	button {
 		@extend .a--cta;
 	}
 
+	svg {
+		flex: none;
+
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	.cta {
+		margin-right: calc(var(--pad-xs) * -1);
+	}
+
+	&.combined-mobile {
+		@media screen and (max-width: variables.$screen-small-l) {
+			flex-direction: column;
+			gap: var(--gap-xs);
+
+			label {
+				align-self: flex-start;
+			}
+
+			.cta {
+				align-self: flex-end;
+			}
+		}
+	}
 
 	&:hover {
 		box-shadow: 0 0 0 .25rem var(--neon-green);
@@ -105,8 +143,9 @@ form {
 
 		label {
 			@extend .flex-row-center;
+			@extend .p--small;
 
-			gap: var(--gap-s);
+			gap: var(--gap-m);
 
 			font-weight: initial;
 			cursor: pointer;
@@ -121,9 +160,5 @@ form {
 		.button {
 			align-self: flex-end;
 		}
-	}
-
-	.cta {
-		margin-right: calc(var(--pad-xs) * -1);
 	}
 }

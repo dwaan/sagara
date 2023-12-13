@@ -43,6 +43,16 @@ body {
   letter-spacing: -0.105rem;
   line-height: 100%;
 
+  @media screen and (max-width: variables.$screen-normal-m) {
+    font-size: 3.2rem;
+    line-height: 105%;
+  }
+
+  @media screen and (max-width: variables.$screen-small-l) {
+    font-size: 2.4rem;
+    line-height: 110%;
+  }
+
   &--homepage,
   &.homepage {
     font-size: 5.5rem;
@@ -51,7 +61,6 @@ body {
     @media screen and (max-width: variables.$screen-normal-m) {
       font-size: 4rem;
       letter-spacing: -0.18rem;
-      line-height: 110%;
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
@@ -73,7 +82,6 @@ body {
     @media screen and (max-width: variables.$screen-small-l) {
       font-size: 2.4rem;
       letter-spacing: -0.06rem;
-      line-height: 110%;
     }
   }
 }
@@ -88,6 +96,15 @@ h1 {
 
   font-size: 3rem;
   line-height: 110%;
+  letter-spacing: -0.04rem;
+
+  @media screen and (max-width: variables.$screen-normal-m) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: variables.$screen-small-l) {
+    font-size: 2rem;
+  }
 
   &--big,
   &.big {
@@ -136,6 +153,7 @@ h1 {
   &.smallest {
     font-size: 1.5rem;
     line-height: 150%;
+    letter-spacing: .05rem;
   }
 }
 
@@ -191,6 +209,14 @@ h3 {
   line-height: 140%;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+
+  @media screen and (max-width: variables.$screen-normal-m) {
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: variables.$screen-small-l) {
+    font-size: 1rem;
+  }
 }
 
 h4 {
@@ -218,6 +244,7 @@ h5 {
   &.regular {
     font-size: 1.125rem;
     line-height: 160%;
+    letter-spacing: 0;
 
     @media screen and (max-width: variables.$screen-normal-m) {
       font-size: 1.1rem;
@@ -231,8 +258,12 @@ h5 {
   &--small,
   &.small {
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 140%;
     letter-spacing: 0.02rem;
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      font-size: .9rem;
+    }
   }
 
   &--hero,
@@ -241,7 +272,7 @@ h5 {
     line-height: 160%;
 
     @media screen and (max-width: variables.$screen-small-l) {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 

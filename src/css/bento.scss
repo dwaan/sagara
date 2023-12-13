@@ -22,6 +22,10 @@
 		overflow: hidden;
 		height: 26.25rem;
 
+		@media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-l) {
+			height: 32rem;
+		}
+
 		.img {
 			@extend .flex-row-center;
 
@@ -81,8 +85,8 @@
 
 			p {
 				@extend .p;
-				align-self: stretch;
 
+				align-self: stretch;
 			}
 
 			&.left {
@@ -105,22 +109,44 @@
 				width: calc((var(--size) * 1.5) + (var(--gap-xxl) / 2));
 			}
 
+			@media screen and (max-width: variables.$screen-small-l) {
+				width: 100%;
+			}
+
 			.text {
 				padding: var(--pad-m) var(--pad-s);
 				gap: calc(var(--gap-xs) / 2);
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					padding: var(--pad-l) var(--pad-xl);
+					gap: var(--gap-xs);
+				}
 			}
 		}
 
 		&.medium {
 			width: calc((var(--size) * 1.5) + (var(--gap-xxl) / 2));
 
+			@media screen and (max-width: variables.$screen-small-l) {
+				width: 100%;
+			}
+
 			.img,
 			.text {
 				padding: var(--pad-m) var(--pad-s);
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					padding: var(--pad-l);
+				}
 			}
 
 			.text {
 				gap: var(--gap-xs);
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					padding: var(--pad-l) var(--pad-xl);
+					gap: var(--gap-xs);
+				}
 			}
 		}
 
@@ -133,6 +159,11 @@
 
 			.text {
 				padding: var(--pad-s) var(--pad-l);
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					padding: var(--pad-l) var(--pad-xl);
+					gap: var(--gap-xs);
+				}
 
 				h3 {
 					@extend .h3;
@@ -149,12 +180,22 @@
 		// Style
 
 		&.v-text-r {
-			flex-flow: row;
+			flex-direction: row;
+
+			@media screen and (max-width: variables.$screen-small-l) {
+				flex-direction: column;
+				justify-content: flex-start;
+			}
 
 			.img,
 			.text {
 				order: 1;
 				width: 50%;
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					width: 100%;
+					order: 3;
+				}
 			}
 
 			.text {
@@ -165,8 +206,12 @@
 		}
 
 		&.v-text-l {
-			flex-flow: row;
+			flex-direction: row;
 			justify-content: flex-start;
+
+			@media screen and (max-width: variables.$screen-small-l) {
+				flex-direction: column;
+			}
 
 			.img {
 				order: 2;
@@ -178,6 +223,10 @@
 				flex: none;
 				width: 22.5rem;
 				order: 1;
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					width: 100%;
+				}
 			}
 		}
 
@@ -217,6 +266,27 @@
 			}
 		}
 
+		&.h-text-b-mobile {
+			@media screen and (max-width: variables.$screen-small-l) {
+				justify-content: flex-end;
+
+				.img {
+					order: 1;
+				}
+
+				.text {
+					padding-top: 0;
+					padding-bottom: var(--pad-l);
+					order: 2;
+				}
+
+				h3,
+				p {
+					text-align: center;
+				}
+			}
+		}
+
 		&.center {
 			justify-content: center;
 			align-items: center;
@@ -226,6 +296,20 @@
 			}
 		}
 
+		&.center-mobile {
+			@media screen and (max-width: variables.$screen-normal-m) {
+
+				&,
+				.img {
+					justify-content: center;
+					align-items: center;
+				}
+
+				.img {
+					flex: none;
+				}
+			}
+		}
 
 		// Color
 
@@ -287,9 +371,18 @@
 		margin: calc(var(--gap-xs) * -1) calc(var(--gap-m) * -1) calc(var(--gap-xs) * -5)
 	}
 
+	.no-wrap,
 	.round-shadow {
 		img {
 			margin: 0;
+		}
+	}
+
+	.no-wrap-mobile {
+		img {
+			@media screen and (max-width: variables.$screen-normal-l) {
+				margin: 0;
+			}
 		}
 	}
 }

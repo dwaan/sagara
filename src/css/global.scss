@@ -444,6 +444,7 @@ section.blue {
           flex-direction: column;
 
           form {
+            order: 3;
             align-self: stretch;
           }
         }
@@ -567,6 +568,33 @@ section.blue {
     @media screen and (max-width: variables.$screen-normal-l) {
       margin-left: -.5rem;
       max-width: none;
+    }
+  }
+
+  &#how-to-apply {
+    >article>div {
+      @media screen and (max-width: variables.$screen-normal-m) {
+        flex-direction: column;
+      }
+    }
+
+    .row {
+      @media screen and (max-width: variables.$screen-small-l) {
+        flex-direction: column;
+      }
+    }
+
+    .drop {
+      width: 8rem;
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        width: 100%;
+      }
+    }
+
+    form {
+      order: 3;
+      width: 100%;
     }
   }
 }
@@ -754,7 +782,8 @@ section.listing {
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
-      flex-direction: column;
+      --padding-small: var(--pad-l);
+      --padding-big: var(--padding-small);
     }
 
     li {
@@ -767,16 +796,24 @@ section.listing {
       width: var(--third);
 
       @media screen and (max-width: variables.$screen-normal-l) {
+        flex-direction: column !important;
         width: var(--half);
+      }
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        width: 100%;
       }
 
       @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
           padding: var(--padding-big);
           width: var(--half);
+
+          @media screen and (max-width: variables.$screen-small-l) {
+            width: 100%;
+          }
         }
       }
-
     }
 
     svg {
@@ -800,6 +837,18 @@ section.listing {
 
     p {
       @extend .p--regular;
+    }
+
+    svg {
+      --size: 10rem;
+
+      @media screen and (max-width: variables.$screen-normal-m) {
+        --size: 8rem;
+        align-self: flex-start;
+      }
+
+      width: var(--size);
+      height: var(--size);
     }
   }
 
@@ -930,6 +979,18 @@ section.slider {
       @extend .round-shadow--big;
     }
   }
+
+  &.tabs {
+    >nav {
+      width: 100%;
+      max-width: var(--max-s);
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        width: unset;
+        max-width: none;
+      }
+    }
+  }
 }
 
 section.tabs {
@@ -960,49 +1021,56 @@ section.points {
         padding-left: var(--pad-xxl);
         padding-right: var(--pad-xxl);
       }
+
+      p {
+        @extend .p--small;
+      }
     }
   }
 
   svg {
+    --size: 20rem;
+
     width: 100%;
-    max-width: 16rem;
-  }
+    max-width: var(--size);
+    height: calc(var(--size) / 2);
 
-  &.commitment {
-    --svg-fill: var(--dark-normal);
-
-    h3 {
-      @extend .h3--small;
-
-      color: var(--dark-normal);
+    @media screen and (max-width: variables.$screen-normal-m) {
+      --size: 17.5rem;
     }
 
-    @media screen and (max-width: variables.$screen-normal-l) {
-      .commitment {
-        padding: 0;
-      }
+    @media screen and (max-width: variables.$screen-small-l) {
+      --size: 14rem;
+    }
+  }
+}
 
-      ul,
-      ol {
-        padding: 0;
-        flex: 1 0 0;
-        gap: var(--gap-l);
+section.commitment {
+  --svg-fill: var(--dark-normal);
 
-        li {
-          padding: var(--pad-xs);
-        }
-      }
+  h3 {
+    @extend .h3--small;
 
-      li {
-        .img {
-          flex: 1 0 0;
+    color: var(--dark-normal);
+  }
 
-          svg {
-            width: 100%;
-            max-width: 16rem;
-          }
-        }
-      }
+  .img {
+    margin: 0 calc(var(--bttn-xl) * -1);
+  }
+
+  @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-m) {
+
+    ul,
+    ol {
+      gap: var(--gap-l) !important;
+    }
+
+    li {
+      padding: 0 var(--pad-m) !important;
+    }
+
+    .img {
+      margin: 0 -2rem !important;
     }
   }
 }
@@ -1050,6 +1118,10 @@ section.image {
     gap: var(--gap-xxl);
     max-width: initial;
 
+    @media screen and (max-width: variables.$screen-small-l) {
+      flex-direction: column;
+    }
+
     h2 {
       @extend .h2--medium;
     }
@@ -1077,6 +1149,18 @@ section.icon {
     svg {
       --svg-fill: var(--neon-blue);
       --svg-stroke: var(--white-static);
+      --size: 8rem;
+
+      @media screen and (max-width: variables.$screen-normal-m) {
+        --size: 6rem;
+      }
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        --size: 4rem;
+      }
+
+      width: var(--size);
+      height: var(--size);
     }
   }
 
@@ -1098,15 +1182,34 @@ section.icon {
 section.gray {
   background: var(--gray-background);
 
+
   article {
     @extend .flex-row;
 
     align-self: center;
     gap: var(--gap-xxl);
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      flex-direction: column;
+    }
   }
 
   h2 {
     @extend .h2--medium;
+  }
+
+  .text,
+  .img {
+    @media screen and (max-width: variables.$screen-small-l) {
+      order: 1;
+      align-self: flex-start;
+    }
+  }
+
+  .text {
+    @media screen and (max-width: variables.$screen-small-l) {
+      order: 2;
+    }
   }
 }
 
@@ -1160,7 +1263,18 @@ section.careers {
 }
 
 section.career {
+
   sidebar {
+    width: var(--size-one-third);
+
+    @media screen and (max-width: variables.$screen-normal-m) {
+
+      margin: calc(var(--pad-xs) * -1) calc(var(--pad-xl) * -1);
+      padding: var(--pad-xs) var(--pad-xl);
+
+      width: 100vw;
+      overflow: hidden;
+    }
 
     menu,
     ul,
@@ -1170,7 +1284,12 @@ section.career {
       flex-direction: column;
       gap: var(--gap-s);
 
+      @media screen and (max-width: variables.$screen-normal-m) {
+        flex-flow: row nowrap;
+      }
+
       li {
+        white-space: nowrap;
 
         &,
         a {
@@ -1183,34 +1302,42 @@ section.career {
       }
     }
 
+    menu {
+      @media screen and (max-width: variables.$screen-normal-m) {
+        margin: calc(var(--pad-xl) * -1);
+        padding: var(--pad-xl);
+        overflow: auto;
+      }
+    }
+  }
+
+  article {
+    display: block;
+
+    width: 100%;
+    max-width: var(--max-s);
+
+    h3 {
+      @extend .h3--regular;
+
+      margin-top: var(--gap-xxl);
+      margin-bottom: var(--gap-s);
+
+      color: var(--blue-normal);
+    }
+
+    p,
+    li {
+      margin-bottom: var(--gap-xs);
+    }
   }
 
   .content {
     @extend .flex-row;
 
-    sidebar {
-      width: var(--size-one-third);
-    }
-
-    article {
-      display: block;
-
-      width: 100%;
-      max-width: var(--max-s);
-
-      h3 {
-        @extend .h3--regular;
-
-        margin-top: var(--gap-xxl);
-        margin-bottom: var(--gap-s);
-
-        color: var(--blue-normal);
-      }
-
-      p,
-      li {
-        margin-bottom: var(--gap-xs);
-      }
+    @media screen and (max-width: variables.$screen-normal-m) {
+      flex-direction: column;
+      gap: var(--gap-xl);
     }
   }
 }
@@ -1251,7 +1378,12 @@ section.closest {
   gap: var(--gap-xl);
 
   width: 100%;
-  max-width: var(--max-s)
+  max-width: var(--max-s);
+
+  @media screen and (max-width: variables.$screen-small-l) {
+    flex-flow: column wrap;
+    gap: var(--gap-m);
+  }
 }
 
 .column {
@@ -1452,6 +1584,7 @@ section.closest {
   }
 
   li {
+    white-space: nowrap;
     scroll-snap-align: start;
 
     a,

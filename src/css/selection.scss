@@ -136,7 +136,9 @@
   >ol {
     @extend .flat;
 
-    @media screen and (max-width: variables.$screen-normal-l) {
+    flex: auto;
+
+    @media screen and (max-width: variables.$screen-normal-m) {
       flex-direction: column;
     }
   }
@@ -147,11 +149,10 @@
     padding: var(--bttn-l) var(--bttn-xl);
 
     gap: var(--gap-s);
-    flex: auto;
 
-    // @media screen and (max-width: variables.$screen-normal-l) {
-    //   flex-direction: row;
-    // }
+    @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-m) {
+      flex-direction: row !important;
+    }
 
     &::before {
       background-color: var(--gray-background);
@@ -160,12 +161,6 @@
 
     .img {
       @extend .flex-row-center;
-
-      margin: 0 calc(var(--bttn-xl) * -1);
-
-      @media screen and (max-width: variables.$screen-normal-l) {
-        margin: 0;
-      }
     }
 
     p {
@@ -179,9 +174,24 @@
     @extend .flex-column-start;
 
     align-self: flex-start;
-    flex: 1 0 0;
+    flex: auto;
     gap: var(--gap-s);
     max-width: 15.625rem;
+  }
+
+  svg {
+    --size: 12.625rem;
+
+    @media screen and (max-width: variables.$screen-normal-m) {
+      --size: 10rem;
+    }
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      --size: 8rem;
+    }
+
+    width: var(--size);
+    height: calc(var(--size) * 0.7425742574);
   }
 
   p {
@@ -191,14 +201,16 @@
     align-self: stretch;
   }
 
-  @media screen and (max-width: variables.$screen-normal-l) {
 
-    ul,
-    ol {
+  ul,
+  ol {
+    @media screen and (max-width: variables.$screen-normal-l) {
       gap: var(--gap-xl);
+    }
 
-      li {
-        padding: 0
+    li {
+      @media screen and (max-width: variables.$screen-normal-l) {
+        padding: 0;
       }
     }
   }
@@ -271,10 +283,25 @@
     padding: 0;
     align-self: initial;
     width: 17.5rem;
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      width: 15rem;
+    }
   }
 
   p {
     @extend .p--small;
+  }
+
+  svg {
+    --size: 8rem;
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      --size: 6rem;
+    }
+
+    width: var(--size);
+    height: var(--size);
   }
 }
 
@@ -349,13 +376,14 @@
     }
 
     svg {
-      width: 6rem;
-      height: 6rem;
+      --size: 6rem;
 
       @media screen and (max-width: variables.$screen-small-l) {
-        width: 3rem;
-        height: 3rem;
+        --size: 3rem;
       }
+
+      width: var(--size);
+      height: var(--size);
     }
   }
 }
@@ -402,6 +430,14 @@
     ul,
     ol {
       gap: var(--gap-xxl);
+
+      @media screen and (max-width: variables.$screen-normal-m) {
+        gap: var(--gap-l);
+      }
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        gap: var(--gap-xxl);
+      }
     }
   }
 
@@ -412,14 +448,6 @@
 
   &.partners {
     @extend .selection--partners;
-  }
-
-  &.commitment {
-    .img {
-      svg {
-        width: 100%;
-      }
-    }
   }
 
   &.journey {
