@@ -8,11 +8,11 @@ footer {
 	@extend .flex-column-center;
 	@extend .no-padding-margin;
 
-	padding: var(--pad-l) var(--pad-xl) var(--pad-s);
 	gap: var(--gap-xl);
+	padding: var(--pad-l) var(--pad-xl) var(--pad-s);
 
 	@media screen and (max-width: variables.$screen-small-l) {
-		gap: var(--gap-l);
+		gap: var(--gap-xl);
 		padding: var(--pad-xl);
 	}
 
@@ -95,7 +95,7 @@ footer {
 
 		@media screen and (max-width: variables.$screen-small-l) {
 			--gap-x: var(--gap-l);
-			--gap-y: var(--gap-m);
+			--gap-y: calc(var(--gap-l) * 1.25);
 		}
 
 		gap: var(--gap-x);
@@ -103,7 +103,7 @@ footer {
 		flex-wrap: wrap;
 
 		@media screen and (max-width: variables.$screen-small-l) {
-			gap: calc(var(--gap-y) * 3);
+			gap: calc(var(--gap-y) * 2);
 		}
 
 		ol,
@@ -117,7 +117,7 @@ footer {
 			a[aria-current="page"] {
 				--size: .35rem;
 				--width: .5rem;
-				--left: calc(var(--gap-m) * -1);
+				--left: calc(var(--gap-m) * -1.15);
 
 				&::before,
 				&::after {
@@ -154,7 +154,7 @@ footer {
 			gap: var(--gap-x);
 
 			@media screen and (max-width: variables.$screen-small-l) {
-				gap: calc(var(--gap-y) * 3);
+				gap: calc(var(--gap-y) * 2);
 			}
 		}
 
@@ -175,7 +175,23 @@ footer {
 			}
 
 			@media screen and (max-width: variables.$screen-small-l) {
+				position: relative;
 				width: 100%;
+
+				ol li {
+					&::before {
+						content: "";
+						display: block;
+
+						position: absolute;
+						top: calc(var(--gap-y) / -2);
+						left: 0;
+						right: calc(var(--gap-x) * -2);
+						height: .0625rem;
+
+						background: var(--gray-transparent);
+					}
+				}
 			}
 		}
 	}
@@ -207,7 +223,11 @@ footer {
 	}
 
 	.arrow {
-		margin-left: calc(var(--pad-xxl) * -1);
+		margin-left: calc(var(--pad-xxl) * -1.5);
 		width: calc(100% + var(--pad-xxl));
+
+		@media screen and (max-width: variables.$screen-small-l) {
+			display: none;
+		}
 	}
 }
