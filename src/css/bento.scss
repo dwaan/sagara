@@ -41,8 +41,6 @@
 		.img {
 			--svg-stroke: var(--white-static);
 
-			border: 1px solid red;
-
 			position: relative;
 			z-index: 1;
 			flex: auto;
@@ -104,7 +102,6 @@
 				}
 
 				img {
-					border: 1px solid yellow;
 					position: relative;
 
 					width: 100%;
@@ -118,8 +115,6 @@
 
 		.text {
 			@extend .flex-column;
-
-			border: 1px solid greenyellow;
 
 			position: relative;
 			z-index: 2;
