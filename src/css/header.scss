@@ -101,7 +101,7 @@ header {
 
 #menu-show-trigger {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   @media screen and (max-width: variables.$screen-normal-l) {
     display: flex;
@@ -113,7 +113,7 @@ header {
 
     display: none;
     width: 2rem;
-    height: 1rem;
+    height: 1.25rem;
 
     border-top: .125rem solid var(--dark-normal);
 
