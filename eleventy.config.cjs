@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
 		return `
 			<li>
 				<div class="img">
-					<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}">
+					<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}" style="width: ${width / 16}rem; height: ${height / 16}rem;">
 					<use href="/img/icons/${icon}.svg#${symbol}" />
 					</svg>
 				</div>
@@ -74,7 +74,7 @@ module.exports = function (eleventyConfig) {
 			viewHeight = view[1];
 		}
 
-		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"> <use href="/img/icons/${icon}" viewBox="0 0 ${viewWidth} ${viewHeight}" /></svg>`;
+		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"style="width: ${width / 16}rem; height: ${height / 16}rem;"> <use href="/img/icons/${icon}" viewBox="0 0 ${viewWidth} ${viewHeight}" /></svg>`;
 	});
 	eleventyConfig.addShortcode("a_menu", function (title, url, page_url, now = false) {
 		if (now == "true") now = true;
@@ -112,7 +112,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPairedShortcode("h2", function (content, svg, alt) {
 		let icon = `
 		<div class="icon">
-			<svg width="112" height="112" viewBox="0 0 128 128" aria-label="${alt}">
+			<svg width="112" height="112" viewBox="0 0 128 128" aria-label="${alt}" style="width: 7rem; height: 7rem;">
 				<use href="/img/icons/plain.svg#${svg}" />
 			</svg>
 		</div>`;

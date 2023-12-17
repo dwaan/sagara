@@ -1019,8 +1019,8 @@ section.points {
     --size: 20rem;
 
     width: 100%;
-    max-width: var(--size);
-    height: calc(var(--size) / 2);
+    max-width: var(--size)!important;
+    height: calc(var(--size) / 2)!important;
 
     @media screen and (max-width: variables.$screen-normal-m) {
       --size: 17.5rem;
