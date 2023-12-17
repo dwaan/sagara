@@ -1024,10 +1024,14 @@ section.points {
 
     @media screen and (max-width: variables.$screen-normal-m) {
       --size: 17.5rem;
+
+      margin: 0 -1rem 0 -3rem;
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
       --size: 14rem;
+
+      margin: 0;
     }
   }
 }
@@ -1058,6 +1062,12 @@ section.commitment {
 
     .img {
       margin: 0 -2rem !important;
+    }
+  }
+
+  svg {
+    @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-m) {
+      margin: 0 -2rem 0 -3rem;
     }
   }
 }

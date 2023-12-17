@@ -228,7 +228,7 @@ nav.menu {
 
     @media screen and (max-width: variables.$screen-normal-l) {
       position: absolute;
-      top: calc(var(--pad-m) * 2.5);
+      top: calc(var(--pad-m) * 2);
       right: 0;
       left: 0;
 
@@ -246,7 +246,7 @@ nav.menu {
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
-      top: calc(var(--pad-m) * 5);
+      top: calc(var(--pad-m) * 4);
     }
 
     >li {

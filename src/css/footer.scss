@@ -9,7 +9,7 @@ footer {
 	@extend .no-padding-margin;
 
 	gap: var(--gap-xl);
-	padding: var(--pad-l) var(--pad-xl) var(--pad-s);
+	padding: var(--pad-l) var(--pad-xl) var(--pad-xxl);
 
 	@media screen and (min-width: variables.$screen-small-l) {
 		gap: var(--gap-xl);
