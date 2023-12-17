@@ -978,18 +978,6 @@ section.slider {
       @extend .round-shadow--big;
     }
   }
-
-  &.tabs {
-    >nav {
-      width: 100%;
-      max-width: var(--max-s);
-
-      @media screen and (max-width: variables.$screen-small-l) {
-        width: unset;
-        max-width: none;
-      }
-    }
-  }
 }
 
 section.tabs {
@@ -1533,6 +1521,8 @@ section.closest {
     flex-direction: row;
     align-items: center;
     gap: var(--gap-xxl);
+    width: 100%;
+    max-width: var(--max-s);
 
     padding: 0;
 
@@ -1543,6 +1533,7 @@ section.closest {
       gap: var(--gap-m);
 
       width: initial;
+      max-width: none;
       margin: calc(var(--pad-s) * -1) calc(var(--pad-xl) * -1);
       padding: var(--pad-s) var(--pad-xl) !important;
 

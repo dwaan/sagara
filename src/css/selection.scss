@@ -148,6 +148,7 @@
 
     padding: var(--bttn-l) var(--bttn-xl);
 
+    flex: 1 0 0;
     gap: var(--gap-s);
 
     @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-m) {
