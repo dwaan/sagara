@@ -74,7 +74,7 @@ form {
 	flex: none;
 	align-self: center;
 
-	padding: calc(var(--pad-xs) * 2/3) var(--pad-s);
+	padding: calc(var(--pad-xs) * 2/3) var(--pad-m);
 
 	@media screen and (max-width: variables.$screen-small-l) {
 		padding: calc(var(--pad-xs) * 2/3) var(--pad-l);
@@ -109,6 +109,10 @@ form {
 
 	.cta {
 		margin-right: calc(var(--pad-xs) * -1);
+
+		@media screen and (max-width: variables.$screen-small-l) {
+			margin-right: calc(var(--pad-xs) * -1/2);
+		}
 	}
 
 	&.combined-mobile {

@@ -1019,19 +1019,28 @@ section.points {
     --size: 20rem;
 
     width: 100%;
-    max-width: var(--size)!important;
-    height: calc(var(--size) / 2)!important;
+    max-width: var(--size) !important;
+    height: calc(var(--size) / 2) !important;
 
     @media screen and (max-width: variables.$screen-normal-m) {
       --size: 17.5rem;
-
-      margin: 0 -1rem 0 -3rem;
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
       --size: 14rem;
+    }
+  }
 
-      margin: 0;
+  &.crop {
+    svg {
+
+      @media screen and (max-width: variables.$screen-normal-m) {
+        margin: 0 -2rem 0 -4rem;
+      }
+
+      @media screen and (max-width: variables.$screen-small-l) {
+        margin: 0;
+      }
     }
   }
 }
@@ -1771,7 +1780,7 @@ section.closest {
 //* pm.os
 .pmos {
   .bento {
-    @media screen and (max-width: variables.$screen-normal-l) {
+    @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-l) {
       .box {
         order: 3;
       }
@@ -1791,7 +1800,7 @@ section.closest {
 .dask,
 .itik {
   .bento {
-    @media screen and (max-width: variables.$screen-normal-l) {
+    @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-l) {
       .box {
         order: 1;
       }
@@ -1810,7 +1819,7 @@ section.closest {
 //* lm.sys
 .lmsys {
   .bento {
-    @media screen and (max-width: variables.$screen-normal-l) {
+    @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-l) {
       .box {
         order: 3;
       }
@@ -1829,7 +1838,7 @@ section.closest {
 //* web-based
 .web-based {
   .bento {
-    @media screen and (max-width: variables.$screen-normal-l) {
+    @media screen and (min-width: variables.$screen-small-l) and (max-width: variables.$screen-normal-l) {
       .box {
         order: 3;
       }
