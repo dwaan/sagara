@@ -93,6 +93,15 @@
 				}
 			}
 
+			&.left-tablet {
+				@media screen and (max-width: variables.$screen-normal-m) {
+					img {
+						right: initial;
+						left: 0;
+					}
+				}
+			}
+
 			&.stretch {
 				width: auto;
 				margin: calc(var(--pad-m) * -1) calc(var(--pad-s) * -1);
@@ -221,11 +230,8 @@
 			.img,
 			.text {
 				order: 1;
-				width: 14.5rem;
 
 				@media screen and (max-width: variables.$screen-small-l) {
-					width: auto;
-					min-width: 100%;
 					order: 3;
 				}
 			}
@@ -234,6 +240,12 @@
 				@extend .flex-column-center;
 
 				order: 2;
+				width: 14.5rem;
+
+				@media screen and (max-width: variables.$screen-small-l) {
+					width: auto;
+					order: 3;
+				}
 			}
 
 			.img.stretch {

@@ -55,12 +55,13 @@ header {
     pointer-events: none;
 
     @media screen and (max-width: variables.$screen-wide-l) {
-      width: 9.875rem!important;
-      height: 3.5rem!important;
+      width: 9.875rem !important;
+      height: 3.5rem !important;
     }
+
     @media screen and (max-width: variables.$screen-small-l) {
-      width: 8rem!important;
-      height: 3.5rem!important;
+      width: 8rem !important;
+      height: 3.5rem !important;
     }
   }
 
@@ -114,19 +115,23 @@ header {
     width: 2rem;
     height: 1rem;
 
-    @media screen and (max-width: variables.$screen-small-l) {
-      width: 1.5rem;
-    }
-
     border-top: .125rem solid var(--dark-normal);
 
     transition: all var(--fast) var(--ease-back);
+
+    @media screen and (max-width: variables.$screen-normal-l) {
+      display: block;
+    }
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      width: 1.5rem;
+    }
 
     &::before,
     &::after {
       height: .125rem;
       top: calc(50% - .0625rem);
-      background-color: var(--dark-normal);
+      background: var(--dark-normal);
 
       transition: all var(--fast) var(--ease-back);
     }
@@ -135,9 +140,16 @@ header {
       top: 100%;
       right: .25rem;
     }
+  }
 
-    @media screen and (max-width: variables.$screen-normal-l) {
-      display: block;
+  &:hover {
+    i {
+      border-color: var(--neon-blue);
+
+      &::before,
+      &::after {
+        background: var(--neon-blue);
+      }
     }
   }
 
@@ -383,10 +395,10 @@ nav.popup {
 
   position: absolute;
   z-index: 1;
-  top: calc(var(--pad-m) * 3);
+  top: calc(var(--pad-m) * 2);
   left: 0;
   right: 0;
-  padding: var(--pad-l) var(--pad-xxl) var(--pad-s);
+  padding: var(--pad-l) var(--pad-xxl) var(--pad-m);
 
   gap: var(--gap-xl);
 
