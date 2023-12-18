@@ -175,9 +175,18 @@
     @extend .flex-column-start;
 
     align-self: flex-start;
-    flex: auto;
+    flex: none;
     gap: var(--gap-s);
-    max-width: 15.625rem;
+    width: 15.625rem;
+
+    @media screen and (max-width: variables.$screen-normal-m) {
+      width: 25%;
+    }
+
+    @media screen and (max-width: variables.$screen-small-l) {
+      width: 33.33%;
+    }
+
   }
 
   svg {

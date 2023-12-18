@@ -1018,16 +1018,22 @@ section.points {
   svg {
     --size: 20rem;
 
+    margin: 0 calc(var(--size) / -2);
+
     width: 100%;
     max-width: var(--size) !important;
     height: calc(var(--size) / 2) !important;
 
     @media screen and (max-width: variables.$screen-normal-m) {
       --size: 17.5rem;
+
+      margin: 0;
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
       --size: 14rem;
+
+      margin: 0 calc(var(--size) / -2);
     }
   }
 
