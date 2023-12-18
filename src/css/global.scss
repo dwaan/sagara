@@ -338,7 +338,7 @@ section.hero {
     &.no-shadow {
       img {
         border-radius: 0;
-        box-shadow: none;
+        box-shadow: initial;
       }
     }
   }
