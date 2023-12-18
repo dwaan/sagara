@@ -228,6 +228,7 @@ h4 {
 .h5 {
   @include inline-bold;
   @include children-tags;
+  font-size: 1rem;
 }
 
 h5 {

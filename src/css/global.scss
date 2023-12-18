@@ -38,7 +38,9 @@ menu {
   list-style: none;
 }
 
-a {
+a,
+label,
+button {
   @extend .after-before;
 
   display: inline-block;
@@ -122,6 +124,7 @@ a {
     }
   }
 
+  &.small,
   &.pill {
     padding: var(--bttn-s) var(--bttn-m);
     gap: var(--bttn-s);
@@ -144,12 +147,34 @@ a {
       }
     }
 
+    &.white {
+      &::before {
+        background: var(--white-normal);
+      }
+
+      &:hover {
+        color: var(--white-static);
+
+        &::before {
+          background: var(--neon-blue);
+        }
+      }
+    }
+
     &.blue {
       color: var(--white-static);
 
       &::before {
         background: var(--neon-blue);
       }
+    }
+  }
+
+  &.small {
+    padding: calc(var(--bttn-s) / 2) var(--bttn-s);
+
+    &::before {
+      border-radius: var(--round-s);
     }
   }
 
@@ -168,7 +193,12 @@ a {
   }
 
   input[type="submit"],
-  button {
+  button,
+  label {
+    @extend .flex-row-center;
+
+    gap: var(--gap-s);
+
     color: currentColor;
     cursor: pointer;
   }

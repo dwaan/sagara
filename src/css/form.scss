@@ -25,7 +25,8 @@ button {
 	}
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
 	width: var(--bttn-l);
 	height: var(--bttn-l);
 
@@ -38,7 +39,7 @@ input[type="radio"] {
 	transition: all var(--fast) var(--ease-back);
 
 	&:checked {
-		background-size: var(--bttn-l);
+		background-size: 100%;
 	}
 }
 

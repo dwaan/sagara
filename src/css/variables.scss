@@ -51,6 +51,7 @@ $screen-unsupported: 240px;
   --gap-xxl: var(--size-64);
 
   // Button
+  --bttn-xs: var(--size-12);
   --bttn-s: var(--size-16);
   --bttn-m: var(--size-24);
   --bttn-l: var(--size-32);
@@ -118,6 +119,7 @@ $screen-unsupported: 240px;
     --gap-xxl: var(--size-32);
 
     // Button - modified
+    --bttn-xs: var(--size-8);
     --bttn-s: var(--size-12);
     --bttn-m: var(--size-16);
     --bttn-l: var(--size-24);

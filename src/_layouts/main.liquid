@@ -115,18 +115,50 @@ title: A Mission Driven Technology Company in Indonesia
           <li {% aria_current_page page.url "/careers/" careers-now %}>
             <a href="/careers/">Careers</a>
           </li>
-          <li class="accessibility">
-            <a href="#accesibility">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 32 32"
-                aria-label="Jadi Logo">
-                <use href="/img/icons/medium.svg#accessibility" />
-              </svg>
-            </a>
-          </li>
         </menu>
+
+        {% comment %} Toggle for Accesibility {% endcomment %}
+        <input
+          type="checkbox"
+          name="accessibility"
+          id="accessibility"
+          hidden />
+        <label for="accessibility" class="accessibility">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 32 32"
+            aria-label="Jadi Logo">
+            <use href="/img/icons/medium.svg#accessibility" />
+          </svg>
+        </label>
+
+        {% comment %} Accessibility popup {% endcomment %}
+        <dialog class="options">
+          <form method="dialog">
+            <article>
+              <h3>Accessibility</h3>
+              <label><input type="checkbox" name="reduce-motion"> Reduce Motion</label>
+              <label><input type="checkbox" name="underline-url"> Underline URL</label>
+              <label><input type="checkbox" name="high-contrast"> High Contrast</label>
+              <label><input type="checkbox" name="dark-mode"> Dark Mode</label>
+              <p class="row">
+                <input
+                  type="radio"
+                  name="lang"
+                  hidden>
+                <span>Languange</span>
+                <label class="button blue small">En</label>
+                <label class="button white small">Ina</label>
+              </p>
+            </article>
+            <p class="small">
+              <strong>Notice</strong>: We use cookies to save your accessibility preferences.</p>
+            <label for="accessibility" class="button white pill">Save and close
+              <i class="arrow"></i>
+            </label>
+          </form>
+        </dialog>
       </nav>
     </header>
 
