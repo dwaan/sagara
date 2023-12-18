@@ -46,6 +46,7 @@ button {
   display: inline-block;
   background: transparent;
   border: none;
+
   cursor: pointer;
 
   &.default,
@@ -124,7 +125,7 @@ button {
     }
   }
 
-  &.small,
+  &.very-small,
   &.pill {
     padding: var(--bttn-s) var(--bttn-m);
     gap: var(--bttn-s);
@@ -170,7 +171,7 @@ button {
     }
   }
 
-  &.small {
+  &.very-small {
     padding: calc(var(--bttn-s) / 2) var(--bttn-s);
 
     &::before {
@@ -1021,27 +1022,16 @@ section.tabs {
 }
 
 section.points {
-  .text p {
-    @extend .p--hero;
-  }
 
-  li .text p {
-    @extend .p--regular;
-  }
+  &.crop {
+    svg {
 
-  .partners {
-    margin: 0 calc(var(--pad-xxl) * -1);
-
-    .scroll {
-
-      >ul,
-      >ol {
-        padding-left: var(--pad-xxl);
-        padding-right: var(--pad-xxl);
+      @media screen and (max-width: variables.$screen-normal-m) {
+        margin: 0 -2rem 0 -4rem;
       }
 
-      p {
-        @extend .p--small;
+      @media screen and (max-width: variables.$screen-small-l) {
+        margin: 0;
       }
     }
   }
@@ -1068,17 +1058,33 @@ section.points {
     }
   }
 
-  &.crop {
-    svg {
+  li .text p {
+    @extend .p--regular;
+  }
 
-      @media screen and (max-width: variables.$screen-normal-m) {
-        margin: 0 -2rem 0 -4rem;
+  .partners {
+    margin: 0 calc(var(--pad-xxl) * -1);
+
+    .scroll {
+
+      >ul,
+      >ol {
+        padding-left: var(--pad-xxl);
+        padding-right: var(--pad-xxl);
       }
 
-      @media screen and (max-width: variables.$screen-small-l) {
-        margin: 0;
+      p {
+        @extend .p--small;
       }
     }
+  }
+
+  .selection {
+    justify-content: center
+  }
+
+  .text p {
+    @extend .p--hero;
   }
 }
 

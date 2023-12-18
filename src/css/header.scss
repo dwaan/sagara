@@ -681,8 +681,9 @@ dialog.options {
   width: 100vw;
   height: 100vh;
 
+  color: var(--dark-normal);
   border: none;
-  background: #00000033;
+  background: var(--dark-background);
 
   transition: all var(--fast) var(--ease-back);
 
