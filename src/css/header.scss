@@ -86,9 +86,8 @@ header {
 // ! Desktop and Mobile Menu switcher
 //
 
+// Desktop menu toggle
 #menu-close-trigger {
-  @extend .flex-row-center;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -96,17 +95,17 @@ header {
   bottom: 0;
   z-index: 1;
 
-  cursor: auto;
-
   display: block;
 }
 
+// Desktop menu toggle
 #menu-close {
-  &:checked+label {
+  &:checked+#menu-close-trigger {
     display: none;
   }
 }
 
+// Mobile and Tablet menu toggle
 #menu-show-trigger {
   position: relative;
   z-index: 3;
@@ -138,14 +137,14 @@ header {
     &::before,
     &::after {
       height: .125rem;
-      top: calc(50% - .0625rem);
+      top: calc(50% - .125rem);
       background: var(--dark-normal);
 
       transition: all var(--fast) var(--ease-back);
     }
 
     &::after {
-      top: 100%;
+      top: calc(100% - .125rem);
       right: .25rem;
     }
   }
@@ -188,24 +187,32 @@ header {
       +menu {
         transform: translate(0, 2rem);
         transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
-
       }
 
       +menu>li {
         opacity: 0;
         transform: translate(2rem, 0);
         transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
+
+        // Add more if menu content is more than 8
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i*32}ms;
+          }
+        }
       }
     }
   }
 
   &:checked+label {
+
+    // Make hamburger icon into x icon
     i {
       border-color: transparent;
 
       &::before,
       &::after {
-        top: 50%;
+        top: calc(50% - .125rem);
         transform: rotate(40deg);
         right: 0;
       }
@@ -217,19 +224,11 @@ header {
 
     +menu {
       @media screen and (max-width: variables.$screen-normal-l) {
-        opacity: 1;
-        transform: translate(0, 0);
 
+        &,
         >li {
           opacity: 1;
           transform: translate(0, 0);
-
-          // Add more if menu content is more than 8
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i}) {
-              transition-delay: #{$i*32}ms;
-            }
-          }
         }
       }
     }
@@ -277,6 +276,7 @@ nav.menu {
       justify-content: flex-start;
 
       pointer-events: none;
+      overflow: hidden;
 
       background: var(--white-transparent);
       box-shadow: var(--menu-shadow);
@@ -393,7 +393,7 @@ nav.menu {
         }
       }
 
-      // Show menu popup
+      // Show popup menu
 
       >nav.popup {
         opacity: 0;
@@ -421,6 +421,7 @@ nav.menu {
         }
       }
 
+      // Show popup menu
       input:checked+label+nav.popup {
         margin-top: 0;
         opacity: 1;
@@ -464,7 +465,6 @@ nav.menu {
 nav.popup {
   @extend .flex-column-center;
   @extend .selection--minimal;
-  @extend .before;
 
   position: absolute;
   z-index: 1;
@@ -477,6 +477,10 @@ nav.popup {
 
   pointer-events: none;
 
+  background: var(--white-transparent);
+  box-shadow: var(--menu-shadow);
+  backdrop-filter: blur(var(--pad-l));
+
   @media screen and (max-width: variables.$screen-wide-s) {
     top: calc(var(--pad-m) * 2.5);
   }
@@ -486,19 +490,10 @@ nav.popup {
     position: static;
     padding: 0;
     gap: var(--pad-xs);
-  }
 
-  &::before {
-    border-radius: 0;
-    background: var(--white-transparent);
-    box-shadow: var(--menu-shadow);
-    backdrop-filter: blur(var(--pad-l));
-
-    @media screen and (max-width: variables.$screen-normal-l) {
-      background: unset;
-      box-shadow: unset;
-      backdrop-filter: unset;
-    }
+    background: unset;
+    box-shadow: unset;
+    backdrop-filter: unset;
   }
 
   // submenu
