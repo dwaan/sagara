@@ -31,6 +31,11 @@
   initial-value: 95%;
 }
 
+
+//
+//! Header
+//
+
 header {
   @extend .flex-row-center;
   @extend .no-padding-margin;

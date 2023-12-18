@@ -70,6 +70,7 @@ const paths = {
 	},
 	js: {
 		src: src + 'js/main.js',
+		watch: src + 'js/**/*.js',
 		dest: sites + 'js/'
 	},
 	html: {
@@ -268,7 +269,7 @@ function development() {
 	gulp.watch(paths.svglogo.src, { events: 'all', ignoreInitial: false }, svglogo);
 	gulp.watch(paths.staticsvg.src, { events: 'all', ignoreInitial: false }, copy_svg);
 	gulp.watch(paths.scss.src, { events: 'all', ignoreInitial: false }, gulp.series(scss_dev, css_prefix_dev));
-	gulp.watch(paths.js.src, { events: 'all', ignoreInitial: false }, js_dev);
+	gulp.watch(paths.js.watch, { events: 'all', ignoreInitial: false }, js_dev);
 	gulp.watch(paths.html.src, { events: 'all', ignoreInitial: false }, html);
 }
 function production() {
