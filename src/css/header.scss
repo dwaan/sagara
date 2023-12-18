@@ -49,6 +49,14 @@ header {
   a {
     color: var(--dark-normal);
     align-self: center;
+
+    &:hover {
+      div.gradient {
+        --rad1: 20%;
+        --rad2: 40%;
+        --rad3: 60%;
+      }
+    }
   }
 
   object {
@@ -173,7 +181,24 @@ header {
   }
 }
 
+// Mobile and Tablet menu toggle
 #menu-show {
+  &+label {
+    @media screen and (max-width: variables.$screen-normal-l) {
+      +menu {
+        transform: translate(0, 2rem);
+        transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
+
+      }
+
+      +menu>li {
+        opacity: 0;
+        transform: translate(2rem, 0);
+        transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
+      }
+    }
+  }
+
   &:checked+label {
     i {
       border-color: transparent;
@@ -193,6 +218,19 @@ header {
     +menu {
       @media screen and (max-width: variables.$screen-normal-l) {
         opacity: 1;
+        transform: translate(0, 0);
+
+        >li {
+          opacity: 1;
+          transform: translate(0, 0);
+
+          // Add more if menu content is more than 8
+          @for $i from 1 through 8 {
+            &:nth-child(#{$i}) {
+              transition-delay: #{$i*32}ms;
+            }
+          }
+        }
       }
     }
   }
@@ -360,13 +398,26 @@ nav.menu {
       >nav.popup {
         opacity: 0;
         pointer-events: none;
-        transform: translate(0, -2rem);
+        transform: translate(0, 2rem);
         transition: all var(--fast) var(--ease-back);
 
         @media screen and (max-width: variables.$screen-normal-l) {
-          display: none;
+          height: 0;
+          margin-top: calc(var(--gap-xl) * -1);
           transform: translate(0, 0);
-          pointer-events: all;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .button,
+        menu>li {
+          opacity: 0;
+          transform: translate(0, 2rem);
+          transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
+
+          @media screen and (max-width: variables.$screen-normal-l) {
+            transform: translate(2rem, 0);
+          }
         }
       }
 
@@ -376,12 +427,34 @@ nav.menu {
         transform: translate(0, 0);
 
         @media screen and (max-width: variables.$screen-normal-l) {
-          display: flex;
+          margin-top: 0;
+          height: auto;
+          pointer-events: all;
         }
 
         li,
         a {
           pointer-events: all;
+        }
+
+        .button,
+        menu>li {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        menu>li {
+
+          // Add more if menu content is more than 8
+          @for $i from 1 through 8 {
+            &:nth-child(#{$i}) {
+              transition-delay: #{$i*32}ms;
+            }
+          }
+        }
+
+        .button {
+          transition-delay: 128ms;
         }
       }
     }
@@ -416,7 +489,6 @@ nav.popup {
   }
 
   &::before {
-    top: calc(var(--pad-xs) * 1.5);
     border-radius: 0;
     background: var(--white-transparent);
     box-shadow: var(--menu-shadow);
