@@ -67,6 +67,7 @@ $screen-unsupported: 240px;
   --size-one-third: 23.3333125rem;
   --size-ss: calc(100vw * 1200/1440);
   --aspect-ratio-ss: calc(1200 / 720);
+  --aspect-ratio-ss-tablet: calc(1194 / 834);
 
   // Max size
   --max-s: 47.5rem;
@@ -160,6 +161,8 @@ $screen-unsupported: 240px;
 
     --neon-blue: #0057F2;
     --neon-green: #2FFF86;
+
+    --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%232B2727' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E")
   }
 }
 
@@ -187,6 +190,8 @@ $screen-unsupported: 240px;
 
     --neon-blue: #014ccd;
     --neon-green: #22c666;
+
+    --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%23C1C1C2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E")
   }
 }
 

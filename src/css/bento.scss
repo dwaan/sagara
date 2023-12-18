@@ -32,7 +32,7 @@
 			height: 32rem;
 		}
 
-		@media screen and (max-width: variables.$screen-normal-m) {
+		@media screen and (max-width: variables.$screen-wide-s) {
 			padding: var(--pad-s);
 		}
 

@@ -312,7 +312,7 @@ nav.menu {
 
   gap: var(--gap-xl);
 
-  position: relative;
+  position: static;
   z-index: 2;
 
   >a {
@@ -342,11 +342,11 @@ nav.menu {
 
     @media screen and (max-width: variables.$screen-normal-l) {
       position: absolute;
-      top: calc(var(--pad-m) * 2);
+      top: calc(var(--pad-m) * 2.5);
       right: 0;
       left: 0;
 
-      padding: var(--pad-xxl) var(--pad-xl);
+      padding: var(--pad-xl) var(--pad-xl) var(--pad-xxl);
 
       flex-direction: column;
       align-items: flex-start;

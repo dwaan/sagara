@@ -189,6 +189,18 @@ function waitForImg() {
 	});
 }
 
+//! Local storage
+
+function get(name) {
+	return localStorage ? localStorage.getItem(name) : false;
+}
+function set(name, value) {
+	if (localStorage) localStorage.setItem(name, value);
+}
+function remove(name) {
+	if (localStorage) localStorage.removeItem(name);
+}
+
 
 /**
  * Call konami code script
@@ -233,5 +245,8 @@ export {
 	pluralinwords,
 	datediff,
 	waitForImg,
-	konami
+	konami,
+	get,
+	set,
+	remove
 };

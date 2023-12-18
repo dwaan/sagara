@@ -1005,6 +1005,10 @@ section.slider {
       aspect-ratio: var(--aspect-ratio-ss);
     }
 
+    img.tablet {
+      aspect-ratio: var(--aspect-ratio-ss-tablet);
+    }
+
     li {
       @extend .round-shadow;
       @extend .round-shadow--big;
