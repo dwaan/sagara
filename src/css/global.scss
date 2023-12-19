@@ -1292,13 +1292,8 @@ section.checkbox {
 
     ul,
     ol {
-      padding-left: calc(var(--pad-xl) * 2);
-      padding-right: calc(var(--pad-xl) * 2);
-
-      @media screen and (max-width: variables.$screen-normal-l) {
-        padding-left: calc(var(--pad-xl));
-        padding-right: calc(var(--pad-xl));
-      }
+      padding-left: calc(var(--pad-xl));
+      padding-right: calc(var(--pad-xl));
     }
   }
 
@@ -1915,6 +1910,8 @@ section.closest {
   }
 
   .selection {
+    justify-content: center;
+
     form {
       gap: var(--gap-m);
     }
@@ -1923,25 +1920,13 @@ section.closest {
     ol {
       @extend .flex-row-center;
 
-      padding-left: 0;
-      padding-right: 0;
-
-      overflow-x: unset;
-      overflow-y: unset;
+      overflow: unset;
 
       @media screen and (max-width: variables.$screen-normal-l) {
         justify-content: flex-start;
 
-        padding-left: var(--pad-xl);
-        padding-right: var(--pad-xl);
-
         overflow-x: scroll;
       }
     }
-
-    .scroll {
-      max-width: var(--max-m);
-    }
-
   }
 }

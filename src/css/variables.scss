@@ -222,29 +222,41 @@ html.high-contrast {
   --dark-normal: #000;
   --dark-static: #000;
   --dark-background: #00000033;
+}
 
-  &.dark-mode {
-    --white-normal: #111;
-    --white-static: #FFF;
-    --white-transparent: #11199;
+//! High Contrast - Dark Mode
 
-    --gray-normal: #433f3f;
-    --gray-transparent: #99999999;
-    --gray-dynamic: #999;
-    --gray-high-contrast: #999;
-    --gray-background: #A49D8533;
+@mixin high-contrast-dark-mode {
+  --white-normal: #111;
+  --white-static: #FFF;
+  --white-transparent: #11199;
 
-    --dark-normal: #FFF;
-    --dark-static: #111;
-    --dark-background: #00000099;
+  --gray-normal: #433f3f;
+  --gray-transparent: #99999999;
+  --gray-dynamic: #999;
+  --gray-high-contrast: #999;
+  --gray-background: #A49D8533;
 
-    --blue-dark: #0f5fe8;
-    --blue-deep: #2568e5;
-    --blue-normal: #266fec;
-    --blue-cyan: #0096E1;
+  --dark-normal: #FFF;
+  --dark-static: #111;
+  --dark-background: #00000099;
 
-    --neon-blue: #0077ff;
-    --neon-green: #2FFF86;
+  --blue-dark: #0f5fe8;
+  --blue-deep: #2568e5;
+  --blue-normal: #266fec;
+  --blue-cyan: #0096E1;
+
+  --neon-blue: #0077ff;
+  --neon-green: #2FFF86;
+}
+
+html.high-contrast.dark-mode {
+  @include high-contrast-dark-mode;
+}
+
+@media (prefers-color-scheme: dark) {
+  html.high-contrast {
+    @include high-contrast-dark-mode;
   }
 }
 

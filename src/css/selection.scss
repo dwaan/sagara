@@ -12,6 +12,7 @@
   @extend .flex-column;
   @extend .after-before;
 
+  &::after,
   &::before {
     background: var(--white-normal);
     border: 1px solid var(--gray-transparent);

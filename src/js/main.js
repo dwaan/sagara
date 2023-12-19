@@ -13,6 +13,7 @@ removeClass("html", "nojs");
 // Registering scroll to plugins
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+
 //
 //! Accessibility settings
 //
@@ -59,6 +60,7 @@ accessibility_checkbox.addEventListener('change', _ => {
   set_browser_color();
 });
 
+
 //
 //! Calling barba.js
 //
@@ -70,7 +72,7 @@ barba.init({
     name: 'default-transition',
     async leave() {
       // Collapse mobile menu
-      _qAll("header input[type='checkbox']").forEach(checkbox => {
+      _qAll("header nav.menu menu input[type='checkbox']").forEach(checkbox => {
         checkbox.checked = false
       });
       // Collapse desktop menu
@@ -115,14 +117,18 @@ barba.init({
   }]
 });
 
+
 //
 //! Scroll to top
 //
+
 function scrollToTop(el) {
   return new Promise(resolve => {
     const top = el == window ? el.pageYOffset : el.scrollTop;
     const scroll = top / (window.outerHeight * 2);
-    const speed = reduceMotion() ? .24 : 1.28;
+    const speed = reduceMotion() ? 0 : 1.28;
+
+    console.log(speed);
 
     if (scroll > 0) {
       gsap.to(el, {
@@ -135,9 +141,11 @@ function scrollToTop(el) {
   });
 }
 
+
 //
 //! Get reduce motion status
 //
+
 function reduceMotion() {
-  return get(settings[4]) ? true : false;
+  return get(settings[3]) ? true : false;
 }
