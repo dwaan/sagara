@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", _ => {
   //
 
   // All settings
-  const settings = ["dark-mode", "high-contrast", "underline-url", "reduce-motion"];
+  const settings = ["dark-mode", "high-contrast", "underline-links", "reduce-motion"];
   settings.forEach(name => {
     const checkbox = _q("#" + name);
 

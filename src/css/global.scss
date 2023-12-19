@@ -11,6 +11,7 @@
 @use 'list';
 @use 'bento';
 @use 'form';
+@use 'accessibility';
 @use 'nojs';
 
 //
@@ -28,14 +29,6 @@ body {
   background: var(--white-normal);
 
   transition: background var(--fast) var(--ease-out);
-
-  &.underline-url a {
-
-    &,
-    * {
-      text-decoration: underline !important;
-    }
-  }
 }
 
 menu {
@@ -1950,35 +1943,5 @@ section.closest {
       max-width: var(--max-m);
     }
 
-  }
-}
-
-
-//
-//! dark mode, dim image a little bit
-//
-
-@media (prefers-color-scheme: dark) {
-  img {
-    filter: brightness(.8);
-
-    .nodim {
-      filter: brightness(1);
-    }
-  }
-}
-
-
-//
-//! Reduce motion override
-//
-
-html.reduce-motion * {
-
-  &,
-  &::before,
-  &::after {
-    transition: none !important;
-    animation: none !important;
   }
 }

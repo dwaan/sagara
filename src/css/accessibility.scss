@@ -1,0 +1,54 @@
+//
+//! Accessibility override
+//
+
+
+//! Dark mode, dim image a little bit
+
+@mixin dim {
+  img {
+    filter: brightness(.8);
+
+    .nodim {
+      filter: none;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dim;
+}
+
+html.dark-mode {
+  @include dim;
+
+  &.high-contrast {
+    img {
+      filter: none;
+    }
+  }
+}
+
+
+//! Reduce motion
+
+html.reduce-motion * {
+
+  &,
+  &::before,
+  &::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+//! Underline links
+
+html.underline-url a {
+
+  &,
+  * {
+    text-decoration: underline !important;
+  }
+}
