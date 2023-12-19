@@ -1,6 +1,7 @@
 ---
 title: Sagara
 description: A Mission Driven Technology Company in Indonesia
+namespace: home
 ---
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ description: A Mission Driven Technology Company in Indonesia
         html.setAttribute('class', mode);
       }
     </script>
-    <script src="/js/bundle.js"></script>
+    <script src="/js/bundle.js" async></script>
 
     {% comment %} Favicons {% endcomment %}
     <link
@@ -55,24 +56,23 @@ description: A Mission Driven Technology Company in Indonesia
       {% comment %} Microsoft tile {% endcomment %}
     <meta name="msapplication-TileColor" content="#F9FAFC">
     <meta name="msapplication-TileImage" content="/android-chrome-192x192.png">
-    <meta name="theme-color" content="#F9FAFC">
 
       {% comment %} Open Graph / Facebook {% endcomment %}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url }}">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="/android-chrome-512x512.png">
+    <meta property="og:image" content="/favicon.svg">
 
       {% comment %} Twitter {% endcomment %}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ page.url }}">
     <meta property="twitter:title" content="{{ title }}">
     <meta property="twitter:description" content="{{ description }}">
-    <meta property="twitter:image" content="/android-chrome-512x512.png">
+    <meta property="twitter:image" content="/favicon.svg">
   </head>
 
-  <body>
+  <body data-barba="wrapper">
     <header>
       <div>
         <a
@@ -219,7 +219,10 @@ description: A Mission Driven Technology Company in Indonesia
       </nav>
     </header>
 
-    <main class="{{ class }}">
+    <main
+      class="{{ class }}"
+      data-barba="container"
+      data-barba-namespace="{{ namespace }}">
       {{ content }}
     </main>
 

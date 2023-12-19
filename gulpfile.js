@@ -108,8 +108,8 @@ function js_dev() {
 				clean: true
 			}
 		}))
-		.pipe(header(`document.write('<script src="http://' + window.location.hostname + ':35729/livereload.js"></script>');`))
 		.pipe(gulp.dest(paths.js.dest))
+		.pipe(header(`document.write('<script src="http://' + window.location.hostname + ':35729/livereload.js"></script>');`))
 		.pipe(browserSync.stream())
 		.pipe(livereload());
 }

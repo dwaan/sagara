@@ -37,6 +37,13 @@ module.exports = function (eleventyConfig) {
 			</li>`;
 	}
 
+	function convertToSlug(text) {
+		return text
+			.toLowerCase()
+			.replace(/ /g, '-')
+			.replace(/[^\w-]+/g, '');
+	}
+
 
 	eleventyConfig.addPlugin(pluginTOC, {
 		tags: ['h2', 'h3'],
@@ -84,9 +91,10 @@ module.exports = function (eleventyConfig) {
 		return `<a href="${url}"` + (classes ? ` class="${classes}"` : ``) + (page_url == url ? ` aria-current="page"` : ``) + `>${title} <i class="arrow"></i></a>`;
 	});
 	eleventyConfig.addShortcode("label_checkbox", function (title, url, name) {
+		const slug = convertToSlug(title);
 		return `
-			<input type="radio" name="${name}" id="menu-${url}" hidden />
-			<label for="menu-${url}"><a href="${url}">${title} <i class="arrow"></i></a></label>
+			<input type="radio" name="${name}" id="menu-${slug}" hidden />
+			<label for="menu-${slug}"><a href="${url}">${title} <i class="arrow"></i></a></label>
 		`;
 	});
 	eleventyConfig.addShortcode("aria_current_page", function (url, page_url, now) {
@@ -97,7 +105,7 @@ module.exports = function (eleventyConfig) {
 	});
 	eleventyConfig.addShortcode("selection_icon_plain", function (title, content, symbol = "") {
 		const finalContent = `<h3>${title}</h3><p>${content}</p>`;
-		if (symbol == "") symbol = title.toLowerCase().replace(/ /g, "-");
+		if (symbol == "") symbol = convertToSlug(title);
 
 		return selection(finalContent, 128, 128, "plain", symbol, title + " Icon");
 	});
