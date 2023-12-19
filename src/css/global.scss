@@ -29,8 +29,10 @@ body {
 
   transition: background var(--fast) var(--ease-out);
 
-  &.underline-url {
-    a {
+  &.underline-url a {
+
+    &,
+    * {
       text-decoration: underline !important;
     }
   }
@@ -1977,5 +1979,6 @@ html.reduce-motion * {
   &::before,
   &::after {
     transition: none !important;
+    animation: none !important;
   }
 }
