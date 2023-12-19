@@ -1,14 +1,16 @@
 ---
-title: A Mission Driven Technology Company in Indonesia
+title: Sagara
+description: A Mission Driven Technology Company in Indonesia
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="nojs">
   <head>
     <meta charset="UTF-8">
+
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bundle.css">
-    <script src="/js/bundle.js"></script>
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
@@ -17,14 +19,57 @@ title: A Mission Driven Technology Company in Indonesia
       name="theme-color"
       media="(prefers-color-scheme: dark)"
       content="#191A1B" />
+    <link rel="stylesheet" href="/css/bundle.css">
+
+    <script>
+      if (window.matchMedia) {
+        const html = document.querySelector("html");
+        const mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark-mode" : "js";
+        html.setAttribute('class', mode);
+      }
+    </script>
+    <script src="/js/bundle.js"></script>
+
+    {% comment %} Favicons {% endcomment %}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png">
     <link rel="icon" href="/favicon.svg">
     <link
       rel="mask-icon"
       href="/favicon.svg"
-      color="#191A1B">
-    <link rel="apple-touch-icon" href="/favicon.svg">
+      color="#2B2727">
     <link rel="manifest" href="/site.webmanifest">
-    <title>{{ title }} - Sagara</title>
+
+      {% comment %} Microsoft tile {% endcomment %}
+    <meta name="msapplication-TileColor" content="#F9FAFC">
+    <meta name="msapplication-TileImage" content="/android-chrome-192x192.png">
+    <meta name="theme-color" content="#F9FAFC">
+
+      {% comment %} Open Graph / Facebook {% endcomment %}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="/android-chrome-512x512.png">
+
+      {% comment %} Twitter {% endcomment %}
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ page.url }}">
+    <meta property="twitter:title" content="{{ title }}">
+    <meta property="twitter:description" content="{{ description }}">
+    <meta property="twitter:image" content="/android-chrome-512x512.png">
   </head>
 
   <body>
@@ -230,5 +275,4 @@ title: A Mission Driven Technology Company in Indonesia
       </section>
     </footer>
   </body>
-
 </html>

@@ -99,7 +99,7 @@ header {
     --rad3: 95%;
 
     --width: 9.875rem;
-    --height: 3.5rem;
+    --height: 3.625rem;
 
     position: relative;
     z-index: 1;
@@ -555,6 +555,10 @@ nav.menu {
     svg {
       width: var(--size);
       height: var(--size);
+    }
+
+    &:hover {
+      --svg-stroke: var(--neon-blue);
     }
   }
 }

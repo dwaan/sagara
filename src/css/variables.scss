@@ -95,7 +95,7 @@ $screen-unsupported: 240px;
   }
 }
 
-@media screen and (max-width: $screen-normal-l) {
+@media screen and (max-width: $screen-wide-s) {
   :root {
     --size-ss: calc(100vw - (var(--pad-xl) * 2));
   }
