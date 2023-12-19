@@ -1,18 +1,59 @@
 'use strict';
 
 // Helper
-import { _q, _qAll, konami, removeClass, get, set } from './helpers/helper.js';
+import { _q, _qAll, konami, removeClass, get, set, addClass, remove } from './helpers/helper.js';
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", _ => {
   // Calling konami code 😗
   konami();
 
   // removing no-js class
-  removeClass(_q("html"), "nojs");
+  removeClass("html", "nojs");
 
-  // Setting dark mode
-  const dark_mode = get("dark-mode") || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? true : false;
-  if (_q("#dark-mode")) _q("#dark-mode").checked = dark_mode;
-  console.log(_q("#dark-mode").checked);
-  set("dark-mode", dark_mode);
+
+  //
+  //! Accessibility settings
+  //
+
+  // All settings
+  const settings = ["dark-mode", "high-contrast", "underline-url", "reduce-motion"];
+  settings.forEach(name => {
+    const checkbox = _q("#" + name);
+
+    if (get(name)) {
+      addClass("html", name);
+      checkbox.checked = true;
+    } else {
+      removeClass("html", name);
+      checkbox.checked = false;
+    }
+  });
+
+  // Set color of the browser
+  const set_browser_color = _ => {
+    const color = get(settings[0]) ? get(settings[1]) ? "#000" : "#191A1B" : get(settings[1]) ? "#FFF" : "#F9FAFC";
+    _q("meta[name=theme-color]").setAttribute("content", color);
+  }
+  set_browser_color();
+
+  // Setting accesibility
+  const accessibility_name = "accessibility";
+  const accessibility_checkbox = _q("#" + accessibility_name);
+  // Listen to checkbox change
+  accessibility_checkbox.addEventListener('change', _ => {
+    settings.forEach(name => {
+      const checkbox = _q("#" + name);
+
+      if (checkbox.checked) {
+        set(name, true);
+        addClass("html", name);
+      } else {
+        remove(name);
+        removeClass("html", name);
+      }
+    });
+
+    // Set browser color
+    set_browser_color();
+  });
 });

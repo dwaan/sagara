@@ -19,6 +19,8 @@ function _qAll(argument) {
 }
 
 function removeClass(el, className) {
+	if (typeof el == "string") el = _q(el);
+
 	if (el.classList) {
 		el
 			.classList
@@ -35,6 +37,8 @@ function removeClass(el, className) {
  * @param {string} className Class name
  */
 function addClass(el, className) {
+	if (typeof el == "string") el = _q(el);
+
 	if (el.classList) {
 		el
 			.classList

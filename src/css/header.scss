@@ -94,13 +94,12 @@ header {
   }
 
   .logo {
-
     --rad1: 70%;
     --rad2: 90%;
     --rad3: 95%;
 
-    --width: 10.9722222222vw;
-    --height: 3.8888888889vw;
+    --width: 10.97vw;
+    --height: 3.92vw;
 
     position: relative;
     z-index: 1;
@@ -125,17 +124,20 @@ header {
 
     span {
       display: flex;
+      align-items: center;
+      justify-content: center;
       height: var(--height);
       flex: auto;
 
       &.name {
-        color: var(--blue-deep);
+        color: transparent;
         background: var(--blue-deep);
       }
 
       &.gradient {
         flex: none;
         width: var(--height);
+        border-radius: 100%;
 
         background: conic-gradient(from -90deg, var(--neon-green) 0%, var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
         transition: --rad1 var(--fast) var(--ease-back), --rad2 var(--fast) var(--ease-back), --rad3 var(--fast) var(--ease-back);

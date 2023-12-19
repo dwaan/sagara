@@ -28,6 +28,12 @@ body {
   background: var(--white-normal);
 
   transition: background var(--fast) var(--ease-out);
+
+  &.underline-url {
+    a {
+      text-decoration: underline !important;
+    }
+  }
 }
 
 menu {
@@ -1957,5 +1963,19 @@ section.closest {
     .nodim {
       filter: brightness(1);
     }
+  }
+}
+
+
+//
+//! Reduce motion override
+//
+
+html.remove-motion * {
+
+  &,
+  &::before,
+  &::after {
+    transition: none !important;
   }
 }

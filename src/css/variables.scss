@@ -138,6 +138,8 @@ $screen-unsupported: 240px;
 // Color collection
 //
 
+//! Light Mode
+
 @media (prefers-color-scheme: light) {
   :root {
     --white-normal: #F9FAFC;
@@ -166,35 +168,85 @@ $screen-unsupported: 240px;
   }
 }
 
+//! Dark Mode
+
+@mixin dark-mode {
+  --white-normal: #191A1B;
+  --white-static: #d6d6d9;
+  --white-transparent: #191A1B99;
+
+  --gray-normal: #322F2FCC;
+  --gray-transparent: #e6dbdb28;
+  --gray-dynamic: #E6DBDB14;
+  --gray-high-contrast: #E6DBDB00;
+  --gray-background: #A49D8514;
+
+  --dark-normal: #C1C1C2;
+  --dark-static: #2B2727;
+  --dark-background: #00000099;
+
+  --blue-dark: #0242af;
+  --blue-deep: #003fb5;
+  --blue-normal: #0255e3;
+  --blue-cyan: #037bb7;
+
+  --neon-blue: #014ccd;
+  --neon-green: #22c666;
+
+  --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%23C1C1C2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E")
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-
-    --white-normal: #191A1B;
-    --white-static: #d6d6d9;
-    --white-transparent: #191A1B99;
-
-    --gray-normal: #322F2FCC;
-    --gray-transparent: #e6dbdb28;
-    --gray-dynamic: #E6DBDB14;
-    --gray-high-contrast: #E6DBDB00;
-    --gray-background: #A49D8514;
-
-    --dark-normal: #C1C1C2;
-    --dark-static: #2B2727;
-    --dark-background: #00000099;
-
-    --blue-dark: #0242af;
-    --blue-deep: #003fb5;
-    --blue-normal: #0255e3;
-    --blue-cyan: #037bb7;
-
-    --neon-blue: #014ccd;
-    --neon-green: #22c666;
-
-    --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none' %3E%3Cpath stroke='%23C1C1C2' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m23.556 12.444-9.778 9.34L8 16.889'/%3E%3C/svg%3E")
+    @include dark-mode;
   }
 }
 
+html.dark-mode {
+  @include dark-mode;
+}
+
+//! High Contrast - Light Mode
+
+html.high-contrast {
+  --white-normal: #FFF;
+  --white-static: #FFF;
+  --white-transparent: #FFFFFFCC;
+
+  --gray-normal: #E6DBDB;
+  --gray-transparent: #43333399;
+  --gray-dynamic: #43333399;
+  --gray-high-contrast: #43333399;
+  --gray-background: #A49D8514;
+
+  --dark-normal: #000;
+  --dark-static: #000;
+  --dark-background: #00000033;
+
+  &.dark-mode {
+    --white-normal: #111;
+    --white-static: #FFF;
+    --white-transparent: #11199;
+
+    --gray-normal: #433f3f;
+    --gray-transparent: #99999999;
+    --gray-dynamic: #999;
+    --gray-high-contrast: #999;
+    --gray-background: #A49D8533;
+
+    --dark-normal: #FFF;
+    --dark-static: #111;
+    --dark-background: #00000099;
+
+    --blue-dark: #0f5fe8;
+    --blue-deep: #2568e5;
+    --blue-normal: #266fec;
+    --blue-cyan: #0096E1;
+
+    --neon-blue: #0077ff;
+    --neon-green: #2FFF86;
+  }
+}
 
 //
 // SVG color
