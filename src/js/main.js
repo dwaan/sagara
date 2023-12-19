@@ -1,6 +1,6 @@
 'use strict';
 
-import gsap from 'gsap';
+import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all.js';
 import barba from '@barba/core';
 import { _q, _qAll, konami, removeClass, get, set, addClass, remove } from './helpers/helper.js';
 
@@ -10,6 +10,8 @@ konami();
 // removing no-js class
 removeClass("html", "nojs");
 
+// Registering scroll to plugins
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 //
 //! Accessibility settings
@@ -66,13 +68,16 @@ barba.init({
   logLevel: 3,
   transitions: [{
     name: 'default-transition',
-    leave() {
+    async leave() {
       // Collapse mobile menu
       _qAll("header input[type='checkbox']").forEach(checkbox => {
         checkbox.checked = false
       });
       // Collapse desktop menu
       _q("header input#menu-close").checked = true;
+
+      // Scroll to top
+      await scrollToTop(window);
 
       return true;
     },
@@ -109,3 +114,30 @@ barba.init({
     }
   }]
 });
+
+//
+//! Scroll to top
+//
+function scrollToTop(el) {
+  return new Promise(resolve => {
+    const top = el == window ? el.pageYOffset : el.scrollTop;
+    const scroll = top / (window.outerHeight * 2);
+    const speed = reduceMotion() ? .24 : 1.28;
+
+    if (scroll > 0) {
+      gsap.to(el, {
+        scrollTo: 0,
+        duration: (scroll > speed) ? speed : scroll,
+        ease: "expo.inOut",
+        onComplete: resolve
+      });
+    } else resolve();
+  });
+}
+
+//
+//! Get reduce motion status
+//
+function reduceMotion() {
+  return get(settings[4]) ? true : false;
+}
