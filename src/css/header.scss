@@ -98,8 +98,8 @@ header {
     --rad2: 90%;
     --rad3: 95%;
 
-    --width: 10.97vw;
-    --height: 3.92vw;
+    --width: 9.875rem;
+    --height: 3.5rem;
 
     position: relative;
     z-index: 1;
@@ -111,11 +111,6 @@ header {
 
     width: var(--width);
     height: var(--height);
-
-    @media screen and (max-width: variables.$screen-normal-l) {
-      --width: 9.875rem;
-      --height: 3.5rem;
-    }
 
     @media screen and (max-width: variables.$screen-small-l) {
       --width: 7.9rem;
@@ -743,12 +738,17 @@ dialog.options {
         padding: var(--gap-s) 0 0;
 
         border-top: .0625rem solid var(--gray-transparent);
+        transition: all var(--fast) var(--ease-back);
 
         @media screen and (max-width: variables.$screen-small-l) {
           gap: var(--gap-l);
 
           padding: var(--gap-l) 0 0;
         }
+      }
+
+      >label:hover {
+        color: var(--blue-normal);
       }
 
       >p.row {
