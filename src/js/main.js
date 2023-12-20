@@ -66,6 +66,7 @@ accessibility_checkbox.addEventListener('change', _ => {
 //! Calling barba.js
 //
 
+const duration = .8;
 barba.init({
   debug: true,
   logLevel: 3,
@@ -97,34 +98,49 @@ barba.init({
       return tl
         .set("#loader", {
           pointerEvents: "all"
-        })
-        .set("#loader .logo .gradient", {
-          className: "gradient plain hover"
-        })
+        }, 0)
+        .fromTo(data.current.container, {
+          y: 0,
+          opacity: 1
+        }, {
+          y: "10vh",
+          opacity: 0,
+          duration: duration / 2,
+          ease: "power2.in"
+        }, 0)
         .fromTo("#loader", {
           opacity: 0,
         }, {
           opacity: 1,
-          duration: reduceMotion() ? 0 : .48,
-          ease: "power3.out"
-        });
+          duration: duration,
+          ease: "power2.out"
+        }, duration / 4)
+        .set("#loader .logo .gradient", {
+          className: "gradient plain hover"
+        }, duration / 4);
     },
-    afterEnter() {
+    afterEnter(data) {
       // Hide loader
       if (reduceMotion()) return true;
       let tl = gsap.timeline();
       tl
-        .to("#loader", {
-          duration: .24,
-        })
         .fromTo("#loader", {
           opacity: 1,
         }, {
           pointerEvents: "none",
-          duration: .48,
+          duration: duration,
           opacity: 0,
-          ease: "power3.in"
-        })
+          ease: "expo"
+        }, 0)
+        .fromTo(data.next.container, {
+          y: "10vh",
+          opacity: 0
+        }, {
+          y: 0,
+          opacity: 1,
+          duration: duration,
+          ease: "expo.out"
+        }, duration / 4)
         .set("#loader .logo .gradient", {
           className: "gradient plain"
         });
