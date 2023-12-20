@@ -77,7 +77,7 @@ barba.init({
         pointerEvents: "none"
       });
     },
-    async leave() {
+    async leave(data) {
       // Collapse mobile menu
       _qAll("header nav.menu menu input[type='checkbox']").forEach(checkbox => {
         checkbox.checked = false
@@ -87,6 +87,9 @@ barba.init({
 
       // Scroll to top
       await scrollToTop(window);
+
+      // Display menu and footer indicator
+      currentPageIndicator(data.next);
 
       // Show loader
       if (reduceMotion()) return true;
@@ -105,12 +108,6 @@ barba.init({
           duration: reduceMotion() ? 0 : .48,
           ease: "power3.out"
         });
-    },
-    enter(data) {
-      // Display menu and footer indicator
-      currentPageIndicator(data.next);
-
-      return true;
     },
     afterEnter() {
       // Hide loader
