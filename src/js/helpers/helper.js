@@ -3,7 +3,8 @@
 import gsap from 'gsap';
 
 //! Helper variables
-var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const settings = ["dark-mode", "high-contrast", "underline-links", "reduce-motion"];
 
 //! Helper functions
 /**
@@ -219,9 +220,9 @@ function konami() {
 			keyIndex == konami.length && (0 === _qAll("#konamicode").length && (_q("body").innerHTML += '<div id="konamicode"><iframe width="905" height="510" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&controls=0" frameborder="0" allow="autoplay; picture-in-picture" allowfullscreen></iframe></div>'), keyIndex = 0);
 		if (_q('#konamicode') != undefined) {
 			const elem = _q('#konamicode');
-			elem.onclick = function (e) {
+			elem.onclick = _ => {
 				gsap.to('#konamicode', {
-					duration: reduceMotionFilter(1),
+					duration: reduceMotion() ? 0 : 1,
 					ease: "expo.in",
 					opacity: 0,
 					onComplete: function () {
@@ -235,8 +236,18 @@ function konami() {
 	};
 }
 
+
+//
+//! Get reduce motion status
+//
+
+function reduceMotion() {
+	return get(settings[3]) ? true : false;
+}
+
 export {
 	monthNames,
+	settings,
 	_q,
 	_qAll,
 	removeClass,
@@ -252,5 +263,6 @@ export {
 	konami,
 	get,
 	set,
-	remove
+	remove,
+	reduceMotion
 };

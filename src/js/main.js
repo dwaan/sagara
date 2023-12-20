@@ -2,8 +2,8 @@
 
 import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all.js';
 import barba from '@barba/core';
-import { _q, _qAll, konami, removeClass, get, set, addClass, remove } from './helpers/helper.js';
-
+import { settings, _q, _qAll, konami, removeClass, get, set, addClass, remove, reduceMotion } from './helpers/helper.js';
+import scroll from './helpers/scroll.js';
 
 // Registering scroll to plugins
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -20,7 +20,6 @@ removeClass("html", "nojs");
 //
 
 // All settings
-const settings = ["dark-mode", "high-contrast", "underline-links", "reduce-motion"];
 settings.forEach(name => {
   const checkbox = _q("#" + name);
 
@@ -63,20 +62,24 @@ accessibility_checkbox.addEventListener('change', _ => {
 
 
 //
-//! Calling barba.js
+//! barba.js
 //
 
 const duration = .8;
 barba.init({
   debug: true,
-  logLevel: 3,
+  logLevel: 0,
   transitions: [{
     name: 'default-transition',
-    once() {
+    once(data) {
+      // Hide loader
       gsap.set("#loader", {
         opacity: 0,
         pointerEvents: "none"
       });
+
+      // Call parallax image
+      parallaxImage(data.next.container.querySelectorAll(".img.clip, section.image .img"));
     },
     async leave(data) {
       // Collapse mobile menu
@@ -118,6 +121,14 @@ barba.init({
         .set("#loader .logo .gradient", {
           className: "gradient plain hover"
         }, duration / 4);
+    },
+    afterLeave() {
+      // Clear up previous scroll for smaller memory
+      scroll.destroy();
+    },
+    enter(data) {
+      // Call parallax image
+      parallaxImage(data.next.container.querySelectorAll(".img.clip, section.image .img"));
     },
     afterEnter(data) {
       // Hide loader
@@ -209,9 +220,30 @@ function currentPageIndicator(el) {
 
 
 //
-//! Get reduce motion status
+//! Running scroll trigger on clipped image
 //
 
-function reduceMotion() {
-  return get(settings[3]) ? true : false;
+function parallaxImage(triggers) {
+  triggers.forEach(trigger => {
+    const imgs = trigger.querySelectorAll("img");
+    scroll.push(tl => {
+      imgs.forEach(img => {
+        tl.fromTo(img, {
+          y: "-25%"
+        }, {
+          y: "25%",
+          ease: 'linear'
+        }, 0);
+      });
+      return tl;
+    }, tl => {
+      return ScrollTrigger.create({
+        trigger: trigger,
+        start: "0% 100%",
+        end: "100% 0%",
+        animation: tl,
+        scrub: true
+      });
+    });
+  });
 }
