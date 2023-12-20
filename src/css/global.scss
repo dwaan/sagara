@@ -19,7 +19,9 @@
 //
 
 * {
+  appearance: none;
   box-sizing: border-box;
+  direction: ltr;
 }
 
 [hidden],
@@ -1745,7 +1747,7 @@ section.closest {
 //! Loader
 //
 
-.js #loader {
+#loader {
   @extend .flex-column-center;
 
   position: fixed;

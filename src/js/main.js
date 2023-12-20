@@ -66,10 +66,10 @@ accessibility_checkbox.addEventListener('change', _ => {
 
 
 //
-//! barba.js
+//! barba.js - where all events happening
 //
 
-const duration = .8;
+const duration = .72;
 barba.init({
   debug: true,
   logLevel: 0,
@@ -133,7 +133,7 @@ barba.init({
       // Clear up previous scroll for smaller memory
       scroll.destroy();
     },
-    enter() {
+    enter(data) {
       // Call parallax image
       parallaxImage();
 
@@ -145,18 +145,23 @@ barba.init({
       if (reduceMotion()) return true;
       let tl = gsap.timeline();
       tl
+        // Fix for parallax container position
+        .set(data.next.container, {
+          y: "0",
+          opacity: 0
+        }, 0)
         .fromTo("#loader", {
           opacity: 1,
         }, {
-          pointerEvents: "none",
-          duration: duration,
           opacity: 0,
-          ease: "expo"
+          duration: duration,
+          ease: "power2.out"
         }, 0)
-        .fromTo(data.next.container, {
-          y: "10vh",
-          opacity: 0
-        }, {
+        // Fix for parallax container position
+        .set(data.next.container, {
+          y: "10vh"
+        }, duration / 4)
+        .to(data.next.container, {
           y: 0,
           opacity: 1,
           duration: duration,
@@ -164,6 +169,8 @@ barba.init({
         }, duration / 4)
         .set("#loader .logo .gradient", {
           className: "gradient plain"
+        }).set("#loader", {
+          pointerEvents: "none"
         });
       return true;
     }
@@ -278,7 +285,8 @@ function parallaxImage() {
         start: "0% 100%",
         end: "100% 0%",
         animation: tl,
-        scrub: true
+        scrub: true,
+        markers: false
       });
     });
   });
