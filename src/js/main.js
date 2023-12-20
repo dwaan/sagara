@@ -3,7 +3,7 @@
 import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all.js';
 import barba from '@barba/core';
 import { settings, _q, _qAll, konami, removeClass, get, set, addClass, remove, reduceMotion } from './helpers/helper.js';
-import scroll from './helpers/scroll.js';
+import { scroll, scrollto } from './helpers/scroll.js';
 
 // Registering scroll to plugins
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -56,6 +56,10 @@ accessibility_checkbox.addEventListener('change', _ => {
     }
   });
 
+  // Call parallax to see if it need to be destroy when
+  // reduce motion is activated or deactivated
+  parallaxImage();
+
   // Set browser color
   set_browser_color();
 });
@@ -71,7 +75,7 @@ barba.init({
   logLevel: 0,
   transitions: [{
     name: 'default-transition',
-    once(data) {
+    once() {
       // Hide loader
       gsap.set("#loader", {
         opacity: 0,
@@ -79,7 +83,10 @@ barba.init({
       });
 
       // Call parallax image
-      parallaxImage(data.next.container.querySelectorAll(".img.clip, section.image .img"));
+      parallaxImage();
+
+      // Scroll to hash
+      scrollToId();
     },
     async leave(data) {
       // Collapse mobile menu
@@ -126,9 +133,12 @@ barba.init({
       // Clear up previous scroll for smaller memory
       scroll.destroy();
     },
-    enter(data) {
+    enter() {
       // Call parallax image
-      parallaxImage(data.next.container.querySelectorAll(".img.clip, section.image .img"));
+      parallaxImage();
+
+      // Scroll to hash
+      scrollToId();
     },
     afterEnter(data) {
       // Hide loader
@@ -184,6 +194,18 @@ function scrollToTop(el) {
 
 
 //
+//! Scroll to id
+//
+function scrollToId() {
+  _qAll("main a[href]").forEach(el => {
+    if (el.getAttribute("href")[0] == "#") {
+      scrollto(el);
+    }
+  })
+}
+
+
+//
 //! Current page indicator in menu and footer
 //
 
@@ -223,7 +245,21 @@ function currentPageIndicator(el) {
 //! Running scroll trigger on clipped image
 //
 
-function parallaxImage(triggers) {
+function parallaxImage() {
+  const triggers = _qAll(".img.clip, section.image .img");
+
+  if (reduceMotion()) {
+    scroll.destroy();
+    triggers.forEach(trigger => {
+      const imgs = trigger.querySelectorAll("img");
+      gsap.set(imgs, {
+        y: 0
+      });
+    });
+    return;
+  }
+
+  // Only run when it's not reduce motion
   triggers.forEach(trigger => {
     const imgs = trigger.querySelectorAll("img");
     scroll.push(tl => {
