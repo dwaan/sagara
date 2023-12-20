@@ -246,7 +246,7 @@ function currentPageIndicator(el) {
 //
 
 function parallaxImage() {
-  const triggers = _qAll(".img.clip, section.image .img");
+  const triggers = _qAll(".img.clip, section.image .img, section.background .img");
 
   if (reduceMotion()) {
     scroll.destroy();

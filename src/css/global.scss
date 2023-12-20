@@ -375,12 +375,12 @@ section.hero {
     img {
       aspect-ratio: initial;
     }
+  }
 
-    &.no-shadow {
-      img {
-        border-radius: 0;
-        box-shadow: initial;
-      }
+  &.no-shadow {
+    img {
+      border-radius: 0;
+      box-shadow: initial;
     }
   }
 
