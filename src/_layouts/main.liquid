@@ -219,10 +219,17 @@ namespace: home
       </nav>
     </header>
 
+    <div id="loader" aria-hidden>
+      <div class="logo square">
+        <span class="gradient plain"></span>
+      </div>
+    </div>
+
     <main
       class="{{ class }}"
       data-barba="container"
       data-barba-namespace="{{ namespace }}">
+
       {{ content }}
     </main>
 

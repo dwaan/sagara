@@ -13,6 +13,12 @@
 //! Property to animate conic-gradient in logo
 //
 
+@property --rad0 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
 @property --rad1 {
   syntax: '<percentage>';
   inherits: false;
@@ -31,6 +37,92 @@
   initial-value: 95%;
 }
 
+//
+//! Gradient logo
+//
+
+
+.logo {
+  --width: 9.875rem;
+  --height: 3.625rem;
+
+  position: relative;
+  z-index: 1;
+
+  mask-size: var(--width) var(--height);
+  mask-position: left center;
+  mask-image: url(../img/logo-mask.svg);
+  mask-repeat: no-repeat;
+
+  width: var(--width);
+  height: var(--height);
+
+  @media screen and (max-width: variables.$screen-small-l) {
+    --width: 7.9rem;
+    --height: 2.8rem;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--height);
+    flex: auto;
+
+    &.name {
+      color: transparent;
+      background: var(--blue-deep);
+    }
+
+    &.gradient {
+      --rad0: 0%;
+      --rad1: 70%;
+      --rad2: 90%;
+      --rad3: 95%;
+
+      flex: none;
+      width: var(--height);
+      border-radius: 100%;
+
+      background: conic-gradient(from -90deg, var(--neon-green) var(--rad0), var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
+      transition: --rad0 var(--fast) var(--ease-back), --rad1 var(--fast) var(--ease-back), --rad2 var(--fast) var(--ease-back), --rad3 var(--fast) var(--ease-back);
+
+      &.plain {
+        --rad0: 100%;
+        --rad1: 100%;
+        --rad2: 100%;
+        --rad3: 100%;
+
+        opacity: 0;
+        background: conic-gradient(from -90deg, var(--neon-green) var(--rad0), var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
+        transition: opacity .08s ease, --rad0 .64s var(--ease-back), --rad1 .64s var(--ease-back), --rad2 .64s var(--ease-back), --rad3 .64s var(--ease-back);
+        transition-delay: .16s;
+
+        &.hover {
+          opacity: 1;
+          background: conic-gradient(from -90deg, var(--neon-green) var(--rad0), var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
+        }
+      }
+    }
+  }
+
+  &.square {
+    --width: 16.9285714286rem;
+    --height: 6rem;
+
+    width: var(--height);
+    overflow: hidden;
+  }
+
+  .hover.plain.gradient,
+  &:hover .gradient {
+    --rad0: 0%;
+    --rad1: 20%;
+    --rad2: 40%;
+    --rad3: 60%;
+  }
+}
+
 
 //
 //! Header
@@ -40,10 +132,12 @@ header {
   @extend .flex-row-center;
   @extend .no-padding-margin;
 
-  position: relative;
-  z-index: 999;
-  padding: var(--pad-s) var(--pad-xxl);
   justify-content: space-between;
+
+  position: relative;
+  z-index: 4;
+
+  padding: var(--pad-s) var(--pad-xxl);
 
   @media screen and (max-width: variables.$screen-wide-s) {
     padding: var(--pad-m) var(--pad-xl);
@@ -91,59 +185,6 @@ header {
 
   input[type=radio] {
     display: none;
-  }
-
-  .logo {
-    --rad1: 70%;
-    --rad2: 90%;
-    --rad3: 95%;
-
-    --width: 9.875rem;
-    --height: 3.625rem;
-
-    position: relative;
-    z-index: 1;
-
-    mask-size: contain;
-    mask-position: left center;
-    mask-image: url(../img/logo-mask.svg);
-    mask-repeat: no-repeat;
-
-    width: var(--width);
-    height: var(--height);
-
-    @media screen and (max-width: variables.$screen-small-l) {
-      --width: 7.9rem;
-      --height: 2.8rem;
-    }
-
-    span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: var(--height);
-      flex: auto;
-
-      &.name {
-        color: transparent;
-        background: var(--blue-deep);
-      }
-
-      &.gradient {
-        flex: none;
-        width: var(--height);
-        border-radius: 100%;
-
-        background: conic-gradient(from -90deg, var(--neon-green) 0%, var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
-        transition: --rad1 var(--fast) var(--ease-back), --rad2 var(--fast) var(--ease-back), --rad3 var(--fast) var(--ease-back);
-      }
-    }
-
-    &:hover .gradient {
-      --rad1: 20%;
-      --rad2: 40%;
-      --rad3: 60%;
-    }
   }
 }
 
@@ -583,7 +624,7 @@ nav.popup {
   backdrop-filter: blur(var(--pad-l));
 
   @media screen and (max-width: variables.$screen-wide-s) {
-    top: calc(var(--pad-m) * 2.5);
+    top: calc(var(--pad-m) * 2.25);
   }
 
   @media screen and (max-width: variables.$screen-normal-l) {

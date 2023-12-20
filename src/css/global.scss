@@ -22,10 +22,16 @@
   box-sizing: border-box;
 }
 
+[hidden],
+[aria-hidden] {
+  display: none
+}
+
 html,
 body {
   @extend .no-padding-margin;
 
+  position: relative;
   background: var(--white-normal);
 
   transition: background var(--fast) var(--ease-out);
@@ -256,10 +262,12 @@ main {
   @extend .flex-column;
   @extend .no-padding-margin;
 
+  position: relative;
+  z-index: 1;
+
   overflow: hidden;
   gap: var(--gap-xxl);
 }
-
 
 //
 //! Sections blocks styling
@@ -1732,6 +1740,30 @@ section.closest {
   }
 }
 
+
+//
+//! Loader
+//
+
+.js #loader {
+  @extend .flex-column-center;
+
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  background: var(--white-normal);
+
+  .logo {
+    margin-top: var(--pad-xxl);
+    flex: none;
+    align-self: center;
+  }
+}
 
 //
 //! toggle display helper

@@ -8,7 +8,11 @@ footer {
 	@extend .flex-column-center;
 	@extend .no-padding-margin;
 
+	z-index: 3;
+	position: relative;
+
 	gap: var(--gap-xl);
+
 	padding: var(--pad-l) var(--pad-xl) var(--pad-xxl);
 
 	@media screen and (min-width: variables.$screen-small-l) {

@@ -4,14 +4,15 @@ import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all.js';
 import barba from '@barba/core';
 import { _q, _qAll, konami, removeClass, get, set, addClass, remove } from './helpers/helper.js';
 
+
+// Registering scroll to plugins
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
 // Calling konami code 😗
 konami();
 
 // removing no-js class
 removeClass("html", "nojs");
-
-// Registering scroll to plugins
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 //
@@ -70,6 +71,12 @@ barba.init({
   logLevel: 3,
   transitions: [{
     name: 'default-transition',
+    once() {
+      gsap.set("#loader", {
+        opacity: 0,
+        pointerEvents: "none"
+      });
+    },
     async leave() {
       // Collapse mobile menu
       _qAll("header nav.menu menu input[type='checkbox']").forEach(checkbox => {
@@ -81,37 +88,49 @@ barba.init({
       // Scroll to top
       await scrollToTop(window);
 
-      return true;
+      // Show loader
+      if (reduceMotion()) return true;
+      let tl = gsap.timeline();
+      return tl
+        .set("#loader", {
+          pointerEvents: "all"
+        })
+        .set("#loader .logo .gradient", {
+          className: "gradient plain hover"
+        })
+        .fromTo("#loader", {
+          opacity: 0,
+        }, {
+          opacity: 1,
+          duration: reduceMotion() ? 0 : .48,
+          ease: "power3.out"
+        });
     },
     enter(data) {
-      // Current page indicator for main menu
-      _qAll("header nav.menu li > a, header nav.menu li > label a").forEach(a => {
-        let parent = a.parentNode
-        if (parent.tagName != "LI") parent = parent.parentNode;
-        if (a.innerText.toLowerCase().trim() == data.next.namespace) {
-          parent.setAttribute("aria-current", "page");
-        } else {
-          parent.removeAttribute("aria-current");
-        }
-      });
-      // Current page indicator for popup menu
-      _qAll("header nav.popup li a:first-child").forEach(a => {
-        if (a.getAttribute("href") == data.next.url.path) {
-          a.parentNode.setAttribute("aria-current", "page");
-        } else {
-          a.parentNode.removeAttribute("aria-current");
-        }
-      });
+      // Display menu and footer indicator
+      currentPageIndicator(data.next);
 
-      // Current page indicator for footer
-      _qAll("footer a").forEach(a => {
-        if (a.getAttribute("href") == data.next.url.path) {
-          a.setAttribute("aria-current", "page");
-        } else {
-          a.removeAttribute("aria-current");
-        }
-      });
-
+      return true;
+    },
+    afterEnter() {
+      // Hide loader
+      if (reduceMotion()) return true;
+      let tl = gsap.timeline();
+      tl
+        .to("#loader", {
+          duration: .24,
+        })
+        .fromTo("#loader", {
+          opacity: 1,
+        }, {
+          pointerEvents: "none",
+          duration: .48,
+          opacity: 0,
+          ease: "power3.in"
+        })
+        .set("#loader .logo .gradient", {
+          className: "gradient plain"
+        });
       return true;
     }
   }]
@@ -128,8 +147,6 @@ function scrollToTop(el) {
     const scroll = top / (window.outerHeight * 2);
     const speed = reduceMotion() ? 0 : 1.28;
 
-    console.log(speed);
-
     if (scroll > 0) {
       gsap.to(el, {
         scrollTo: 0,
@@ -138,6 +155,42 @@ function scrollToTop(el) {
         onComplete: resolve
       });
     } else resolve();
+  });
+}
+
+
+//
+//! Current page indicator in menu and footer
+//
+
+function currentPageIndicator(el) {
+  // Current page indicator for main menu
+  _qAll("header nav.menu li > a, header nav.menu li > label a").forEach(a => {
+    let parent = a.parentNode
+    if (parent.tagName != "LI") parent = parent.parentNode;
+    if (a.innerText.toLowerCase().trim() == el.namespace) {
+      parent.setAttribute("aria-current", "page");
+    } else {
+      parent.removeAttribute("aria-current");
+    }
+  });
+
+  // Current page indicator for popup menu
+  _qAll("header nav.popup li a:first-child").forEach(a => {
+    if (a.getAttribute("href") == el.url.path) {
+      a.parentNode.setAttribute("aria-current", "page");
+    } else {
+      a.parentNode.removeAttribute("aria-current");
+    }
+  });
+
+  // Current page indicator for footer
+  _qAll("footer a").forEach(a => {
+    if (a.getAttribute("href") == el.url.path) {
+      a.setAttribute("aria-current", "page");
+    } else {
+      a.removeAttribute("aria-current");
+    }
   });
 }
 
