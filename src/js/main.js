@@ -87,6 +87,8 @@ barba.init({
 
       // Scroll to hash
       scrollToId();
+      // Scroll to top
+      scrollto("#scrollTop");
     },
     async leave(data) {
       // Collapse sub menu and mobile menu

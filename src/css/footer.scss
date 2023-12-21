@@ -13,15 +13,7 @@ footer {
 
 	gap: var(--gap-xl);
 
-	padding: var(--pad-l) var(--pad-xl) var(--pad-xxl);
-
-	@media screen and (min-width: variables.$screen-small-l) {
-		padding: var(--pad-xl);
-	}
-
-	@media screen and (max-width: variables.$screen-small-l) {
-		padding-top: var(--pad-xxl);
-	}
+	padding: var(--gap-xxl) var(--pad-xl);
 
 	a {
 		@extend .before;
@@ -233,6 +225,69 @@ footer {
 
 		@media screen and (max-width: variables.$screen-small-l) {
 			display: none;
+		}
+	}
+}
+
+#scrollTop {
+	@extend .after-before;
+
+	color: var(--dark-normal);
+	font-weight: 600;
+	padding-left: 2rem;
+	margin-bottom: var(--pad-xl);
+
+	transition: color var(--fast) var(--ease-back);
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 50%;
+
+		background: transparent;
+		display: block;
+
+		opacity: 1;
+	}
+
+	&::before {
+		border: .1625rem solid var(--dark-normal);
+		border-left: none;
+		border-bottom: none;
+
+		width: .5rem;
+		height: .5rem;
+
+		transform: translate(0, -.5rem) rotate(-45deg);
+		transform-origin: center;
+
+		border-radius: 0;
+	}
+
+	&::after {
+		left: .25rem;
+
+		width: .1625rem;
+		height: 1rem;
+
+		background: var(--dark-normal);
+
+		transform: translate(0, -50%);
+	}
+
+	&:hover {
+		color: var(--neon-blue);
+
+		&::before {
+			border-color: var(--neon-blue);
+
+			transform: translate(0, -.75rem) rotate(-45deg);
+		}
+
+		&::after {
+			height: 1.5rem;
+
+			background: var(--neon-blue);
 		}
 	}
 }

@@ -158,9 +158,11 @@ var scroll = {
 
 /**
  * A script to scroll to hash address from element href attribute
- * @param {element} el Object element of HTML DOM
+ * @param {element} el Object element of HTML DOM or query string
  */
 function scrollto(el) {
+  if (typeof el == "string") el = _q(el);
+
   el.addEventListener("click", function (e) {
     var length = reduceMotion() ? 0 : 1;
 

@@ -32,7 +32,6 @@
     align-items: center;
 
     width: 16rem;
-    gap: var(--gap-s);
     flex: none;
 
     @media screen and (max-width: variables.$screen-small-l) {
@@ -41,6 +40,10 @@
 
     h3 {
       @extend .h3--small;
+
+      a {
+        padding-top: var(--gap-s);
+      }
     }
 
     p {
@@ -99,8 +102,18 @@
   li {
     @extend .vertical;
 
-    padding: var(--bttn-s);
-    gap: var(--gap-xs);
+    gap: 0;
+
+    a {
+      padding: var(--bttn-s);
+      padding-top: 0;
+      align-self: stretch;
+
+      &:first-child {
+        padding-top: var(--bttn-s);
+        padding-bottom: var(--gap-xs);
+      }
+    }
 
     &::before {
       opacity: 0;
@@ -418,11 +431,29 @@
   }
 
   li {
-    padding: var(--bttn-l);
+    gap: 0;
+
+    a {
+      display: flex;
+      align-self: stretch;
+
+      padding: 0 var(--bttn-l) var(--bttn-l);
+    }
+
+    >a {
+      justify-content: center;
+
+      padding: var(--bttn-l);
+    }
   }
 
   .text {
-    gap: var(--gap-xs);
+    justify-content: stretch;
+    align-items: stretch;
+
+    h3 a {
+      padding-bottom: var(--gap-xs);
+    }
   }
 
 

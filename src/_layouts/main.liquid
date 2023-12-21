@@ -73,7 +73,7 @@ namespace: home
   </head>
 
   <body data-barba="wrapper">
-    <header>
+    <header id="top">
       <div>
         <a
           href="/"
@@ -234,6 +234,8 @@ namespace: home
     </main>
 
     <footer>
+      <a href="#top" id="scrollTop">scroll to top</a>
+
       <menu class="sitemap">
         <li>
           <h3>{% a_menu 'Products' '/products/' page.url %}</h3>
