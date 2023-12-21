@@ -7,8 +7,11 @@
   "scripts": {
     "test": "gulp dev",
     "webp": "gulp dev:webp",
-    "build": "rm -R sites/ && gulp prod",
-    "serve": "rm -R sites/ && gulp prod:serve"
+    "clean": "rm -R sites/",
+    "build": "gulp prod",
+    "build:clean": "rm -R sites/ && gulp prod",
+    "serve": "gulp prod:serve",
+    "serve:clean": "rm -R sites/ && gulp prod:serve"
   },
   "author": "Dwan",
   "license": "ISC",

@@ -20,6 +20,8 @@ footer {
 
 		color: var(--dark-normal);
 
+		transition: color var(--fast) var(--ease-back);
+
 		&::before {
 			background: var(--gray-normal);
 			border-radius: calc(var(--round-s) * 2);
