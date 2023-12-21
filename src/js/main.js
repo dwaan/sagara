@@ -33,11 +33,16 @@ settings.forEach(name => {
 });
 
 // Set color of the browser
-const set_browser_color = _ => {
-  const color = get(settings[0]) ? get(settings[1]) ? "#000" : "#191A1B" : get(settings[1]) ? "#FFF" : "#F9FAFC";
-  _q("meta[name=theme-color]").setAttribute("content", color);
+const set_browser_color = (animate = true) => {
+  const color = get(settings[0]) ? get(settings[1]) ? "#111" : "#191A1B" : get(settings[1]) ? "#FFF" : "#F9FAFC";
+  gsap.to("meta[name=theme-color], body", {
+    attr: { content: color },
+    backgroundColor: color,
+    duration: reduceMotion() || !animate ? 0 : .48,
+    ease: "expo"
+  })
 }
-set_browser_color();
+set_browser_color(false);
 
 // Setting accesibility
 const accessibility_name = "accessibility";
