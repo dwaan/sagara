@@ -524,7 +524,6 @@ section.blue {
 
       display: flex;
       align-items: flex-start;
-      gap: calc(var(--gap-l) / 2);
       flex: auto;
 
       width: calc(50% - var(--gap-l));
@@ -540,7 +539,7 @@ section.blue {
         display: flex;
         line-height: 1.625rem;
         flex: 1 0 0;
-        padding: var(--pad-xs) 0;
+        padding: var(--pad-xs) calc(var(--gap-l) / 2) var(--pad-xs) 0;
       }
 
 
