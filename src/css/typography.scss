@@ -11,8 +11,12 @@ body {
   font-weight: 400;
   line-height: 130%;
 
-	@media screen and (min-width: variables.$screen-wide-l) {
+  @media screen and (min-width: variables.$screen-wide-l) {
     font-size: 1.1111111111vw; // based on resolution of 1440px
+  }
+
+  @media screen and (max-width: variables.$screen-small-l) {
+    font-size: 4.2vw; // Manually adjusted to fit mobile screen
   }
 }
 
@@ -395,7 +399,7 @@ menu,
     letter-spacing: 0.03375rem;
 
     @media screen and (max-width: variables.$screen-small-l) {
-      font-size: 1rem;
+      font-size: 1.1rem;
       letter-spacing: 0;
     }
   }

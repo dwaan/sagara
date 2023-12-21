@@ -58,8 +58,8 @@
   height: var(--height);
 
   @media screen and (max-width: variables.$screen-small-l) {
-    --width: 7.9rem;
-    --height: 2.8rem;
+    --width: 8.175rem;
+    --height: 3rem;
   }
 
   span {
@@ -319,12 +319,12 @@ header {
       &::before,
       &::after {
         top: calc(50% - .125rem);
-        transform: rotate(40deg);
+        transform: rotate(45deg);
         right: 0;
       }
 
       &::after {
-        transform: rotate(-40deg);
+        transform: rotate(-45deg);
       }
     }
 
@@ -399,6 +399,7 @@ nav.menu {
     }
 
     @media screen and (max-width: variables.$screen-small-l) {
+      padding: var(--pad-xxl) var(--pad-l);
       top: calc(var(--pad-m) * 4);
     }
 
@@ -424,6 +425,10 @@ nav.menu {
 
         @media screen and (max-width: variables.$screen-normal-l) {
           justify-content: flex-start;
+        }
+
+        @media screen and (max-width: variables.$screen-small-l) {
+          gap: var(--gap-l);
         }
 
         &::before {

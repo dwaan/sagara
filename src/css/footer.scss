@@ -16,8 +16,11 @@ footer {
 	padding: var(--pad-l) var(--pad-xl) var(--pad-xxl);
 
 	@media screen and (min-width: variables.$screen-small-l) {
-		gap: var(--gap-xl);
 		padding: var(--pad-xl);
+	}
+
+	@media screen and (max-width: variables.$screen-small-l) {
+		padding-top: var(--pad-xxl);
 	}
 
 	a {
@@ -97,17 +100,15 @@ footer {
 		--gap-x: var(--gap-xxl);
 		--gap-y: calc(var(--gap-xl) / 2);
 
-		@media screen and (max-width: variables.$screen-small-l) {
-			--gap-x: var(--gap-l);
-			--gap-y: calc(var(--gap-l) * 1.25);
-		}
-
 		gap: var(--gap-x);
 		padding-bottom: var(--pad-l);
 		flex-wrap: wrap;
 
 		@media screen and (max-width: variables.$screen-small-l) {
-			gap: calc(var(--gap-y) * 2);
+			--gap-x: var(--gap-l);
+			--gap-y: calc(var(--gap-l) * 1.25);
+
+			gap: calc(var(--gap-y) * 3);
 		}
 
 		ol,
