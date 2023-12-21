@@ -150,6 +150,8 @@ header {
   >div {
     @extend .flex-row-center;
 
+    z-index: 3;
+
     a {
       @extend .flex-row-center;
     }
@@ -179,10 +181,6 @@ header {
     }
   }
 
-  label {
-    cursor: pointer;
-  }
-
   input[type=radio] {
     display: none;
   }
@@ -200,6 +198,8 @@ header {
   right: 0;
   bottom: 0;
   z-index: 1;
+
+  cursor: auto;
 
   display: block;
 }
@@ -292,7 +292,7 @@ header {
     @media screen and (max-width: variables.$screen-normal-l) {
       +menu {
         transform: translate(0, 2rem);
-        transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
+        transition: transform var(--fast) var(--ease-back-in), opacity var(--fast) var(--ease-back-in);
       }
 
       +menu>li {
@@ -310,6 +310,7 @@ header {
     }
   }
 
+  // Show menu
   &:checked+label {
 
     // Make hamburger icon into x icon
@@ -328,8 +329,11 @@ header {
       }
     }
 
+    // Menu is shown
     +menu {
       @media screen and (max-width: variables.$screen-normal-l) {
+        pointer-events: all;
+        transition: transform var(--fast) var(--ease-back), opacity var(--fast) var(--ease-back);
 
         &,
         >li {
@@ -517,9 +521,11 @@ nav.menu {
 
       >nav.popup {
         opacity: 0;
+
         pointer-events: none;
+
         transform: translate(0, 2rem);
-        transition: all var(--fast) var(--ease-back);
+        transition: all var(--fast) var(--ease-back-in);
 
         @media screen and (max-width: variables.$screen-normal-l) {
           height: 0;
@@ -543,8 +549,11 @@ nav.menu {
       // Show popup menu
       input:checked+label+nav.popup {
         margin-top: 0;
+
         opacity: 1;
+
         transform: translate(0, 0);
+        transition: all var(--fast) var(--ease-back);
 
         @media screen and (max-width: variables.$screen-normal-l) {
           margin-top: 0;

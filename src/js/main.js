@@ -89,8 +89,8 @@ barba.init({
       scrollToId();
     },
     async leave(data) {
-      // Collapse mobile menu
-      _qAll("header nav.menu menu input[type='checkbox']").forEach(checkbox => {
+      // Collapse sub menu and mobile menu
+      _qAll("header nav.menu menu input[type='checkbox'], header input#menu-show").forEach(checkbox => {
         checkbox.checked = false
       });
       // Collapse desktop menu
@@ -203,6 +203,7 @@ function scrollToTop(el) {
 //
 //! Scroll to id
 //
+
 function scrollToId() {
   _qAll("main a[href]").forEach(el => {
     if (el.getAttribute("href")[0] == "#") {
