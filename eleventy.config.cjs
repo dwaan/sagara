@@ -2,6 +2,7 @@ const pluginTOC = require('eleventy-plugin-toc')
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const eleventyPluginFilesMinifier = require("@sherby/eleventy-plugin-files-minifier");
+const { EleventyI18nPlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
 	function selection(content, size, view, icon, symbol, alt) {
@@ -52,6 +53,9 @@ module.exports = function (eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: "en"
+  });
 
 	eleventyConfig.setServerOptions({
 		watch: ["sites/js/*"]
@@ -84,11 +88,12 @@ module.exports = function (eleventyConfig) {
 		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"style="width: ${width / 16}rem; height: ${height / 16}rem;"> <use href="/img/icons/${icon}" viewBox="0 0 ${viewWidth} ${viewHeight}" /></svg>`;
 	});
 	eleventyConfig.addShortcode("a_menu", function (title, url, page_url, now = false) {
+		console.log(locale_url, page_url);
 		if (now == "true") now = true;
 		return `<a href="${url}"` + (page_url == url || now ? ` aria-current="page"` : ``) + `>${title}</a>`;
 	});
-	eleventyConfig.addShortcode("a_arrow", function (title, url, classes, page_url) {
-		return `<a href="${url}"` + (classes ? ` class="${classes}"` : ``) + (page_url == url ? ` aria-current="page"` : ``) + `>${title} <i class="arrow"></i></a>`;
+	eleventyConfig.addShortcode("a_arrow", function (title, url, classes) {
+		return `<a href="${url}"` + (classes ? ` class="${classes}"` : ``) + `>${title} <i class="arrow"></i></a>`;
 	});
 	eleventyConfig.addShortcode("label_checkbox", function (title, url, name) {
 		const slug = convertToSlug(title);

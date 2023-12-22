@@ -311,6 +311,8 @@ li {
 .a {
   text-decoration: none;
 
+  transition: color var(--fast) var(--ease-back);
+
   &--default,
   &.default,
   &--button,

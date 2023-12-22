@@ -1,8 +1,8 @@
 ---
 layout: main.liquid
 title: Oops! Not Found
-permalink: 404.html
 namespace: notfound
+permalink: "/404.html"
 ---
 
 <section class="notfound">
@@ -18,11 +18,11 @@ namespace: notfound
     <h1>Page not Found</h1>
     <p>Well, sometimes it happens – the URL you were hoping to visit is currently not available. Don't worry, though! Our digital compass might be a bit quirky today, but we're here to help you get back on track.</p>
     <div>
-      <a href="/" class="button cta">Homepage
+      <a href="{{ "/" | locale_url }}" class="button cta">Homepage
         <i class="arrow"></i>
       </a>
       <p>or</p>
-      <a href="/customer-support/" class="button">Contact us</a>
+      <a href="{{ "/supports/customer-support/" | locale_url }}" class="button">Contact us</a>
     </div>
   </div>
 </section>

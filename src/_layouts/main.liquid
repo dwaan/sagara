@@ -5,7 +5,7 @@ namespace: home
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="{{ page.lang }}" class="nojs">
   <head>
     <meta charset="UTF-8">
 
@@ -22,11 +22,24 @@ namespace: home
       content="#191A1B" />
     <link rel="stylesheet" href="/css/bundle.css">
 
+      {% comment %} Provide link to othe language {% endcomment %}
+    <link
+      rel="alternate"
+      hreflang="{{ page.lang }}"
+      href="{{ page.url }}">
+    {% assign links = page.url | locale_links %}
+    {%- for link in links %}
+      <link
+        rel="alternate"
+        hreflang="{{ link.lang }}"
+        href="{{ link.url }}">
+    {%- endfor -%}
+
     <script>
       if (window.matchMedia) {
         const html = document.querySelector("html");
-        const mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark-mode" : "js";
-        html.setAttribute('class', mode);
+        const mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark-mode" : "js";
+        html.setAttribute("class", mode);
       }
     </script>
     <script src="/js/bundle.js" async></script>
@@ -73,11 +86,23 @@ namespace: home
   </head>
 
   <body data-barba="wrapper">
+    {% assign homepage_url = "/" | locale_url %}
+    {% assign products_url = "/products/" | locale_url %}
+    {% assign solutions_url = "/solutions/" | locale_url %}
+    {% assign consultations_url = "/consultations/" | locale_url %}
+    {% assign supports_url = "/supports/" | locale_url %}
+    {% assign careers_url = "/careers/" | locale_url %}
+    {% assign about_url = "/about/" | locale_url %}
+    {% assign commitment_url = "/commitment-and-responsibility/" | locale_url %}
+    {% assign term_url = "/terms-of-use/" | locale_url %}
+    {% assign cookie_url = "/cookie-policy/" | locale_url %}
+    {% assign privacy_url = "/privacy-policy/" | locale_url %}
+
     <header id="top">
       <div>
         <a
-          href="/"
-          {% aria_current_page page.url "/" %}
+          href="{{ homepage_url }}"
+          {% aria_current_page page.url homepage_url %}
           class="logo">
           <span class="gradient"></span>
           <span class="name">sagara</span>
@@ -115,50 +140,50 @@ namespace: home
         {% comment %} Menu {% endcomment %}
         <menu>
           <li hidden>
-            <a href="/">Home</a>
+            <a href="{{ homepage_url }}">Home</a>
           </li>
-          <li {% aria_current_page page.url "/products/" products-now %}>
-            {% label_checkbox "Products" "/products/" "main-menu" %}
+          <li {% aria_current_page page.url products_url products-now %}>
+            {% label_checkbox "Products" products_url "main-menu" %}
 
             <nav class="popup">
               <menu>
-                {% render 'item-menu' items: collections.products page_url: page.url %}
+                {% render "item-menu" items: collections.products page_url: page.url %}
               </menu>
-              {% a_arrow "See All Products" "/products/" "button pill" %}
+              {% a_arrow "See All Products" products_url "button pill" %}
             </nav>
           </li>
-          <li {% aria_current_page page.url "/solutions/" solutions-now %}>
-            {% label_checkbox "Solutions" "/solutions/" "main-menu" %}
+          <li {% aria_current_page page.url solutions_url solutions-now %}>
+            {% label_checkbox "Solutions" solutions_url "main-menu" %}
 
             <nav class="popup">
               <menu>
-                {% render 'item-menu' items: collections.solutions page_url: page.url %}
+                {% render "item-menu" items: collections.solutions page_url: page.url %}
               </menu>
-              {% a_arrow "See All Solutions" "/solutions/" "button pill" %}
+              {% a_arrow "See All Solutions" solutions_url "button pill" %}
             </nav>
           </li>
-          <li {% aria_current_page page.url "/consultations/" consultations-now %}>
-            {% label_checkbox "Consultations" "/consultations/" "main-menu" %}
+          <li {% aria_current_page page.url consultations_url consultations-now %}>
+            {% label_checkbox "Consultations" consultations_url "main-menu" %}
 
             <nav class="popup">
               <menu>
-                {% render 'item-menu' items: collections.consultations page_url: page.url %}
+                {% render "item-menu" items: collections.consultations page_url: page.url %}
               </menu>
-              {% a_arrow "See All Consultations" "/consultations/" "button pill" %}
+              {% a_arrow "See All Consultations" consultations_url "button pill" %}
             </nav>
           </li>
-          <li {% aria_current_page page.url "/supports/" supports-now %}>
-            {% label_checkbox "Supports" "/supports/" "main-menu" %}
+          <li {% aria_current_page page.url supports_url supports-now %}>
+            {% label_checkbox "Supports" supports_url "main-menu" %}
 
             <nav class="popup">
               <menu>
-                {% render 'item-menu' items: collections.supports page_url: page.url %}
+                {% render "item-menu" items: collections.supports page_url: page.url %}
               </menu>
-              {% a_arrow "See All Supports" "/supports/" "button pill" %}
+              {% a_arrow "See All Supports" supports_url "button pill" %}
             </nav>
           </li>
-          <li {% aria_current_page page.url "/careers/" careers-now %}>
-            <a href="/careers/">Careers</a>
+          <li {% aria_current_page page.url careers_url careers-now %}>
+            <a href={{ careers_url }}>Careers</a>
           </li>
         </menu>
 
@@ -238,37 +263,37 @@ namespace: home
 
       <menu class="sitemap">
         <li>
-          <h3>{% a_menu 'Products' '/products/' page.url %}</h3>
+          <h3>{% a_menu "Products" products_url page.url %}</h3>
           <ol>
-            {% render 'item-menu-footer' items: collections.products page_url: page.url %}
+            {% render "item-menu-footer" items: collections.products page_url: page.url %}
           </ol>
         </li>
         <li>
-          <h3>{% a_menu 'Solutions' '/solutions/' page.url %}</h3>
+          <h3>{% a_menu "Solutions" solutions_url page.url %}</h3>
           <ol>
-            {% render 'item-menu-footer' items: collections.solutions page_url: page.url %}
+            {% render "item-menu-footer" items: collections.solutions page_url: page.url %}
           </ol>
         </li>
         <li>
-          <h3>{% a_menu 'Consultations' '/consultations/' page.url %}</h3>
+          <h3>{% a_menu "Consultations" consultations_url page.url %}</h3>
           <ol>
-            {% render 'item-menu-footer' items: collections.consultations page_url: page.url %}
+            {% render "item-menu-footer" items: collections.consultations page_url: page.url %}
           </ol>
         </li>
         <li>
           <ul>
             <li>
-              <h3>{% a_menu 'Supports' '/supports/' page.url %}</h3>
+              <h3>{% a_menu "Supports" supports_url page.url %}</h3>
               <ol>
-                {% render 'item-menu-footer' items: collections.supports page_url: page.url %}
+                {% render "item-menu-footer" items: collections.supports page_url: page.url %}
               </ol>
             </li>
             <li>
               <h3>Corporate</h3>
               <ol>
-                <li>{% a_menu 'Careers' '/careers/' page.url careers-now %}</li>
-                <li>{% a_menu 'About' '/about/' page.url %}</li>
-                <li>{% a_menu 'Commitment and Responsibility' '/commitment-and-responsibility/' page.url %}</li>
+                <li>{% a_menu "Careers" careers_url page.url careers-now %}</li>
+                <li>{% a_menu "About" about_url page.url %}</li>
+                <li>{% a_menu "Commitment and Responsibility" commitment_url page.url %}</li>
               </ol>
             </li>
           </ul>
@@ -280,9 +305,9 @@ namespace: home
       <section class="legal">
         <p>&copy;{{ "now" | date: "%Y" }} PT. Sagara Xinix Solusitama</p>
         <menu>
-          <li>{% a_menu 'Terms of Use' '/terms-of-use/' page.url %}</li>
-          <li>{% a_menu 'Cookie Policy' '/cookie-policy/' page.url %}</li>
-          <li>{% a_menu ' Privacy Policy' '/privacy-policy/' page.url %}</li>
+          <li>{% a_menu "Terms of Use" term_url page.url %}</li>
+          <li>{% a_menu "Cookie Policy" cookie_url page.url %}</li>
+          <li>{% a_menu " Privacy Policy" privacy_url page.url %}</li>
         </menu>
       </section>
     </footer>

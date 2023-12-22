@@ -502,10 +502,6 @@ section.blue {
     @extend .p--blue;
   }
 
-  a {
-    transition: color var(--fast) var(--ease-back);
-  }
-
   .text {
     gap: var(--gap-s);
 
