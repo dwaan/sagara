@@ -164,19 +164,22 @@ function scrollto(el) {
   if (typeof el == "string") el = _q(el);
 
   el.addEventListener("click", function (e) {
-    var length = reduceMotion() ? 0 : 1;
+    if (reduceMotion()) return false;
 
     e.preventDefault();
     removeClass(_q("html"), "snap");
 
-    gsap.to(window, {
-      duration: length * 3 / 4,
-      ease: "expo.inOut",
-      scrollTo: e.target.getAttribute("href"),
-      onComplete: function () {
-        addClass(_q("html"), "snap");
-      }
-    });
+    try {
+      gsap.to(window, {
+        duration: 3 / 4,
+        ease: "expo.inOut",
+        scrollTo: e.target.getAttribute("href"),
+        onComplete: function () {
+          addClass(_q("html"), "snap");
+        }
+      });
+    }
+    catch (e) { console.log(e); }
   });
 }
 

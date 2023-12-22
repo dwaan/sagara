@@ -245,6 +245,15 @@ function reduceMotion() {
 	return get(settings[3]) ? true : false;
 }
 
+// Is it dark mode
+const isDarkMode = _ => {
+  return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || get(settings[0]);
+}
+// Is it high contrast
+const isHighContrast = _ => {
+  return get(settings[1]);
+}
+
 export {
 	monthNames,
 	settings,
@@ -264,5 +273,7 @@ export {
 	get,
 	set,
 	remove,
-	reduceMotion
+	reduceMotion,
+	isDarkMode,
+	isHighContrast
 };

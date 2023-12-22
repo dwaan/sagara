@@ -98,7 +98,7 @@ namespace: home
     {% assign cookie_url = "/cookie-policy/" | locale_url %}
     {% assign privacy_url = "/privacy-policy/" | locale_url %}
 
-    <header id="top">
+      <header id="top">
       <div>
         <a
           href="{{ homepage_url }}"
@@ -188,11 +188,6 @@ namespace: home
         </menu>
 
         {% comment %} Toggle for Accesibility {% endcomment %}
-        <input
-          type="checkbox"
-          name="accessibility"
-          id="accessibility"
-          hidden />
         <label for="accessibility" class="accessibility">
           <svg
             width="24"
@@ -202,8 +197,15 @@ namespace: home
             <use href="/img/icons/medium.svg#accessibility" />
           </svg>
         </label>
+      </nav>
 
-        {% comment %} Accessibility popup {% endcomment %}
+      {% comment %} Accessibility popup {% endcomment %}
+      <div id="a11y">
+        <input
+          type="checkbox"
+          name="accessibility"
+          id="accessibility"
+          hidden />
         <dialog class="options" title="Accesibility Settings">
           <form method="dialog">
             <article>
@@ -241,7 +243,7 @@ namespace: home
             </label>
           </form>
         </dialog>
-      </nav>
+      </div>
     </header>
 
     <div id="loader" aria-hidden>

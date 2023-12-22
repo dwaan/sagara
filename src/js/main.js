@@ -2,7 +2,7 @@
 
 import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all.js';
 import barba from '@barba/core';
-import { settings, _q, _qAll, konami, removeClass, get, set, addClass, remove, reduceMotion } from './helpers/helper.js';
+import { settings, _q, _qAll, konami, removeClass, get, set, addClass, remove, reduceMotion, isDarkMode, isHighContrast } from './helpers/helper.js';
 import { scroll, scrollto } from './helpers/scroll.js';
 
 // Registering scroll to plugins
@@ -34,15 +34,16 @@ settings.forEach(name => {
 
 // Set color of the browser
 const set_browser_color = (animate = true) => {
-  const color = get(settings[0]) ? get(settings[1]) ? "#111" : "#191A1B" : get(settings[1]) ? "#FFF" : "#F9FAFC";
+  const color = isDarkMode() ? isHighContrast() ? "#111" : "#191A1B" : isHighContrast() ? "#FFF" : "#F9FAFC";
   gsap.to("meta[name=theme-color], body", {
     attr: { content: color },
-    backgroundColor: color,
+    background: color,
     duration: reduceMotion() || !animate ? 0 : .48,
     ease: "expo"
   })
 }
 set_browser_color(false);
+
 
 // Setting accesibility
 const accessibility_name = "accessibility";
@@ -76,7 +77,7 @@ accessibility_checkbox.addEventListener('change', _ => {
 
 const duration = .72;
 barba.init({
-  debug: true,
+  debug: false,
   logLevel: 0,
   transitions: [{
     name: 'default-transition',

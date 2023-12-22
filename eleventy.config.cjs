@@ -88,7 +88,6 @@ module.exports = function (eleventyConfig) {
 		return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="${alt}"style="width: ${width / 16}rem; height: ${height / 16}rem;"> <use href="/img/icons/${icon}" viewBox="0 0 ${viewWidth} ${viewHeight}" /></svg>`;
 	});
 	eleventyConfig.addShortcode("a_menu", function (title, url, page_url, now = false) {
-		console.log(locale_url, page_url);
 		if (now == "true") now = true;
 		return `<a href="${url}"` + (page_url == url || now ? ` aria-current="page"` : ``) + `>${title}</a>`;
 	});

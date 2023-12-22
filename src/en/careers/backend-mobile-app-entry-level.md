@@ -57,7 +57,7 @@ From **Rp. 3.000.000,-** to **4.000.000,-**
 
 We’re open for suggestion based on your qualifications and previous experiences.
 
-### Why Sagara?
+### Why Sagara
 
 - Mentorship from experienced professionals.
 - Opportunities to work on exciting and impactful projects.
