@@ -147,7 +147,7 @@ namespace: home
 
             <nav class="popup">
               <menu>
-                {% render "item-menu" items: collections.products page_url: page.url %}
+                {% render "item-menu" items: collections.products page_url: page.url lang: page.lang %}
               </menu>
               {% a_arrow "See All Products" products_url "button pill" %}
             </nav>
@@ -157,7 +157,7 @@ namespace: home
 
             <nav class="popup">
               <menu>
-                {% render "item-menu" items: collections.solutions page_url: page.url %}
+                {% render "item-menu" items: collections.solutions page_url: page.url lang: page.lang %}
               </menu>
               {% a_arrow "See All Solutions" solutions_url "button pill" %}
             </nav>
@@ -167,7 +167,7 @@ namespace: home
 
             <nav class="popup">
               <menu>
-                {% render "item-menu" items: collections.consultations page_url: page.url %}
+                {% render "item-menu" items: collections.consultations page_url: page.url lang: page.lang %}
               </menu>
               {% a_arrow "See All Consultations" consultations_url "button pill" %}
             </nav>
@@ -177,7 +177,7 @@ namespace: home
 
             <nav class="popup">
               <menu>
-                {% render "item-menu" items: collections.supports page_url: page.url %}
+                {% render "item-menu" items: collections.supports page_url: page.url lang: page.lang %}
               </menu>
               {% a_arrow "See All Supports" supports_url "button pill" %}
             </nav>
@@ -228,12 +228,13 @@ namespace: home
                   name="dark-mode"> Always Dark Mode</label>
               <p class="row">
                 <input
-                  type="radio"
+                  type="checkbox"
+                  id="lang"
                   name="lang"
                   hidden>
                 <span>Language</span>
-                <label class="button blue very-small">En</label>
-                <label class="button white very-small">Ina</label>
+                <label class="button white very-small" id="lang-en">En</label>
+                <label class="button white very-small" id="lang-id">Ina</label>
               </p>
             </article>
             <p class="small">
@@ -267,19 +268,19 @@ namespace: home
         <li>
           <h3>{% a_menu "Products" products_url page.url %}</h3>
           <ol>
-            {% render "item-menu-footer" items: collections.products page_url: page.url %}
+            {% render "item-menu-footer" items: collections.products page_url: page.url lang: page.lang %}
           </ol>
         </li>
         <li>
           <h3>{% a_menu "Solutions" solutions_url page.url %}</h3>
           <ol>
-            {% render "item-menu-footer" items: collections.solutions page_url: page.url %}
+            {% render "item-menu-footer" items: collections.solutions page_url: page.url lang: page.lang %}
           </ol>
         </li>
         <li>
           <h3>{% a_menu "Consultations" consultations_url page.url %}</h3>
           <ol>
-            {% render "item-menu-footer" items: collections.consultations page_url: page.url %}
+            {% render "item-menu-footer" items: collections.consultations page_url: page.url lang: page.lang %}
           </ol>
         </li>
         <li>
@@ -287,7 +288,7 @@ namespace: home
             <li>
               <h3>{% a_menu "Supports" supports_url page.url %}</h3>
               <ol>
-                {% render "item-menu-footer" items: collections.supports page_url: page.url %}
+                {% render "item-menu-footer" items: collections.supports page_url: page.url lang: page.lang %}
               </ol>
             </li>
             <li>

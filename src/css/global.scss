@@ -808,8 +808,8 @@ section.listing {
     @extend .selection--static;
 
     --gap: var(--gap-xxl);
-    --padding-small: var(--pad-l) var(--pad-s);
-    --padding-big: var(--pad-s) var(--pad-xl);
+    --padding-small: var(--pad-m) var(--pad-m);
+    --padding-big: var(--pad-m) var(--pad-xl);
 
     gap: var(--gap);
     flex-wrap: wrap;
@@ -830,7 +830,7 @@ section.listing {
       --third: calc((100% - (var(--gap) * 2)) / 3);
 
       gap: 0;
-      padding: var(--padding);
+      padding: var(--padding-small);
       flex: none;
       width: var(--third);
 

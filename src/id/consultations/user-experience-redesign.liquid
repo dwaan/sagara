@@ -1,0 +1,156 @@
+---
+layout: consultations.liquid
+
+title: User Experience Redesign
+description: Reshape user interaction and information delivery for more impactful and satisfying experience.
+description-hero: Reshape how your user interact and acquire information within your system, providing them with more experience and better overall satisfaction.
+svg: redesign
+tags:
+- consultations
+- accessibility
+
+date: 1986-10-29
+---
+
+<section class="hero image image-outside no-shadow">
+  <div class="img">
+    <img
+      src="/img/experience/meeting.webp"
+      width="1440"
+      height=""
+      loading="lazy"
+      alt="People in a meeting and two of them shaking hand, photo was taken from above angle" />
+  </div>
+</section>
+
+<section class="blocks icon">
+  {% h2 svg title %}
+    <h2>It's Not Magic</h2>
+    <p>User-Centered Design is the cornerstone of our design strategy. It goes beyond aesthetics, focusing on creating an intuitive and engaging user experience. We believe that delivering a quality and satisfying product requires understanding your audience's needs and providing the precise information that your organization offers, while continuously improve your system over time.</p>
+  {% endh2 %}
+
+  <div class="dots"></div>
+
+  <div class="bento">
+    {% comment %} First row {% endcomment %}
+
+    <div class="box big neon-green v-text-r h-text-b-mobile">
+      <div class="img stretch">
+        <img
+          src="/img/experience/smile.webp"
+          width=""
+          height=""
+          loading="lazy"
+          alt="A women smiling infront of her laptop" />
+      </div>
+      <div class="text big">
+        <h3>User Research and Persona</h3>
+        <p>Understanding your audience and how they interact with your system is key to good design strategy.</p>
+      </div>
+    </div>
+
+    <div class="box small neon-blue h-text-b center-tablet">
+      <div class="img bottom">
+        {% svg "wide.svg#information-architect" "320x160" "256x128" "information architect Icon" %}
+      </div>
+      <div class="text">
+        <h3>Information Architect and Content Strategy</h3>
+        <p>Structuring your information to be more relevant and engaging.</p>
+      </div>
+    </div>
+
+    {% comment %} Second row {% endcomment %}
+
+    <div class="box small blue-normal h-text-b center-tablet">
+      <div class="img bottom">
+        {% svg "wide.svg#wireframe-prototype" "320x160" "256x128" "Wireframe prototype Icon" %}
+      </div>
+      <div class="text left">
+        <h3>Wireframe and Prototype</h3>
+        <p>Iteratively visualized layout and functionality closer to how the final system look.</p>
+      </div>
+    </div>
+
+    <div class="box small blue-deep h-text-b center-tablet">
+      <div class="img bottom">
+        {% svg "wide.svg#interaction-design" "320x160" "256x128" "Interaction Design Icon" %}
+      </div>
+      <div class="text left">
+        <h3>Interaction Design and Strategy</h3>
+        <p>Strategized how your system can provide your audience with an engaging experience.</p>
+      </div>
+    </div>
+
+    <div class="box small blue-dark h-text-b center-tablet">
+      <div class="img bottom">
+        {% svg "wide.svg#documentation" "320x160" "256x128" "Documentation Icon" %}
+      </div>
+      <div class="text left">
+        <h3>Documentation and Training</h3>
+        <p>To assist your organization to successfully implementing and maintaining the design.</p>
+      </div>
+    </div>
+
+    {% comment %} Third row {% endcomment %}
+
+    <div class="box big blue-dark v-text-l">
+      <div class="img stretch">
+        <img
+          src="/img/experience/graph.webp"
+          width=""
+          height=""
+          loading="lazy"
+          alt="People pointing at a graph on the table" />
+      </div>
+      <div class="text">
+        <h3>Usability Testing and Feedback Integration</h3>
+        <p>Continous real-user testing and integrate their feedback into design iterations.</p>
+      </div>
+    </div>
+
+    <div class="box small big-mobile neon-green h-text-b center-tablet">
+      <div class="img bottom">
+        {% svg "wide.svg#support" "320x160" "256x128" "Support Icon" %}
+      </div>
+      <div class="text">
+        <h3>Post-Launch Analysis and Support</h3>
+        <p>Monitor post-launch performance and ongoing support for enhancements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="listing small">
+  <div class="text">
+    <h2>Matchmaking User Experience with User Interface and Accessibility</h2>
+    <p>User experience redesign is often the first step in fundamentally transforming your organization's communication. Combine it with our web and interface redesign consultation, along with accessibility implementation and evaluation, for a comprehensive redesign process.</p>
+  </div>
+  <div class="selection">
+    <ul>
+      {% render 'item-listing' for collections.experience as item %}
+    </ul>
+  </div>
+</section>
+
+<section class="points">
+  <div class="text">
+    <h2>Trusted By</h2>
+    <p>These organizations have collaborated with Sagara to enhance the user experience of their web and mobile applications, aligning them with their core business operations and communication strategy.</p>
+  </div>
+
+  <div class="selection partners">
+    <div class="scroll">
+      <ol>
+        {% selection_logo "angkasapuraairports" "Angkasa Pura" %}
+        {% selection_logo "yayasandarmabaktiastra" "Darma Bakti Astra Foundation" %}
+        {% selection_logo "danone" "Danone<br/>Indonesia" %}
+        {% selection_logo "ppatk" "Indonesian Financial Transaction Reports and Analysis Center" %}
+        {% selection_logo "kemenkumham" "Ministry of Law and Human Rights of Indonesia" %}
+        {% selection_logo "kementrianinvestasibkpm" "Ministry of Investment - Indonesia Investment Coordinating Board" %}
+        {% selection_logo "badanstandardisasinasional" "The National Standardization Agency of Indonesia" %}
+        {% selection_logo "loket" "LOKET - Ticketing Management Service Platform" %}
+        {% selection_logo "tiketapasaja" "Tiket Apa Saja by Melon Music Indonesia" %}
+      </ol>
+    </div>
+  </div>
+</section>

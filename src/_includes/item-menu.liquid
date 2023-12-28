@@ -1,26 +1,29 @@
+{% capture lang_url %}/{{ lang }}{% endcapture %}
 {% for item in items %}
-<li{% if page_url == item.url %} aria-current="page"{% endif %}>
-  {% if item.data.svg %}
-    <a href="{{ item.url }}">
-      <svg
-        width="128"
-        height="128"
-        viewBox="0 0 128 128"
-        aria-label="{{ item.data.title }} - Logo">
-        <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
-      </svg>
-    </a>
+  {% if item.url contains lang_url %}
+    <li{% if page_url == item.url %} aria-current="page"{% endif %}>
+      {% if item.data.svg %}
+        <a href="{{ item.url }}">
+          <svg
+            width="128"
+            height="128"
+            viewBox="0 0 128 128"
+            aria-label="{{ item.data.title }} - Logo">
+            <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
+          </svg>
+        </a>
+      {% endif %}
+      <a href="{{ item.url }}">
+        {% if item.data.title-strong %}
+          <strong>{{ item.data.title-strong }}</strong>
+          -
+        {% endif %}
+        {% if item.data.title-description %}
+          {{ item.data.title-description }}
+        {% else %}
+          {{ item.data.title }}</a>
+        {% endif %}
+      </a>
+    </li>
   {% endif %}
-  <a href="{{ item.url }}">
-    {% if item.data.title-strong %}
-      <strong>{{ item.data.title-strong }}</strong>
-      -
-    {% endif %}
-    {% if item.data.title-description %}
-      {{ item.data.title-description }}
-    {% else %}
-      {{ item.data.title }}</a>
-    {% endif %}
-  </a>
-</li>
 {% endfor %}

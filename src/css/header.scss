@@ -860,4 +860,36 @@ nav.popup {
       transform: translate(-50%, -50%);
     }
   }
+
+  #lang {
+    &+span {
+      +label {
+        &::before {
+          background: var(--neon-blue);
+        }
+
+        +label {
+          &::before {
+            background: var(--gray-transparent);
+          }
+        }
+      }
+    }
+
+    &:checked+span {
+      +label {
+        &::before {
+          background: var(--gray-transparent);
+        }
+
+        +label {
+          color: var(--white-static);
+
+          &::before {
+            background: var(--neon-blue);
+          }
+        }
+      }
+    }
+  }
 }

@@ -9,8 +9,20 @@ class: careers
   <article>
     <div>
       <div class="text">
-        <h3>Join Our Team</h3>
-        <p>Together we define a clearer narrative, expand our creativity, contribute to effective problem solving, and strive for collaborative excellence.</p>
+        <h3>
+          {% if page.lang == "id" %}
+            Bergabung dengan Kami
+          {% else %}
+            Join Our Team
+          {% endif %}
+        </h3>
+        <p>
+          {% if page.lang == "id" %}
+            Bersama kita mendefinisikan narasi yang lebih jelas, memperluas kreativitas kita, berkontribusi pada pemecahan masalah yang efektif, dan berjuang untuk keunggulan kolaboratif.
+          {% else %}
+            Together we define a clearer narrative, expand our creativity, contribute to effective problem solving, and strive for collaborative excellence.
+          {% endif %}
+        </p>
       </div>
 
       <object
@@ -21,9 +33,14 @@ class: careers
         aria-label="We are hiring"></object>
     </div>
     <menu class="submenu">
-      {% render 'item-careers' items: collections.featured %}
+      {% render 'item-careers' items: collections.featured lang: page.lang %}
     </menu>
-    <a href="{{  "/careers/" | locale_url }}" class="default green">See all open positions
+    <a href="{{  "/careers/" | locale_url }}" class="default green">
+      {% if page.lang == "id" %}
+        Lihat semua posisi terbuka
+      {% else %}
+        See all open positions
+      {% endif %}
       <i class="arrow"></i>
     </a>
   </article>

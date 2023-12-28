@@ -1,15 +1,18 @@
+{% capture lang_url %}/{{ lang }}{% endcapture %}
 {% for item in items %}
-<li>
-  <a href="{{ item.url }}"{% if page_url == item.url %} aria-current="page"{% endif %}>
-    {% if item.data.title-strong %}
-      <strong>{{ item.data.title-strong }}</strong>
-      -
-    {% endif %}
-    {% if item.data.title-description %}
-      {{ item.data.title-description }}
-    {% else %}
-      {{ item.data.title }}</a>
-    {% endif %}
-  </a>
-</li>
+  {% if item.url contains lang_url %}
+    <li>
+      <a href="{{ item.url }}"{% if page_url == item.url %} aria-current="page"{% endif %}>
+        {% if item.data.title-strong %}
+          <strong>{{ item.data.title-strong }}</strong>
+          -
+        {% endif %}
+        {% if item.data.title-description %}
+          {{ item.data.title-description }}
+        {% else %}
+          {{ item.data.title }}</a>
+        {% endif %}
+      </a>
+    </li>
+  {% endif %}
 {% endfor %}

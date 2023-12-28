@@ -1,0 +1,83 @@
+---
+layout: main.liquid
+namespace: careers
+---
+
+<section class="listing image">
+  <article>
+    <div class="text">
+      {{ content }}
+      <a href="#open-positions" class="button cta"
+        {% if page.lang == "id" %}
+          Lihat Posisi yang Terbuka
+        {% else %}
+          See Open Positions
+        {% endif %}
+
+        <i class="arrow"></i>
+      </a>
+    </div>
+  </article>
+
+  <div class="img clip">
+    <img
+      src="/img/careers/hero.webp"
+      width="1440"
+      height=""
+      alt="People gathering around in a table with all their devices" />
+  </div>
+</section>
+
+<section id="open-positions" class="tabs careers">
+  <input
+    type="radio"
+    id="tabs1All"
+    name="tabs1"
+    checked />
+  {% for tag in collections.tagList %}
+    <input
+      type="radio"
+      id="tabs1{{ tag | slugify }}"
+      name="tabs1" />
+  {% endfor %}
+
+  <nav>
+    <h2>Open positions:</h2>
+    <menu class="flat tab submenu">
+      <li>
+        <label for="tabs1All">All</label>
+      </li>
+      {% for tag in collections.tagList %}
+        <li>
+          <label for="tabs1{{ tag | slugify }}">{{ tag | makeTitleFromTag }}</label>
+        </li>
+      {% endfor %}
+    </menu>
+  </nav>
+
+  <div class="content">
+    <article class="selection careers">
+      <div class="column">
+        {% include "careers-tags/{{ page.lang }}/all" %}
+      </div>
+      <ol>
+        {% render 'item-careers' items: collections.careers lang: page.lang %}
+      </ol>
+    </article>
+
+    {% for tag in collections.tagList %}
+      <article class="selection careers">
+        <div class="column">
+          {% capture description %}careers-tags/{{ page.lang }}/{{ tag }}{% endcapture %}
+          {% include description %}
+        </div>
+        <ol>
+          {% render 'item-careers' items: collections[tag] lang: page.lang %}
+        </ol>
+      </article>
+    {% endfor %}
+  </div>
+
+
+  <div class="dots"></div>
+</section>

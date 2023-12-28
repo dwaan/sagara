@@ -53,12 +53,20 @@ accessibility_checkbox.addEventListener('change', _ => {
   settings.forEach(name => {
     const checkbox = _q("#" + name);
 
-    if (checkbox.checked) {
-      set(name, true);
-      addClass("html", name);
+    if (name == settings[4]) {
+      if (checkbox.checked) {
+        set(name, "id-ID");
+      } else {
+        set(name, "en-US");
+      }
     } else {
-      remove(name);
-      removeClass("html", name);
+      if (checkbox.checked) {
+        set(name, true);
+        addClass("html", name);
+      } else {
+        remove(name);
+        removeClass("html", name);
+      }
     }
   });
 
@@ -68,6 +76,15 @@ accessibility_checkbox.addEventListener('change', _ => {
 
   // Set browser color
   set_browser_color();
+});
+// Languange changer
+_q("#lang-id").addEventListener("click", _ => {
+  set(settings[4], "id-ID");
+  _q("#" + settings[4]).checked = true;
+});
+_q("#lang-en").addEventListener("click", _ => {
+  set(settings[4], "en-US");
+  _q("#" + settings[4]).checked = false;
 });
 
 

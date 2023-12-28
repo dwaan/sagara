@@ -4,7 +4,7 @@ import gsap from 'gsap';
 
 //! Helper variables
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const settings = ["dark-mode", "high-contrast", "underline-links", "reduce-motion"];
+const settings = ["dark-mode", "high-contrast", "underline-links", "reduce-motion", "lang"];
 
 //! Helper functions
 /**
@@ -197,13 +197,21 @@ function waitForImg() {
 //! Local storage
 
 function get(name) {
-	return localStorage ? localStorage.getItem(name) : false;
+	const cookieValue = document.cookie
+		.split("; ")
+		.find((row) => row.startsWith(`${name}=`))
+		?.split("=")[1];
+	return cookieValue != undefined ? cookieValue : false;
 }
 function set(name, value) {
-	if (localStorage) localStorage.setItem(name, value);
+	var now = new Date();
+	var time = now.getTime();
+	var expireTime = time + 1000 * 36000;
+	now.setTime(expireTime);
+	document.cookie = `${name}=${value}; expires=` + now.toGMTString() + `; path=/;`;
 }
 function remove(name) {
-	if (localStorage) localStorage.removeItem(name);
+	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
 
 
@@ -247,11 +255,11 @@ function reduceMotion() {
 
 // Is it dark mode
 const isDarkMode = _ => {
-  return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || get(settings[0]);
+	return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || get(settings[0]);
 }
 // Is it high contrast
 const isHighContrast = _ => {
-  return get(settings[1]);
+	return get(settings[1]);
 }
 
 export {

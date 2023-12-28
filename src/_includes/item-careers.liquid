@@ -1,24 +1,28 @@
+{% capture lang_url %}/{{ lang }}{% endcapture %}
 {% for item in items %}
-  <li>
-    {% if item.data.svg %}
-      <a href="{{ item.url }}">
-        <svg
-          width="96"
-          height="96"
-          viewBox="0 0 32 32"
-          aria-label="{{ item.data.title }} - Logo">
-          <use href="/img/icons/small.svg#{{ item.data.svg }}" />
-        </svg>
-      </a>
-    {% endif %}
-    <div class="text">
-      <a href="{{ item.url }}">
-        {% if item.data.title-description %}
-          {{ item.data.title-description }}
-        {% else %}
-          {{ item.data.title }}
-        {% endif %}
-      </a>
-    </div>
-  </li>
+  {% if item.url contains lang_url %}
+    <li>
+      {% if item.data.svg %}
+        <a href="{{ item.url }}">
+          <svg
+            width="96"
+            height="96"
+            viewBox="0 0 32 32"
+            aria-label="{{ item.data.title }} - Logo">
+            <use href="/img/icons/small.svg#{{ item.data.svg }}" />
+          </svg>
+        </a>
+      {% endif %}
+      <div class="text">
+        <a href="{{ item.url }}">
+          {% if item.data.title-description %}
+            {{ item.data.title-description }}
+          {% else %}
+            {{ item.data.title }}
+          {% endif %}
+        </a>
+      </div>
+    </li>
+  {% endif %}
 {% endfor %}
+{% comment %} TODO: Empty page {% endcomment %}

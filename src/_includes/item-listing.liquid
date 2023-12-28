@@ -1,24 +1,29 @@
-<li>
-  <svg
-    width="160"
-    height="160"
-    viewBox="0 0 128 128"
-    aria-label="{{ item.data.title }} - Logo">
-    <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
-  </svg>
-  <h3>
-    {% if item.data.title-strong %}
-      <strong>{{ item.data.title-strong }}</strong>
-      -
-    {% endif %}
-    {% if item.data.title-description %}
-      {{ item.data.title-description }}
-    {% else %}
-      {{ item.data.title }}
-    {% endif %}
-  </h3>
-  <p>{{ item.data.description }}</p>
-  <a href="{{ item.url }}" class="button pill blue">Learn more
-    <i class="arrow"></i>
-  </a>
-</li>
+{% capture lang_url %}/{{ lang }}{% endcapture %}
+{% for item in items %}
+  {% if item.url contains lang_url %}
+    <li>
+      <svg
+        width="160"
+        height="160"
+        viewBox="0 0 128 128"
+        aria-label="{{ item.data.title }} - Logo">
+        <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
+      </svg>
+      <h3>
+        {% if item.data.title-strong %}
+          <strong>{{ item.data.title-strong }}</strong>
+          -
+        {% endif %}
+        {% if item.data.title-description %}
+          {{ item.data.title-description }}
+        {% else %}
+          {{ item.data.title }}
+        {% endif %}
+      </h3>
+      <p>{{ item.data.description }}</p>
+      <a href="{{ item.url }}" class="button pill blue">Learn more
+        <i class="arrow"></i>
+      </a>
+    </li>
+  {% endif %}
+{% endfor %}

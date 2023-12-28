@@ -1,31 +1,34 @@
+{% capture lang_url %}/{{ lang }}{% endcapture %}
 {% for item in items %}
-  <li>
-    {% if item.data.svg %}
-      <a href="{{ item.url }}">
-        <svg
-          width="128"
-          height="128"
-          viewBox="0 0 128 128"
-          aria-label="{{ item.data.title }} - Logo">
-          <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
-        </svg>
-      </a>
-    {% endif %}
-    <div class="text">
-      {% if item.data.title-strong %}
-        <h3>
-          <a href="{{ item.url }}">{{ item.data.title-strong }}</a>
-        </h3>
-      {% endif %}
-      <p>
+  {% if item.url contains lang_url %}
+    <li>
+      {% if item.data.svg %}
         <a href="{{ item.url }}">
-          {% if item.data.title-description %}
-            {{ item.data.title-description }}
-          {% else %}
-            {{ item.data.title }}
-          {% endif %}
+          <svg
+            width="128"
+            height="128"
+            viewBox="0 0 128 128"
+            aria-label="{{ item.data.title }} - Logo">
+            <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
+          </svg>
         </a>
-      </p>
-    </div>
-  </li>
+      {% endif %}
+      <div class="text">
+        {% if item.data.title-strong %}
+          <h3>
+            <a href="{{ item.url }}">{{ item.data.title-strong }}</a>
+          </h3>
+        {% endif %}
+        <p>
+          <a href="{{ item.url }}">
+            {% if item.data.title-description %}
+              {{ item.data.title-description }}
+            {% else %}
+              {{ item.data.title }}
+            {% endif %}
+          </a>
+        </p>
+      </div>
+    </li>
+  {% endif %}
 {% endfor %}
