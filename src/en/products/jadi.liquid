@@ -10,16 +10,19 @@ svg: jadi-scale
 date: 1983-10-29
 ---
 
+{% assign menu = menu.en %}
+{% assign buttons = buttons.en %}
+
 <section class="hero">
   <article>
     <div class="text">
-      <h4>{{ tags }}</h4>
+      <h4>{{ menu.products }}</h4>
       <h1>{{ title }}</h1>
       <p>With
         <strong>Jadi</strong>
         <i>(/Ja-dee/)</i>, unlock the full potential of document and information management with our proven technology, tailored from years of experience in managing legal document systems.</p>
     </div>
-    <a href="#request-demo" class="button cta">Request for Demo
+    <a href="#request-demo" class="button cta">{{ buttons.request_demo }}
       <i class="arrow"></i>
     </a>
   </article>

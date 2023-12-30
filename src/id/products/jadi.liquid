@@ -1,25 +1,27 @@
 ---
 layout: products.liquid
 
-title: Jadi - Legal Documents and Information System
+title: Jadi - Sistem Dokumen Hukum dan Informasi
 title-strong: Jadi
-title-description: Legal Documents and Information System
-description: Unlock the full potential of document and information management with our proven technology tailored for your system requirements.
+title-description: Sistem Dokumen Hukum dan Informasi
+description: Buka potensi penuh manajemen dokumen dan informasi dengan teknologi kami yang telah terbukti disesuaikan dengan kebutuhan sistem Anda.
 svg: jadi-scale
 
 date: 1983-10-29
 ---
 
+{% assign menu = menu.id %}
+{% assign buttons = buttons.id %}
+
 <section class="hero">
   <article>
     <div class="text">
-      <h4>{{ tags }}</h4>
+      <h4>{{ menu.products }}</h4>
       <h1>{{ title }}</h1>
-      <p>With
-        <strong>Jadi</strong>
-        <i>(/Ja-dee/)</i>, unlock the full potential of document and information management with our proven technology, tailored from years of experience in managing legal document systems.</p>
+      <p>Dengan
+        <strong>Jadi</strong>, buka potensi penuh manajemen dokumen dan informasi dengan teknologi kami yang telah terbukti, disesuaikan dari pengalaman bertahun-tahun dalam mengelola sistem dokumen hukum.</p>
     </div>
-    <a href="#request-demo" class="button cta">Request for Demo
+    <a href="#request-demo" class="button cta">{{ buttons.request_demo }}
       <i class="arrow"></i>
     </a>
   </article>

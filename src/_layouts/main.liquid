@@ -86,6 +86,7 @@ namespace: home
   </head>
 
   <body data-barba="wrapper">
+    {% comment %} Url Translation {% endcomment %}
     {% assign homepage_url = "/" | locale_url %}
     {% assign products_url = "/products/" | locale_url %}
     {% assign solutions_url = "/solutions/" | locale_url %}
@@ -98,7 +99,14 @@ namespace: home
     {% assign cookie_url = "/cookie-policy/" | locale_url %}
     {% assign privacy_url = "/privacy-policy/" | locale_url %}
 
-      <header id="top">
+    {% comment %} Menu translation {% endcomment %}
+    {% if page.lang == "id" %}
+      {% assign menu = menu.id %}
+    {% else %}
+      {% assign menu = menu.en %}
+    {% endif %}
+
+    <header id="top">
       <div>
         <a
           href="{{ homepage_url }}"
@@ -143,47 +151,47 @@ namespace: home
             <a href="{{ homepage_url }}">Home</a>
           </li>
           <li {% aria_current_page page.url products_url products-now %}>
-            {% label_checkbox "Products" products_url "main-menu" %}
+            {% label_checkbox menu.products products_url "main-menu" %}
 
             <nav class="popup">
               <menu>
                 {% render "item-menu" items: collections.products page_url: page.url lang: page.lang %}
               </menu>
-              {% a_arrow "See All Products" products_url "button pill" %}
+              {% a_arrow menu.see_products products_url "button pill" %}
             </nav>
           </li>
           <li {% aria_current_page page.url solutions_url solutions-now %}>
-            {% label_checkbox "Solutions" solutions_url "main-menu" %}
+            {% label_checkbox menu.solutions solutions_url "main-menu" %}
 
             <nav class="popup">
               <menu>
                 {% render "item-menu" items: collections.solutions page_url: page.url lang: page.lang %}
               </menu>
-              {% a_arrow "See All Solutions" solutions_url "button pill" %}
+              {% a_arrow menu.see_solutions solutions_url "button pill" %}
             </nav>
           </li>
           <li {% aria_current_page page.url consultations_url consultations-now %}>
-            {% label_checkbox "Consultations" consultations_url "main-menu" %}
+            {% label_checkbox menu.consultations consultations_url "main-menu" %}
 
             <nav class="popup">
               <menu>
                 {% render "item-menu" items: collections.consultations page_url: page.url lang: page.lang %}
               </menu>
-              {% a_arrow "See All Consultations" consultations_url "button pill" %}
+              {% a_arrow menu.see_consultations consultations_url "button pill" %}
             </nav>
           </li>
           <li {% aria_current_page page.url supports_url supports-now %}>
-            {% label_checkbox "Supports" supports_url "main-menu" %}
+            {% label_checkbox menu.supports supports_url "main-menu" %}
 
             <nav class="popup">
               <menu>
                 {% render "item-menu" items: collections.supports page_url: page.url lang: page.lang %}
               </menu>
-              {% a_arrow "See All Supports" supports_url "button pill" %}
+              {% a_arrow menu.see_supports supports_url "button pill" %}
             </nav>
           </li>
           <li {% aria_current_page page.url careers_url careers-now %}>
-            <a href={{ careers_url }}>Careers</a>
+            <a href={{ careers_url }}>{{ menu.careers }}</a>
           </li>
         </menu>
 
@@ -262,23 +270,29 @@ namespace: home
     </main>
 
     <footer>
-      <a href="#top" id="scrollTop">scroll to top</a>
+      <a href="#top" id="scrollTop">
+        {% if page.lang == "id" %}
+          skroll ke atas
+        {% else %}
+          scroll to top
+        {% endif %}
+      </a>
 
       <menu class="sitemap">
         <li>
-          <h3>{% a_menu "Products" products_url page.url %}</h3>
+          <h3>{% a_menu menu.products products_url page.url %}</h3>
           <ol>
             {% render "item-menu-footer" items: collections.products page_url: page.url lang: page.lang %}
           </ol>
         </li>
         <li>
-          <h3>{% a_menu "Solutions" solutions_url page.url %}</h3>
+          <h3>{% a_menu menu.solutions solutions_url page.url %}</h3>
           <ol>
             {% render "item-menu-footer" items: collections.solutions page_url: page.url lang: page.lang %}
           </ol>
         </li>
         <li>
-          <h3>{% a_menu "Consultations" consultations_url page.url %}</h3>
+          <h3>{% a_menu menu.consultations consultations_url page.url %}</h3>
           <ol>
             {% render "item-menu-footer" items: collections.consultations page_url: page.url lang: page.lang %}
           </ol>
@@ -286,17 +300,17 @@ namespace: home
         <li>
           <ul>
             <li>
-              <h3>{% a_menu "Supports" supports_url page.url %}</h3>
+              <h3>{% a_menu menu.supports supports_url page.url %}</h3>
               <ol>
                 {% render "item-menu-footer" items: collections.supports page_url: page.url lang: page.lang %}
               </ol>
             </li>
             <li>
-              <h3>Corporate</h3>
+              <h3>{{ menu.corporate }}</h3>
               <ol>
-                <li>{% a_menu "Careers" careers_url page.url careers-now %}</li>
-                <li>{% a_menu "About" about_url page.url %}</li>
-                <li>{% a_menu "Commitment and Responsibility" commitment_url page.url %}</li>
+                <li>{% a_menu menu.careers careers_url page.url careers-now %}</li>
+                <li>{% a_menu menu.about about_url page.url %}</li>
+                <li>{% a_menu menu.commitment commitment_url page.url %}</li>
               </ol>
             </li>
           </ul>
@@ -308,9 +322,9 @@ namespace: home
       <section class="legal">
         <p>&copy;{{ "now" | date: "%Y" }} PT. Sagara Xinix Solusitama</p>
         <menu>
-          <li>{% a_menu "Terms of Use" term_url page.url %}</li>
-          <li>{% a_menu "Cookie Policy" cookie_url page.url %}</li>
-          <li>{% a_menu " Privacy Policy" privacy_url page.url %}</li>
+          <li>{% a_menu menu.terms term_url page.url %}</li>
+          <li>{% a_menu menu.cookie cookie_url page.url %}</li>
+          <li>{% a_menu menu.privacy privacy_url page.url %}</li>
         </menu>
       </section>
     </footer>

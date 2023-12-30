@@ -1,3 +1,10 @@
+{% comment %} Menu translation {% endcomment %}
+{% if lang == "id" %}
+  {% assign buttons = buttons.id %}
+{% else %}
+  {% assign buttons = buttons.en %}
+{% endif %}
+
 {% capture lang_url %}/{{ lang }}{% endcapture %}
 {% for item in items %}
   {% if item.url contains lang_url %}
@@ -21,7 +28,7 @@
         {% endif %}
       </h3>
       <p>{{ item.data.description }}</p>
-      <a href="{{ item.url }}" class="button pill blue">Learn more
+      <a href="{{ item.url }}" class="button pill blue">{{ buttons.more }}
         <i class="arrow"></i>
       </a>
     </li>

@@ -1,11 +1,18 @@
+{% comment %} Menu translation {% endcomment %}
+{% if page.lang == "id" %}
+  {% assign buttons = buttons.id %}
+{% else %}
+  {% assign buttons = buttons.en %}
+{% endif %}
+
 <section class="blue request-demo" id="request-demo">
   <article>
     <div>
       <div class="text">
         {% if form-consultation %}
-          <h3>Request for Consultation</h3>
+          <h3>{{ buttons.request_consultations }}</h3>
         {% else %}
-          <h3>Request for Demo</h3>
+          <h3>{{ buttons.request_demo }}</h3>
         {% endif %}
         {% if form-message %}
           <p>{{ form-message }}</p>
@@ -26,7 +33,7 @@
         <div class="combined">
           <input type="email" placeholder="Type your email" />
           <a class="button cta small">
-            <button type="submit">Send</button>
+            <button type="submit">{{ buttons.send }}</button>
           </a>
         </div>
       </form>

@@ -1,0 +1,36 @@
+{
+  "en": {
+    "products": "Products",
+    "solutions": "Solutions",
+    "consultations": "Consultations",
+    "supports": "Supports",
+    "careers": "Careers",
+    "corporate": "Corporate",
+    "about": "About",
+    "commitment": "Commitment and Responsibility",
+    "terms": "Terms of Use",
+    "cookie": "Cookie Policy",
+    "privacy": "Privacy Policy",
+    "see_products": "See All Products",
+    "see_solutions": "See All Solutions",
+    "see_consultations": "See All Consultations",
+    "see_supports": "Supports"
+  },
+  "id": {
+    "products": "Produk",
+    "solutions": "Solusi",
+    "consultations": "Konsultasi",
+    "supports": "Dukungan",
+    "careers": "Karir",
+    "corporate": "Korporasi",
+    "about": "Tentang",
+    "commitment": "Komitmen dan Responsibilitas",
+    "terms": "Persyaratan Penggunaan",
+    "cookie": "Kebijakan Cookie",
+    "privacy": "Kebijakan Privasi",
+    "see_products": "Lihat Semua Produk",
+    "see_solutions": "Lihat Semua Solusi",
+    "see_consultations": "Lihat Semua Konsultasi",
+    "see_supports": "Lihat Semua Dukungan"
+  }
+}

@@ -13,5 +13,5 @@ supports-now: true
 <div class="dots"></div>
 
 <ul>
-  {% render 'item-listing' for collections.supports as item %}
+  {% render 'item-listing' items: collections.supports lang: page.lang buttons: buttons %}
 </ul>
