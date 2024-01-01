@@ -21,13 +21,13 @@ body {
 }
 
 @mixin inline-bold {
-  display: inline-block;
+  // display: inline-block;
   font-weight: 600;
 }
 
 @mixin children-tags {
   strong {
-    display: inline-block;
+    // display: inline-block;
     font-weight: 700;
   }
 

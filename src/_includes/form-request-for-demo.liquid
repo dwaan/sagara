@@ -1,16 +1,9 @@
-{% comment %} Menu translation {% endcomment %}
-{% if page.lang == "id" %}
-  {% assign buttons = buttons.id %}
-{% else %}
-  {% assign buttons = buttons.en %}
-{% endif %}
-
 <section class="blue request-demo" id="request-demo">
   <article>
     <div>
       <div class="text">
         {% if form-consultation %}
-          <h3>{{ buttons.request_consultations }}</h3>
+          <h3>{{ buttons.request_consultation }}</h3>
         {% else %}
           <h3>{{ buttons.request_demo }}</h3>
         {% endif %}
@@ -31,7 +24,7 @@
 
       <form action="{{ page.url }}">
         <div class="combined">
-          <input type="email" placeholder="Type your email" />
+          <input type="email" placeholder="{{ buttons.type_email }}" />
           <a class="button cta small">
             <button type="submit">{{ buttons.send }}</button>
           </a>

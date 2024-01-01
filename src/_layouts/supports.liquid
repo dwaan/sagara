@@ -7,10 +7,17 @@ supports-now: true
 svg: placeholder
 ---
 
+{% comment %} Menu translation {% endcomment %}
+{% if page.lang == "id" %}
+  {% assign menu = menu.id %}
+{% else %}
+  {% assign menu = menu.en %}
+{% endif %}
+
 <section class="hero">
   <article>
     <div class="text">
-      <h4>{{ tags }}</h4>
+      <h4>{{ menu.supports }}</h4>
       <h1>{{ title }}</h1>
       <p>{{ description-hero }}</p>
     </div>

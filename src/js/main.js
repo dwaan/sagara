@@ -35,9 +35,8 @@ settings.forEach(name => {
 // Set color of the browser
 const set_browser_color = (animate = true) => {
   const color = isDarkMode() ? isHighContrast() ? "#111" : "#191A1B" : isHighContrast() ? "#FFF" : "#F9FAFC";
-  gsap.to("meta[name=theme-color], body", {
+  gsap.to("meta[name=theme-color]", {
     attr: { content: color },
-    background: color,
     duration: reduceMotion() || !animate ? 0 : .48,
     ease: "expo"
   })

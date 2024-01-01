@@ -1,23 +1,51 @@
-<section class="journey">
-  <div class="text">
-    <h2>Our Development Journey</h2>
-    <p>Sagara has been advocating the Agile development process to deliver end results that align with the dynamic nature of your organization's activities. This ensures the continuous improvement of the system and a process that demands your organization's involvement throughout the development phases.</p>
-  </div>
-
-  <div class="selection journey">
-    <div class="scroll">
-      <ol>
-        {% selection_icon_plain "Project Initiation" "The project begins with a clear understanding of the goals, scope, and objectives." %}
-        {% selection_icon_plain "Requirements Gathering" "High-level requirements are collected, but also can be refined and adjusted as the project progresses." %}
-        {% selection_icon_plain "Planning" "Our team breaks the project into smaller tasks and creates a backlog of features and user stories." %}
-        {% selection_icon_plain "Development Sprints" "The project is divided into short, fixed timeframes (sprints), typically 2-4 weeks, where specific features are developed and tested." %}
-        {% selection_icon_plain "Daily Stand-Ups" "Our team meets daily to discuss progress, challenges, and plan the day's work." %}
-        {% selection_icon_plain "Continuous Integration and Testing" "Code is integrated frequently, and testing is done continuously throughout development." %}
-        {% selection_icon_plain "Customer Feedback" "Your organization especially the stakeholders provide feedback at the end of each sprint, allowing for adjustments and improvements." %}
-        {% selection_icon_plain "Iterative Development" "The process is repeated for multiple sprints until the system meets the desired level of functionality and quality." %}
-        {% selection_icon_plain "Deployment" "Once the system is ready, it is deployed for use." %}
-        {% selection_icon_plain "Monitoring and Maintenance" "After deployment, your system is continuously monitored, and any issues or enhancements are addressed." %}
-      </ol>
+{% if page.lang == "id" %}
+  <section class="journey">
+    <div class="text">
+      <h2>Proses Perjalanan Pengembangan Kami</h2>
+      <p>Sagara telah menganjurkan proses pengembangan
+        <i>Agile</i>
+        untuk memberikan hasil akhir yang selaras dengan sifat dinamis dari kegiatan organisasi Anda. Ini memastikan peningkatan sistem yang berkelanjutan dan proses yang menuntut keterlibatan organisasi Anda di seluruh fase pengembangan.</p>
     </div>
-  </div>
-</section>
+
+    <div class="selection journey">
+      <div class="scroll">
+        <ol>
+          {% selection_icon_plain "Project Initiation" "Inisiasi Proyek" "Proyek ini dimulai dengan pemahaman yang jelas tentang tujuan, ruang lingkup, dan tujuan." %}
+          {% selection_icon_plain "Requirements Gathering" "Persyaratan pengumpulan" "Persyaratan tingkat tinggi dikumpulkan, tetapi juga dapat disempurnakan dan disesuaikan saat proyek berlangsung." %}
+          {% selection_icon_plain "Planning" "Perencanaan" "Tim kami memecah proyek menjadi tugas yang lebih kecil dan membuat tumpukan fitur dan cerita pengguna." %}
+          {% selection_icon_plain "Development Sprints" "Sprint Pengembangan" "Proyek ini dibagi menjadi jangka pendek, jangka waktu tetap (sprint), biasanya 2-4 minggu, di mana fitur spesifik dikembangkan dan diuji." %}
+          {% selection_icon_plain "Daily Stand-Ups" "Daily Stand-up" "Tim kami bertemu setiap hari untuk membahas kemajuan, tantangan, dan merencanakan pekerjaan hari itu." %}
+          {% selection_icon_plain "Continuous Integration and Testing" "Integrasi dan Pengujian Berkelanjutan" "Kode akan sering diintegrasikan, dan pengujian dilakukan terus menerus di seluruh pengembangan. " %}
+          {% selection_icon_plain "Customer Feedback" "Umpan Balik Pelanggan" "Organisasi Anda terutama pemangku kepentingan memberikan umpan balik di akhir setiap sprint, memungkinkan penyesuaian dan peningkatan." %}
+          {% selection_icon_plain "Iterative Development" "pengembangan iteratif" "Proses diulangi untuk beberapa sprint sampai sistem memenuhi tingkat fungsionalitas dan kualitas yang diinginkan." %}
+          {% selection_icon_plain "Deployment" "Penyebaran" "Setelah sistem siap, itu digunakan untuk digunakan." %}
+          {% selection_icon_plain "Monitoring and Maintenance" "Pemantauan dan Pemeliharaan" "Setelah penyebaran, sistem Anda terus dipantau, dan masalah atau peningkatan apa pun ditangani." %}
+        </ol>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <section class="journey">
+    <div class="text">
+      <h2>Our Development Journey</h2>
+      <p>Sagara has been advocating the Agile development process to deliver end results that align with the dynamic nature of your organization's activities. This ensures the continuous improvement of the system and a process that demands your organization's involvement throughout the development phases.</p>
+    </div>
+
+    <div class="selection journey">
+      <div class="scroll">
+        <ol>
+          {% selection_icon_plain "Project Initiation" "Project Initiation" "The project begins with a clear understanding of the goals, scope, and objectives." %}
+          {% selection_icon_plain "Requirements Gathering" "Requirements Gathering" "High-level requirements are collected, but also can be refined and adjusted as the project progresses." %}
+          {% selection_icon_plain "Planning" "Planning" "Our team breaks the project into smaller tasks and creates a backlog of features and user stories." %}
+          {% selection_icon_plain "Development Sprints" "Development Sprints" "The project is divided into short, fixed timeframes (sprints), typically 2-4 weeks, where specific features are developed and tested." %}
+          {% selection_icon_plain "Daily Stand-Ups" "Daily Stand-Ups" "Our team meets daily to discuss progress, challenges, and plan the day's work." %}
+          {% selection_icon_plain "Continuous Integration and Testing" "Continuous Integration and Testing" "Code is integrated frequently, and testing is done continuously throughout development." %}
+          {% selection_icon_plain "Customer Feedback" "Customer Feedback" "Your organization especially the stakeholders provide feedback at the end of each sprint, allowing for adjustments and improvements." %}
+          {% selection_icon_plain "Iterative Development" "Iterative Development" "The process is repeated for multiple sprints until the system meets the desired level of functionality and quality." %}
+          {% selection_icon_plain "Deployment" "Deployment" "Once the system is ready, it is deployed for use." %}
+          {% selection_icon_plain "Monitoring and Maintenance" "Monitoring and Maintenance" "After deployment, your system is continuously monitored, and any issues or enhancements are addressed." %}
+        </ol>
+      </div>
+    </div>
+  </section>
+{% endif %}

@@ -2,13 +2,17 @@
   "en": {
     "request_demo": "Request for Demo",
     "request_consultation": "Request for Consultation",
+    "request_quotation": "Request for Quotation",
     "send": "Send",
-    "more": "Learn more"
+    "more": "Learn more",
+    "type_email": "Type your email"
   },
   "id": {
     "request_demo": "Permintaan Demo",
     "request_consultation": "Permintaan Konsultasi",
+    "request_quotation": "Permintaan Kutipan",
     "send": "Kirim",
-    "more": "Pelajari"
+    "more": "Pelajari",
+    "type_email": "Ketik surel Anda"
   }
 }

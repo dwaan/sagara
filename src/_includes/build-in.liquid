@@ -1,27 +1,57 @@
-<section class="points commitment">
-  <div class="text">
-    {% if build-in != true or build-in != false %}
-      <h2>Embedded In</h2>
-    {% else %}
-      <h2>Build In</h2>
-    {% endif %}
-    <p>Crafting a digital future that's not only functional but also commited to a world that's sustainable, accessible, and private.</p>
-  </div>
+{% if page.lang == "id" %}
+  <section class="points commitment">
+    <div class="text">
+      {% if build-in != true or build-in != false %}
+        <h2>Tertanam</h2>
+      {% else %}
+        <h2>Termasuk</h2>
+      {% endif %}
+      <p>Membuat masa depan digital yang tidak hanya fungsional tetapi juga berkomitmen untuk dunia yang berkelanjutan, dapat diakses, dan pribadi.</p>
+    </div>
 
-  <div class="selection commitment">
-    <ol class="flat">
-      {% selection "320x160" "256x128" "wide" "sustainability" "Sustainability icon" %}
-        <h3>Sustainability</h3>
-        <p>Sustainable practices in every steps</p>
-      {% endselection %}
-      {% selection "320x160" "256x128" "wide" "accessibility" "Accessibility Icon" %}
-        <h3>Accessibility</h3>
-        <p>Functionalities that champions inclusivity</p>
-      {% endselection %}
-      {% selection "320x160" "256x128" "wide" "privacy" "Privacy Icon" %}
-        <h3>Privacy</h3>
-        <p>Digital privacy in every data and transactions</p>
-      {% endselection %}
-    </ol>
-  </div>
-</section>
+    <div class="selection commitment">
+      <ol class="flat">
+        {% selection "320x160" "256x128" "wide" "sustainability" "Ikon Keberlanjutan" %}
+          <h3>Keberlanjutan</h3>
+          <p>Praktik berkelanjutan dalam setiap langkah</p>
+        {% endselection %}
+        {% selection "320x160" "256x128" "wide" "accessibility" "Ikon Aksesibilitas" %}
+          <h3>Aksesibilitas</h3>
+          <p>Fungsi yang memperjuangkan inklusivitas</p>
+        {% endselection %}
+        {% selection "320x160" "256x128" "wide" "privacy" "Ikon Privasi" %}
+          <h3>Pribadi</h3>
+          <p>Privasi digital dalam setiap data dan transaksi</p>
+        {% endselection %}
+      </ol>
+    </div>
+  </section>
+{% else %}
+  <section class="points commitment">
+    <div class="text">
+      {% if build-in != true or build-in != false %}
+        <h2>Embedded In</h2>
+      {% else %}
+        <h2>Build In</h2>
+      {% endif %}
+      <p>Crafting a digital future that's not only functional but also commited to a world that's sustainable, accessible, and private.</p>
+    </div>
+
+    <div class="selection commitment">
+      <ol class="flat">
+        {% selection "320x160" "256x128" "wide" "sustainability" "Sustainability icon" %}
+          <h3>Sustainability</h3>
+          <p>Sustainable practices in every steps</p>
+        {% endselection %}
+        {% selection "320x160" "256x128" "wide" "accessibility" "Accessibility Icon" %}
+          <h3>Accessibility</h3>
+          <p>Functionalities that champions inclusivity</p>
+        {% endselection %}
+        {% selection "320x160" "256x128" "wide" "privacy" "Privacy Icon" %}
+          <h3>Privacy</h3>
+          <p>Digital privacy in every data and transactions</p>
+        {% endselection %}
+      </ol>
+    </div>
+  </section>
+{% endif %}

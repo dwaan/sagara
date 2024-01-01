@@ -8,14 +8,23 @@ svg: placeholder
 build-in: true
 ---
 
+{% comment %} Menu and buttons translation {% endcomment %}
+{% if page.lang == "id" %}
+  {% assign menu = menu.id %}
+  {% assign buttons = buttons.id %}
+{% else %}
+  {% assign menu = menu.en %}
+  {% assign buttons = buttons.en %}
+{% endif %}
+
 <section class="hero">
   <article>
     <div class="text">
-      <h4>Consultations</h4>
+      <h4>{{ menu.consultations }}</h4>
       <h1>{{ title }}</h1>
       <p>{{ description-hero }}</p>
     </div>
-    <a href="#request-demo" class="button cta">Request for Quotation
+    <a href="#request-demo" class="button cta">{{ buttons.request_quotation }}
       <i class="arrow"></i>
     </a>
   </article>
