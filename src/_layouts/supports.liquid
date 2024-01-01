@@ -7,11 +7,13 @@ supports-now: true
 svg: placeholder
 ---
 
-{% comment %} Menu translation {% endcomment %}
+{% comment %} Menu and buttons translation {% endcomment %}
 {% if page.lang == "id" %}
   {% assign menu = menu.id %}
+  {% assign buttons = buttons.id %}
 {% else %}
   {% assign menu = menu.en %}
+  {% assign buttons = buttons.en %}
 {% endif %}
 
 <section class="hero">
