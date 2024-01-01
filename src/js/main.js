@@ -76,7 +76,7 @@ accessibility_checkbox.addEventListener('change', _ => {
   // Set browser color
   set_browser_color();
 });
-// Languange changer
+// Language changer
 _q("#lang-id").addEventListener("click", _ => {
   set(settings[4], "id-ID");
   _q("#" + settings[4]).checked = true;
@@ -93,7 +93,7 @@ _q("#lang-en").addEventListener("click", _ => {
 
 const duration = .72;
 barba.init({
-  debug: false,
+  debug: true,
   logLevel: 0,
   transitions: [{
     name: 'default-transition',
@@ -246,7 +246,7 @@ function currentPageIndicator(el) {
   _qAll("header nav.menu li > a, header nav.menu li > label a").forEach(a => {
     let parent = a.parentNode
     if (parent.tagName != "LI") parent = parent.parentNode;
-    if (a.innerText.toLowerCase().trim() == el.namespace) {
+    if (a.getAttribute("href").toLowerCase().trim().includes(`/${el.namespace}/`)) {
       parent.setAttribute("aria-current", "page");
     } else {
       parent.removeAttribute("aria-current");
