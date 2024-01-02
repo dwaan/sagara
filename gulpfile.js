@@ -274,15 +274,16 @@ function development() {
 }
 function production() {
 	return gulp.parallel(
-		image, gulp.series(
-			copy_font,
-			copy_meta,
-			svgsmall,
-			svgmedium,
-			svgplain,
-			svgshadow,
-			svgwide,
-			copy_svg,
+		image,
+		copy_font,
+		copy_meta,
+		svgsmall,
+		svgmedium,
+		svgplain,
+		svgshadow,
+		svgwide,
+		copy_svg,
+		gulp.series(
 			scss_prod,
 			css_prefix_prod,
 			js_prod

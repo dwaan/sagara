@@ -1,32 +1,35 @@
+{% capture lang_url %}/{{ lang }}{% endcapture %}
 {% for item in items %}
-  <li>
-    <label>
-      <input
-        type="radio"
-        name="products"
-        required
-        value="{{ item.data.title | slugify }}" />
-      {% if item.data.svg %}
-        <svg
-          width="128"
-          height="128"
-          viewBox="0 0 128 128"
-          aria-label="{{ item.data.title }} - Logo">
-          <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
-        </svg>
-      {% endif %}
-      <div class="text">
-        {% if item.data.title-strong %}
-          <h3>{{ item.data.title-strong }}</h3>
+  {% if item.page.inputPath contains lang_url %}
+    <li>
+      <label>
+        <input
+          type="radio"
+          name="products"
+          required
+          value="{{ item.data.title | slugify }}" />
+        {% if item.data.svg %}
+          <svg
+            width="128"
+            height="128"
+            viewBox="0 0 128 128"
+            aria-label="{{ item.data.title }} - Logo">
+            <use href="/img/icons/shadow.svg#{{ item.data.svg }}" />
+          </svg>
         {% endif %}
-        <p>
-          {% if item.data.title-description %}
-            {{ item.data.title-description }}
-          {% else %}
-            {{ item.data.title }}
+        <div class="text">
+          {% if item.data.title-strong %}
+            <h3>{{ item.data.title-strong }}</h3>
           {% endif %}
-        </p>
-      </div>
-    </label>
-  </li>
+          <p>
+            {% if item.data.title-description %}
+              {{ item.data.title-description }}
+            {% else %}
+              {{ item.data.title }}
+            {% endif %}
+          </p>
+        </div>
+      </label>
+    </li>
+  {% endif %}
 {% endfor %}

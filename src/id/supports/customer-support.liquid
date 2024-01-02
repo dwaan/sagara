@@ -1,9 +1,9 @@
 ---
 layout: supports.liquid
 
-title: Customer Support
-description: Whether you have a question, need assistance with our products or services, or want to provide feedback, our customer service team is here to assist.
-description-hero: To schedule a demo and have a conversation with our experts about our range of products, please select the product and share your email, and we'll set up a suitable time for you.
+title: Dukungan Pelanggan
+description: Apakah Anda memiliki pertanyaan, memerlukan bantuan dengan produk atau layanan kami, atau ingin memberikan umpan balik, tim layanan pelanggan kami ada di sini untuk membantu.
+description-hero: Untuk menjadwalkan demo dan melakukan percakapan dengan para ahli kami tentang berbagai produk kami, pilih produk dan bagikan email Anda, dan kami akan mengatur waktu yang tepat untuk Anda.
 svg: customer
 class: customer
 
@@ -13,32 +13,32 @@ date: 1984-10-29
 <section class="checkbox closest">
   <form action="{{ page.url }}" method="post">
     <div class="combined combined-mobile border">
-      <label for="name">Name</label>
+      <label for="name">Nama</label>
       <input
         type="text"
         id="name"
         name="name"
         minlength="3"
         required
-        placeholder="Type your name or your organization name" />
+        placeholder="Ketik nama Anda atau nama organisasi Anda" />
     </div>
 
     <div class="combined combined-mobile border">
-      <label for="email">Email</label>
+      <label for="email">Surel</label>
       <input
         id="email"
         name="email"
         type="email"
         minlength="6"
         required
-        placeholder="Type your email" />
+        placeholder="Ketik surel Anda" />
     </div>
 
     <article id="products" class="selection checkbox">
-      <h2 hidden>Products</h2>
+      <h2 hidden>Produk</h2>
       <div class="scroll">
         <ol class="flat">
-          {% render 'item-checkbox' items: collections.types %}
+          {% render 'item-checkbox' items: collections.types lang: page.lang %}
         </ol>
       </div>
     </article>
@@ -65,21 +65,21 @@ date: 1984-10-29
             <path d="m17 8-5-5m0 0L7 8m5-5v12" />
           </g>
         </svg>
-        <p>Tap, click, or drag and drop your document here to upload</p>
+        <p>Ketuk, klik, atau seret dan letakkan dokumen Anda di sini untuk mengunggah</p>
       </label>
     </div>
 
     <div class="combined combined-mobile large border">
-      <label for="message">Message</label>
+      <label for="message">Pesan</label>
       <textarea
         id="message"
         name="message"
         minlength="10"
-        placeholder="Type your message"
+        placeholder="Ketik pesan anda"
         required
         rows="10"></textarea>
       <a class="button cta small">
-        <button type="submit">Contact Us</button>
+        <button type="submit">Hubungi kami</button>
       </a>
     </div>
 

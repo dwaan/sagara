@@ -1952,7 +1952,7 @@ section.closest {
 
       overflow: unset;
 
-      @media screen and (max-width: variables.$screen-normal-l) {
+      @media screen and (max-width: variables.$screen-wide-s) {
         justify-content: flex-start;
 
         overflow-x: scroll;
