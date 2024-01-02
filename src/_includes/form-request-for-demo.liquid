@@ -10,14 +10,24 @@
         {% if form-message %}
           <p>{{ form-message }}</p>
         {% else %}
-          {% if form-consultation %}
-            <p>To schedule for a conversation with our experts in
-              <strong>{{ title }}</strong>
-              Consultations, please share your email, and we'll contact you back.</p>
+          {% if page.lang == "id" %}
+            {% if form-consultation %}
+              <p>Untuk menjadwalkan percakapan dengan ahli
+                <strong>{{ title }}</strong>, silakan bagikan email Anda, dan kami akan menghubungi Anda kembali.</p>
+            {% else %}
+              <p>Untuk meminta kutipan atau jadwalkan percakapan dengan kami ahli
+                <strong>{{ title-strong }}</strong>, silakan bagikan email Anda, dan kami akan menghubungi Anda kembali.</p>
+            {% endif %}
           {% else %}
-            <p>To ask for quotation or schedule for a conversation with our
-              <strong>{{ title-strong }}</strong>
-              experts, please share your email, and we'll contact you back.</p>
+            {% if form-consultation %}
+              <p>To schedule for a conversation with our experts in
+                <strong>{{ title }}</strong>
+                Consultations, please share your email, and we'll contact you back.</p>
+            {% else %}
+              <p>To ask for quotation or schedule for a conversation with our
+                <strong>{{ title-strong }}</strong>
+                experts, please share your email, and we'll contact you back.</p>
+            {% endif %}
           {% endif %}
         {% endif %}
       </div>

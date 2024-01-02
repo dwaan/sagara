@@ -1,0 +1,22 @@
+{
+  "en": {
+    "title": "Accesibility",
+    "setting": "Accesibility Settings",
+    "motion": "Remove Motion",
+    "links": "Underline Links",
+    "contrast": "High Contrast",
+    "dark_mode": "Always Dark Mode",
+    "notice": "<strong>Notice</strong>: We use cookies to save your accessibility preferences.",
+    "save": "Save and Close"
+  },
+  "id": {
+    "title": "Aksesibilitas",
+    "setting": "Pengaturan Aksesibilitas",
+    "motion": "Hapus Gerakan",
+    "links": "Garisbawahi Tautan",
+    "contrast": "Kontras Tinggi",
+    "dark_mode": "Selalu Mode Gelap",
+    "notice": "<strong>Perhatian</strong>: Kami menggunakan cookie untuk menyimpan preferensi aksesibilitas Anda.",
+    "save": "Simpan dan Tutup"
+  }
+}

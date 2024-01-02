@@ -102,8 +102,10 @@ namespace: home
     {% comment %} Menu translation {% endcomment %}
     {% if page.lang == "id" %}
       {% assign menu = menu.id %}
+      {% assign accessibility = accessibility.id %}
     {% else %}
       {% assign menu = menu.en %}
+      {% assign accessibility = accessibility.en %}
     {% endif %}
 
     <header id="top">
@@ -214,26 +216,26 @@ namespace: home
           name="accessibility"
           id="accessibility"
           hidden />
-        <dialog class="options" title="Accesibility Settings">
+        <dialog class="options" title="{{ accessibility.settings }}">
           <form method="dialog">
             <article>
-              <h3>Accessibility</h3>
+              <h3>{{ accessibility.title }}</h3>
               <label><input
                   type="checkbox"
                   id="reduce-motion"
-                  name="reduce-motion"> Remove Motion</label>
+                  name="reduce-motion"> {{ accessibility.motion }}</label>
               <label><input
                   type="checkbox"
                   id="underline-links"
-                  name="underline-links"> Underline Links</label>
+                  name="underline-links"> {{ accessibility.links }}</label>
               <label><input
                   type="checkbox"
                   id="high-contrast"
-                  name="high-contrast"> High Contrast</label>
+                  name="high-contrast"> {{ accessibility.contrast }}</label>
               <label><input
                   type="checkbox"
                   id="dark-mode"
-                  name="dark-mode"> Always Dark Mode</label>
+                  name="dark-mode"> {{ accessibility.dark_mode }}</label>
               <p class="row">
                 <input
                   type="checkbox"
@@ -245,9 +247,8 @@ namespace: home
                 <label class="button white very-small" id="lang-id">Ina</label>
               </p>
             </article>
-            <p class="small">
-              <strong>Notice</strong>: We use cookies to save your accessibility preferences.</p>
-            <label for="accessibility" class="button white pill">Save and close
+            <p class="small">{{ accessibility.notice }}</p>
+            <label for="accessibility" class="button white pill">{{ accessibility.save }}
               <i class="arrow"></i>
             </label>
           </form>
