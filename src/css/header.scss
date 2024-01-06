@@ -864,11 +864,15 @@ nav.popup {
   #lang {
     &+span {
       +label {
+        color: var(--white-static);
+
         &::before {
           background: var(--neon-blue);
         }
 
         +label {
+          color: var(--dark-normal);
+
           &::before {
             background: var(--gray-transparent);
           }
@@ -878,6 +882,8 @@ nav.popup {
 
     &:checked+span {
       +label {
+        color: var(--dark-normal);
+
         &::before {
           background: var(--gray-transparent);
         }

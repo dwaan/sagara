@@ -1,45 +1,45 @@
 ---
 layout: static.liquid
-title: Terms of Use
+title: Persyarat Penggunaan
 ---
 
-## Term of Use
+## Persyarat Penggunaan
 
-Effective as of 29 October 2023.
+Efektif pada 29 Oktober 2023.
 
-### 1. Introduction
+### 1. Perkenalan
 
-This Privacy Policy outlines how PT. Sagara Xinix Solusitama (referred to as "we," "our," or "us") collects, uses, and protects the personal information provided by users of the <https://www.sagara.id> website (the "Website"). We are committed to safeguarding your privacy and ensuring the security of your personal information.
+Kebijakan privasi ini menguraikan bagaimana PT. Sagara xinix solusitama (disebut sebagai "kami," "kami," atau "kami") mengumpulkan, menggunakan, dan melindungi informasi pribadi yang disediakan oleh pengguna situs web <https://www.sagara.id> ("situs web" ""). Kami berkomitmen untuk melindungi privasi Anda dan memastikan keamanan informasi pribadi Anda.
 
-### 2. Information We Collect
+### 2. Informasi yang kami kumpulkan
 
-We collect email addresses provided voluntarily by users who express interest in job openings or our services as client prospects. No personal information is collected without your knowledge and consent.
+Kami mengumpulkan alamat email yang disediakan secara sukarela oleh pengguna yang menyatakan minatnya pada lowongan kerja atau layanan kami sebagai prospek klien. Tidak ada informasi pribadi yang dikumpulkan tanpa sepengetahuan dan persetujuan Anda.
 
-### 3. Use of Information
+### 3. Penggunaan informasi
 
-- Job Openings: Email addresses submitted for job openings may be used to contact you regarding your application and for related hiring processes.
-- Client Prospects: Email addresses submitted for client prospects may be used to contact you regarding our services, projects, or any inquiries you may have made.
+- Lowongan Pekerjaan: Alamat email yang dikirimkan untuk lowongan pekerjaan dapat digunakan untuk menghubungi Anda mengenai aplikasi Anda dan untuk proses perekrutan terkait.
+- Prospek Klien: Alamat email yang dikirimkan untuk prospek klien dapat digunakan untuk menghubungi Anda mengenai layanan, proyek, atau pertanyaan kami yang mungkin telah Anda buat.
 
-### 4. Protection of Information
+### 4. Perlindungan informasi
 
-We employ reasonable security measures to protect the personal information we collect. However, no data transmission over the internet can be guaranteed as completely secure. We cannot guarantee the security of any information you transmit to us.
+Kami menggunakan langkah -langkah keamanan yang wajar untuk melindungi informasi pribadi yang kami kumpulkan. Namun, tidak ada transmisi data melalui internet yang dapat dijamin sepenuhnya aman. Kami tidak dapat menjamin keamanan informasi apa pun yang Anda kirimkan kepada kami.
 
-### 5. Sharing of Information
+### 5. Berbagi informasi
 
-We do not sell, trade, or otherwise transfer your personal information to third parties. Your information is only shared with our team members involved in the hiring process or client prospect discussions.
+Kami tidak menjual, berdagang, atau mentransfer informasi pribadi Anda ke pihak ketiga. Informasi Anda hanya dibagikan dengan anggota tim kami yang terlibat dalam proses perekrutan atau diskusi prospek klien.
 
-### 6. Cookies and Tracking
+### 6. Cookie dan Pelacakan
 
-We may use cookies to enhance your browsing experience on the Website. Cookies are small files stored on your device that help us improve user experiences. You may disable cookies in your browser settings if you prefer not to have them.
+Kami dapat menggunakan cookie untuk meningkatkan pengalaman penelusuran Anda di situs web. Cookie adalah file kecil yang disimpan di perangkat Anda yang membantu kami meningkatkan pengalaman pengguna. Anda dapat menonaktifkan cookie di pengaturan browser Anda jika Anda lebih suka tidak memilikinya.
 
-### 7. Access and Control
+### 7. Akses dan Kontrol
 
-You have the right to access, modify, or delete the personal information we have collected. You may contact us at <legal@sagara.id> to make such requests.
+Anda memiliki hak untuk mengakses, memodifikasi, atau menghapus informasi pribadi yang telah kami kumpulkan. Anda dapat menghubungi kami di <legal@sagara.id> untuk membuat permintaan tersebut.
 
-### 8. Updates to Privacy Policy
+### 8. Pembaruan Kebijakan Privasi
 
-We may revise this Privacy Policy from time to time. Any changes will be posted on the Website with an updated effective date. Your continued use of the Website after any changes signifies your acceptance of the revised Privacy Policy.
+Kami dapat merevisi Kebijakan Privasi ini dari waktu ke waktu. Setiap perubahan akan diposting di situs web dengan tanggal efektif yang diperbarui. Anda terus menggunakan Situs Web setelah perubahan apa pun menandakan penerimaan Anda terhadap Kebijakan Privasi yang direvisi.
 
-### 9. Contact Information
+### 9. Informasi Kontak
 
-For any questions, concerns, or requests related to this Privacy Policy, please contact us at <legal@sagara.id>.
+Untuk pertanyaan, masalah, atau permintaan yang terkait dengan kebijakan privasi ini, silakan hubungi kami di <legal@sagara.id>.

@@ -1,6 +1,6 @@
 ---
 layout: static.liquid
-title: Cookie Policy
+title: Privacy Policy
 ---
 
 ## Privacy Policy
@@ -17,8 +17,8 @@ We collect email addresses provided voluntarily by users who express interest in
 
 ### 3. Use of Information
 
-Job Openings: Email addresses submitted for job openings may be used to contact you regarding your application and for related hiring processes.
-Client Prospects: Email addresses submitted for client prospects may be used to contact you regarding our services, projects, or any inquiries you may have made.
+- Job Openings: Email addresses submitted for job openings may be used to contact you regarding your application and for related hiring processes.
+- Client Prospects: Email addresses submitted for client prospects may be used to contact you regarding our services, projects, or any inquiries you may have made.
 
 ### 4. Protection of Information
 

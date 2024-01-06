@@ -274,19 +274,19 @@ function development() {
 }
 function production() {
 	return gulp.parallel(
-		image,
-		copy_font,
-		copy_meta,
-		svgsmall,
+		// image,
 		svgmedium,
 		svgplain,
 		svgshadow,
 		svgwide,
+		copy_meta,
+		copy_font,
+		svgsmall,
 		copy_svg,
+		js_prod,
 		gulp.series(
 			scss_prod,
-			css_prefix_prod,
-			js_prod
+			css_prefix_prod
 		)
 	);
 }

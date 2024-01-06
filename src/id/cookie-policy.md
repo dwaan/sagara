@@ -1,40 +1,39 @@
 ---
 layout: static.liquid
-title: Cookie Policy
+title: Kebijakan Cookie
 ---
+## Kebijakan Cookie
 
-## Cookie Policy
+Efektif pada 29 Oktober 2023.
 
-Effective as of 29 October 2023.
+### 1. Perkenalan
 
-### 1. Introduction
+Kebijakan cookie ini menguraikan bagaimana PT. Sagara Xinix Solusitama (disebut sebagai "kami," "kami," atau "kami") menggunakan cookie di situs web <https://www.sagara.id> ("situs web"). Kami menggunakan cookie untuk meningkatkan pengalaman penelusuran Anda dan memungkinkan Anda menyimpan preferensi situs web Anda. Kami tidak menggunakan cookie untuk pelacakan atau tujuan lain di luar meningkatkan pengalaman pengguna Anda.
 
-This Cookie Policy outlines how PT. Sagara Xinix Solusitama (referred to as "we," "our," or "us") uses cookies on the <https://www.sagara.id> website (the "Website"). We use cookies to enhance your browsing experience and enable you to save your website preferences. We do not use cookies for tracking or any other purpose beyond improving your user experience.
+### 2. Apa itu Cookie?
 
-### 2. What Are Cookies?
+Cookie adalah file teks kecil yang ditempatkan di perangkat Anda saat Anda mengunjungi situs web. Mereka membantu situs web mengingat preferensi, pengaturan, dan informasi Anda yang meningkatkan pengalaman pengguna Anda pada kunjungan berikutnya.
 
-Cookies are small text files that are placed on your device when you visit a website. They help websites remember your preferences, settings, and other information that improves your user experience on subsequent visits.
+### 3. Jenis Cookie
 
-### 3. Types of Cookies
+- Cookie Preferensi: Kami menggunakan cookie preferensi untuk mengingat preferensi dan pengaturan Anda di situs web. Cookie ini memungkinkan kami untuk memberi Anda pengalaman penelusuran yang lebih personal.
 
-- Preference Cookies: We use preference cookies to remember your preferences and settings on the Website. These cookies enable us to provide you with a more personalized browsing experience.
+### 4. Persetujuan Anda
 
-### 4. Your Consent
+Dengan menggunakan situs web, Anda menyetujui penggunaan cookie preferensi sebagaimana diuraikan dalam kebijakan cookie ini. Anda dapat mengelola atau menghapus cookie ini melalui pengaturan browser Anda. Harap dicatat bahwa menonaktifkan cookie preferensi dapat memengaruhi pengalaman Anda di situs web.
 
-By using the Website, you consent to the use of preference cookies as outlined in this Cookie Policy. You can manage or delete these cookies through your browser settings. Please note that disabling preference cookies may affect your experience on the Website.
+### 5. Tidak ada Cookie Pelacakan
 
-### 5. No Tracking Cookies
+Kami tidak menggunakan cookie pelacakan di situs web. Privasi dan aktivitas online Anda tidak dipantau melalui cookie.
 
-We do not use tracking cookies on the Website. Your privacy and online activity are not monitored through cookies.
+### 6. Mengelola Cookie
 
-### 6. Managing Cookies
+Anda dapat mengelola atau menghapus cookie melalui pengaturan browser Anda. Silakan merujuk ke bagian Bantuan Browser Anda untuk instruksi tentang cara mengontrol cookie. Ingatlah bahwa menonaktifkan cookie dapat memengaruhi pengalaman Anda di situs web.
 
-You can manage or delete cookies through your browser settings. Please refer to your browser's help section for instructions on how to control cookies. Keep in mind that disabling cookies may affect your experience on the Website.
+### 7. Pembaruan Kebijakan Cookie
 
-### 7. Updates to Cookie Policy
+Kami dapat memperbarui kebijakan cookie ini dari waktu ke waktu. Setiap perubahan akan diposting di situs web dengan tanggal efektif yang diperbarui. Anda terus menggunakan situs web setelah perubahan apa pun menandakan penerimaan Anda terhadap kebijakan cookie yang direvisi.
 
-We may update this Cookie Policy from time to time. Any changes will be posted on the Website with an updated effective date. Your continued use of the Website after any changes signifies your acceptance of the revised Cookie Policy.
+### 8. Informasi Kontak
 
-### 8. Contact Information
-
-For any questions or concerns related to this Cookie Policy, please contact us at <legal@sagara.id>.
+Untuk pertanyaan atau masalah yang terkait dengan kebijakan cookie ini, silakan hubungi kami di <legal@sagara.id>.
