@@ -26,7 +26,7 @@ careers-now: true
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
     </div>
-    <a href="#detail" class="button cta">See Details
+    <a href="#detail" class="button cta">{{ buttons.see_details }}
       <i class="arrow"></i>
     </a>
   </article>
@@ -46,7 +46,7 @@ careers-now: true
       <menu>
         {{ content | toc }}
         <li>
-          <a href="#how-to-apply" class="blue">How to Apply</a>
+          <a href="#how-to-apply" class="blue">{{ buttons.how_to_apply }}</a>
         </li>
       </menu>
     </sidebar>
@@ -63,14 +63,18 @@ careers-now: true
   <article>
     <div>
       <div class="text">
-        <h3>How to Apply</h3>
-        <p>Ready to jumpstart your career as an {{ level }} {{ title }}? Send and upload your resume and a brief cover letter outlining your passion in a zip file here.</p>
+        <h3>{{ buttons.how_to_apply }}</h3>
+        {% if page.lang == "id" %}
+          <p>Siap untuk melompat karier Anda sebagai {{ level }} {{ title }}? Kirim dan unggah resume Anda dan surat pengantar singkat yang menguraikan hasrat Anda dalam file zip di sini.</p>
+        {% else %}
+          <p>Ready to jumpstart your career as an {{ level }} {{ title }}? Send and upload your resume and a brief cover letter outlining your passion in a zip file here.</p>
+        {% endif %}
       </div>
 
       <form action="{{ page.url }}">
         <div class="row">
           <div class="combined">
-            <input type="text" placeholder="Type your name" />
+            <input type="text" placeholder="{{ buttons.type_name }}" />
           </div>
           <div class="combined drop">
             <input
@@ -104,9 +108,9 @@ careers-now: true
             type="email"
             minlength="6"
             required
-            placeholder="Type your email" />
+            placeholder="{{ buttons.type_email }}" />
           <a class="button cta small">
-            <button type="submit">Send</button>
+            <button type="submit">{{ buttons.send }}</button>
           </a>
         </div>
       </form>

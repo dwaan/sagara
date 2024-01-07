@@ -5,7 +5,10 @@
     "request_quotation": "Request for Quotation",
     "send": "Send",
     "more": "Learn more",
-    "type_email": "Type your email"
+    "type_email": "Type your email",
+    "type_name": "Type your name",
+    "see_details": "See Details",
+    "how_to_apply": "How to Apply"
   },
   "id": {
     "request_demo": "Permintaan Demo",
@@ -13,6 +16,9 @@
     "request_quotation": "Permintaan Kutipan",
     "send": "Kirim",
     "more": "Pelajari",
-    "type_email": "Ketik surel Anda"
+    "type_email": "Ketik surel Anda",
+    "type_name": "Ketik nama Anda",
+    "see_details": "Lihat Detailnya",
+    "how_to_apply": "Cara Melamar"
   }
 }

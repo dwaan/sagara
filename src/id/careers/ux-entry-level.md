@@ -1,12 +1,12 @@
 ---
 layout: careers.liquid
 
-title: User Experience Designer - Mobile and Web Solutions
-description: Join the creative team at Sagara, where innovation meets design. At Sagara, we are committed to delivering exceptional user experiences that captivate and delight our users. As we expand our team, we are seeking a passionate and talented Entry-Level User Experience Designer to contribute to our mission of creating meaningful and user-centric products.
+title: Desainer Pengalaman Pengguna - Solusi Seluler dan Web
+description: Bergabunglah dengan tim kreatif di Sagara, di mana inovasi memenuhi desain.Di Sagara, kami berkomitmen untuk memberikan pengalaman pengguna luar biasa yang memikat dan menyenangkan pengguna kami.Saat kami memperluas tim kami, kami mencari perancang pengalaman pengguna entry-level yang bersemangat dan berbakat untuk berkontribusi pada misi kami menciptakan produk yang bermakna dan berpusat pada pengguna.
 level: Entry-Level
 
 img: /img/careers/ux.webp
-alt: A collection of hand drawn wireframes wiht a pencil and a mobile phone on the right side
+alt: Koleksi wireframes yang digambar tangan dengan pensil dan ponsel di sisi kanan
 svg: experience
 
 tags:
@@ -17,52 +17,52 @@ tags:
 date: 1986-10-29
 ---
 
-As an Entry-Level User Experience Designer at Sagara, you will play a vital role in shaping the overall look and feel of our digital products. Working collaboratively with cross-functional teams, you will be involved in all aspects of the design process, from user research and wireframing to prototyping and usability testing. This is an excellent opportunity for a recent graduate or someone with minimal experience to kickstart their career in UX design.
+Sebagai perancang pengalaman pengguna tingkat pemula di Sagara, Anda akan memainkan peran penting dalam membentuk tampilan dan nuansa keseluruhan produk digital kami.Bekerja secara kolaboratif dengan tim lintas fungsi, Anda akan terlibat dalam semua aspek proses desain, dari penelitian pengguna dan wireframing hingga prototipe dan pengujian kegunaan.Ini adalah kesempatan yang sangat baik untuk lulusan baru atau seseorang dengan pengalaman minimal untuk memulai karier mereka dalam desain UX.
 
-### Location
+### Lokasi
 
-**Buaran, East-Jakarta, Indonesia.**
+**Buaran, Timur-Jakarta, Indonesia.**
 
-We welcome everyone who live outside Jakarta to apply for this position. But to save commute time when needed, we prefer candidate who live or will live nearby our office area.
+Kami menyambut semua orang yang tinggal di luar Jakarta untuk melamar posisi ini.Tetapi untuk menghemat waktu perjalanan saat dibutuhkan, kami lebih suka kandidat yang tinggal atau akan tinggal di dekat area kantor kami.
 
-### Responsibilities
+### Tanggung jawab
 
-- Conduct user research to understand user needs, behaviors, and pain points.
-- Create wireframes, prototypes, and high-fidelity designs for web and mobile applications.
-- Collaborate with product managers and developers to ensure design feasibility and implementation.
-- Conduct usability testing and gather feedback to iterate and improve designs.
-- Stay current with industry trends, design tools, and emerging technologies.
-- Work closely with stakeholders to understand business goals and user requirements.
+- Melakukan penelitian pengguna untuk memahami kebutuhan pengguna, perilaku, dan titik nyeri.
+- Buat wireframes, prototipe, dan desain kesetiaan tinggi untuk aplikasi web dan seluler.
+- Berkolaborasi dengan manajer dan pengembang produk untuk memastikan kelayakan dan implementasi desain.
+- Lakukan pengujian kegunaan dan kumpulkan umpan balik untuk mengulang dan meningkatkan desain.
+- Tetap terkini dengan tren industri, alat desain, dan teknologi yang muncul.
+- Bekerja sama dengan pemangku kepentingan untuk memahami tujuan bisnis dan persyaratan pengguna.
 
-### Qualifications
+### Kualifikasi
 
-- Bachelor's degree in Graphic Design, Interaction Design, Human-Computer Interaction, or a related field (or equivalent experience).
-- Strong understanding of design principles and user-centered design methodologies
-- Proficiency in design tools such as Sketch, Figma, or Adobe Creative Suite.
-- Excellent communication and collaboration skills.
-- Eagerness to learn and adapt to new design trends and technologies.
-- Strong portfolio showcasing design projects and process.
+- Gelar Sarjana dalam Desain Grafis, Desain Interaksi, Interaksi Manusia-Komputer, atau Bidang Terkait (atau Pengalaman Setara).
+- Pemahaman yang kuat tentang prinsip-prinsip desain dan metodologi desain yang berpusat pada pengguna
+- Kemahiran dalam alat desain seperti Sketsa, Figma, atau Adobe Creative Suite.
+- Keterampilan komunikasi dan kolaborasi yang sangat baik.
+- Semangat untuk belajar dan beradaptasi dengan tren dan teknologi desain baru.
+- Proyek dan proses desain portofolio yang kuat.
 
-### Preferred Qualifications
+### Kualifikasi Pendukung
 
-- Basic knowledge of front-end development technologies (HTML, CSS, JavaScript).
-- Experience with animation and interaction design.
-- Familiarity with design systems and component-based design.
-- Passion for solving complex design challenges.
+- Pengetahuan dasar teknologi pengembangan front-end (HTML, CSS, JavaScript).
+- Pengalaman dengan desain animasi dan interaksi.
+- Keakraban dengan sistem desain dan desain berbasis komponen.
+- Gairah untuk menyelesaikan tantangan desain yang kompleks.
 
-### Salary Range
+### Kisaran Gaji
 
-From **Rp. 3.000.000,-** to **4.000.000,-**
+Dari **RP.3.000.000,-** ke **4.000.000,-**
 
-We’re open for suggestion based on your qualifications and previous experiences.
+Kami terbuka untuk saran berdasarkan kualifikasi dan pengalaman Anda sebelumnya.
 
-### Why Sagara
+### Mengapa Sagara
 
-- Mentorship from experienced professionals.
-- Opportunities to work on exciting and impactful projects.
-- A collaborative and inclusive work culture.
-- Professional growth and development prospects.
-- Competitive compensation and benefits package.
-- Hybrid working environment.
-- Health and pension benefits.
-- 20 leave days excluding holidays and bank holidays.
+- Bimbingan dari para profesional yang berpengalaman.
+- Peluang untuk bekerja pada proyek yang menarik dan berdampak.
+- Budaya kerja kolaboratif dan inklusif.
+- Prospek Pertumbuhan dan Pembangunan Profesional.
+- Paket Kompensasi dan Manfaat Kompetitif.
+- Lingkungan kerja hibrida.
+- Manfaat kesehatan dan pensiun.
+- 20 hari cuti tidak termasuk hari libur dan hari libur bank.

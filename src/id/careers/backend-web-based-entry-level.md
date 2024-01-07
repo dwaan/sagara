@@ -1,12 +1,12 @@
 ---
 layout: careers.liquid
 
-title: Backend Developer - Web-Based Solutions
-description: Are you passionate about web-based solutions and backend development? Are you looking to kickstart your career in a dynamic and collaborative environment? Join us at Sagara as an Entry-Level Backend Developer and embark on a journey to shape the digital landscape!
+title: Pengembang Backend - Solusi Berbasis Web
+description: Apakah Anda bersemangat tentang solusi berbasis web dan pengembangan backend?Apakah Anda ingin memulai karier Anda di lingkungan yang dinamis dan kolaboratif?Bergabunglah dengan kami di Sagara sebagai pengembang backend entry-level dan memulai perjalanan untuk membentuk lanskap digital!
 level: Entry-Level
 
 img: /img/careers/typing.webp
-alt: A person typing on their laptop on the sofa, with scatered book on the side
+alt: Seseorang mengetik di laptop mereka di sofa, dengan buku yang tersebar di samping
 svg: rack
 
 tags:
@@ -17,45 +17,45 @@ tags:
 date: 1984-10-29
 ---
 
-At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an Entry-Level Backend Developer, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.
+Di Sagara, kami berdedikasi untuk menciptakan solusi berbasis web inovatif yang seimbang yang mendorong kesuksesan untuk klien kami dan Anda sebagai tim kami.Tim kami menggunakan teknologi yang terbukti, mengerjakan proyek progresif yang berdampak pada industri dan masyarakat.Sebagai pengembang backend entry-level, Anda akan memiliki kesempatan untuk belajar dari para pakar industri, berkolaborasi dengan tim yang berbakat, dan berkontribusi pada proyek-proyek yang membuat perbedaan.
 
-### Location
+### Lokasi
 
-**Buaran, East-Jakarta, Indonesia.**
+**Buaran, Timur-Jakarta, Indonesia.**
 
-We welcome everyone who live outside Jakarta to apply for this position. But to save commute time when needed, we prefer candidate who live or will live nearby our office area.
+Kami menyambut semua orang yang tinggal di luar Jakarta untuk melamar posisi ini.Tetapi untuk menghemat waktu perjalanan saat dibutuhkan, kami lebih suka kandidat yang tinggal atau akan tinggal di dekat area kantor kami.
 
-### Key Responsibilities
+### Kunci tanggung jawab
 
-- Collaborate with frontend developers to build robust and efficient web applications.
-- Develop, test, and maintain backend services, APIs, and databases.
-- Ensure code quality, security, and performance optimization.
-- Troubleshoot and resolve technical issues, ensuring seamless functionality.
-- Work with version control systems and follow coding standards.
+- Berkolaborasi dengan pengembang Frontend untuk membangun aplikasi web yang kuat dan efisien.
+- Mengembangkan, menguji, dan memelihara layanan backend, API, dan database.
+- Pastikan kualitas kode, keamanan, dan optimasi kinerja.
+- Memecahkan masalah dan menyelesaikan masalah teknis, memastikan fungsionalitas yang mulus.
+- Bekerja dengan sistem kontrol versi dan ikuti standar pengkodean.
 
-### Qualifications
+### Kualifikasi Pendukung
 
-- Bachelor's degree in computer science or related field (or relevant coursework/certifications).
-- Proficiency in one or more backend programming languages (e.g. PHP, Node.js).
-- Basic knowledge of databases (SQL, NoSQL) and web development concepts.
-- Familiarity with version control systems like Git.
-- Strong problem-solving skills and attention to detail.
-- Effective communication and teamwork abilities.
-- Eagerness to learn and adapt to new technologies.
+- Gelar sarjana dalam bidang ilmu komputer atau bidang terkait (atau kursus/sertifikasi yang relevan).
+- Kemahiran dalam satu atau lebih bahasa pemrograman backend (mis. PHP, node.js).
+- Pengetahuan dasar basis data (SQL, NOSQL) dan konsep pengembangan web.
+- Keakraban dengan sistem kontrol versi seperti Git.
+- Keterampilan pemecahan masalah yang kuat dan perhatian terhadap detail.
+- Kemampuan komunikasi dan kerja tim yang efektif.
+- Semangat untuk belajar dan beradaptasi dengan teknologi baru.
 
-### Salary Range
+### Kisaran Gaji
 
-From **Rp. 3.000.000,-** to **4.000.000,-**
+Dari **RP.3.000.000,-** ke **4.000.000,-**
 
-We’re open for suggestion based on your qualifications and previous experiences.
+Kami terbuka untuk saran berdasarkan kualifikasi dan pengalaman Anda sebelumnya.
 
-### Why Sagara
+### Mengapa Sagara
 
-- Mentorship from experienced professionals.
-- Opportunities to work on exciting and impactful projects.
-- A collaborative and inclusive work culture.
-- Professional growth and development prospects.
-- Competitive compensation and benefits package.
-- Hybrid working environment.
-- Health and pension benefits.
-- 20 leave days excluding holidays and bank holidays.
+- Bimbingan dari para profesional yang berpengalaman.
+- Peluang untuk bekerja pada proyek yang menarik dan berdampak.
+- Budaya kerja kolaboratif dan inklusif.
+- Prospek Pertumbuhan dan Pembangunan Profesional.
+- Paket Kompensasi dan Manfaat Kompetitif.
+- Lingkungan kerja hibrida.
+- Manfaat kesehatan dan pensiun.
+- 20 hari cuti tidak termasuk hari libur dan hari libur bank.

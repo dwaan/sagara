@@ -1,12 +1,12 @@
 ---
 layout: careers.liquid
 
-title: User Interface Developer - Web-Based Solutions
-description: Are you passionate about web-based solutions and backend development? Are you looking to kickstart your career in a dynamic and collaborative environment? Join us at Sagara as an Entry-Level Backend Developer and embark on a journey to shape the digital landscape!
+title: Pengembang Antarmuka Pengguna - Solusi Berbasis Web
+description: Apakah Anda bersemangat tentang solusi berbasis web dan pengembangan backend?Apakah Anda ingin memulai karier Anda di lingkungan yang dinamis dan kolaboratif?Bergabunglah dengan kami di Sagara sebagai pengembang backend entry-level dan memulai perjalanan untuk membentuk lanskap digital!
 level: Entry-Level
 
 img: /img/careers/ui.webp
-alt: Two monitors displaying overall view of website design
+alt: Dua monitor yang menampilkan tampilan keseluruhan desain situs web
 svg: interface
 
 tags:
@@ -17,53 +17,53 @@ tags:
 date: 1985-10-29
 ---
 
-At Sagara, we're dedicated to creating balanced innovative web-based solutions that drive success for our clients and you as our team. Our team is using proven technologies, working on progressive projects that impact industries and communities. As an {{ title }}, you'll have the opportunity to learn from industry experts, collaborate with talented teams, and contribute to projects that make a difference.
+Di Sagara, kami berdedikasi untuk menciptakan solusi berbasis web inovatif yang seimbang yang mendorong kesuksesan untuk klien kami dan Anda sebagai tim kami.Tim kami menggunakan teknologi yang terbukti, mengerjakan proyek progresif yang berdampak pada industri dan masyarakat.Sebagai {{title}}, Anda akan memiliki kesempatan untuk belajar dari para pakar industri, berkolaborasi dengan tim berbakat, dan berkontribusi pada proyek yang membuat perbedaan.
 
-### Location
+### Lokasi
 
-**Buaran, East-Jakarta, Indonesia.**
+**Buaran, Timur-Jakarta, Indonesia.**
 
-We welcome everyone who live outside Jakarta to apply for this position. But to save commute time when needed, we prefer candidate who live or will live nearby our office area.
+Kami menyambut semua orang yang tinggal di luar Jakarta untuk melamar posisi ini.Tetapi untuk menghemat waktu perjalanan saat dibutuhkan, kami lebih suka kandidat yang tinggal atau akan tinggal di dekat area kantor kami.
 
-### Responsibilities
+### Tanggung jawab
 
-- Collaborate with designers to translate visual designs into responsive and engaging user interfaces.
-- Implement and maintain front-end code using HTML, CSS, and JavaScript.
-- Ensure the technical feasibility of UI/UX designs and optimize applications for maximum speed and scalability.
-- Participate in code reviews and provide constructive feedback to peers.
-- Stay up-to-date with the latest industry trends and best practices in UI development.
+- Berkolaborasi dengan desainer untuk menerjemahkan desain visual menjadi antarmuka pengguna yang responsif dan menarik.
+- Menerapkan dan memelihara kode front-end menggunakan HTML, CSS, dan JavaScript.
+- Pastikan kelayakan teknis desain UI/UX dan mengoptimalkan aplikasi untuk kecepatan dan skalabilitas maksimum.
+- Berpartisipasi dalam ulasan kode dan memberikan umpan balik konstruktif kepada rekan.
+-Tetap mutakhir dengan tren industri terbaru dan praktik terbaik dalam pengembangan UI.
 
-### Qualifications
+### Kualifikasi
 
-- Bachelor's degree in Computer Science, Web Development, or a related field (or equivalent experience).
-- Strong understanding of HTML, CSS, and JavaScript.
-- Basic knowledge of front-end frameworks (e.g., React, Angular, or Vue.js).
-- Basic knowledge of node.js development tools (e.g. Gulp, Webpack, or Grunt).
-- Ability to collaborate effectively in a team environment.
-- Eagerness to learn and adapt to new technologies.
-- Excellent problem-solving and communication skills.
+- Gelar Sarjana dalam Ilmu Komputer, Pengembangan Web, atau Bidang Terkait (atau Pengalaman Setara).
+- Pemahaman yang kuat tentang HTML, CSS, dan JavaScript.
+- Pengetahuan dasar kerangka kerja front-end (mis., Bereaksi, Angular, atau Vue.js).
+- Pengetahuan dasar alat pengembangan Node.js (mis. Gulp, Webpack, atau Grunt).
+- Kemampuan untuk berkolaborasi secara efektif dalam lingkungan tim.
+- Semangat untuk belajar dan beradaptasi dengan teknologi baru.
+- Keterampilan pemecahan masalah dan komunikasi yang sangat baik.
 
-### Preferred Qualifications
+### Kualifikasi Pendukung
 
-- Experience with version control systems (e.g., Git).
-- Familiarity with design tools such as Sketch, Figma, or Adobe Creative Suite.
-- Familiarity with UI/UX design principles.
-- Knowledge of responsive design techniques.
-- Portfolio or examples of previous UI development projects.
+- Pengalaman dengan Sistem Kontrol Versi (mis., GIT).
+- Keakraban dengan alat -alat desain seperti Sketsa, Figma, atau Adobe Creative Suite.
+- Keakraban dengan prinsip desain UI/UX.
+- Pengetahuan tentang teknik desain yang responsif.
+- Portofolio atau contoh proyek pengembangan UI sebelumnya.
 
-### Salary Range
+### Kisaran Gaji
 
-From **Rp. 3.000.000,-** to **4.000.000,-**
+Dari **RP.3.000.000,-** ke **4.000.000,-**
 
-We’re open for suggestion based on your qualifications and previous experiences.
+Kami terbuka untuk saran berdasarkan kualifikasi dan pengalaman Anda sebelumnya.
 
-### Why Sagara
+### Mengapa Sagara
 
-- Mentorship from experienced professionals.
-- Opportunities to work on exciting and impactful projects.
-- A collaborative and inclusive work culture.
-- Professional growth and development prospects.
-- Competitive compensation and benefits package.
-- Hybrid working environment.
-- Health and pension benefits.
-- 20 leave days excluding holidays and bank holidays.
+- Bimbingan dari para profesional yang berpengalaman.
+- Peluang untuk bekerja pada proyek yang menarik dan berdampak.
+- Budaya kerja kolaboratif dan inklusif.
+- Prospek Pertumbuhan dan Pembangunan Profesional.
+- Paket Kompensasi dan Manfaat Kompetitif.
+- Lingkungan kerja hibrida.
+- Manfaat kesehatan dan pensiun.
+- 20 hari cuti tidak termasuk hari libur dan hari libur bank.

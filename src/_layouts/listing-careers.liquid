@@ -7,13 +7,7 @@ namespace: careers
   <article>
     <div class="text">
       {{ content }}
-      <a href="#open-positions" class="button cta">
-        {% if page.lang == "id" %}
-          Lihat Posisi yang Terbuka
-        {% else %}
-          See Open Positions
-        {% endif %}
-
+      <a href="#open-positions" class="button cta">See Open Positions
         <i class="arrow"></i>
       </a>
     </div>
@@ -24,7 +18,11 @@ namespace: careers
       src="/img/careers/hero.webp"
       width="1440"
       height=""
-      alt="People gathering around in a table with all their devices" />
+      alt="{% if page.lang == "id" %}
+        Orang -orang berkumpul di meja dengan semua perangkat mereka
+      {% else %}
+        People gathering around in a table with all their devices
+      {% endif %}" />
   </div>
 </section>
 
@@ -42,10 +40,22 @@ namespace: careers
   {% endfor %}
 
   <nav>
-    <h2>Open positions:</h2>
+    <h2>
+      {% if page.lang == "id" %}
+        Posisi terbuka:
+      {% else %}
+        Open positions:
+      {% endif %}
+    </h2>
     <menu class="flat tab submenu">
       <li>
-        <label for="tabs1All">All</label>
+        <label for="tabs1All">
+          {% if page.lang == "id" %}
+            Semua
+          {% else %}
+            All
+          {% endif %}
+        </label>
       </li>
       {% for tag in collections.tagList %}
         <li>

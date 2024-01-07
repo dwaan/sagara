@@ -53,7 +53,10 @@ accessibility_checkbox.addEventListener('change', _ => {
     const checkbox = _q("#" + name);
 
     if (name == settings[4]) {
-      if (get(name).toString() != (checkbox.checked ? "id-ID" : "en-US")) {
+      let lang = get(name).toString();
+      if (lang == "false") lang = "en-US";
+
+      if (lang != (checkbox.checked ? "id-ID" : "en-US")) {
         set(name, checkbox.checked ? "id-ID" : "en-US");
         gsap
           .timeline({
