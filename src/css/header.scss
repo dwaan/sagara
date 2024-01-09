@@ -899,3 +899,37 @@ nav.popup {
     }
   }
 }
+
+.high-contrast #a11y {
+
+
+  #lang {
+    &+span {
+      +label {
+        &::before {
+          background: var(--neon-blue);
+        }
+
+        +label {
+          &::before {
+            background: var(--white-transparent);
+          }
+        }
+      }
+    }
+
+    &:checked+span {
+      +label {
+        &::before {
+          background: var(--white-transparent);
+        }
+
+        +label {
+          &::before {
+            background: var(--neon-blue);
+          }
+        }
+      }
+    }
+  }
+}

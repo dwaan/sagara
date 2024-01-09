@@ -53,27 +53,33 @@ accessibility_checkbox.addEventListener('change', _ => {
     const checkbox = _q("#" + name);
 
     if (name == settings[4]) {
+      const redirect = function () {
+        location.href = checkbox.checked ? window.location.href.replace("/en/", "/id/") : window.location.href.replace("/id/", "/en/");
+      }
       let lang = get(name).toString();
       if (lang == "false") lang = "en-US";
 
       if (lang != (checkbox.checked ? "id-ID" : "en-US")) {
         set(name, checkbox.checked ? "id-ID" : "en-US");
-        gsap
-          .timeline({
-            onComplete: _ => {
-              location.href = checkbox.checked ? window.location.href.replace("/en/", "/id/") : window.location.href.replace("/id/", "/en/");
-            }
-          })
-          .set("body", {
-            pointerEvents: "none"
-          }, 0)
-          .fromTo("body", {
-            opacity: 1
-          }, {
-            opacity: 0,
-            duration: duration / 2,
-            ease: "power2.in"
-          }, 0);
+
+        if (reduceMotion()) {
+          redirect();
+        } else {
+          gsap
+            .timeline({
+              onComplete: redirect
+            })
+            .set("body", {
+              pointerEvents: "none"
+            }, 0)
+            .fromTo("body", {
+              opacity: 1
+            }, {
+              opacity: 0,
+              duration: duration / 2,
+              ease: "power2.in"
+            }, 0);
+        }
       }
     } else {
       if (checkbox.checked) {
