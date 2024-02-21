@@ -2,7 +2,7 @@
 layout: careers.liquid
 
 title: Desainer Pengalaman Pengguna - Solusi Seluler dan Web
-description: Bergabunglah dengan tim kreatif di Sagara, di mana inovasi memenuhi desain.Di Sagara, kami berkomitmen untuk memberikan pengalaman pengguna luar biasa yang memikat dan menyenangkan pengguna kami.Saat kami memperluas tim kami, kami mencari perancang pengalaman pengguna entry-level yang bersemangat dan berbakat untuk berkontribusi pada misi kami menciptakan produk yang bermakna dan berpusat pada pengguna.
+description: Bergabunglah dengan tim kreatif di Sagara, di mana inovasi memenuhi desain. Di Sagara, kami berkomitmen untuk memberikan pengalaman pengguna luar biasa yang memikat dan menyenangkan pengguna kami. Saat kami memperluas tim kami, kami mencari perancang pengalaman pengguna entry-level yang bersemangat dan berbakat untuk berkontribusi pada misi kami menciptakan produk yang bermakna dan berpusat pada pengguna.
 level: Entry-Level
 
 img: /img/careers/ux.webp
