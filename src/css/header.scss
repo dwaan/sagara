@@ -75,32 +75,46 @@
     }
 
     &.gradient {
-      --rad0: 0%;
-      --rad1: 70%;
-      --rad2: 90%;
-      --rad3: 95%;
+      --rad0: 7%;
+      --rad1: 29%;
+      --rad2: 64%;
+      --rad3: 83%;
+      --posx: 90%;
+      --posy: 10%;
 
       flex: none;
       width: var(--height);
       border-radius: 100%;
 
-      background: conic-gradient(from -90deg, var(--neon-green) var(--rad0), var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
+      background: var(--blue-normal);
+      background: radial-gradient(farthest-corner at var(--posx) var(--posy),
+          var(--neon-yellow) var(--rad0),
+          var(--neon-green) var(--rad1),
+          var(--blue-cyan) var(--rad2),
+          var(--blue-normal) var(--rad3),
+          var(--blue-deep) 100%);
       transition: --rad0 var(--fast) var(--ease-back), --rad1 var(--fast) var(--ease-back), --rad2 var(--fast) var(--ease-back), --rad3 var(--fast) var(--ease-back);
 
       &.plain {
-        --rad0: 100%;
-        --rad1: 100%;
-        --rad2: 100%;
-        --rad3: 100%;
+        --rad0: 0%;
+        --rad1: 0%;
+        --rad2: 0%;
+        --rad3: 0%;
+        --posx: 50%;
+        --posy: 50%;
 
         opacity: 0;
-        background: conic-gradient(from -90deg, var(--neon-green) var(--rad0), var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
         transition: opacity .08s ease, --rad0 .64s var(--ease-back), --rad1 .64s var(--ease-back), --rad2 .64s var(--ease-back), --rad3 .64s var(--ease-back);
         transition-delay: .16s;
 
         &.hover {
+          --rad0: 7%;
+          --rad1: 29%;
+          --rad2: 64%;
+          --rad3: 83%;
+          --posx: 90%;
+          --posy: 10%;
           opacity: 1;
-          background: conic-gradient(from -90deg, var(--neon-green) var(--rad0), var(--blue-cyan) var(--rad1), var(--neon-blue) var(--rad2), var(--blue-normal) var(--rad3), var(--blue-deep) 100%);
         }
       }
     }
@@ -116,10 +130,10 @@
 
   .hover.plain.gradient,
   &:hover .gradient {
-    --rad0: 0%;
-    --rad1: 20%;
-    --rad2: 40%;
-    --rad3: 60%;
+    --rad0: 7%;
+    --rad1: 60%;
+    --rad2: 80%;
+    --rad3: 90%;
   }
 }
 
