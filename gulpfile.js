@@ -82,7 +82,7 @@ const paths = {
 		dest: sites + "fonts"
 	},
 	meta: {
-		src: src + '/**/meta/*',
+		src: [src + '/**/meta/*', src + '/index.php'],
 		dest: sites
 	}
 };

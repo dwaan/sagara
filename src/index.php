@@ -6,8 +6,9 @@ print_r($lang);
 
 switch ($lang) {
     case "id-ID":
-        // header("Location: /id/");
+        header("Location: /id/");
+        break;
     default:
-        // header("Location: /en/");
+        header("Location: /en/");
         break;
 }

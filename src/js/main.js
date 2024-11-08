@@ -115,7 +115,7 @@ _q("#lang-en").addEventListener("click", _ => {
 
 const duration = .72;
 barba.init({
-  debug: true,
+  debug: false,
   logLevel: 0,
   transitions: [{
     name: 'default-transition',
