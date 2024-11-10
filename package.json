@@ -1,6 +1,6 @@
 {
   "name": "sagara",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Sagara Redesign 2023",
   "main": "src/homepage.liquid",
   "type": "module",
