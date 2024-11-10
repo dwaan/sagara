@@ -1658,7 +1658,7 @@ section.closest {
       }
 
       &:hover {
-        color: var(--black);
+        color: var(--dark-static);
 
         &:after {
           top: calc(var(--bttn-s) / -8);
