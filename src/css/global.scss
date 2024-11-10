@@ -1522,7 +1522,6 @@ section.closest {
 //
 
 .tabs {
-
   input[type="radio"] {
     display: none;
 
@@ -1546,7 +1545,6 @@ section.closest {
           position: relative;
           z-index: 1;
           width: initial;
-          // margin: calc(var(--pad-m) * -1) 0 0;
           opacity: 1;
           pointer-events: all;
 
@@ -1660,7 +1658,7 @@ section.closest {
       }
 
       &:hover {
-        color: var(--white-static);
+        color: var(--black);
 
         &:after {
           top: calc(var(--bttn-s) / -8);
@@ -1668,8 +1666,8 @@ section.closest {
           right: calc(var(--bttn-s) / -4);
           bottom: calc(var(--bttn-s) / -8);
 
-          border-color: var(--neon-blue);
-          background: var(--neon-blue);
+          border-color: var(--neon-yellow);
+          background: var(--neon-yellow);
         }
       }
     }
