@@ -146,7 +146,10 @@ function css_prefix_dev() {
 
 function image() {
 	return gulp.src(paths.image.src, { since: gulp.lastRun(image) })
-		.pipe(webp())
+		.pipe(webp({
+			method: 6,
+			lossless: 9
+		}))
 		.pipe(gulp.dest(paths.image.dest))
 }
 
