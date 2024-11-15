@@ -9,7 +9,7 @@
     "test:11ty": "npx @11ty/eleventy --serve --port=8080",
     "clean": "rm -R sites/",
     "build": "gulp prod",
-    "build:webp": "gulp dev:webp",
+    "build:image": "gulp image",
     "build:clean": "rm -R sites/ && gulp prod",
     "serve": "gulp prod:serve",
     "serve:clean": "rm -R sites/ && gulp prod:serve"

@@ -292,7 +292,7 @@ function production() {
 }
 
 gulp.task('dev', gulp.series(development));
-gulp.task('dev:webp', gulp.series(image));
+gulp.task('image', gulp.series(image));
 gulp.task('prod', gulp.parallel(production(), eleventy_prod));
 gulp.task('prod:serve', gulp.series(production(), eleventy_dev));
 gulp.task('default', gulp.series('dev'));
