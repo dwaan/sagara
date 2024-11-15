@@ -2,3 +2,4 @@ node_modules/
 sites/
 cache/
 .vscode/
+credential.json
