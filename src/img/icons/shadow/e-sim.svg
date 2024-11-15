@@ -19,7 +19,7 @@
 <rect x="24.5" y="66.5" width="66" height="19" rx="6.5" stroke="#0057F2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="94.5" y="67.5" width="17" height="27" rx="6.5" stroke="#0057F2" stroke-width="3"/>
 <rect x="88.5" y="83.5" width="30" height="30" rx="15" fill="#F9FAFC" stroke="#0057F2" stroke-width="3"/>
-<rect x="99.6667" y="91.9783" width="7.66667" height="13.0435" rx="3.83333" stroke="#0057F2"/>
+<rect x="99.6666" y="91.9783" width="7.66667" height="13.0435" rx="3.83333" stroke="#0057F2"/>
 <rect x="97.5" y="89.5" width="12" height="18" rx="6" stroke="#0057F2"/>
 <rect x="101.833" y="94.4565" width="3.33333" height="8.08696" rx="1.66667" stroke="#0057F2"/>
 <rect x="99" y="97" width="2" height="2" fill="#F9FAFC"/>
@@ -49,9 +49,9 @@
 <rect x="18.5" y="62.5" width="66" height="19" rx="6.5" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="88.5" y="63.5" width="17" height="27" rx="6.5" stroke="#2B2727" stroke-width="3"/>
 <rect x="82.5" y="79.5" width="30" height="30" rx="15" fill="#F9FAFC" stroke="#2B2727" stroke-width="3"/>
-<rect x="93.6667" y="87.9783" width="7.66667" height="13.0435" rx="3.83333" stroke="#2B2727"/>
+<rect x="93.6666" y="87.9783" width="7.66667" height="13.0435" rx="3.83333" stroke="#2B2727"/>
 <rect x="91.5" y="85.5" width="12" height="18" rx="6" stroke="#2B2727"/>
-<rect x="95.8333" y="90.4565" width="3.33333" height="8.08696" rx="1.66667" stroke="#2B2727"/>
+<rect x="95.8334" y="90.4565" width="3.33333" height="8.08696" rx="1.66667" stroke="#2B2727"/>
 <rect x="93" y="93" width="2" height="2" fill="#F9FAFC"/>
 <rect x="90" y="96" width="2" height="2" fill="#F9FAFC"/>
 <rect x="97" y="100" width="2" height="2" fill="#F9FAFC"/>

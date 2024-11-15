@@ -4,5 +4,5 @@
 <circle cx="96.579" cy="63.859" r="7.97179" fill="#F9FAFC"/>
 <rect x="18" y="88.9136" width="13.6659" height="13.6659" rx="3" fill="#F9FAFC" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M104.551 63.859C104.551 68.2617 100.982 71.8308 96.579 71.8308C92.1763 71.8308 88.6072 68.2617 88.6072 63.859C88.6072 59.4563 92.1763 55.8872 96.579 55.8872" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M94.3014 62.1512L97.1484 64.9982L103.981 58.1653" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M94.3014 62.1512L97.1485 64.9982L103.981 58.1653" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

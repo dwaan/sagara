@@ -7,5 +7,5 @@
 <path d="M28 64.5H100M41 116H87C94.1797 116 100 110.18 100 103V27C100 19.8203 94.1797 14 87 14H41C33.8203 14 28 19.8203 28 27V103C28 110.18 33.8203 116 41 116Z" stroke="#2B2727" stroke-width="3"/>
 <path d="M39.5 75.5H58.5M65.5 75.5H86.5M39.5 84.5H49.5M55.5 84.5H65.5M72.5 84.5H82.5M39.5 93.5H84.5M39.5 102.5H64.5M72.5 102.5H88.5" stroke="#2B2727" stroke-width="3" stroke-linecap="round"/>
 <rect x="39.5" y="23.5" width="48.5245" height="33.2064" rx="6.5" fill="#F9FAFC" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M50.533 48.458V42.8593M58.8883 48.458V35.1664M67.2436 48.458V39.4402M75.599 48.458V31.7473" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50.533 48.458V42.8593M58.8883 48.458V35.1664M67.2436 48.458V39.4402M75.5989 48.458V31.7473" stroke="#2B2727" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
