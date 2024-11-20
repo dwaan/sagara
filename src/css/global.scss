@@ -1291,6 +1291,23 @@ section.journey {
   }
 }
 
+section.core {
+  .scroll {
+    margin-left: calc(var(--pad-xl) * -1);
+    margin-right: calc(var(--pad-xl) * -1);
+
+    ol,
+    ul {
+      padding-left: var(--pad-xl);
+      padding-right: var(--pad-xl);
+    }
+  }
+
+  p {
+    @extend .p--hero;
+  }
+}
+
 section.checkbox {
   article {
     margin-left: calc(var(--pad-xl) * -1);

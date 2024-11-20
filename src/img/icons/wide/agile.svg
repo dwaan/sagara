@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" fill="none" viewBox="0 0 256 128">
+  <circle cx="132" cy="63" r="38" fill="#F9FAFC"/>
+  <path stroke="#2B2727" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M132 100.84c20.987 0 38-17.013 38-38s-17.013-38-38-38-38 17.013-38 38c0 13.774 7.328 25.836 18.298 32.5"/>
+  <path stroke="#2B2727" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M132 100.84c17.673 0 32-12.536 32-28s-14.327-28-32-28"/>
+  <path stroke="#2B2727" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M133 100.84c13.255 0 24-8.059 24-18 0-9.94-10.745-18-24-18"/>
+  <path stroke="#2B2727" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M132 100.84c7.732 0 14-3.581 14-8 0-4.418-6.268-8-14-8m0 16H56.5M135.692 41l-4.314 3.698 3.567 4.388M135.51 21l-4.314 3.698 3.567 4.388M90.31 56.027l3.777 4.245 4.321-3.647M135.692 61l-4.314 3.698 3.567 4.388"/>
+  <path stroke="#2B2727" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m135.692 81-4.314 3.698 3.567 4.388M160 101.243h52.207m0 0-4.242-4.242m4.242 4.242-4.242 4.242"/>
+  <rect width="13.666" height="13.666" x="43" y="93.84" fill="#F9FAFC" stroke="#2B2727" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" rx="3"/>
+</svg>

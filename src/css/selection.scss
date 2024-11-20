@@ -246,7 +246,6 @@
     align-self: stretch;
   }
 
-
   ul,
   ol {
     @media screen and (max-width: variables.$screen-normal-l) {
@@ -302,6 +301,48 @@
       opacity: 1;
       border-color: var(--gray-dynamic);
       background: var(--gray-background);
+    }
+  }
+
+  p {
+    @extend .p--small;
+  }
+}
+
+.selection--yellow {
+  li {
+    @extend .flex-column;
+    @extend .vertical;
+
+    align-items: center;
+    align-self: stretch;
+    gap: var(--gap-s);
+    flex: none;
+
+    width: 18.3625rem;
+
+    padding: var(--bttn-l);
+
+    h3 {
+      color: var(--dark-normal);
+    }
+
+    &::before {
+      @extend .p--regular;
+      @extend .flex-row-center;
+
+      align-self: initial;
+      position: relative;
+
+      display: none;
+      width: var(--bttn-xl);
+      height: var(--bttn-xl);
+    }
+
+    &::after {
+      opacity: .52;
+      border-color: var(--gray-dynamic);
+      background: var(--neon-yellow);
     }
   }
 
@@ -514,7 +555,7 @@
   }
 
   &.cta,
-  &.jurney {
+  &.journey {
     @extend .selection--static;
   }
 
@@ -524,6 +565,10 @@
 
   &.journey {
     @extend .selection--journey;
+  }
+
+  &.core {
+    @extend .selection--yellow;
   }
 
   &.checkbox {
